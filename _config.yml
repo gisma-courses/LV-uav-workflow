@@ -25,6 +25,7 @@ logger_factory:
 # morea_head_breadcrumb_link: "http://cnn.com"
 # morea_head_breadcrumb_label: "CNN Site"
 
+
 # INTERNAL CONFIGURATION: The following fields are not normally edited by users.
 markdown: kramdown
 kramdown:
