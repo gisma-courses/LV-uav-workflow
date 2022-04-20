@@ -5,30 +5,21 @@ morea_type: home
 published: true
 ---
 
-## Welcome to ICS 199, Fall 2021
-
-<div class="alert alert-danger" role="alert">
-  Note: this is not a website for a real course. It is actually the "demo" site for the Morea Framework. See the <a href="https://morea-framework.github.io">Morea Framework Project Site</a> for details.
-</div>
-
-ICS 199 is a four week overview of selected topics in computer science, including Javascript, Open Source Software, and Ethics.
-
-## Who should take this course
-
-This course is intended for undergraduates in computer science or computer engineering who have a working knowledge of at least one programming language and who want to get a taste of important topics in the field.
-
-## Pedagogy
-
-ICS 199 is structured as a sequential series of [modules](/modules), each taking approximately a week to complete. Each module has the following structure:
-
-  * [Prerequisites](/prerequisites), describing skills you should have prior to starting the module.
-  * [Learning outcomes](/outcomes), describing the major goals for the module.
-  * [Readings and other online resources](/readings), providing background material.
-  * [Experiential learning activities](/experiences), providing a structured set of challenges enabling you to acquire mastery of material.
-  * [Assessments](/assessments), which help you determine if you have acquired mastery of the material.
-
-## About the instructor
-
-[Philip Johnson](https://philipmjohnson.org) is a Professor of Information and Computer Sciences at the University of Hawaii. His research interests include climate change, educational technology, software engineering, and serious games. He is currently an active developer of [RadGrad](https://radgrad.org), an open source software system based on Javascript, Typescript, React, and Meteor.
+## Welcome to Micro Remote Sensing 
 
 
+The course Micro Remote Sensing - provides a complete introduction to the reproducible acquisition preprocessing and examplary analysis of high resolution imaging threat data based on open source software. 
+
+## Who should take this course?
+
+This course is designed for students at all levels who have a basic knowledge of the organization of their operating system and want to acquire a hands-on approach to the independent acquisition of high-resolution aerial imagery data.
+
+## Didaktisches Konzept
+
+ The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-Micro-Remote-Sensing/modules) to be worked through, each lasting approximately two to 3 weeks. Each module has the following structure:
+
+  * [Prerequisites](/LV-Micro-Remote-Sensing/prerequisites) - Basic knowledge upon which the module is based.
+  * [Learning outcomes](/LV-Micro-Remote-Sensing/outcomes) - what is the learning objective.
+  * [Readings & Resources](/LV-Micro-Remote-Sensing/readings), background material.
+  * [Experiences](/LV-Micro-Remote-Sensing/experiences) - training and exercises to practically master the learning objectives.
+  * [Assessments](/LV-Micro-Remote-Sensing/assessments) - exercises/study/exam performance.
