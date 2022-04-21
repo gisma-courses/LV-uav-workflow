@@ -9,7 +9,7 @@ morea_type: assessment
 morea_start_date: "2022-04-28T23:59"
 morea_sort_order: 05
 morea_labels:
-- Abgabe
+- delivery
 
 
 ---
