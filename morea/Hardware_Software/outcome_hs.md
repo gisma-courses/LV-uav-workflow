@@ -1,7 +1,7 @@
 ---
 title: "UAV Hardware and related Software"
 published: true
-morea_id: outcome
+morea_id: outcome-hs
 morea_type: outcome
 morea_sort_order: 7
 ---

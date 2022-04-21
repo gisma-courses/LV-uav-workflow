@@ -4,7 +4,7 @@ published: true
 morea_coming_soon: false
 morea_id: module-introduction
 morea_outcomes:
-  - outcome
+  - outcome-hs
 morea_readings:
   - reading-1
   - reading-2
