@@ -14,3 +14,8 @@ morea_labels:
 
 ---
 
+* Please read the articles crosswise and identify one positive and one negative aha effect from this research.
+
+* List the top 3 content issues that sparked your greatest interest
+
+* Prepare this for a short statement with rationale for the upcoming session.
