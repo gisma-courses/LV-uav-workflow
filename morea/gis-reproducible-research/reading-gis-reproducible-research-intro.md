@@ -7,8 +7,8 @@ morea_url: https://www.earthdatascience.org/courses/intro-to-earth-data-science/
 morea_type: reading
 morea_sort_order: 1
 morea_labels:
- - "Reading"
+ - reading
  - 10 min
- - mandantory
+ - mandatory
 ---
 

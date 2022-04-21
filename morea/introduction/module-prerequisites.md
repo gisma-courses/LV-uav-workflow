@@ -15,7 +15,7 @@ morea_icon_url: /morea/introduction/reading.png
 morea_start_date: "2022-04-20"
 morea_end_date: "2021-04-28"
 morea_labels: 
-  - Basisc Knowledge
+  - basics
   - mandantory
 morea_sort_order: 4
 ---

@@ -8,8 +8,8 @@ morea_type: reading
 morea_icon_url: /morea/reading.png
 morea_sort_order: 3
 morea_labels:
-  - Grundlagen
-  - Pflicht
+  - basics
+  - mandatory
 ---
 
 Read the abstracts and choose the most interesting article for a vbrief review.
