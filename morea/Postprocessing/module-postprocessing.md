@@ -1,10 +1,10 @@
 ---
-title: "UAV Fieldwork - Safe and Effective gathering data"
+title: "Creating High Quality Orthophotos"
 morea_type: module
 published: true
 morea_coming_soon: true
 morea_id: module-postprocessing
-morea_icon_url: /morea/introduction/setup-folder-icon.png
+morea_icon_url: /morea/Postprocessing/odm.png
 morea_start_date: "2022-04-20"
 morea_end_date: "2021-05-02"
 morea_labels: 

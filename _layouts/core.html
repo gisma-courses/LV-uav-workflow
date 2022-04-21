@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/{{ site.morea_theme }}/font-awesome.min.css">
+  
+  <img src="{{ site.baseurl }}/morea/header_gis.jpg" style="height:200px;> 
   <title> {{ site.name }} | {{ page.title }} </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!--  Load bootswatch-based Morea theme file. -->
   <link rel="stylesheet" href="{{ site.baseurl }}/css/themes/{{ site.morea_theme }}/bootstrap.min.css">
@@ -35,6 +42,9 @@
 
   <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+
+    
   <script>
     $(window).on('load', function () {
       $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
@@ -89,10 +99,10 @@
     {% else %}
     No footer page content supplied.
     {% endif %}
-    <p style="margin: 0">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a> (Theme: {{ site.morea_theme }})<br>
+    <p style="margin: 0;   font-size: .6em; ">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a>
       Last update on: <span>{{ site.time }}</span></p>
 
-    <p style="margin: 0">
+    <p style="margin: 0;font-size: .6em;">
       {% if site.morea_navbar_items contains 'Prerequisites' %}
       {{ site.morea_prerequisite_pages.size }} prerequisites |
       {% endif %}

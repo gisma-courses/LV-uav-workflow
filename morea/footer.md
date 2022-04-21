@@ -4,7 +4,11 @@ morea_id: footer
 morea_type: footer
 ---
 
-Philip Johnson | Information and Computer Sciences | University of Hawaii <br>
-johnson@hawaii.edu<br>
+<small>
+<a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach">Chris Reudenbach</a>
+|
+<a class="footer-link"  href="https://www.uni-marburg.de/en">University of Marburg </a>
+</small>
+
 
 

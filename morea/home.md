@@ -14,7 +14,7 @@ The course Micro Remote Sensing - provides a complete introduction to the reprod
 
 This course is designed for students at all levels who have a basic knowledge of the organization of their operating system and want to acquire a hands-on approach to the independent acquisition of high-resolution aerial imagery data.
 
-## Didaktisches Konzept
+## Didactic Concept
 
  The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-Micro-Remote-Sensing/modules) to be worked through, each lasting approximately two to 3 weeks. Each module has the following structure:
 

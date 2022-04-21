@@ -4,7 +4,7 @@
 # SITE SPECIFIC: The following fields are typically changed for each site
 name: LV-uav-workflow
 baseurl: /LV-uav-workflow
-morea_theme: darkly
+morea_theme: cerulean-purple
 timezone: Europe/Berlin
 morea_navbar_items:
   - Prerequisites
@@ -13,20 +13,9 @@ morea_navbar_items:
   - Readings
   - Experiences
   - Assessments
-  - Schedule
 logger_factory:
   Morea: error
 
-
-# MOREA PORTAL: The following fields are only needed if this site is part of a "Morea Portal".
-# morea_course: ics311
-# morea_domain: http://morea-framework.github.io/
-# morea_google_analytics_tracking_id: "<your tracking id here>"
-# morea_head_breadcrumb_link: "http://cnn.com"
-# morea_head_breadcrumb_label: "CNN Site"
-
-
-# INTERNAL CONFIGURATION: The following fields are not normally edited by users.
 markdown: kramdown
 kramdown:
   hard_wrap: false
