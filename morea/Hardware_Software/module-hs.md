@@ -15,7 +15,7 @@ morea_assessments:
   - assessment-hs
 morea_icon_url: /morea/Hardware_Software/oss.jpeg
 morea_start_date: "2022-04-20"
-morea_end_date: "2021-05-02"
+morea_end_date: "2021-05-04"
 morea_labels: 
   - Basic Information
 morea_sort_order: 5
