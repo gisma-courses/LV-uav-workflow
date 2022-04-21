@@ -1,6 +1,6 @@
 ---
 title: "Rmarkdown zur Dokumentation wissenschaftlicher Arbeitsprozesse und Resultate"
-published: true
+published: false
 morea_id: experience-gis-reproducible-research-r
 morea_summary: "Blogdown und Hugo"
 morea_url: https://thinking-spatial.org/courses/geoinformationen_kommunizieren/kurs5/

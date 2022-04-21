@@ -1,6 +1,6 @@
 ---
 title: "Aufgabe Rmarkdown Seiten zur Dokumentation der Kursinhalte"
-published: true
+published: false
 morea_id: assessment-gis-reproducible-research
 morea_summary: Einrichten einer Website mit RStudio, die alle Übungen und die Kommunikation auf Github bereitstellt.
 morea_type: assessment
