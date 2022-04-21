@@ -9,7 +9,7 @@ morea_start_date: "2022-04-20"
 morea_end_date: "2021-05-02"
 morea_labels: 
   - Einführung
-morea_sort_order: 10
+morea_sort_order: 9
 
 ---
 
