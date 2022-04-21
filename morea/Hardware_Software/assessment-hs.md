@@ -6,10 +6,11 @@ morea_id: assessment-hs
 morea_type: assessment
 morea_url: 
 morea_type: assessment
-morea_start_date: "2022-05-04T23:59"
+morea_start_date: "2022-04-20T23:59"
+morea_end_date: "2021-05-04T23:59"
 morea_sort_order: 05
 morea_labels:
- - mandatory
+ - deliverey
 
 ---
 
