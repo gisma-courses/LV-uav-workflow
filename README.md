@@ -1,3 +1,5 @@
+![Course Header](https://gisma-courses.github.io/LV-uav-workflow/morea/header_gis.jpg "Image source: C.Reudenbach")
+
 This course is brought to you from the working group on Geoinformatics Science of the [Department of Geography](https://www.uni-marburg.de/fb19).
 
 
