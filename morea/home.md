@@ -23,3 +23,12 @@ This course is designed for students at all levels who have a basic knowledge of
   * [Readings & Resources](/LV-Micro-Remote-Sensing/readings), background material.
   * [Experiences](/LV-Micro-Remote-Sensing/experiences) - training and exercises to practically master the learning objectives.
   * [Assessments](/LV-Micro-Remote-Sensing/assessments) - exercises/study/exam performance.
+  
+  
+## Legal
+
+This course is brought to you from the working group on [Geoinformatics Science](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach) of the [Department of Geography](https://www.uni-marburg.de/fb19). The course content is developed and hosted on [Github](https://gisma-courses.github.io/geoinfo-basis-qgis/).
+
+The responsibility for the content rests with the instructors. Statements, opinions and/or conclusions are the ones from the instructors and do not necessarily reflect the opinion of the representatives of Marburg University. 
+
+
