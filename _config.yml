@@ -7,7 +7,6 @@ baseurl: /LV-uav-workflow
 morea_theme: spacelab
 timezone: Europe/Berlin
 morea_navbar_items:
-  - Prerequisites
   - Modules
   - Outcomes
   - Readings

@@ -18,11 +18,11 @@ This course is designed for students at all levels who have a basic knowledge of
 
  The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-Micro-Remote-Sensing/modules) to be worked through, each lasting approximately two to 3 weeks. Each module has the following structure:
 
-  * [Prerequisites](/LV-Micro-Remote-Sensing/prerequisites) - Basic knowledge upon which the module is based.
+
   * [Learning outcomes](/LV-Micro-Remote-Sensing/outcomes) - what is the learning objective.
-  * [Readings & Resources](/LV-Micro-Remote-Sensing/readings), background material.
-  * [Experiences](/LV-Micro-Remote-Sensing/experiences) - training and exercises to practically master the learning objectives.
-  * [Assessments](/LV-Micro-Remote-Sensing/assessments) - exercises/study/exam performance.
+  * [Readings & Resources](/LV-Micro-Remote-Sensing/readings) - all kind of ressources.
+  * [Experiences](/LV-Micro-Remote-Sensing/experiences) - exercises & tutorials to practically master the learning goals.
+  * [Assessments](/LV-Micro-Remote-Sensing/assessments) - self assessment to get an idea how you peform.
   
   
 ## Legal
