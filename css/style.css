@@ -33,11 +33,30 @@
   padding-bottom: 1em;
 }
 
-h1, h2, h3 {
+h1 {
+  font-size: 1.6em;
   margin-top: .20em;
 }
 
-small {
-  font-size: .7em
+h2, h3 { 
+    font-size: 1.3em;
+  margin-top: .20em;
 }
 
+h3 { 
+  font-size: 1.2em;
+  margin-top: .20em;
+}
+
+h4,h5 { 
+  font-size: 1.1em;
+  font-style:italic;
+  margin-top: .20em;
+}
+small {
+  font-size: .6em
+}
+
+body {
+  font-size: 1.3em
+}
