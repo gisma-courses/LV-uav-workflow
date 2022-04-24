@@ -12,7 +12,7 @@ The course Micro Remote Sensing - provides a complete introduction to the reprod
 
 ## Who should take this course?
 
-This course is designed for students at all levels who have a basic knowledge of the organization of their operating system and want to acquire a hands-on approach to the independent acquisition of high-resolution aerial imagery data.
+This course is designed for students of all levels who have a basic knowledge of the organization of their operating system. Programming knowledge is not required but will be helpful for the advanced module *Analysis of high resolution aerial data*. The focus is on a practical approach to the independent acquisition of high resolution aerial data. Post-processing of products and an introduction to classification and analysis of the generated datasets complete the course.
 
 ## Didactic Concept
 
