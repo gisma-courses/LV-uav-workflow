@@ -27,7 +27,7 @@ This course is designed for students at all levels who have a basic knowledge of
   
 ## Legal
 
-The course content is developed and hosted on [Github](https://gisma-courses.github.io/geoinfo-basis-qgis/) and developed by the [GISMA Geoinformatics Science](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach) working group.
+The course content is developed and hosted on [Github](https://github.com/gisma-courses/LV-uav-workflow) and developed by the [GISMA Geoinformatics Science](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach) working group.
 
 The responsibility for the content rests with the instructors. Statements, opinions and/or conclusions are the ones from the instructors and do not necessarily reflect the opinion of the representatives of [Marburg University](https://www.uni-marburg.de/en). 
 
