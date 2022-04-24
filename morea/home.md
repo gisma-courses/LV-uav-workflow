@@ -26,7 +26,7 @@ This course is designed for students at all levels who have a basic knowledge of
   
 ## Instructor
 
-[Chris Reudenbach](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach) Geoinformatics Working Group (GISMA) of the Department of Geography at the [University of Marburg ](https://www.uni-marburg.de/en). The course content is developed and hosted on [Github](https://github.com/gisma-courses/LV-uav-workflow).
+[Chris Reudenbach](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach), Geoinformatics Working Group (GISMA) of the Department of Geography at the [University of Marburg ](https://www.uni-marburg.de/en). The course content is developed and hosted on [Github](https://github.com/gisma-courses/LV-uav-workflow).
 
 The responsibility for the content rests with the instructors. Statements, opinions and/or conclusions are the ones from the instructors and do not necessarily reflect the opinion of the representatives of the University of Marburg. 
 
