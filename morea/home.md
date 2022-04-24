@@ -30,7 +30,3 @@ This course is designed for students at all levels who have a basic knowledge of
 
 The responsibility for the content rests with the instructors. Statements, opinions and/or conclusions are the ones from the instructors and do not necessarily reflect the opinion of the representatives of the University of Marburg. 
 
-### Legal
-
-Have a look at the legal stuff and [Impressum](https://gisma-courses.github.io/gi-modules/post/2021-11-21-impressum/)
-
