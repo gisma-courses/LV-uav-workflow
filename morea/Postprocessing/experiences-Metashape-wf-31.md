@@ -19,9 +19,17 @@ morea_labels:
 # Metashape Workflow via Metashape Toolbox
 
 The Metashape Toolbox provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and witgehend automatically optimized products from the aerial images. Installation is seamless via Metashape's script interface.  
-After the installation and the necessary restart of MEtashape there is a optimizeTools menu item in the Metashape menu bar. Via this menu control all working steps can be called. Normally this menu replaces the manual workflow .
+After the installation and the necessary restart of MEtashape there is a optimizeTools menu item in the Metashape menu bar. 
 
-### Instalation Metashape Toolbox
+{% include note.html content=" <br>
+The MetashapeToolbox plugin is capable to control all working steps for low budget cameras like GoPro etc.. Usually it replaces the manual workflow.
+<br><br>
+**This is not the case for specific sensors like the MicaSense Altum or other advanced sensors!**
+<br><br>
+However you preferably should integrate in [specific workflows](https://agisoft.freshdesk.com/support/solutions/articles/31000148381-micasense-altum-processing-workflow-including-reflectance-calibration-in-agisoft-metashape-professi) the MetashapeToolbox functions if appropriate.
+ " %}
+
+### Instalation of the toolbox
 **Linux/Mac:**
 Download this repo and unzip it to `~/.local/share/Agisoft/Metashape Pro/scripts/`
 
@@ -32,7 +40,7 @@ git clone https://github.com/envima/MetashapeTools.git .
 **Windows:**
 Copy the content of this repo to `User/AppData/Local/AgiSoft/PhotoScan Pro/scripts`
 
-## Using the toolbox
+### Procedure of toolbox usage
 
 1. Add the images/image folders which you want to process to the chunk(s).
 2. Give the chunk a meaningful name.
@@ -52,13 +60,13 @@ Copy the content of this repo to `User/AppData/Local/AgiSoft/PhotoScan Pro/scrip
   * export of Orthomosaic, Seamlines and Marker error
 
 
-## Check the quality of the orthomosaic reproducibility
+### Sensitivity study on the reproducibility of the orthophoto
 1. Follow Steps 1 - 4 form above
 2. Start the script `Reproducibility`
 This will compute a set amount of orthomosaics (default is 5), which later can be analysed in R.
 
 
-## Pointcloud processing only
+### Point cloud processing only
 1. UAS Denseclouds had variying absolute height values
     - Stems from the photogrammetric process itself
     - has to be investigated at some point
@@ -75,7 +83,7 @@ This will compute a set amount of orthomosaics (default is 5), which later can b
     - it is reasonable to assume that there is a 1x1 m terrain model available
 
 
-### Densecloud export from Metashape
+### Dense cloud export from Metashape
 
 Currently there is no way in the Metashape API to conveniently export only parts of the densecloud. Here is a workaround in the Metashape interface:
 1. import  shape
