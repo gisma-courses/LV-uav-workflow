@@ -1,5 +1,5 @@
 ---
-title: "Analysis of high resolution aerial data"
+title: "Flight planning made easy"
 morea_type: module
 published: true
 morea_coming_soon: false
