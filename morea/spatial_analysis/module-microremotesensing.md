@@ -8,7 +8,7 @@ morea_experiences:
 morea_id: module-hr-analysis
 morea_icon_url: /morea/spatial_analysis/icon1.png
 morea_start_date: "2022-06-20"
-morea_end_date: "2021-07-14"
+morea_end_date: "2022-07-14"
 morea_labels: 
   - Einführung
 morea_sort_order: 14

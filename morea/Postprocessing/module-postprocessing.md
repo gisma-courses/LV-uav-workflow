@@ -12,8 +12,8 @@ morea_experiences:
   - experience-fw-21
   - experience-fw-22
 morea_icon_url: /morea/Postprocessing/odm.png
-morea_start_date: "2022-04-20"
-morea_end_date: "2022-05-02"
+morea_start_date: "2022-05-25"
+morea_end_date: "2022-06-15"
 morea_labels: 
   - Einführung
   

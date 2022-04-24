@@ -8,8 +8,8 @@ morea_experiences:
   - experience-fw-11    
 morea_id: module-fieldwork
 morea_icon_url: /morea/UAVFieldwork/fp3.png
-morea_start_date: "2022-04-20"
-morea_end_date: "2021-05-02"
+morea_start_date: "2022-05-04"
+morea_end_date: "2022-05-18"
 morea_labels: 
   - Einführung
 morea_sort_order: 9
