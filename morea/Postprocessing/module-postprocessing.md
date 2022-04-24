@@ -2,7 +2,7 @@
 title: "Creating High Quality Orthophotos"
 morea_type: module
 published: true
-morea_coming_soon: false
+morea_coming_soon: true
 morea_id: module-postprocessing
 morea_experiences:
   - experience-fw-10
