@@ -7,9 +7,9 @@ morea_url:
 morea_type: experience
 morea_sort_order: 20
 morea_labels:
+ - preliminary 
  - knowledgebase
- - optional 
- - 15 min
+
 ---
 
 # Optimize Alignment: How to align and merge Chunks

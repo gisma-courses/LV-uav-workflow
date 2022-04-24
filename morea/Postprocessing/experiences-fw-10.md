@@ -7,9 +7,8 @@ morea_url:
 morea_type: experience
 morea_sort_order: 10
 morea_labels:
- - mandatory
+ - preliminary 
  - basic
- - 30 min
 ---
 
 # Agisoft Metashape basic workflow 

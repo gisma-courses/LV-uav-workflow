@@ -7,9 +7,8 @@ morea_url:
 morea_type: experience
 morea_sort_order: 21
 morea_labels:
+ - preliminary 
  - knowledgebase
- - optional
- - 60-120 min
 ---
 
 # Postprocessing UAV Footage

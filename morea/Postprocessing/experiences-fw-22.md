@@ -7,9 +7,8 @@ morea_url:
 morea_type: experience
 morea_sort_order: 22
 morea_labels:
+ - preliminary 
  - knowledgebase
- - optional
- - 15 min
 ---
 
 # Setup Metashape on a cluster 

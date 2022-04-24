@@ -25,9 +25,9 @@
     <div style="border-top-color: transparent" class="card-footer bg-body">
       {% for label in include.labels %}
       <!-- If customer.name = "anonymous" -->
-      {% if label contains "Mandatory" or label contains "Pflicht" or label contains "mandatory" label contains "knowledgebase"  %}
+      {% if label contains "Pflicht" or label contains "mandatory" label contains "knowledgebase"  %}
       <span class="badge badge-warning">{{ label }}</span>       
-      {% elsif label contains "Submission" or label contains "obligate" or label contains "Abgabe" or label contains "delivery" %}
+      {% elsif label contains "Submission" or label contains "obligate" or label contains "Abgabe" or label contains "delivery" or label contains "preliminary"%}
       <span class="badge badge-danger">{{ label }}</span>   
       {% elsif label contains "knowledgebase" or label contains "recommended"  %}
       <span class="badge badge-info">{{ label }}</span>       
