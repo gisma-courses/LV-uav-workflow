@@ -14,9 +14,12 @@ morea_labels:
 
 ---
 
-## Please familiarize yourself with the following software packages. Install it on your laptop if necessary.
+# Assessment
+
 
 {% include ass.html content="
+Please familiarize yourself with the following software packages. Install the packages on your laptop and check if they are running.<br><br> 
+
 - [Missionplanner](https://ardupilot.org/planner/)<br><br>
 - [OpenDroneMap](https://www.opendronemap.org/)<br><br>
 - [uavRmp](https://gisma.github.io/uavRmp/)
