@@ -1,5 +1,5 @@
 ---
-title: "Processing Notes Metashape"
+title: "Metashape Toolbox - optimized processing of RGB images "
 toc: true
 toc_label: Inhalt
 published: true

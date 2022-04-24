@@ -2,36 +2,36 @@
 title: "Unmanned Aerial Vehicle R based Mission Planning"
 published: true
 morea_id: experience-fw-11
-morea_summary: "Agisoft Metashape basic workflow"
+morea_summary: "Planning an aerial flight mission using Missionplaner and uavRmp"
 morea_url: 
 morea_type: experience
 morea_sort_order: 11
 morea_labels:
- - optional
- - advanced
+ - basic
+ - mandatory
  - practices
- - 15 min
+ - 60 min
 ---
 
 
-# Introduction
-Unmanned Aerial Vehicle R based Mission Planning
+# Unmanned Aerial Vehicle R based Mission Planning
+
+{% include attention.html content=" 
+ 
+
+There are still a lot of construction zones around. This package is far beyond to be in a mature state. You have to utilize a double check system while planning and performing autonomous flight missions. <br><br> You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. <br><br>
+
+Check your risk - use parachute systems and, even if everything is running like a charm, **keep alert**!
+"%}
+
+
 
 
 The [uavRmp](https://github.com/gisma/uavRmp) package is designed 
-for UAV autonomous mission planning. In the first place it is a simple and open source planning tool for planning survey flights of low budget drones based on ```R```. It provide an easy workflow for planning autonomous 
-surveys including battery-dependent task splitting and save departures and approaches of each monitoring chunks.
+for UAV autonomous mission planning. In the first place it is a simple and open source planning tool for planning survey flights of low budget drones based on ```R```. It provide an easy workflow for planning autonomous surveys including battery-dependent task splitting and save departures and approaches of each monitoring chunks.
 
 The range of usage of these kinds aof aerial photography is widespread from Digital Surface Models (DSM), Digital Elevation Models (DEM), orthophotos, altitude point clouds to landuse/landscape classification, NDVI forest structure classifications and so on… 
 
-
-{% include note.html content=" 
- 
-
-WARNING: Take care! There are still a lot of construction zones around. This package is far beyond to be in a mature state. Please implement a double check systems while planning and performing autonomous flight missions. You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. 
-
-Check your risk - use parachute systems and, even if everything is running like a charm, keep alert!
-"%}
 
 ## Supported UAV platforms
 
@@ -289,7 +289,7 @@ PLEASE NOTE: Optionally all used data files are copied to a folder called `data`
 
 ''flightAltitude'' is set to the (legal) maximum of 100m, ''flightPlanMode'' is set to ''track'' and finally a DEM of this area with 20m resulution is used to retrieve the altitude of the launching point. If we use the example data we first have to convert them to a valid GeoTiff file.
 
-```{r, eval=FALSE}
+```r
 
   # get example DEM data
  fn <- system.file("extdata", "mrbiko.tif", package = "uavRmp")
