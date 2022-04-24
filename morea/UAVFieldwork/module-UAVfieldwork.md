@@ -17,3 +17,4 @@ morea_labels:
 ---
 
 
+The basic idea is to provide an easy to use workflow for controlling rtf UAVs on autonomous survey missions in highly structured terrain.
