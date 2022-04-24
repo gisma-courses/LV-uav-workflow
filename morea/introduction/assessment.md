@@ -10,12 +10,12 @@ morea_start_date: "2022-04-28T23:59"
 morea_sort_order: 05
 morea_labels:
 - delivery
-
-
 ---
+ 
+ 
+{% include ass.html content="
+- Please read the articles crosswise and identify one positive and one negative aha effect from this research.<br><br>
+- List the top 3 content issues that sparked your greatest interest<br><br>
+- Prepare this for a short statement with rationale for the upcoming session.
 
-* Please read the articles crosswise and identify one positive and one negative aha effect from this research.
-
-* List the top 3 content issues that sparked your greatest interest
-
-* Prepare this for a short statement with rationale for the upcoming session.
+"%}

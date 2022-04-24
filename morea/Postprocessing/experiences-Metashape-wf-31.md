@@ -21,7 +21,7 @@ morea_labels:
 The Metashape Toolbox provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and witgehend automatically optimized products from the aerial images. Installation is seamless via Metashape's script interface.  
 After the installation and the necessary restart of MEtashape there is a optimizeTools menu item in the Metashape menu bar. 
 
-{% include note.html content=" <br>
+{% include kim.html content="
 The MetashapeToolbox plugin is capable to control all working steps for low budget cameras like GoPro etc.. Usually it replaces the manual workflow.
 <br><br>
 **This is not the case for specific sensors like the MicaSense Altum or other advanced sensors!**
