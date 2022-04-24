@@ -16,7 +16,7 @@ This course is designed for students at all levels who have a basic knowledge of
 
 ## Didactic Concept
 
- The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-Micro-Remote-Sensing/modules) to be worked through, each lasting approximately two to 3 weeks. Each module has the following structure:
+ The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-Micro-Remote-Sensing/modules) to be worked through, each lasting approximately 2-3 weeks. Each module has the following structure:
 
 
   * [Learning outcomes](/LV-Micro-Remote-Sensing/outcomes) - what is the learning objective.
