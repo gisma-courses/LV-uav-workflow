@@ -7,7 +7,7 @@ morea_outcomes:
 morea_experiences:
   - experience-fw-11    
 morea_id: module-fieldwork
-morea_icon_url: /morea/UAVFieldwork/fp3.png
+morea_icon_url: /morea/UAVFieldwork/fp4.png
 morea_start_date: "2022-05-04"
 morea_end_date: "2022-05-18"
 morea_labels: 
