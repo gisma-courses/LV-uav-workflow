@@ -4,7 +4,7 @@
 # SITE SPECIFIC: The following fields are typically changed for each site
 name: LV-uav-workflow
 baseurl: /LV-uav-workflow
-morea_theme: cerulean-purple
+morea_theme: spacelab
 timezone: Europe/Berlin
 morea_navbar_items:
   - Prerequisites
