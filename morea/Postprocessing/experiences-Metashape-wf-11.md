@@ -3,15 +3,14 @@ title: "Metashape Toolbox - optimized processing of RGB images "
 toc: true
 toc_label: Inhalt
 published: true
-morea_id: experience-metashape-wf-31
+morea_id: experience-metashape-wf-11
 morea_summary: "Agisoft Metashape basic workflow"
 morea_url: 
 morea_type: experience
-morea_sort_order: 31
+morea_sort_order: 11
 morea_labels:
- - optional
- - advanced
- - practices
+ - mandatory
+ - basic
  - 15 min
 
 ---
