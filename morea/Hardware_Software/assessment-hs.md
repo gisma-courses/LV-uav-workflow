@@ -14,9 +14,11 @@ morea_labels:
 
 ---
 
-## Please familiarize yourself with the following software and install it on your laptop if necessary.
+## Please familiarize yourself with the following software packages. Install it on your laptop if necessary.
 
-* [Missionplanner](https://ardupilot.org/planner/)
-* [OpenDroneMap](https://www.opendronemap.org/)
-* [Agisoft Metashape](https://www.agisoft.com/)
-* [uavRmp](https://gisma.github.io/uavRmp/)
+{% include ass.html content="
+- [Missionplanner](https://ardupilot.org/planner/)<br><br>
+- [OpenDroneMap](https://www.opendronemap.org/)<br><br>
+- [uavRmp](https://gisma.github.io/uavRmp/)
+
+"%}
