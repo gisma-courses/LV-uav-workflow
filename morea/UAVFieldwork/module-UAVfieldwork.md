@@ -2,7 +2,7 @@
 title: "Effective Planning of UAV Flights"
 morea_type: module
 published: true
-morea_coming_soon: false
+morea_coming_soon: true
 morea_outcomes:
 morea_experiences:
   - experience-fw-10
