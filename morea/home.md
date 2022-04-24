@@ -16,13 +16,13 @@ This course is designed for students of all levels who have a basic knowledge of
 
 ## Didactic Concept
 
- The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-Micro-Remote-Sensing/modules) to be worked through, each lasting approximately 2-3 weeks. Each module has the following structure:
+ The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-uav-workflow/modules) to be worked through, each lasting approximately 2-3 weeks. Each module has the following structure:
 
 
-  * [Outcomes](/LV-Micro-Remote-Sensing/outcomes) - what is the learning objective.
-  * [Readings](/LV-Micro-Remote-Sensing/readings) - all kind of ressources.
-  * [Experiences](/LV-Micro-Remote-Sensing/experiences) - exercises & tutorials to practically master the learning goals.
-  * [Assessments](/LV-Micro-Remote-Sensing/assessments) - self assessment to get an idea how you peform.
+  * [Outcomes](/LV-uav-workflow/outcomes) - what is the learning objective.
+  * [Readings](/LV-uav-workflow/readings) - all kind of ressources.
+  * [Experiences](/LV-uav-workflow/experiences) - exercises & tutorials to practically master the learning goals.
+  * [Assessments](/LV-uav-workflow/assessments) - self assessment to get an idea how you peform.
   
 ## Instructor
 
