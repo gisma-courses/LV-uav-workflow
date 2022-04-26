@@ -1,5 +1,5 @@
 ---
-title: "Hardware and Software requirements"
+title: "Scientific UAV Hardware"
 morea_type: module
 published: true
 morea_summary: "The market for drones and the associated control and evaluation software is virtually unmanageable and requires constant readjustment to the application requirements and technical possibilities."

@@ -1,5 +1,5 @@
 ---
-title: "Major player in scientific UAV applications"
+title: "Get used to scientific UAV applications"
 published: true
 morea_summary: "Prepare your working environment"
 morea_id: assessment-hs
