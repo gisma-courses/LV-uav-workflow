@@ -16,10 +16,8 @@ morea_labels:
 <br> 
 
 {% include attention.html content=" 
-You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. <br><br>
-
-Check your risk - implement a **double check** system while planning and performing autonomous flight missions.
-<br><br>
+You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. Check your risk - implement a **double check** system while planning and performing autonomous flight missions.
+<br>
 Keep cool - **keep alert!**
 "%}
 <br> 
