@@ -20,7 +20,7 @@ morea_labels:
 {% include ass.html content="
 Please familiarize yourself with the following software packages. Install the packages on your laptop and check if they are running.<br><br> 
 
-- [Missionplanner](https://ardupilot.org/planner/)<br><br>
+- [QGroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html)<br><br>
 - [OpenDroneMap](https://www.opendronemap.org/)<br><br>
 - [uavRmp](https://gisma.github.io/uavRmp/)
 
