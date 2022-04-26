@@ -51,7 +51,7 @@ Once again:  Operating (autonomous) UAVs can harm the the pilot and environment.
 
 ## Things you need 
 
-  - [R](https://www.r-project.org) 
+  - [R-Software](https://www.r-project.org) 
   - [uavRmp](https://github.com/gisma/uavRmp) package
   - Digital Surface Model  (DSM) data 
   - Pixhawk UAV
@@ -81,15 +81,9 @@ We want to plan a flight in a structured terrain in the upper Lahn-valley. Start
 
 {% include medium-img.html url="qcmission.png" %}  
 
-Save this at an appropriate folder. To use this planning file you have to set in `makeAP` the switch:
+Save this fightplan to an appropriate folder. 
 
-``` R
- useMP = TRUE
-```
-
-
-### Calling makeAP 
-
+### Calling makeAP from the uavRmd package
 
 There are a lot of optional arguments available that helps to control the generation of an autonomous flight plan. In this first use case we keep it as simple as possible. First we will focus the arguments to organize the project.  All results will be stored in a fixed folder structure. The root folder is set by the argument `projectDir`. e.g. `~/proj/uav`. The current working directory will then be generated from the `locationName` and is always a subfolder of the `projectDir`. So in this case it is set to `firstSurvey`.  The resulting folder for a specified location in a speciefied project is then `~/proj/uav/firstsurvey`. According to the date of planning the following subfolder structure is set up. The log files are saved in the `log` folder the temporary data sets are stored in a folder called `run`.
 
@@ -104,20 +98,22 @@ Please check the folder structure according to the figure below.
 
 #### Explanation of the used arguments
 
-* *flightAltitude* is set to the (legal) maximum of 120m, 
-* *flightPlanMode* is set to *track* 
-* *demFn* the DEM of this area (20m resolution) 
+* *useMP = TRUE*   is the switch to activate and QGroundCOntrol or Missionplanner task file
+* *flightAltitude = 120* is set to the (legal) maximum flight altitude of of 120 meter, 
+* *flightPlanMode = "track"* to activate a track flight
+* *demFn = filname* the path to the used DEM 
 
 ```r
 
-  # get example DEM data
+# get example DEM data
  fn <- system.file("extdata", "mrbiko.tif", package = "uavRmp")
  fa <- system.file("extdata", "flightarea.kml", package = "uavRmp")
 
- fp<-makeAP(surveyArea= fa,
-          flightAltitude = 120,
-            maxSpeed = 35,
-            demFn = fn)
+ fp<-makeAP(surveyArea = fa,
+                useMP  = TRUE,
+        flightAltitude = 120,
+              maxSpeed = 35,
+                 demFn = fn)
 ```
 
 The script generates:
@@ -130,8 +126,12 @@ All three of them are important even if a quick inspection of the generated obje
 
 {% include medium-img.html url="simplemission.png" %} 
 
-Ready to take off - that’s your first flight plan!
+ <br> <br>
+{% include cool.html content="
+Ready to take off - that’s your first flight plan!"
+%}
 
+ <br> <br>
 # Field Guide
 
 ## Planning your Survey
