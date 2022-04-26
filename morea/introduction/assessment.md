@@ -16,6 +16,6 @@ morea_labels:
 {% include ass.html content="
 - Please read the articles crosswise and identify one positive and one negative aha effect from this research.<br><br>
 - List the top 3 content issues that sparked your greatest interest<br><br>
-- Prepare this for a short statement with rationale for the upcoming session.
+- Prepare this for a short summary with some explanation reasoning for the upcoming session.
 
 "%}
