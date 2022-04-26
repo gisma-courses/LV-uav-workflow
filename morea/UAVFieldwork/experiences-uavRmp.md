@@ -1,5 +1,5 @@
 ---
-title: "Unmanned Aerial Vehicle R based Mission Planning"
+title: "UAV Mission Planning Practical Workflow"
 published: true
 morea_id: experience-fw-11
 morea_summary: "Planning an aerial flight mission using QGroundcontrol and uavRmp"
@@ -7,11 +7,13 @@ morea_url:
 morea_type: experience
 morea_sort_order: 11
 morea_labels:
- - preliminary 
+ - basic
+ - mandatory
+ - prelim
 ---
 
 
-# Unmanned Aerial Vehicle R based Mission Planning
+# UAV Mission Planning Practical Workflow
 
 {% include attention.html content=" 
  

@@ -1,7 +1,7 @@
 ---
 title: "Qgroundcontrol planning a mission"
 published: true
-morea_id: reading-hs-7
+morea_id: reading-fw-7
 morea_summary: "Getting an idea how to practically plan and perform a flight mission with QGroundControl"
 morea_type: reading
 morea_icon_url: /morea/experience.png

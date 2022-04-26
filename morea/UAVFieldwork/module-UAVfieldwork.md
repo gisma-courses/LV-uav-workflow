@@ -5,6 +5,9 @@ published: true
 morea_coming_soon: false
 morea_outcomes:
 morea_experiences:
+  - reading-fw-6
+  - reading-fw-7
+  - reading-fw-8  
   - experience-fw-11    
 morea_id: module-fieldwork
 morea_icon_url: /morea/UAVFieldwork/fp4.png
