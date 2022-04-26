@@ -8,6 +8,9 @@ morea_outcomes:
 morea_readings:
   - reading-1
   - reading-2
+  - reading-hs-0
+  - reading-hs-1
+  - reading-hs-2  
 morea_assessments:
   - assessment
 morea_type: module
