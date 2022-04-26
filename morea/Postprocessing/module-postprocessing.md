@@ -5,6 +5,9 @@ published: true
 morea_coming_soon: false
 morea_id: module-postprocessing
 morea_experiences:
+  - experience-odm-09
+  - experience-odm-10
+  - experience-odm-15
   - reading-hs-3
   - reading-hs-4 
   - experience-fw-10
@@ -13,8 +16,7 @@ morea_experiences:
   - experience-fw-20
   - experience-fw-21
   - experience-fw-22
-  - experience-odm-10
-  - experience-odm-15
+
   
 morea_icon_url: /morea/Postprocessing/odm.png
 morea_start_date: "2022-05-25"
@@ -26,4 +28,4 @@ morea_sort_order: 10
 
 ---
 
- The processing of aerial drone imagery is a complex procedure which is supported by both open source and closed source software. The goal is to calculate from a pile of 2D images Classified Point Clouds, 3D Textured Models, Georeferenced Orthorectified Imagery and Georeferenced Digital Elevation Models
+ The processing of aerial drone imagery is a complex procedure which is supported by both open source and closed source software.
