@@ -117,8 +117,6 @@ The script generates:
 
 All three of them are important even if a quick inspection of the generated objects is most of the time sufficient. The log file dumps the all important parameters of the calculated mission. Most important the calculated mission speed and picture rate based on an estimation of the mission time. 
 
-{% include medium-img.html url="simplemission.png" %} 
-
  <br> <br>
 {% include cool.html content="
 Ready to take off - that’s your first flight plan!"
