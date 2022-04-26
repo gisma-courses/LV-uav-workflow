@@ -16,7 +16,7 @@ morea_labels:
 <br> 
 
 {% include attention.html content=" 
-You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. Check your risk - implement a **double check** system while planning and performing autonomous flight missions.
+You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. Check your risk - implement a **double check** system while planning and performing autonomous flight missions. Operating (autonomous) UAVs is in the full responsibility of the pilot. 
 <br>
 Keep cool - **keep alert!**
 "%}
@@ -41,11 +41,6 @@ devtools::install_github("gisma/uavRmp", ref = "master")
 
 This recipe deals with the effective and safe planning of an autonomous flight. This provides basic information about the used hardware and software as well as supplemental data and nice to haves. The basic workflow of planning a good aerial and target oriented flight mission. In the extended version you find some more explanations and hints for improving your planning. 
 
-{% include attention.html content=" 
- 
-Once again:  Operating (autonomous) UAVs can harm the the pilot and environment. It is the full responsibility of the pilot to deal with this fact."
-
-%}
 
 ## Things you need 
 
