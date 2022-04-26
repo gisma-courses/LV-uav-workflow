@@ -14,7 +14,7 @@ morea_readings:
 morea_assessments:
   - assessment
 morea_type: module
-morea_icon_url: /morea/introduction/reading.png
+morea_icon_url: /morea/introduction/oss.jpeg
 morea_start_date: "2022-04-20"
 morea_end_date: "2021-04-28"
 morea_labels: 
