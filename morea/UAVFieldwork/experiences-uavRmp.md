@@ -184,48 +184,56 @@ Actually you also should check the weather.
 Forget about flying with wind speed above 4 Beaufort - the UAV is **not** a falcon."
 %}
 
-## Workflow in the field   
-1. Plan you r flight with an adequate planning tool at home and control it in the field (see examples, check your flightplan)
-2. Setup your Remote Controller 
-3. Setup your controlling device
-4. Setup your UAV
-5. Setup your safety system (use a parachute!)
-6. Setup your camera(s)
-7. Start RC
-8. Start UAV
-9. Start Camera 
-10. Load Task 
-11. Fly Task
-As simple this seems it is full of pitfalls. Therefore we would like to provide some checklist:
+## Workflow in the field 
+{% include note.html content=" 
+1. Plan your flight with an adequate planning tool at home and double check control it in the field (see examples, check your flightplan)<br>
+2. Setup your Remote Controller <br>
+3. Setup your controlling device <br>
+4. Setup your UAV <br>
+5. Setup your safety system (use a parachute!) <br>
+6. Setup your camera(s)<br>
+7. Start RC <br>
+8. Start UAV <br>
+9. Start Camera <br>
+10. Load Task <br>
+11. Fly Task <br>
+"
+%}
 
 ## Pretask Check
-* UAV 
-    + batteries fully charged
-    + remote control charged 
-    + props 
-    + cables
-    + parachute
-    + cleanup MicroSD cards
-    + charge camera(s) 
-    + configure camera(s)
-    + charger
-    + minute book
-    + power bank
 
-* Tools
-    + Tools for the UAV
-    + Tape, glue etc.
-    + Table, chairs etc.
+As simple this seems it is full of pitfalls. Therefore we would like to provide some checklist:
 
-* Survey
-    + Survey is checked
-    + Task is stored on controller (app)
-    + offline maps loaded
 
-* Legal stuff
-    + insurance valid
-    + common flight permission
-    + specific permissions
-    + necessary to inform flight security authorithy
-    + necessary to inform local air control
-
+{% include ass.html content=" 
+* UAV <br>
+    + batteries fully charged <br>
+    + remote control charged <br>
+    + props <br>
+    + cables<br>
+    + parachute<br>
+    + cleanup MicroSD cards<br>
+    + charge camera(s) <br>
+    + configure camera(s)<br>
+    + charger<br>
+    + minute book<br>
+    + power bank<br>
+<br><br>
+* Tools<br>
+    + Tools for the UAV<br>
+    + Tape, glue etc.<br>
+    + Table, chairs etc.<br>
+<br><br>
+* Survey<br>
+    + Survey is checked<br>
+    + Task is stored on controller (app)<br>
+    + offline maps loaded<br>
+<br><br>
+* Legal stuff<br>
+    + insurance valid<br>
+    + common flight permission<br>
+    + specific permissions<br>
+    + necessary to inform flight security authorithy<br>
+    + necessary to inform local air control<br>
+<br>"
+%}
