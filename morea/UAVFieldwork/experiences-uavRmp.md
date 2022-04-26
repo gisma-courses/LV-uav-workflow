@@ -16,11 +16,11 @@ morea_labels:
 <br> 
 
 {% include attention.html content=" 
- 
+You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. <br><br>
 
-There are still a lot of construction zones around. This package is far beyond to be in a mature state. You have to utilize a double check system while planning and performing autonomous flight missions. <br><br> You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. <br><br>
-
-Check your risk - use parachute systems and, even if everything is running like a charm, **keep alert**!
+Check your risk - implement a **double check** system while planning and performing autonomous flight missions.
+<br><br>
+Keep cool - **keep alert!**
 "%}
 <br> 
 
@@ -45,7 +45,7 @@ This recipe deals with the effective and safe planning of an autonomous flight. 
 
 {% include attention.html content=" 
  
-Again - Please keep in mind that autonomous UAVs can harm the the pilot and environment."
+Once again:  Operating (autonomous) UAVs can harm the the pilot and environment. It is the full responsibility of the pilot to deal with this fact."
 
 %}
 
