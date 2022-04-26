@@ -7,6 +7,6 @@ morea_url: https://docs.opendronemap.org/tutorials/
 morea_type: experience
 morea_sort_order: 1010
 morea_labels:
- - knowledgebase
- - advanced
+ - addon
+ - reference
 ---

@@ -8,9 +8,15 @@ morea_id: module-hs
 morea_outcomes:
   - outcome-hs
 morea_readings:
+  - reading-hs-6
+  - reading-hs-7
+  - reading-hs-8  
   - reading-hs-0
   - reading-hs-1
   - reading-hs-2
+
+  
+
 morea_assessments:
   - assessment-hs
 morea_icon_url: /morea/Hardware_Software/oss.jpeg

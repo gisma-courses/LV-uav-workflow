@@ -5,6 +5,8 @@ published: true
 morea_coming_soon: false
 morea_id: module-postprocessing
 morea_experiences:
+  - reading-hs-3
+  - reading-hs-4 
   - experience-fw-10
   - experience-metashape-wf-11
   - experience-metashape-wf-12   
@@ -12,7 +14,8 @@ morea_experiences:
   - experience-fw-21
   - experience-fw-22
   - experience-odm-10
-  - experience-odm-15  
+  - experience-odm-15
+  
 morea_icon_url: /morea/Postprocessing/odm.png
 morea_start_date: "2022-05-25"
 morea_end_date: "2022-06-15"
