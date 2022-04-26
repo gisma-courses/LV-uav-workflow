@@ -241,8 +241,8 @@ You may take any other tool to digitize the survey area as well as you may type 
  # see ?leafDraw for more information
  vecDraw(mapCenter = c(50.855,8.691),preset="uav")
 ```
-![](missionarea.png "alt") 
 
+{% include medium-img.html url="missionarea.png" %}  
 
 Feel free to digitize - similar to the above figure - the four points needed:
 
@@ -262,7 +262,7 @@ Finish digitizing and save it as a KML file. Take care to add the correct extens
 #### Missionplanner or Qgroundcontrol survey feature
 We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the qGroundcontrol and navigate to Mission tab and open Pattern->Survey. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angel overlap and so on.
 
-![](qcmission.png "alt3")
+{% include medium-img.html url="qcmission.png" %}  
 
 Save this at an appropriate folder. To use this planning file you have to set in `makeAP` the switch:
 
@@ -280,7 +280,8 @@ There are a lot of optional arguments available that helps to control the genera
 
 PLEASE NOTE: Optionally all used data files are copied to a folder called `data`, which is located directly under the `projectDir` folder. The project structure will look like the figure.
 
-![](folderstructure.png)  
+{% include medium-img.html url="folderstructure.png" %}  
+  
 
 #### The used arguments
 
@@ -314,8 +315,8 @@ Using the ```mapview``` package  you can easily visualize the results. The below
  mapview(fp[[3]],color="red",cex=5)+
  mapview(fp[[4]],color="darkblue", alpha.regions =0.1,lwd=0.5)
 ```
+{% include medium-img.html url="simplemission.png" %} 
 
-![](simplemission.png "alt2")  
 
 ### Export to the flight app 
 

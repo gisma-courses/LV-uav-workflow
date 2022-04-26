@@ -23,7 +23,7 @@ Agisoft's Photoscan/Metashape is a great tool for deriving point clouds and all 
 
 After loading the images into Agisofts Metashape the aerial images are lining up along the flight track as you can see below.
 
-![](workflow_image_2.png)
+{% include medium-img.html url="workflow_image_2.png" %}  
 
 ### Alignment
 
@@ -37,8 +37,8 @@ The quality of the alignment is crucial for **all** follow up products - especia
 
 The **Align Images** process is somehow exploitative. For a quick start it is a good practice to use the following settings:
 
+{% include medium-img.html url="workflow_image_3.png" %}  
 
-![](workflow_image_3.png "Image source: C.Reudenbach")
 
 It will give you an good estimate how the general alignment process performs. 
 
@@ -51,7 +51,7 @@ It will give you an good estimate how the general alignment process performs.
 
 However there are a lot of different requirements depending on sensor, light and surface characteristics. For high quality images there is obviously [no](http://www.agisoft.com/forum/index.php?topic=3559.0) [significant](http://www.agisoft.com/forum/index.php?topic=3559.0) quality improvement if increasing the number of keypoints behind 240000. You may calculate as a rule of thumb (same post) the maximum number of keypoint according to *megapixels x 6400*. 
 
-![](workflow_image_4.png "Image source: C.Reudenbach")
+{% include medium-img.html url="workflow_image_4.png" %}  
 
 For the Mapir or DJI this will results in roughly 77000 keypoints.  Nevertheless setting the params to zero will be interpreted as maximum which seems to be reliable if one is filtering the point clouds and 3D models in a second step.  So a reasonable highest quality approach may look like:
 
@@ -101,7 +101,7 @@ It is recommended to keep in line with this process if you want to reconstruct h
 
 Now you may use the derived sparse point cloud to build a 3D model. the process is straightforward. For an maximum number of faces in the mesh choose the following settings:
 
-![](workflow_image_6.png "Image source: C.Reudenbach")
+{% include medium-img.html url="workflow_image_5.png" %}  
 
 ## Generate Orthophoto 
 
@@ -118,7 +118,7 @@ Using a mesh (3D model) will give in most cases better results for the orthoimag
 
 So the recommended settings are:
 
-![](workflow_image_6.png "Image source: C.Reudenbach")
+{% include medium-img.html url="workflow_image_6.png" %}  
 Et voila - Finally you derive an orthoimage of fairly high quality 
 
 ## Creating high quality dense point clouds 

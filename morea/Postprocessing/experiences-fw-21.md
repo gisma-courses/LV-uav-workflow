@@ -89,16 +89,16 @@ If not done you need to organize some basic things. It is more than helpful to s
 
   - separate all image files according to the corresponding flight (log file)
   - copy the GPX-log file into the same directory
-  
-![](workflow_image_0.png "Image source: C.Reudenbach")
+
+{% include medium-img.html url="workflow_image_0.png" %}  
+
 
 ## The basic concept 
 
 
 You have to find the start and stop image of the partial task. Load the task in QGIS open the Bing aerial map and the first and last image. In most cases you can easily identify the rough position of the camera. It is by no means necessary to get an extremely exact result. You just need to to generate a correct sequence according to  the gpx track points as described below.
 
-![](workflow_image_1.png "Image source: C.Reudenbach")
-
+{% include medium-img.html url="workflow_image_1.png" %}  
 
 ## The workflow 
 
@@ -107,8 +107,8 @@ Open a terminal and navigate to the image/gpx folder.
 
 ### Write fake exif date and time tag
 
-```bash
-python~/dev/R/uavRst/inst/python/add_fix_dates.py.'2017-05-16 16:44:12'**2**
+``` bash
+python ~/dev/R/uavRst/inst/python/add_fix_dates.py.'2017-05-16 16:44:12'**2**
 ``` 
 
 
@@ -126,8 +126,8 @@ python~/dev/R/uavRst/inst/python/add_fix_dates.py.'2017-05-16 16:44:12'**2**
 
 ### Cut the gpx log file 
 
-```bash
-gpsbabel-t -i gpx -f current_solo.gpxtrack, start=20170516144408,stop=20170516144930-o gpx-F clean_task.gpx
+``` bash
+gpsbabel -t -i gpx -f current_solo.gpxtrack, start=20170516144408,stop=20170516144930-o gpx-F clean_task.gpx
 ```
 
 {% include note.html content=" 
@@ -144,11 +144,10 @@ gpsbabel-t -i gpx -f current_solo.gpxtrack, start=20170516144408,stop=2017051614
 
 Now you can finish the task using the utility script from the `uavRst` package
 
-{% highlight bash %}
+``` bash
+python  ~/dev/R/uavRst/inst/python/geotag_from_gpx.py.clean_task.gpx
 
-python ~/dev/R/uavRst/inst/python/geotag_from_gpx.py.clean_task.gpx
-
-{% endhighlight %}
+```
 
 
 You are done with the preparation now. Time to start Photoscan.

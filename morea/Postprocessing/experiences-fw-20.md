@@ -45,6 +45,5 @@ Remember to align and merge the chunks “upwards” in the reverse direction yo
   - [Search filter](https://www.agisoft.com/forum/index.php?action=search2;params=eJwtzTEOgzAMBdC7sLB4wGUot4mC8wVUIalMoKqUw9epWKz_ny3Zh8snQah95drVWVt6Ek_ETDYsDsQjPQbbHmv-OMn7O6LA7hqd8wtSXE7xe0vW4sKm1gIOucWaIuL_rBG8ymq4Q5ctLT9qwjF9)
   - [Merging Chunks](http://www.agisoft.com/forum/index.php?topic=6995.0)
   - [Chunks alignment](http://www.agisoft.com/forum/index.php?topic=148.0)
-  - [Agisoft Tutorial: Marker based chunk alignment](http://downloads.agisoft.ru/pdf/PS_1.0.0_Tutorial%20(Intermediate%20level)%20-%20Marker%20Based%20Chunk%20Alignment.pdf)
   - [Chunks Workflow](http://www.agisoft.com/forum/index.php?topic=381.0)
 
