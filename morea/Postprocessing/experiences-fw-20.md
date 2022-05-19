@@ -1,6 +1,6 @@
 ---
 title: " Howto manually align and merge Chunks "
-published: true
+published: false
 morea_id: experience-fw-20
 morea_summary: "Align Metashape Chunks"
 morea_url: 

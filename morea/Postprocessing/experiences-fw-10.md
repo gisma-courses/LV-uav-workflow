@@ -8,7 +8,7 @@ morea_type: experience
 morea_sort_order: 10
 morea_labels:
  - basic
- - prelim 
+ - mandatory 
 ---
 
 # Agisoft Metashape basic workflow 
