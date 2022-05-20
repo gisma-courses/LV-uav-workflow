@@ -1,5 +1,5 @@
 ---
-title: "Major player in scientific UAV applications"
+title: "Impressum"
 published: true
 morea_summary: "This course is brought with the background of Open Educational Resources initiative coordinated by the Leibniz-Institut für Bildungsforschung und Bildungsinformation and integrated in the official teaching framework of the Marburg University, Germany"
 morea_id: impressum
