@@ -13,13 +13,11 @@ morea_labels:
 
 # Agisoft Metashape basic workflow 
 
-Even if both criteria not open source not free software, are missing one have to admit that 
-Agisoft's Photoscan/Metashape is a great tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an incredible straightforward GUI and in Question of hardware requests and cost eff ency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [[micrors:agisoft:photoscanunderthehood|Photoscan and UAV Imagery]]. Let's start to follow the white rabbit.
-
-
+Even if both criteria open source and free software are missing one have to admit that 
+Agisoft's Photoscan/Metashape is a good tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an  straightforward GUI and in Question of hardware requests and cost efficiency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [[micrors:agisoft:photoscanunderthehood|Photoscan and UAV Imagery]]. 
 
 ## Add the photos to Photoscan 
-
+Let's start to follow the white rabbit.
 
 After loading the images into Agisofts Metashape the aerial images are lining up along the flight track as you can see below.
 
@@ -30,9 +28,8 @@ After loading the images into Agisofts Metashape the aerial images are lining up
 
 {% include note.html content=" 
  
-The quality of the alignment is crucial for **all** follow up products - especially 3D dense point cloud models and the cration of the orthoimage
+The quality of the alignment is crucial for **all** follow up products - especially 3D dense point cloud models and the creation of the orthoimage.
 "%}
-
 
 
 The **Align Images** process is somehow exploitative. For a quick start it is a good practice to use the following settings:
@@ -44,31 +41,27 @@ It will give you an good estimate how the general alignment process performs.
 
 {% include note.html content=" 
  
- We did choose **reference preselection** due to the georeferenced images"
- %}
-
+ We did choose **reference preselection** due to the fact that we have georeferenced images.
+ "%}
 
 
 However there are a lot of different requirements depending on sensor, light and surface characteristics. For high quality images there is obviously [no](http://www.agisoft.com/forum/index.php?topic=3559.0) [significant](http://www.agisoft.com/forum/index.php?topic=3559.0) quality improvement if increasing the number of keypoints behind 240000. You may calculate as a rule of thumb (same post) the maximum number of keypoint according to *megapixels x 6400*. 
 
 {% include medium-img.html url="workflow_image_4.png" %}  
 
-For the Mapir or DJI this will results in roughly 77000 keypoints.  Nevertheless setting the params to zero will be interpreted as maximum which seems to be reliable if one is filtering the point clouds and 3D models in a second step.  So a reasonable highest quality approach may look like:
+For the GoPro, Mapir or DJI images this will results in roughly 77000 keypoints.  Nevertheless setting the params to zero will be interpreted as maximum which seems to be reliable if one is filtering the point clouds and 3D models in a second step.  So a reasonable highest quality approach may look like:
 
 {% include note.html content=" 
  
 Please keep in mind that it will take a really long time to align the images in a high quality process
  
-Please keep also in mind that if you have a poor image quality and/or alignment you will mess up your tie point cloud with a lot of spurious tie points if you use the maximum setting. It happens sometimes that you wont' be able  to get rid of these points later on.
+Please keep also in mind that if you have a poor image quality and/or alignment you will mess up your tie point cloud with a lot of spurious and cluttered tie points if you use the maximum setting. It happens sometimes that you wont' be able  to get rid of these points later on.
 "%}
-
-
-
 
 ### Creating high quality sparse (tie) point clouds 
 
 
-The trick to derive a high quality sparse  point clouds is to avoid spurious information and to retrieve a good spatial positioning of the images. In other words you need a optimal alignment with as less as possible “spurious” tie points.  You can reach itin most cases with a highest quality alignment and posterior filtering and camera optimization  process. If still the result is not satisfying your needs,  you additionally may also use ground control points GCPs. 
+The trick to derive a high quality sparse  point clouds is to avoid spurious information and to retrieve a good spatial positioning of the images. In other words you need a optimal alignment with as less as possible “spurious” tie points.  You can reach this goals in most cases with a highest quality alignment and posterior filtering and camera optimization  process. If still the result is not satisfying your needs,  you additionally may also use ground control points GCPs. 
 
 We made fairly good experiences following [juhutan](http://www.agisoft.com/forum/index.php?action=profile;u=179074) who suggest the this [workflow](http://www.agisoft.com/forum/index.php?topic=3559.0) for generating high quality point clouds. Usually we need only one recursion of gradual selection:
 
@@ -92,10 +85,8 @@ For more details have a look at e.g.  [dinosaurpaleo](https://dinosaurpalaeo.wor
 
 {% include note.html content=" 
  
-It is recommended to keep in line with this process if you want to reconstruct high quality point clouds and surfaces like textures or orthoimages. Even if it seems to be an annoying manual approach, you will soon notice that the time you have spent pays itself several times… For a automatic retrieval you may use the scripts `makeSparseCloud.py` **TODO**"
-%}
-
-
+It is recommended to keep in line with this process if you want to reconstruct high quality point clouds and surfaces like textures or orthoimages. Even if it seems to be an annoying manual approach, you will soon notice that the time you have spent pays itself several times… 
+"%}
 
 ## Build 3D model (mesh)
 
