@@ -4,7 +4,7 @@ toc: true
 toc_label: Inhalt
 published: true
 morea_id: experience-metashape-wf-11
-morea_summary: "Agisoft Metashape basic workflow"
+morea_summary: "Metashape Toolbox+ extension provides a set of tools for easy reproducibility of optimized generation of orthoimages and point clouds. It is a convenient extension of the standard tools and workflows."
 morea_url: 
 morea_type: experience
 morea_sort_order: 11
