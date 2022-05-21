@@ -1,5 +1,5 @@
 ---
-title: "MicaSense Altum processing workflow"
+title: "Metashape MicaSense Altum workflow"
 toc: true
 toc_label: Inhalt
 published: true

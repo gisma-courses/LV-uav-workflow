@@ -7,8 +7,7 @@ morea_url:
 morea_type: experience
 morea_sort_order: 22
 morea_labels:
- - addon
- - howto
+ - hands on
 ---
 
 # Setup Metashape on a cluster 

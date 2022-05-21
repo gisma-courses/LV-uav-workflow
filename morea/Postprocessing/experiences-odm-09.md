@@ -7,7 +7,9 @@ morea_url:
 morea_type: experience
 morea_sort_order: 1010
 morea_labels:
- - reference
+ - hands on 
+ - YouTube
+ - ~19 min
 ---
 
 ### Introduction WebODM

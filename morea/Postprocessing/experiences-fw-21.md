@@ -7,8 +7,7 @@ morea_url:
 morea_type: experience
 morea_sort_order: 21
 morea_labels:
- - knowledge base
- - howto
+ - hands on
 ---
 
 # Postprocessing UAV Footage
