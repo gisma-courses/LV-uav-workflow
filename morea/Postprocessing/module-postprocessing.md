@@ -13,7 +13,6 @@ morea_experiences:
   - experience-odm-15
 
   - experience-fw-21
-  - experience-fw-22
 morea_readings:  
   - reading-hs-3
   - reading-hs-4 
