@@ -2,12 +2,12 @@
 title: " Postprocessing UAV Footage  "
 published: true
 morea_id: experience-fw-21
-morea_summary: "Aligning UAV Picture with no or defect GPS Position"
+morea_summary: "Aligning UAV picture with no or defect GPS image positions"
 morea_url: 
 morea_type: experience
 morea_sort_order: 21
 morea_labels:
- - addon
+ - knowledge base
  - howto
 ---
 
