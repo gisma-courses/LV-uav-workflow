@@ -8,7 +8,7 @@ published: true
 ## Welcome to Micro Remote Sensing 
 
 
-The course Micro Remote Sensing - provides a complete introduction to the reproducible acquisition preprocessing and examplary analysis of high resolution imaging threat data based on open source software. 
+The Micro Remote Sensing course - provides a complete introduction to reproducible flight planning, acquisition, pre-processing, and exemplar analysis of high resolution low budget image data using commercial and open software systems. 
 
 ## Who should take this course?
 
