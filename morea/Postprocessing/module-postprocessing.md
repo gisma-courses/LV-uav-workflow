@@ -5,8 +5,8 @@ published: true
 morea_coming_soon: false
 morea_id: module-postprocessing
 morea_experiences:
-  - experience-metashape-wf-11
-  - experience-fw-10  
+  - experience-metashape-wf-10
+  - experience-metashape-wf-11 
   - experience-metashape-wf-12   
   - experience-odm-09
   - experience-odm-10

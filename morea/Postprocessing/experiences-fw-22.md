@@ -1,6 +1,6 @@
 ---
 title: " Setup Metashape on a cluster "
-published: true
+published: false
 morea_id: experience-fw-22
 morea_summary: "Setup Metashape on a cluster"
 morea_url: 

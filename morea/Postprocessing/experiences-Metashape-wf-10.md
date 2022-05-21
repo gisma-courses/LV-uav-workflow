@@ -1,7 +1,7 @@
 ---
 title: " Agisoft Metashape basic workflow "
 published: true
-morea_id: experience-fw-10
+morea_id: experience-metashape-wf-10
 morea_summary: "The Metashape software provides a very slim standard workflow with reasonable default values. This tutorial gives some additional explanations for the initial exercises to create an otho image and a point cloud."
 morea_url: 
 morea_type: experience
