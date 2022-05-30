@@ -8,7 +8,7 @@ morea_type: experience
 morea_sort_order: 11
 morea_labels:
  - advanced
- - add on
+ - mandatory
 ---
 
 
@@ -99,13 +99,15 @@ Please check the folder structure according to the figure below.
 
 # get example DEM data
  fn <- system.file("extdata", "mrbiko.tif", package = "uavRmp")
- fa <- system.file("extdata", "flightarea.kml", package = "uavRmp")
+ fa <- system.file("extdata", "qgc_survey.plan", package = "uavRmp")
 
- fp<-makeAP(surveyArea = fa,
-                useMP  = TRUE,
-        flightAltitude = 120,
-              maxSpeed = 35,
-                 demFn = fn)
+
+fp = makeAP(projectDir = "~/uav",
+        surveyArea=fa,
+        useMP = TRUE,
+        demFn = fn,
+        maxFlightTime = 25,
+        uavType = "dji_csv")                 
 ```
 
 The script generates:
@@ -116,6 +118,10 @@ The script generates:
 
 All three of them are important even if a quick inspection of the generated objects is most of the time sufficient. The log file dumps the all important parameters of the calculated mission. Most important the calculated mission speed and picture rate based on an estimation of the mission time. 
 
+You may also use the shiny GUI:
+```r
+runApp(system.file("shiny/plan2litchi/", "/app.R", package = "uavRmp"))
+```
  <br> <br>
 {% include cool.html content="
 Ready to take off - that’s your first flight plan!"
