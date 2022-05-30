@@ -43,10 +43,10 @@ This recipe deals with the effective and safe planning of an autonomous flight. 
 
 ## Things you need 
 
-  - [R-Software](https://www.r-project.org) 
+  - [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html)
   - [uavRmp](https://github.com/gisma/uavRmp) package
-  - Digital Surface Model  (DSM) data 
-  - Pixhawk UAV
+  - [Digital Surface Model](https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/view
+) Account needed.
   - [QGroundcontrol](http://qgroundcontrol.com/)
   - Time to work it out
 
