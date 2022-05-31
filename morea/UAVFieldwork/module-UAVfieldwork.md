@@ -11,6 +11,7 @@ morea_readings:
 morea_experiences:
   - experience-fw-13
   - experience-fw-11
+  - experience-fw-111
   - experience-fw-12
 morea_id: module-fieldwork
 morea_icon_url: /morea/UAVFieldwork/fp4.png
