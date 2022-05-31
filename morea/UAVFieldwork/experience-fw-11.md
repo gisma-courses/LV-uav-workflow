@@ -103,9 +103,10 @@ Please check the folder structure according to the figure below.
 #### Explanation of the used arguments
 
 * *useMP = TRUE*   is the switch to activate and QGroundCOntrol or Missionplanner task file
-* *demFn = filname* the path to the used DEM 
-* *surveyArea = fa* the path and filename of the QGroundControl flightplan
-* *maxFlightTime = 25* the maximum estimated lifetime of the battery in minutes
+* *demFn = filname* set path and filename to the used DEM 
+* *surveyArea = fa* set path and filename of the QGroundControl flightplan
+* *maxFlightTime = 25* set the maximum estimated lifetime of the battery in minutes
+* *maxwaypoints = 250* set the number of allowed waypoints in one control file (older DJIs /Litchi were constrained by 99 waypoints)
 
 ```r
 library(uavRmp)
@@ -119,6 +120,7 @@ fp = makeAP(projectDir = "~/uav",
         useMP = TRUE,
         demFn = demFn,
         maxFlightTime = 25,
+        maxwaypoints = 250,
         uavType = "dji_csv")                 
 ```
 
