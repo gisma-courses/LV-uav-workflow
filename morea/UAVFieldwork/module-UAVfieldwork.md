@@ -9,9 +9,9 @@ morea_readings:
   - reading-fw-7
   - reading-fw-8  
 morea_experiences:
-  - experience-fw-12    
-  - experience-fw-11
   - experience-fw-13
+  - experience-fw-11
+  - experience-fw-12
 morea_id: module-fieldwork
 morea_icon_url: /morea/UAVFieldwork/fp4.png
 morea_start_date: "2022-05-04"

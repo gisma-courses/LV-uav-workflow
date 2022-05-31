@@ -1,5 +1,5 @@
 ---
-title: " Postprocessing UAV Footage  "
+title: "Georeferencing of imagery without GPS data"
 published: true
 morea_id: experience-fw-21
 morea_summary: "Aligning UAV picture with no or defect GPS image positions"
@@ -7,10 +7,11 @@ morea_url:
 morea_type: experience
 morea_sort_order: 21
 morea_labels:
- - hands on
+ - advanced
+ - supplement
 ---
 
-# Postprocessing UAV Footage
+## Georeferencing of imagery without GPS data
 
 This documents provides a basic workflow of the georeferencing process of Solo/Pixhawk flight data as well as the optimized workflow for deriving high quality point clouds 3D models and orthoimages. In detail it covers the topics:
 

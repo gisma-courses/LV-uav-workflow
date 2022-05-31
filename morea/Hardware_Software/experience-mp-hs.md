@@ -8,7 +8,7 @@ morea_type: experience
 morea_icon_url: /morea/experience.png
 morea_sort_order: 3
 morea_labels:
-  - addon
+  - supplement
 ---
 
 ### Introduction Missionplanner

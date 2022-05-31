@@ -8,7 +8,7 @@ morea_type: reading
 morea_icon_url: /morea/reading.png
 morea_sort_order: 3
 morea_labels:
-  - addon
+  - supplement
   - recommended
 ---
 

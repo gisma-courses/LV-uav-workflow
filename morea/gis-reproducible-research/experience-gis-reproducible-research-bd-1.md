@@ -6,12 +6,8 @@ morea_summary: "Teil 1 - 3 Wie erstelle ich eine Bloggerseite mit RStudio auf Gi
 morea_type: experience
 morea_sort_order: 1
 morea_labels:
- - Exkurs
- - "Screencast"
- - "Rmarkdown"
- - ~ 5 Min
- - ~ 15 Min
- - ~ 6 Min
+ - supplement
+ - screencast ~5 min, ~15 min, ~6 min
 ---
 ## Screencasts blogdown 
 ### Setting up

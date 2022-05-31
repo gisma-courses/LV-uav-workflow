@@ -6,9 +6,9 @@ morea_summary: "What is a good balance between effort and benefit?"
 morea_type: reading
 morea_sort_order: 5
 morea_labels:
- - talk
+ - talk ~4 min
  - mandatory
- - ~ 4 min
+
 ---
 
 # The Fiji test is suitable for many situations in life...
