@@ -43,12 +43,15 @@ This recipe deals with the effective and safe planning of an autonomous flight. 
 
 ## Things you need 
 
-  - [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html)
-  - [uavRmp](https://github.com/gisma/uavRmp) package
+First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then please follow the instructions at the  [uavRmp](https://github.com/gisma/uavRmp) homepage and install the package.
+
+
   - [Digital Surface Model](https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/view
 ) Account needed.
   - [QGroundcontrol](http://qgroundcontrol.com/)
   - Time to work it out
+
+
 
 ## General Workflow 
 
