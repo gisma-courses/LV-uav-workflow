@@ -20,19 +20,23 @@ The planning of autonomous surface flights can be done free of charge, comfortab
 
 "%}
 <br> 
+## UAV Mission Planning Introduction
+
+The detailed, visually supported planning of a survey mission is most easily done with a planning tool. QgroundControl offers an all in one solution. the planning tool allows the portable planning of a mission which can then be loaded directly from the software to the Pixhawk copter. For DJU hardware a further step is necessary, namely the storage and conversion of the planning. 
+
+## Overview of the task
+
+This tutorial is about an initial planning of an autonomous flight. The survey flight takes place over heavily relieved terrain and serves to create orthophotos and point clouds. 
 
 
-## Task
+## Things you need 
 
-This recipe deals with the effective and safe planning of an autonomous flight. The survey flight is over high relief energy terrain to generate orthophotos and point clouds. 
-
-[QGroundcontrol](http://ardupilot.org/planner2/) 
+* [QGroundcontrol](http://ardupilot.org/planner2/) 
 
 ## General Workflow 
   1. Identify the area, digitize a polygon
   2. Adjust the flight and camera parameters to your needs 
-  3. Convert and upload the mission control files either directly to your tablet/smartphone or alternatively via the Litchi cloud.
-  4. Make an extensive preflight check
+  4. Save the data as a flightplan
 
   
 ### Digitizing the survey area
@@ -48,5 +52,5 @@ You will find a complete step by step tutorial at [Survey (Plan Pattern)](https:
 
 ## Export the plan
 
-If finished klick on the File Button on the left side menu and save this plan choosing the KML file format. You will need this file for the next step. 
+If finished klick on the File Button on the left side menu and save this plan choosing the generic `.plan` file format. This file is the reference for all additional steps.
 
