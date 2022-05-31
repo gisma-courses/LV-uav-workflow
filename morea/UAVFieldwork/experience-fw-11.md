@@ -137,7 +137,7 @@ library(shiny)
 runApp(system.file("shiny/plan2litchi/", "/app.R", package = "uavRmp"))
 ```
 
-just navigate to th efiles and check the output. Be patient it may take a while.
+Just navigate as requested to the files and check the output. Be patient it may take a while.
 {% include medium-img.html url="shiny.png" %}  
 
 
