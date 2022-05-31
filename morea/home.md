@@ -21,7 +21,7 @@ This course is designed for students of all levels who have a basic knowledge of
 
   * [Outcomes](/LV-uav-workflow/outcomes) - what is the learning objective.
   * [Readings](/LV-uav-workflow/readings) - all kind of ressources.
-  * [Experiences](/experiences) - exercises & tutorials to practically master the learning goals.
+  * [Experiences](/LV-uav-workflow/experiences) - exercises & tutorials to practically master the learning goals.
   * [Assessments](/LV-uav-workflow/assessments) - self assessment to get an idea how you peform.
   
 ## Instructor
