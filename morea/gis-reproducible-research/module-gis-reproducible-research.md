@@ -6,8 +6,8 @@ morea_id: gis-reproducible-research
 morea_outcomes:
 morea_readings:
  - reading-gis-reproducible-research-intro
- - reading-screencast-gis-reproducible-research-5
  - reading-screencast-gis-reproducible-research-4
+ - reading-screencast-gis-reproducible-research-5
 morea_icon_url: /morea/gis-reproducible-research/spatial-r-r.png
 morea_type: module
 morea_sort_order: 30

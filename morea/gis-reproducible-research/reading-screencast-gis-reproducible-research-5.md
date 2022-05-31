@@ -6,9 +6,8 @@ morea_summary: "Why is reproducible research necessary at all?"
 morea_type: reading
 morea_sort_order: 1
 morea_labels:
- - Talk
- - recommended
- - 18:19 min
+ - talk ~18 min
+ - recommended 
 ---
 
 # A Few Thoughts Beyond the Scientific Ethical Significance of Reproducible Research
