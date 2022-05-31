@@ -1,5 +1,5 @@
 ---
-title: "Scientific medium to upper budget UAV"
+title: "Review of UAV based research"
 published: true
 morea_id: reading-hs-1
 morea_summary: "UAV in the advent of the twenties: Where we stand and what is next"

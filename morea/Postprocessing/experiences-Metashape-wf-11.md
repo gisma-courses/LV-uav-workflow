@@ -20,7 +20,7 @@ The Metashape Workflow+ provides essential scripts that simplify and optimize th
 After the installation and the necessary restart of Metashape there is `Workflow+` menu item in the Metashape menu bar. 
 
 {% include kim.html content="
-The MetashapeToolbox plugin is capable to control all working steps for low budget cameras like GoPro etc.. Usually it replaces the manual workflow.
+The MetashapeToolbox plugin is capable to control all working steps for low cost cameras like GoPro etc.. Usually it replaces the manual workflow.
 <br><br>
 **This is not the case for specific sensors like the _MicaSense Altum_ or other advanced sensors!**
 <br><br>
@@ -49,7 +49,7 @@ Note: You will be always ask if you want to perfrm the task for a singel chunk o
 
 ## `BestPractice`
 
-The `BestPractice` menu provides robust and well tested workflows that are primarily intended for processing large image data sets from (low budget) drone surveys. The problem that arises here is the huge amount of images with numerous starts and landings and a fixed continuous camera system (e.g. GoPro Hero 7, time lapse 2 sec). This way, 10k images are quickly collected, 80% of which are over sampled or of poor image quality and so on. The workflows identify low image quality and reduce the number of images by an inverse camera position calculation based on the preliminary surface model. This *dramatically* reduces the number of images, due to elimination of unusable taxiway and takeoff/landing image sequences. In addition the remaining cameras are activated and optimized. In this way, the quality and reproducibility can be significantly improved. At the same time, processing time is reduced by one to two orders of magnitude. 
+The `BestPractice` menu provides robust and well tested workflows that are primarily intended for processing large image data sets from (low cost) drone surveys. The problem that arises here is the huge amount of images with numerous starts and landings and a fixed continuous camera system (e.g. GoPro Hero 7, time lapse 2 sec). This way, 10k images are quickly collected, 80% of which are over sampled or of poor image quality and so on. The workflows identify low image quality and reduce the number of images by an inverse camera position calculation based on the preliminary surface model. This *dramatically* reduces the number of images, due to elimination of unusable taxiway and takeoff/landing image sequences. In addition the remaining cameras are activated and optimized. In this way, the quality and reproducibility can be significantly improved. At the same time, processing time is reduced by one to two orders of magnitude. 
 
 ## Orthoimage Workflow integrating Ground Control Points (GCPs)
 

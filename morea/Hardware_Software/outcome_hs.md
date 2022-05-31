@@ -8,5 +8,5 @@ morea_sort_order: 7
 
 * Hardware - Open Source Hardware, commercial systems
 * Field of application
-* Focus on Low Budget 
-*  Focus on low spectral resolution
+* Focus on Low Cost
+* Focus on low spectral resolution
