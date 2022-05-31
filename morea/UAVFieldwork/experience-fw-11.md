@@ -22,7 +22,7 @@ Keep cool - **keep alert!**
 <br> 
 
 
-# UAV Mission Planning Practical Workflow
+# UAV Mission Planning - Practical Workflow
 
 The _**open**_ UAV community is focused on the PixHawk autopilot unit and the [MissionPlanner](http://qgroundcontrol.com/downloads/), or more recent and platform independent, the [QGroundcontrol](http://ardupilot.org/planner2/) software. Both are well documented and provide APIs and easy to use GUIs. Nevertheless they are missing some planning capabilities like a high resolution terrain following flight planning or dealing with battery-dependent task splitting and save departures and approaches within the splitted main tasksor exporting the tasks to DJI compatible format yet. Other commercial competitors like the extremly powerful [ugcs](https://www.ugcs.com/) are cost intensive and/or fairly complex applications which are not handy as a lightweight planning facility. 
 
@@ -81,13 +81,13 @@ Addressed issues:
 ### Digitizing the survey area
 
 ### Missionplanner or Qgroundcontrol survey feature
-We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angel overlap and so on.
+We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.
 
 {% include medium-img.html url="qcmission.png" %}  
 
 Save this fightplan to an appropriate folder. 
 
-### Calling makeAP from the uavRmd package
+### Calling `makeAP` from the `uavRmd` package
 
 There are a lot of optional arguments available that helps to control the generation of an autonomous flight plan. In this first use case we keep it as simple as possible. First we will focus the arguments to organize the project.  All results will be stored in a fixed folder structure. The root folder is set by the argument `projectDir`. e.g. `~/proj/uav`. The current working directory will then be generated from the `locationName` and is always a subfolder of the `projectDir`. So in this case it is set to `firstSurvey`.  The resulting folder for a specified location in a speciefied project is then `~/proj/uav/firstsurvey`. According to the date of planning the following subfolder structure is set up. The log files are saved in the `log` folder the temporary data sets are stored in a folder called `run`.
 
@@ -103,21 +103,21 @@ Please check the folder structure according to the figure below.
 #### Explanation of the used arguments
 
 * *useMP = TRUE*   is the switch to activate and QGroundCOntrol or Missionplanner task file
-* *flightAltitude = 120* is set to the (legal) maximum flight altitude of of 120 meter, 
-* *flightPlanMode = "track"* to activate a track flight
 * *demFn = filname* the path to the used DEM 
+* *surveyArea = fa* the path and filename of the QGroundControl flightplan
+* *maxFlightTime = 25* the maximum estimated lifetime of the battery in minutes
 
 ```r
-
+library(uavRmp)
 # get example DEM data
- fn <- system.file("extdata", "mrbiko.tif", package = "uavRmp")
+ demFn <- system.file("extdata", "mrbiko.tif", package = "uavRmp")
  fa <- system.file("extdata", "qgc_survey.plan", package = "uavRmp")
 
 
 fp = makeAP(projectDir = "~/uav",
         surveyArea=fa,
         useMP = TRUE,
-        demFn = fn,
+        demFn = demFn,
         maxFlightTime = 25,
         uavType = "dji_csv")                 
 ```
@@ -125,15 +125,22 @@ fp = makeAP(projectDir = "~/uav",
 The script generates:
 
   * R objects for visualisation
-  * log file 
-  * flight control file(s). 
+  * log file(s) 
+  * flight control file(s) for running a mission on DJIs 
 
-All three of them are important even if a quick inspection of the generated objects is most of the time sufficient. The log file dumps the all important parameters of the calculated mission. Most important the calculated mission speed and picture rate based on an estimation of the mission time. 
+All  of them are important even if a quick inspection of the generated objects is the maxFlightTime which rules the length of the single flight. The log file dumps  all important parameters of the calculated mission.
 
-You may also use the shiny GUI:
+If you just want to convert fight plans from `GroundControl` to `Litchi` You may also use the shiny GUI:
 ```r
+library(uavRMp)
+library(shiny)
 runApp(system.file("shiny/plan2litchi/", "/app.R", package = "uavRmp"))
 ```
+
+just navigate to th efiles and check the output. Be patient it may take a while.
+{% include medium-img.html url="shiny.png" %}  
+
+
  <br> <br>
 {% include cool.html content="
 Ready to take off - that’s your first flight plan!"
