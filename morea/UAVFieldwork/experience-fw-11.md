@@ -26,24 +26,35 @@ Keep cool - **keep alert!**
 
 The _**open**_ UAV community is focused on the PixHawk autopilot unit and the [MissionPlanner](http://qgroundcontrol.com/downloads/), or more recent and platform independent, the [QGroundcontrol](http://ardupilot.org/planner2/) software. Both are well documented and provide APIs and easy to use GUIs. Nevertheless they are missing planning capability (APM Planner) of a _*terrain following*_ autonomous flight planning, that is also dealing with battery-dependent task splitting and save departures and approaches yet. Other commercial competitors like the extremly powerful [ugcs](https://www.ugcs.com/) software package are fairly complex and still lacking an advanced capability for generating smooth and save surface following hull curves for low AGL altitudes.
 
-The `uavRmd` tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. To install from `github`  you need to have installed the `devtools` package.
+The `uavRmd` tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the `Litchi` format which can be used for DJI drones.
+
+## Installation 
+
+First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then please follow the instructions at the  [uavRmp](https://github.com/gisma/uavRmp) homepage and install the package.
+
+Check for the most recent version. However you can install the latest stable version from `CRAN`.
 
 ``` R
+install.packages("uavRmp")
 
+```
+
+
+To install the cutting edge (if so) version you should take it from `github`.  You need to have installed the `devtools` package.
+
+``` R
+install.packages("devtools")
 devtools::install_github("gisma/uavRmp", ref = "master")
 
 ```
 
 ## Basic mission planning workflow
 
-### Overview of the task
-
-This recipe deals with the effective and safe planning of an autonomous flight. This provides basic information about the used hardware and software as well as supplemental data and nice to haves. The basic workflow of planning a good aerial and target oriented flight mission. In the extended version you find some more explanations and hints for improving your planning. 
+This tutorial deals with the effective and safe planning of an autonomous flight. This provides basic information about the used hardware and software as well as supplemental data and nice to haves. The basic workflow of planning a good aerial and target oriented flight mission. In the extended version you find some more explanations and hints for improving your planning. 
 
 
 ## Things you need 
 
-First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then please follow the instructions at the  [uavRmp](https://github.com/gisma/uavRmp) homepage and install the package.
 
 
   - [Digital Surface Model](https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/view
