@@ -26,13 +26,11 @@ Keep cool - **keep alert!**
 
 The _**open**_ UAV community is focused on the PixHawk autopilot unit and the [MissionPlanner](http://qgroundcontrol.com/downloads/), or more recent and platform independent, the [QGroundcontrol](http://ardupilot.org/planner2/) software. Both are well documented and provide APIs and easy to use GUIs. Nevertheless they are missing some planning capabilities like a high resolution terrain following flight planning or dealing with battery-dependent task splitting and save departures and approaches within the splitted main tasksor exporting the tasks to DJI compatible format yet. Other commercial competitors like the extremly powerful [ugcs](https://www.ugcs.com/) are cost intensive and/or fairly complex applications which are not handy as a lightweight planning facility. 
 
-The `uavRmd` tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the `Litchi` format which can be used for DJI drones.
+The `R` package [`uavRmp`](https://github.com/gisma/uavRmp) tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the `Litchi` format which can be used for DJI drones.
 
 ## Installation 
-
-First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then please follow the instructions at the  [uavRmp](https://github.com/gisma/uavRmp) homepage and install the package.
-
-Check for the most recent version. However you can install the latest stable version from `CRAN`.
+´
+First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then follow the instructions at the  [uavRmp](https://github.com/gisma/uavRmp) homepage and install the package. Check for the most recent version. However you can install the latest stable version from `CRAN`.
 
 ``` R
 install.packages("uavRmp")
