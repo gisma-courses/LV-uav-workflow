@@ -39,33 +39,33 @@ This tutorial deals with the effective and safe planning of an autonomous flight
   - [Digital Surface Model](https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/view
 ) Account needed.
   - [QGroundcontrol](http://qgroundcontrol.com/)
-  - Time to work it out
+  - [Step by step tutorial](https://docs.qgroundcontrol.com/master/en/PlanView/pattern_survey.html).
 
 
 
 ## General Workflow 
 
-  1. Identify the area, digitize/type the coords of 3 corners and the launching position
+  1. Identify the area and digitize it
   2. Adjust the flight parameters to your needs and generate flight control files
-  3. Convert and upload the mission control files either directly to your tablet/smartphone or alternatively via the Litchi cloud.
+  3. Convert and upload the mission control files either directly to your tablet/smartphone or alternatively via the `Litchi` cloud.
   4. Make an extensive preflight check
   5. Fly the mission
   
-## Basic examples 
+##  Aim of the tutorial 
 
-The first example will introduce you to the basic usage and folder structure.
-
-Purpose: Survey flight over high relief energy terrain to generate orthophotos and point clouds. 
-Addressed issues:
-  - Create a reliable DSM for near surface retrieval of high resolution pictures
+The example will introduce you to the basic usage of `QGroundcontrol` and `uavRmp`.
+The goal is to create flightplans for surveys over high relief energy surfaces/terrain to generate orthophotos and point clouds. 
 
 ### Digitizing the survey area
 
 ### Missionplanner or Qgroundcontrol survey feature
 We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.
 
-{% include full-img.html url="qcmission.png" %}  
+{% include small-img-two.html url1="lahn_quer.png" url2="lahn_lang.png" %}  
  <br> <br>
+ 
+ You will produce much better results when you do both, capturing images from different above ground levels (AGL) and different capturing angles. This can be realized by two different plannings. A bit more complicated is the to control the gimbal angle. It will also improve your products if you take nadir (straight down) and non-nadir (at an angle) images. That means a cross pattern flown at two different altitudes with varying nadir angles is much better than a single-nadir-only-one pattern flight. To avoids horizon takes (which of course can be epic) you should not take pictures with a Nadir greater than roughly 5 to 10 degrees.
+ 
 
 If you use a `Pixhawk` device you are fine now.
 
@@ -75,25 +75,39 @@ If you use a `Pixhawk` device you are fine now.
 To derive a valid planning we need to calculate the correct camera parameters. Typically camera parameters are standarized to the 35 mm full frame sensor format. The DJI Mini 2 sensors have a size of 1/2.3 inch. For an impression have a look at the below figure. Note the default setting of most of the point and shoot cameras is 16:9 - this will change the sensor size due to cutting a part of the height. 
 
 {% include medium-img.html url="sensor_size.png" %} 
+**Real Focal Length**
+Can be calculated approximately by dividing the eqiuvalent focal length by the corresponding [crop factor](https://shuttermuse.com/calculate-cameras-crop-factor/).
+
+```S
+rF = eFL / cf
+
+eFL = equivalent Focal Length
+cf  = crop factor
+rF = real Focal Length
+
+For the Mavic Mini 2:
+rF = 24/5.6 = 4.285714
+rf = 4.3
+```
 
 According to this the camera specs for the DJI are:
 
 Image Size: 4:3: 4000×3000 
 * Sensor Width: 6.17 mm
 * Sensor Height 4.77 mm
-* Focal Length: 2.4 mm
+* Focal Length: 4.3 mm
 
 Image Size: 4:3: 4000×2250
 * Sensor Width: 6.17 mm
 * Sensor Height 4.56 mm
-* Focal Length: 2.4 mm
+* Focal Length: 4.3 mm
 
 You may also use the [Depth of field calculator](https://www.cambridgeincolour.com/tutorials/dof-calculator.htm) to estimate the minimum distance of the camera to the target.
 
 
  <br> 
 {% include note.html content="
-For DJI usage you need to save this fightplan to an appropriate folder and follow the instructions of the below chapter `Calling makeAP from the uavRmd package` to carry out the conversion to the `Litchi` format.
+For DJI usage you need to save this fightplan to an appropriate folder and follow the instructions of the below chapter `Conversion of the flightplan for Litchi compatible DJI devices` to carry out the conversion to the `Litchi` format.
 "%}
  <br> 
 
