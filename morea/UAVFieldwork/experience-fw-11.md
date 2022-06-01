@@ -40,7 +40,8 @@ This tutorial deals with the effective and safe planning of an autonomous flight
 ) Account needed.
   - [QGroundcontrol](http://qgroundcontrol.com/)
   - [Step by step tutorial](https://docs.qgroundcontrol.com/master/en/PlanView/pattern_survey.html).
-  - [Complete Regulations](https://app.flynex.io/) (Use it with the google account)
+  - [Airmap ](https://app.airmap.com/) (Use it with the provided google account) easy to use application
+  - [flynex](https://app.flynex.io/) (Use it with the provided  google account) complex, professional application with a maximum of support
 
 
 
