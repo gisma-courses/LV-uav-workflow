@@ -70,7 +70,9 @@ We want to plan a flight in a structured terrain in the upper Lahn-valley. Start
 
 {% include attention.html content=" 
 
-Observe all airspace and protected area regulations. This is not only a legal issue, but also a matter of maximum safety. So just comply and do it.
+During planning, observe all airspace and protected area regulations. This is not only a legal issue, but also a matter of maximum safety. So just comply and do it.<br> 
+[LBA Legal Stuff](https://www.lba.de/DE/Drohnen/Drohnen_node.html;jsessionid=7ECB1558F37F914B0EF93F2D54B8991B.live11311)
+[BMDV Cheat Card](https://www.bmvi.de/SharedDocs/DE/Anlage/LF/drohnen-flyer-regelungen-eu-und-deutschland.pdf?__blob=publicationFile)
 
 "%}
 <br> 
