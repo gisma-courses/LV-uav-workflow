@@ -84,6 +84,27 @@ Addressed issues:
 We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.
 
 {% include medium-img.html url="qcmission.png" %}  
+ <br> <br>
+ 
+### Specific settings for  DJI Cameras
+
+To derive a valid planning we need to calculate the correct camera parameters. Typically camera parameters are standarized to the 35 mm full frame sensor format. The DJI Mini 2 sensors have a size of 1/2.3 inch. For an impression have a look at the below figure. Note the default setting of most of the point and shoot cameras is 16:9 - this will change the sensor size due to cutting a part of the height. 
+
+{% include medium-img.html url="sensor_size.png" %} 
+
+According to this the camera specs for the DJI are:
+
+Image Size: 4:3: 4000×3000 
+* Sensor Width: 6.17 mm
+* Sensor Height 4.77 mm
+* Focal Length: 2.4 mm
+
+Image Size: 4:3: 4000×2250
+* Sensor Width: 6.17 mm
+* Sensor Height 4.56 mm
+* Focal Length: 2.4 mm
+
+You may also use the [Depth of field calculator](https://www.cambridgeincolour.com/tutorials/dof-calculator.htm) to estimate the minimum distance of the camera to the target.
 
 Save this fightplan to an appropriate folder. 
 
@@ -144,9 +165,11 @@ Just navigate as requested to the files and check the output. Be patient it may 
 
 After checking the files you should import the control file to the [Litchi Hub](https://flylitchi.com/hub). You need an account. During the course the account and Litchi Software is provided via Ilias. 
 
+
+
  <br> <br>
 {% include cool.html content="
 Ready to take off - that’s your first flight plan!"
 %}
 
- <br> <br>
+ 
