@@ -40,6 +40,7 @@ This tutorial deals with the effective and safe planning of an autonomous flight
 ) Account needed.
   - [QGroundcontrol](http://qgroundcontrol.com/)
   - [Step by step tutorial](https://docs.qgroundcontrol.com/master/en/PlanView/pattern_survey.html).
+  - [Complete Regulations](https://app.flynex.io/) (Use it with the google account)
 
 
 
@@ -63,6 +64,15 @@ We want to plan a flight in a structured terrain in the upper Lahn-valley. Start
  <br> <br>
  
  You will produce much better results when you do both, capturing images from different above ground levels (AGL) and different capturing angles. This can be realized by two different plannings. A bit more complicated is the to control the gimbal angle. It will also improve your products if you take nadir (straight down) and non-nadir (at an angle) images. That means a cross pattern flown at two different altitudes with varying nadir angles is much better than a single-nadir-only-one pattern flight. To avoids horizon takes (which of course can be epic) you should not take pictures with a Nadir greater than roughly 5 to 10 degrees.
+ 
+<br> 
+
+{% include attention.html content=" 
+
+Observe all airspace and protected area regulations. This is not only a legal issue, but also a matter of maximum safety. So just comply and do it.
+
+"%}
+<br> 
  
 
 If you use a `Pixhawk` device you are fine now.
