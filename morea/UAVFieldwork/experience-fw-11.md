@@ -26,25 +26,6 @@ Keep cool - **keep alert!**
 
 The _**open**_ UAV community is focused on the PixHawk autopilot unit and the [MissionPlanner](http://qgroundcontrol.com/downloads/), or more recent and platform independent, the [QGroundcontrol](http://ardupilot.org/planner2/) software. Both are well documented and provide APIs and easy to use GUIs. Nevertheless they are missing some planning capabilities like a high resolution terrain following flight planning or dealing with battery-dependent task splitting and save departures and approaches within the splitted main tasksor exporting the tasks to DJI compatible format yet. Other commercial competitors like the extremly powerful [ugcs](https://www.ugcs.com/) are cost intensive and/or fairly complex applications which are not handy as a lightweight planning facility. 
 
-The `R` package [`uavRmp`](https://github.com/gisma/uavRmp) tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the `Litchi` format which can be used for DJI drones.
-
-## Installation 
-´
-First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then follow the instructions at the  [`uavRmp`](https://github.com/gisma/uavRmp) homepage and install the package. Check for the most recent version. However you can install the latest stable version from `CRAN`.
-
-``` R
-install.packages("uavRmp")
-
-```
-
-
-To install the cutting edge (if so) version you should take it from `github`.  You need to have installed the `devtools` package.
-
-``` R
-install.packages("devtools")
-devtools::install_github("gisma/uavRmp", ref = "master")
-
-```
 
 # Basic mission planning workflow
 
@@ -83,8 +64,11 @@ Addressed issues:
 ### Missionplanner or Qgroundcontrol survey feature
 We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.
 
-{% include medium-img.html url="qcmission.png" %}  
+{% include full-img.html url="qcmission.png" %}  
  <br> <br>
+
+If you use a `Pixhawk` device you are fine now.
+
  
 ### Specific settings for  DJI Cameras
 
@@ -106,22 +90,49 @@ Image Size: 4:3: 4000×2250
 
 You may also use the [Depth of field calculator](https://www.cambridgeincolour.com/tutorials/dof-calculator.htm) to estimate the minimum distance of the camera to the target.
 
-Save this fightplan to an appropriate folder. 
 
-### Calling `makeAP` from the `uavRmd` package
+ <br> 
+{% include note.html content="
+For DJI usage you need to save this fightplan to an appropriate folder and follow the instructions of the below chapter `Calling makeAP from the uavRmd package` to carry out the conversion to the `Litchi` format.
+"%}
+ <br> 
+
+# Conversion of the flightplan for Litchi compatible DJI devices 
+
+The `R` package [`uavRmp`](https://github.com/gisma/uavRmp) tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the `Litchi` format which can be used for DJI drones.
+## Installation of `R` and the `uavRmp`
+
+First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then follow the instructions at the  [`uavRmp`](https://github.com/gisma/uavRmp) homepage and install the package. Check for the most recent version. However you can install the latest stable version from `CRAN`.
+
+``` R
+install.packages("uavRmp")
+
+```
+
+
+To install the cutting edge (if so) version you should take it from `github`.  You need to have installed the `devtools` package.
+
+``` R
+install.packages("devtools")
+devtools::install_github("gisma/uavRmp", ref = "master")
+
+```
+
+
+## Calling `makeAP` from the `uavRmd` package
 
 There are a lot of optional arguments available that helps to control the generation of an autonomous flight plan. In this first use case we keep it as simple as possible. First we will focus the arguments to organize the project.  All results will be stored in a fixed folder structure. The root folder is set by the argument `projectDir`. e.g. `~/proj/uav`. The current working directory will then be generated from the `locationName` and is always a subfolder of the `projectDir`. So in this case it is set to `firstSurvey`.  The resulting folder for a specified location in a speciefied project is then `~/proj/uav/firstsurvey`. According to the date of planning the following subfolder structure is set up. The log files are saved in the `log` folder the temporary data sets are stored in a folder called `run`.
-
+ <br> 
 {% include note.html content=" 
 The mission control file(s) are stored in a folder named `control`.
 "%}
-
+ <br> 
 Please check the folder structure according to the figure below.
 
-{% include medium-img.html url="folderstructure.png" %}  
-  
+{% include small-img.html url="folderstructure.png" %}  
+  <br> <br> 
 
-#### Explanation of the used arguments
+### Explanation of the used arguments
 
 * *useMP = TRUE*   is the switch to activate and QGroundCOntrol or Missionplanner task file
 * *demFn = filname* set path and filename to the used DEM 
