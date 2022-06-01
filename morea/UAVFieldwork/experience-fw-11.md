@@ -56,9 +56,7 @@ This tutorial deals with the effective and safe planning of an autonomous flight
 The example will introduce you to the basic usage of `QGroundcontrol` and `uavRmp`.
 The goal is to create flightplans for surveys over high relief energy surfaces/terrain to generate orthophotos and point clouds. 
 
-### Digitizing the survey area
-
-### Missionplanner or Qgroundcontrol survey feature
+### Digitizing the survey area using Qgroundcontrol's survey feature
 We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.
 
 {% include small-img-two.html url1="lahn_quer.png" url2="lahn_lang.png" %}  
