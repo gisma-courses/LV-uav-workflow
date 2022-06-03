@@ -148,6 +148,3 @@ Export the Tie Point Errors from the sparse pointcloud to a csv file. This means
 2. Import the GCP and align them.
 3. Start the script `Reproducibility`
 This will compute a set amount of orthomosaics (default is 5), which later can be analysed in R.
-
-# Comments & Discussions 
-{% include utter.html  %} 

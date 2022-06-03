@@ -152,6 +152,3 @@ python  ~/dev/R/uavRst/inst/python/geotag_from_gpx.py.clean_task.gpx
 
 You are done with the preparation now. Time to start Photoscan.
 
-
-# Comments & Discussions 
-{% include utter.html  %} 

@@ -16,6 +16,3 @@ There are tons of articles dealing with the Quality and Reproducibility of Sfm S
 
 * [Efficient structure from motion for large-scale UAV images](https://www.sciencedirect.com/science/article/abs/pii/S0924271620301131?via%3Dihub)
 * [Demystifying the Differences](https://www.mdpi.com/2504-446X/6/1/24/pdf?version=1642155981)
-
-# Comments & Discussions 
-{% include utter.html  %} 

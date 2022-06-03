@@ -20,5 +20,3 @@ morea_labels:
 ### Planning and running a mission
 {% include youtube.html id="0d23O_RUOmI" %}
 
-# Comments & Discussions 
-{% include utter.html  %} 

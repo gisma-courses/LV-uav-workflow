@@ -3,7 +3,15 @@ title: "Footer"
 morea_id: footer
 morea_type: footer
 ---
-
+# Comments & Discussions 
+<script src="https://utteranc.es/client.js"
+        repo="gisma-courses/LV-uav-workflow"
+        issue-term="title"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous" 
+        async>
+</script>
 <small>
 <a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach"> GISMA Geoinformatics Science</a>
 |

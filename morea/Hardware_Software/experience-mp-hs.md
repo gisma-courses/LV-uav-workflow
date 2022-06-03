@@ -20,5 +20,3 @@ morea_labels:
 ### setting  upt for a task
 {% include youtube.html id="6OdcdR8hjd0" %}
 
-# Comments & Discussions 
-{% include utter.html  %} 

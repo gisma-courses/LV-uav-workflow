@@ -14,5 +14,3 @@ morea_labels:
 # Introduction WebODM
 {% include youtube.html id="c38DUn7kKYk" %}
 
-# Comments & Discussions 
-{% include utter.html  %} 

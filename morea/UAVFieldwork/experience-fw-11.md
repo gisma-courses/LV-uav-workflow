@@ -207,6 +207,4 @@ After checking the files you should import the control file to the [Litchi Hub](
 Ready to take off - that’s your first flight plan!"
 %}
 
-# Comments & Discussions 
-{% include utter.html  %} 
 

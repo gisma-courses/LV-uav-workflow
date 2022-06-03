@@ -31,3 +31,4 @@ morea_sort_order: 10
 ---
 
  The processing of aerial drone imagery is a complex procedure which is supported by both open source and closed source software.
+

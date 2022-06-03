@@ -116,5 +116,3 @@ As simple this seems it is full of pitfalls. Therefore we would like to provide 
 <br>"
 %}
 
-# Comments & Discussions 
-{% include utter.html  %} 
