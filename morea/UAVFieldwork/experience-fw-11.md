@@ -202,10 +202,11 @@ Just navigate as requested to the files and check the output. Be patient it may 
 After checking the files you should import the control file to the [Litchi Hub](https://flylitchi.com/hub). You need an account. During the course the account and Litchi Software is provided via Ilias. 
 
 
-
  <br> <br>
 {% include cool.html content="
 Ready to take off - that’s your first flight plan!"
 %}
 
- 
+# Comments & Discussions 
+{% include utter.html  %} 
+

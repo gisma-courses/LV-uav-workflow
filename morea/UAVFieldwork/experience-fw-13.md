@@ -54,3 +54,5 @@ You will find a complete step by step tutorial at [Survey (Plan Pattern)](https:
 
 If finished klick on the File Button on the left side menu and save this plan choosing the generic `.plan` file format. This file is the reference for all additional steps.
 
+# Comments & Discussions 
+{% include utter.html  %} 

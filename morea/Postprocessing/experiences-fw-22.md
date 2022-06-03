@@ -57,3 +57,6 @@ The installation on the computer may have a newer version.
 
 "
 %}
+
+# Comments & Discussions 
+{% include utter.html  %} 

@@ -47,3 +47,5 @@ Remember to align and merge the chunks “upwards” in the reverse direction yo
   - [Chunks alignment](http://www.agisoft.com/forum/index.php?topic=148.0)
   - [Chunks Workflow](http://www.agisoft.com/forum/index.php?topic=381.0)
 
+# Comments & Discussions 
+{% include utter.html  %} 

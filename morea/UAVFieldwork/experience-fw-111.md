@@ -115,3 +115,6 @@ As simple this seems it is full of pitfalls. Therefore we would like to provide 
     + necessary to inform local air control<br>
 <br>"
 %}
+
+# Comments & Discussions 
+{% include utter.html  %} 
