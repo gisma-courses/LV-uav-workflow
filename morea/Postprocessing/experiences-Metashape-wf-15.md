@@ -66,6 +66,17 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 const layer = viewer.imageryLayers.addImageryProvider(
   new Cesium.IonImageryProvider({ assetId: 1085315 })
 );
-  </script>
 
- 
+const viewer2 = new Cesium.Viewer("cesiumContainer", {
+    baseLayerPicker: false, animation: false, timeline: false
+});
+
+const tileset = viewer2.scene.primitives.add(
+  new Cesium.Cesium3DTileset({
+    url: Cesium.IonResource.fromAssetId(1085405),
+  })
+);
+
+
+
+  </script>
