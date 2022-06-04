@@ -11,7 +11,7 @@ morea_experiences:
   - experience-odm-09
   - experience-odm-10
   - experience-odm-15
-
+  - experience-metashape-wf-15
   - experience-fw-21
 morea_readings:  
   - reading-hs-3
