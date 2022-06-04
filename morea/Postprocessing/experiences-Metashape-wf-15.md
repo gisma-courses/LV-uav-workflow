@@ -4,7 +4,7 @@ toc: true
 toc_label: Inhalt
 published: true
 morea_id: experience-metashape-wf-15
-morea_summary: Case Study *Gisselberger Spannweite*
+morea_summary: 'The goal of the case study is to use the workflow documented in this module to capture sufficiently accurate and reproducible aerial images with low-cost mini-drones (< 250 grams weight).'
 morea_url: 
 morea_type: experience
 morea_sort_order: 11
