@@ -38,8 +38,7 @@ The resolution of the Orthoimage calculated by the software is about 1.4 cm grou
 
 Below in the interactive Cesium map the complete 5 cm dataset is available. Please compare the section of the *three trees*. The cesium server also resampled the image data and hence changes the quality again. 
 
-<br>
-<br>`
+
   <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Cesium.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
