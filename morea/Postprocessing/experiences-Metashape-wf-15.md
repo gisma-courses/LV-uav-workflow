@@ -36,15 +36,25 @@ The resolution of the Orthoimage calculated by the software is about 1.4 cm grou
 
 
 
-Below in the interactive Cesium map the complete 5 cm dataset is available. Please compare the section of the *three trees*. The cesium server also resampled the image data and hence changes the quality again. 
+Below in the upper Cesium map you will find an interactive map of the complete 5 cm orthoimage. Please compare the section of the *three trees*. The cesium server also resampled the image data and hence changes the quality again. 
+In the lower panel you will find the textured meshgrid.
 
 
   <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Cesium.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
+<style>
+#mainCesiumContainer {
+    width: 500px; height: 750px; margin: 0; padding: 0; overflow: hidden;
+    font-family: sans-serif;
+}
 
-  <div id="cesiumContainer" ></div>
+</style>
+
+
+  <div id="cesiumContainer" > </div>
+
 
   <script>
     Cesium.Ion.defaultAccessToken ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0M2ViYjgxYi00M2YzLTQ4YjktOTk3NS1iMmQ5MTk2NjllMDgiLCJpZCI6OTYyNDQsImlhdCI6MTY1NDM1NjIyM30.qRSJjdQBu8tWhq6TzyzZnI7k1N4Wg9WehpSIzOKrxjg';
@@ -55,28 +65,33 @@ var east = 8.7589530542385923;
 var north = 50.7672082855122184;
 
 var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
-Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.0001;
+Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.00005;
 Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
 
+ 
 const viewer = new Cesium.Viewer("cesiumContainer", {
     baseLayerPicker: false, animation: false, timeline: false
 });
+
 
 
 const layer = viewer.imageryLayers.addImageryProvider(
   new Cesium.IonImageryProvider({ assetId: 1085315 })
 );
 
-const viewer2 = new Cesium.Viewer("cesiumContainer", {
-    baseLayerPicker: false, animation: false, timeline: false
+
+  
+const viewer3 = new Cesium.Viewer("cesiumContainer", {
+  terrainProvider: new Cesium.CesiumTerrainProvider({
+    url: Cesium.IonResource.fromAssetId(1),
+  }),    baseLayerPicker: false, animation: false, timeline: false
 });
 
-const tileset = viewer2.scene.primitives.add(
+const tileset = viewer3.scene.primitives.add(
   new Cesium.Cesium3DTileset({
     url: Cesium.IonResource.fromAssetId(1085405),
   })
 );
-
 
 
   </script>
