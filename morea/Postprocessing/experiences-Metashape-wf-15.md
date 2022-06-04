@@ -1,5 +1,5 @@
 ---
-title: "Metashape Workflow+ - optimized processing of RGB images"
+title: "Case Study 'Gisselberger Spannweite'"
 toc: true
 toc_label: Inhalt
 published: true
@@ -9,13 +9,21 @@ morea_url:
 morea_type: experience
 morea_sort_order: 11
 morea_labels:
- - advanced
- - mandatory 
+ - casestudy
 
 ---
+# Case Study 'Gisselberger Spannweite'
 
+A case study is conducted using the Gisselberger Spannweite as an example. The goal is the monitoring of the REnaturation measure with the help of sufficiently precise ortho images with low cost drones < 250 grams weight. For this purpose, the DJI Mini 2 is suitable due to the camera quality and the technology of collision-free straight and descent flight.
 
+The planning was created using` QGroundcontrol` while respecting the protection zones as derived from `Airmap` and converted to `Litchi Mission Hub` using the `R` package `uavRmp`. Due to the challenging wind conditions, two intermediate landings for battery replacement were necessary. On-site acquisition, including set-up and tear-down, took roughly 1 hour. 
 
+## Results 
+
+Below you see the result of the *Gisselberger Spannweite* case study. The original resolution of 1.5 cm has been resampled to 5 cm due to data reduction. 
+The flight was performed with a DJI Mavic Mini 2. Flight altitude longitudinal flight 70 meters AGL, flight altitude cross flight 50 meters AGL. In Metashape, the default workwlow was selected from `Workflow+->Best Practice->Ortho-no-GPS`. 
+<br>
+<br>`
   <!-- Include the CesiumJS JavaScript and CSS files -->
   <script src="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Cesium.js"></script>
   <link href="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
@@ -44,4 +52,5 @@ const layer = viewer.imageryLayers.addImageryProvider(
   new Cesium.IonImageryProvider({ assetId: 1085315 })
 );
   </script>
+
  
