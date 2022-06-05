@@ -61,3 +61,7 @@ Below in the upper Cesium map you will find an interactive map of the complete 5
 In the lower panel you will find the textured meshgrid.  Please notice this the unsmoothed raw mesh. It has to be located manually so the 3D placement may be a bit arbitrary.
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
+
+## Conclusions 
+
+The above example shows the efficiency of the chosen approach to collect high quality orthoimages and point clouds for nature conservation monitoring and other tasks with a low cost drone in a standardized workflow. 
