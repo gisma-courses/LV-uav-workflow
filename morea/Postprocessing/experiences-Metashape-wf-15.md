@@ -20,10 +20,21 @@ The goal of the case study is to use the workflow documented in this module to c
 ## Hardware
 For this purpose, the DJI Mini 2 is suitable due to the cost, camera quality and the technology of collision-free straight and descent flight. Regardless of the admittedly enormous user-friendliness of the DJI HArdware, image capture would be possible with any (mini) drone. However, it should be noted that drones over 250 grams takeoff weight have significantly more constraints to consider. 
 
-## Workflow
-The planning was created using` QGroundcontrol` while respecting the protection zones as derived from `Airmap` and converted to `Litchi Mission Hub` using the `R` package `uavRmp`. Due to the challenging wind conditions, two intermediate landings for battery replacement were necessary. On-site acquisition, including set-up and tear-down, took roughly 1 hour. 
+## Planning
 
-The flight was performed with a DJI Mavic Mini 2. Flight altitude longitudinal flight 70 meters AGL, flight altitude cross flight 50 meters AGL. In Metashape, the default workwlow was selected from `Workflow+->Best Practice->Ortho-no-GPS`. 
+
+
+The planning was created using` QGroundcontrol` while respecting the protection zones as derived from `Airmap` and converted to `Litchi Mission Hub` using the `R` package `uavRmp`.
+
+The flight was performed with a DJI Mavic Mini 2. Flight altitude longitudinal flight 70 meters AGL, flight altitude cross flight 50 meters AGL. Camera lapse rate was set to 2 seconds
+<iframe src="https://flylitchi.com/hub?m=GoaB3rae3J" height="600px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
+<iframe src="https://flylitchi.com/hub?m=cg0TRo2KdE" height="600px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
+
+Due to the challenging wind conditions and with respect to flight saftey, two intermediate landings for battery replacement were necessary. On-site acquisition, including set-up and tear-down, took roughly 1 hour. 
+
+## Post-Processing
+
+Data Processing was carried out using `Metashape's` addon `Workflow+->Best Practice->Ortho-no-GPS`. TheGround Pixel Sample size was set to 1.5 cm. 
 
 
 ## Results 
