@@ -41,8 +41,11 @@ Data Processing was carried out using `Metashape's` addon `Workflow+->Best Pract
 
 ## Results 
 
+For the first overview, especially the quality of the images as well as the number of artifacts and the positional accuracy are important for a visual inspection. 
+
 ### Resolution issues
-The resolution of the Orthoimage calculated by the software is about 1.4 cm ground resolution. You will get an impression of quality if you compare the images below. 
+The resolution of the Orthoimage is defined by a medium estimation of the two flightaltitudes. `Metashape` gives a value is about 1.4 cm ground resolution. The resulting image roughly 2.4 GB of size. If this is resamled to 5 cm we will have about 210 MB.  You will get an impression of quality loss if you compare the two cutout images below. 
+
 {% include small-img-two.html url1="trees_1_5cm.png" url2="trees_5cm.png" %}  
 
 *On the left you can see the original image quality with 1.5 cm, on the right the quality resampled to 5 cm.*
