@@ -28,70 +28,20 @@ The flight was performed with a DJI Mavic Mini 2. Flight altitude longitudinal f
 
 ## Results 
 
-The resolution of the Orthoimage calculated by the software is about 1.4 cm ground resolution. You will get an impression of quality if you compare the images below. On the left you can see the original image quality with 1.5 cm, on the right the quality resampled to 5 cm. 
+### Resolution issues
+The resolution of the Orthoimage calculated by the software is about 1.4 cm ground resolution. You will get an impression of quality if you compare the images below. 
 {% include small-img-two.html url1="trees_1_5cm.png" url2="trees_5cm.png" %}  
 
+*On the left you can see the original image quality with 1.5 cm, on the right the quality resampled to 5 cm.*
 
- <br> <br>
+ <br>
+### Overall visual inspection
+Below in the upper Cesium map you will find an interactive map of the complete 5 cm orthoimage. Please compare the section of the *three trees* with the Cesium rendering. You will note that the cesium server also resample the image and hence changes the visual quality again. Inaddition you can check how the quality of the automatic genberated reolocation applies to the web based maps. Check the **?** Button for navigation help.
+ <br>
+<iframe src="cesium_ortho_1.html" height="800px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
 
-
-
-Below in the upper Cesium map you will find an interactive map of the complete 5 cm orthoimage. Please compare the section of the *three trees*. The cesium server also resampled the image data and hence changes the quality again. 
-In the lower panel you will find the textured meshgrid.
-
-
-  <!-- Include the CesiumJS JavaScript and CSS files -->
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Cesium.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-
-<style>
-#mainCesiumContainer {
-    width: 500px; height: 750px; margin: 0; padding: 0; overflow: hidden;
-    font-family: sans-serif;
-}
-
-</style>
-
-
-  <div id="cesiumContainer" > </div>
-
-
-  <script>
-    Cesium.Ion.defaultAccessToken ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0M2ViYjgxYi00M2YzLTQ4YjktOTk3NS1iMmQ5MTk2NjllMDgiLCJpZCI6OTYyNDQsImlhdCI6MTY1NDM1NjIyM30.qRSJjdQBu8tWhq6TzyzZnI7k1N4Wg9WehpSIzOKrxjg';
-
-var west = 8.7476979731805926;
-var south = 50.7586199274002183;
-var east = 8.7589530542385923;
-var north = 50.7672082855122184;
-
-var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
-Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.00005;
-Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
-
- 
-const viewer = new Cesium.Viewer("cesiumContainer", {
-    baseLayerPicker: false, animation: false, timeline: false
-});
-
-
-
-const layer = viewer.imageryLayers.addImageryProvider(
-  new Cesium.IonImageryProvider({ assetId: 1085315 })
-);
-
-
-  
-const viewer3 = new Cesium.Viewer("cesiumContainer", {
-  terrainProvider: new Cesium.CesiumTerrainProvider({
-    url: Cesium.IonResource.fromAssetId(1),
-  }),    baseLayerPicker: false, animation: false, timeline: false
-});
-
-const tileset = viewer3.scene.primitives.add(
-  new Cesium.Cesium3DTileset({
-    url: Cesium.IonResource.fromAssetId(1085405),
-  })
-);
-
-
-  </script>
+ <br>
+### Mesh with texture
+In the lower panel you will find the textured meshgrid.  Please notice this the unsmoothed raw mesh. It has to be located manually so the 3D placement may be a bit arbitrary.
+ <br>
+<iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>

@@ -7,7 +7,6 @@ morea_id: module-postprocessing
 morea_experiences:
   - experience-metashape-wf-10
   - experience-metashape-wf-11 
-
   - experience-metashape-wf-15  
   - experience-odm-09
   - experience-odm-10

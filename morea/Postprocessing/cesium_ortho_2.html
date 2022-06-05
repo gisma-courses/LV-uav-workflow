@@ -1,0 +1,53 @@
+<html>
+<header>
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+<!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.94/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+<style>
+#mainCesiumContainer {
+    width: 500px; height: 750px; margin: 0; padding: 0; overflow: hidden;
+    font-family: sans-serif;
+}
+
+</style>
+
+
+  <div id="cesiumContainer" > </div>
+
+
+  <script>
+    Cesium.Ion.defaultAccessToken ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0M2ViYjgxYi00M2YzLTQ4YjktOTk3NS1iMmQ5MTk2NjllMDgiLCJpZCI6OTYyNDQsImlhdCI6MTY1NDM1NjIyM30.qRSJjdQBu8tWhq6TzyzZnI7k1N4Wg9WehpSIzOKrxjg';
+
+var west = 8.7476979731805926;
+var south = 50.7586199274002183;
+var east = 8.7589530542385923;
+var north = 50.7672082855122184;
+
+var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
+Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.00005;
+Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
+
+
+const viewer3 = new Cesium.Viewer("cesiumContainer", {
+  terrainProvider: new Cesium.CesiumTerrainProvider({
+    url: Cesium.IonResource.fromAssetId(1),
+  }),    baseLayerPicker: false, animation: false, timeline: false
+});
+
+const tileset = viewer3.scene.primitives.add(
+  new Cesium.Cesium3DTileset({
+    url: Cesium.IonResource.fromAssetId(1085405),
+  })
+);
+
+
+  </script>
+
+
+</body>  
+</html>
