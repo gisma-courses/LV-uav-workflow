@@ -20,8 +20,6 @@ The objective of this feasibility test is to evaluate the postulated workflow fo
 
 # Methods and Impementation
 
-The procedure and choosen parameters and tools  is shown below.
-
 ## Used UAV-Hardware
 
 UAVs that are lighter than 250 grams are especially suitable for such a purpose. The main reasons are:
