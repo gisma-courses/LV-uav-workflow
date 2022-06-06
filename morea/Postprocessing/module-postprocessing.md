@@ -12,10 +12,11 @@ morea_experiences:
   - experience-odm-10
   - experience-odm-15
   - experience-fw-21
+  - readings-metashape-altum
 morea_readings:  
   - reading-hs-3
   - reading-hs-4 
-  - readings-metashape-altum
+
 morea_assessments:    
   - pp-assessment
 
