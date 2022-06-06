@@ -60,9 +60,11 @@ If you fly in an wide open flat area you do not need additional data. But if you
 
 ## Weather
 {% include attention.html content=" 
-Actually you also should [check the weather](https://www.windy.com/?50.117,8.684,5). 
+[Check the weather](https://www.windy.com/?50.117,8.684,5). 
+<br>You **must** take care of the wind gusts and cloud coverage for quality and safety reasons.
 
-**Forget** about flying with wind speed above 4 Beaufort - the UAV is **not** a falcon."
+<br><br>
+Do **not** ignore this. **Forget** about flying with wind speed above 4 Beaufort - most UAVs are **not** falcons."
 %}
 <br><br>
 # Workflow in the field 
