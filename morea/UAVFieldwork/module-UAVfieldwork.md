@@ -13,7 +13,7 @@ morea_experiences:
   - experience-fw-11
   - experience-fw-111
   - experience-fw-12
-morea_assessment:
+morea_assessments:
   - fw-assessment
 morea_id: module-fieldwork
 morea_icon_url: /morea/UAVFieldwork/fp4.png
