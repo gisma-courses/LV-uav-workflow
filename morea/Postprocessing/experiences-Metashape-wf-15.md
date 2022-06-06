@@ -45,15 +45,13 @@ The whole on-site acquisition, including set-up and tear-down, took roughly 1 ho
 
 
 
-## Post-Processing
+## Post-Processing (Agisoft Metashape)
 
-In the `Metashape` workflow some tuning possibilities have not been considered yet. The following results should be interpreted against this background. 
-Data Processing was carried out using `Metashape's` addon `Workflow+->Best Practice->Ortho-no-GPS`. TheGround Pixel Sample size was set to 1.5 cm. 
-
+The data processing was carried out using `Metashape's` addon `Workflow+->Best Practice->Ortho-no-GPS`. The desired ground resolution was set to 1.5 cm. For this example, some tuning options were not used. It can be expected that the results still have potential for optimization. The following results should be interpreted against this background. 
 
 ## Results 
 
-For the first overview, especially the quality of the images as well as the number of artifacts and the positional accuracy are important for a visual inspection. 
+For the first overview, especially the quality (resolution) of the images as well as the number of artifacts and the positional accuracy are important for a visual inspection. 
 
 ### Resolution issues
 The resolution of the Orthoimage is defined by a medium estimation of the two flightaltitudes. `Metashape` gives a value is about 1.4 cm ground resolution. The resulting image roughly 2.4 GB of size. If this is resamled to 5 cm we will have about 210 MB.  You will get an impression of quality loss if you compare the two cutout images below. 
@@ -69,8 +67,20 @@ Below in the upper Cesium map you will find an interactive map of the complete 5
 <iframe src="cesium_ortho_1.html" height="800px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
 
  <br>
+### Typical issues
+
+You will find a lot of *minor* issues. The below panel adresses some of them.
+{% include small-img-4panel.html url4="poor_sampling_artifact.png" url2="shadow_artifact.png"  url3="oversampling_scale.png"  url1="blur.png" %}  
+
+*The outer left crop shows typical blur effects (too much motion or vertical height differences). The center left crop shows an artifact that duplicates features (in this case the shadow of the tree), The center right crop shows typical oversampling issues (too many images on a flat spot), Finally the outer right crop shows typical distortion effects (in this case due to poor image availability at the edge of the task)*
+
+
+ <br>
 ### Mesh with texture
-In the lower panel you will find the textured meshgrid.  Please notice this the unsmoothed raw mesh. It has to be located manually so the 3D placement may be a bit arbitrary.
+
+In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered unsmoothed raw mesh. It shows especially at the "flood waves" of the Lahn the problem of extreme height differences (in relation to the flight altitude) of the observed objects. MEthodes for filtering and thinning of the mesh have to be applied to make the 3D representation more realistic and correct. In particular the calculation of a Dense Point Cloud would be of advantage here. 
+
+For the display in Cesium, the MEsh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
 
