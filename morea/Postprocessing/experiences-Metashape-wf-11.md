@@ -1,10 +1,10 @@
 ---
-title: "Metashape Workflow+ - optimized processing of RGB images"
+title: "Metashape Ortho+ - optimized processing of RGB images"
 toc: true
 toc_label: Inhalt
 published: true
 morea_id: experience-metashape-wf-11
-morea_summary: "Metashape Workflow+ extension provides a set of tools for easy reproducibility of optimized generation of orthoimages and point clouds. It is a convenient extension of the standard tools and workflows."
+morea_summary: "Metashape Ortho+ extension provides a set of tools for easy reproducibility of optimized generation of orthoimages and point clouds. It is a convenient extension of the standard tools and workflows."
 morea_url: 
 morea_type: experience
 morea_sort_order: 11
@@ -14,10 +14,10 @@ morea_labels:
 
 ---
 
-# Metashape Workflow via `Workflow+`
+# Metashape Workflow via `Ortho+`
 
-The Metashape Workflow+ provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and automatically optimized products from the aerial images. Installation is seamless via Metashape's scripting interface.  
-After the installation and the necessary restart of Metashape there is `Workflow+` menu item in the Metashape menu bar. 
+The Metashape Ortho+ provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and automatically optimized products from the aerial images. Installation is seamless via Metashape's scripting interface.  
+After the installation and the necessary restart of Metashape there is `Ortho+` menu item in the Metashape menu bar. 
 
 {% include kim.html content="
 The MetashapeToolbox plugin is capable to control all working steps for low cost cameras like GoPro etc.. Usually it replaces the manual workflow.

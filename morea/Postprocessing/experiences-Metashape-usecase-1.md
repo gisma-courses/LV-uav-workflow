@@ -50,7 +50,7 @@ The whole on-site acquisition, including set-up and tear-down, took roughly 1 ho
 
 ## Post-Processing (Agisoft Metashape)
 
-The data processing was carried out using `Metashape's` addon `Workflow+->Best Practice->Ortho-no-GPS`. The desired ground resolution was set to 1.5 cm. For this example, some tuning options were not used. It can be expected that the results still have potential for optimization. The following results should be interpreted against this background. 
+The data processing was carried out using `Metashape's` addon `Ortho+->Best Practice->Ortho-no-GPS`. The desired ground resolution was set to 1.5 cm. For this example, some tuning options were not used. It can be expected that the results still have potential for optimization. The following results should be interpreted against this background. 
 
 # Results 
 
@@ -87,9 +87,9 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
 
 
  <br>
-#### Mesh with texture
+#### 3D Model 
 
-In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. 
+In the lower area you will find the shaded 3D mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. 
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
 *The problems of missing vertical data are clearly visible in the "tidal waves" of the Lahn near the shore. The challenge is to adequately fill the extreme height differences (related to the flight altitude) of the observed objects with image data. The 3D representation would be more realistic and correct if (1) more horizontally acquired data from a flight altitude < 30 m were available or (2) more complex methods for filtering and calculating the texture were applied. The calculation of a dense point cloud would also be beneficial here.*

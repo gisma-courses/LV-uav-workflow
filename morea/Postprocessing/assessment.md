@@ -13,7 +13,7 @@ morea_labels:
  
  
 {% include ass.html content="
-- Follow the instructions of Agisoft Metashape Bbasiuc worflow and Metashape Workflow+ to derive the first orthoimage and dense cloud. You will find the image data on Ilias <br><br>
+- Follow the instructions of `Metashape` basic workflow and `Metashape Ortho+` to derive the first orthoimage and dense cloud. You will find the image data on Ilias <br><br>
 - Create one orthoimage with 1 cm , and 5 cm ground sampling resolution (GSD). Perform an visual inspection of the image. Are you satisfied? <br><br>
 - Prepare a short summary with your main findings for the upcoming session.
 
