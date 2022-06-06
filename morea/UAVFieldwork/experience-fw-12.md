@@ -7,6 +7,7 @@ morea_url: https://www.dji.com/de/downloads/products/simulator
 morea_type: experience
 morea_sort_order: 11
 morea_labels:
+ - optional
  - supplement
 
 ---
