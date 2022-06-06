@@ -71,14 +71,14 @@ The central question, both for automated evaluation and for visual inspection, i
 
  <br>
 #### Overall visual inspection
-Below in the  Cesium map you will find an interactive map of the complete 5 cm above orthoimage. Please compare again the section of the *three trees* with the Cesium rendering.
+Below in the  [Cesium-Ion](https://cesium.com/platform/cesium-ion/) map you will find an interactive map of the complete 5 cm above orthoimage. Please compare again the section of the *three trees* with the Cesium rendering.
 
-You will note that the cesium server again resample the image and hence changes the quality significantly for visual inspection. This is due to the need of efficient traffic and data storage handling.
+
 
 In addition you can check typical issues try to identify them and think about the reasons an possible solutions. Furthermore have a look how the quality of the automatic generated relocation applies to the web based maps. Check the **?** Button for navigation help.
  <br>
 <iframe src="cesium_ortho_1.html" height="800px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
-
+*Please note that the cesium server also resample the image data and hence changes the quality significantly for visual inspection. This is due to the need of efficient traffic and data storage handling.*
  <br>
 #### Typical other issues
 
