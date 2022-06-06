@@ -5,9 +5,9 @@ published: true
 morea_coming_soon: false
 morea_outcomes:
 morea_readings:
-  - reading-fw-6
+  - reading-fw-8
   - reading-fw-7
-  - reading-fw-8  
+  - reading-fw-6  
 morea_experiences:
   - experience-fw-13
   - experience-fw-11

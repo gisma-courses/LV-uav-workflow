@@ -2,7 +2,7 @@
 <div class="col-md-6 col-lg-4" style="padding-bottom: 20px; " >
   
         
-    {% if experience.morea_labels contains "optional"  %} 
+    {% if experience.morea_labels contains "optional" %} 
     <div class="card h-100" style= "background-color:#f5efef;">
     {% else %}
     <div class="card h-100">
@@ -28,15 +28,15 @@
     <div style="border-top-color: transparent" class="card-footer bg-body">
       {% for label in include.labels %}
       <!-- If customer.name = "anonymous" -->
-      {% if label contains "Pflicht" or label contains "mandatory" label contains "knowledgebase"  %}
+      {% if label contains "Pflicht" or label contains "mandatory" label contains "knowledgebase" or label contains "recommended" %}
       <span class="badge badge-warning">{{ label }}</span>       
-      {% elsif label contains "Submission" or label contains "obligate" or label contains "Abgabe" or label contains "delivery" or label contains "prelim" or label contains "YouTube" or label contains "Screencast" or label contains "talk" %}
+      {% elsif label contains "Submission" or label contains "obligate" or label contains "Abgabe" or label contains "delivery" or label contains "prelim" or label contains "YouTube" or label contains "Screencast" or label contains "talk" or label contains "self-check" %}
       <span class="badge badge-danger">{{ label }}</span>   
-      {% elsif label contains "addon" or label contains "basic"  %}
+      {% elsif label contains "addon" or label contains "basic" or label contains "supplement" or label contains "advanced" %}
       <span class="badge badge-info">{{ label }}</span>  
-      {% elsif label contains "supplement" or label contains "advanced"  %}
+      {% elsif label contains "usecase"  %}
       <span class="badge badge-primary">{{ label }}</span> 
-      {% elsif label contains "supplement" or label contains "recommended" or label contains "application" or label contains "usecase" or label contains "casestudy"  %}
+      {% elsif label contains "application" or label contains "usecase" or label contains "casestudy"  %}
       <span class="badge badge-success">{{ label }}</span> 
       
 

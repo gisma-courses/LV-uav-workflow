@@ -10,6 +10,7 @@ morea_type: experience
 morea_sort_order: 12
 morea_labels:
  - optional
+ - advanced
  - supplement
 ---
 

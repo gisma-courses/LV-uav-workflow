@@ -8,7 +8,7 @@ morea_type: assessment
 morea_start_date: "2022-05-24T23:59"
 morea_sort_order: 05
 morea_labels:
-- delivery
+ - self-check
 ---
  
  

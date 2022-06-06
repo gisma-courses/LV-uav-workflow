@@ -9,7 +9,7 @@ morea_url:
 morea_type: experience
 morea_sort_order: 11
 morea_labels:
- - application
+ - usecase
  - mandatory
 
 ---
