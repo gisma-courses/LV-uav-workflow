@@ -68,17 +68,12 @@ Actually you also should [check the weather](https://www.windy.com/?50.117,8.684
 # Workflow in the field 
 <br>
 {% include note.html content=" 
-1. Plan your flight with an adequate planning tool at home and double check control it in the field (see examples, check your flightplan)<br>
-2. Setup your Remote Controller <br>
-3. Setup your controlling device <br>
-4. Setup your UAV <br>
-5. Setup your safety system (use a parachute!) <br>
-6. Setup your camera(s)<br>
-7. Start RC <br>
-8. Start UAV <br>
-9. Start Camera <br>
-10. Load Task <br>
-11. Fly Task <br>
+
+1. Setup your remote controler, controlling device, UAV <br>
+2. Load task <br>
+3. Double check if the task is correct
+4. Start task <br>
+5. Check always the complete situation - pilot the UAV, co-pilot the sourrounding
 "
 %}
 <br>
@@ -92,14 +87,12 @@ As simple this seems it is full of pitfalls. Therefore we would like to provide 
     + batteries fully charged <br>
     + remote control charged <br>
     + props <br>
-    + cables<br>
-    + parachute<br>
     + cleanup MicroSD cards<br>
-    + charge camera(s) <br>
-    + configure camera(s)<br>
-    + charger<br>
+    + field charger<br>
     + minute book<br>
     + power bank<br>
+    (+ charge camera(s)) <br>
+    (+ configure camera(s))<br>    
 <br><br>
 * Tools<br>
     + Tools for the UAV<br>
