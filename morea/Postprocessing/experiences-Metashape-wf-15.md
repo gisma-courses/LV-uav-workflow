@@ -98,4 +98,4 @@ For the display in Cesium, the mesh must be manually localized and placed in all
 
 # Conclusions 
 
-The above example suggests that the approach of combining a mini-drone with efficient reproducible flight planning and standardized calculation of orthoimages and point clouds seems promising. Especially for the non-invasive monitoring of nature conservation relevant issues and object detection in inaccessible areas this approach seems promising. 
+The above example suggests that the approach of combining a mini-drone with efficient reproducible flight planning and standardized calculation of orthoimages and point clouds seems robust. Especially for the non-invasive monitoring of nature conservation relevant issues and object detection in inaccessible areas this approach seems promising. 
