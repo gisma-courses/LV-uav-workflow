@@ -17,7 +17,11 @@ morea_labels:
 A feasability study is conducted using the [Gisselberger Spannweite](https://www.marburg.de/portal/seiten/renaturierungsmassnahme-gisselberger-spannweite-900002083-23001.html) as an typical example application. 
 The objective of this feasibility test is to evaluate the postulated workflow for its efficiency and applicability to acquire and compute sufficiently accurate (< 2.5 cm) and reproducible orthoimages using low-cost mini-UAVs (< 250 g weight) with minimal effort.The calculated orthoimages and point clouds are used as basic data, for example, for monitoring the development of river restoration measures.
 
-## UAV-Hardware
+# Methods and Impementation
+
+The procedure and choosen parameters and tools  is shown below.
+
+## Used UAV-Hardware
 
 UAVs that are lighter than 250 grams are especially suitable for such a purpose. The main reasons are:
 
@@ -33,12 +37,12 @@ An standardized optimized planning (two flight altitudes at different angles and
 
 The whole on-site acquisition, including set-up and tear-down, took roughly 1 hour. 
 <br>
-### Lengthwise flight
+#### Lengthwise flight
 
 <iframe src="https://flylitchi.com/hub?m=cg0TRo2KdE" height="600px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
 
 <br>
-### Transverse flight
+#### Transverse flight
 
 <iframe src="https://flylitchi.com/hub?m=GoaB3rae3J" height="600px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
 
@@ -49,7 +53,7 @@ The whole on-site acquisition, including set-up and tear-down, took roughly 1 ho
 
 The data processing was carried out using `Metashape's` addon `Workflow+->Best Practice->Ortho-no-GPS`. The desired ground resolution was set to 1.5 cm. For this example, some tuning options were not used. It can be expected that the results still have potential for optimization. The following results should be interpreted against this background. 
 
-## Results 
+# Results 
 
 For the first overview, especially the quality (resolution) of the images as well as the number of artifacts and the positional accuracy are important for a visual inspection. 
 
@@ -84,7 +88,7 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
 
 
  <br>
-### Mesh with texture
+#### Mesh with texture
 
 In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. It shows especially at the "flood waves" of the Lahn the problem of extreme height differences (in relation to the flight altitude) of the observed objects. methods for filtering and thinning of the mesh have to be applied to make the 3D representation more realistic and correct. In particular the calculation of a Dense Point Cloud would be of advantage here. 
 
@@ -92,6 +96,6 @@ For the display in Cesium, the mesh must be manually localized and placed in all
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
 
-## Conclusions 
+# Conclusions 
 
-The above example shows the efficiency of the chosen approach to collect high quality orthoimages and point clouds for nature conservation monitoring and other tasks with a low cost drone in a standardized workflow. 
+The above example shows the efficiency of the chosen approach to collect sufficient  high quality orthoimages and point clouds for nature conservation monitoring and other tasks with a low cost drone in a standardized workflow. 
