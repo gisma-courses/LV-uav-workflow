@@ -151,7 +151,7 @@ This will compute a set amount of orthomosaics (default is 5), which later can b
 
 ## Further Readings
 
-The workflow above is strictly speaking a kind of black box. You will find information under the Help button and in the corresponding paper about [Quality Assessment of Photogrammetric Methods—A Workflow for Reproducible UAS Orthomosaics](https://doi.org/10.3390/rs12223831). 
+The workflow above is strictly speaking a kind of black box. You will find information under the Help button and in the corresponding paper about [Workflow for Reproducible UAS Orthomosaics](https://doi.org/10.3390/rs12223831). 
 
 However it makes sense to actively deal with a complex tool like Metashape. The optimizations and experiences that are imparted in this course focus mainly on low and medium mountain forest areas. The presets and parameters are tailored to this and will not be optimal in every other setting. The resources below will give you an update on different workflows for different settings. They also describe the intensive interactive use of tools and steps that were partially programmed in the automatic scripts.   And please note that you will almost certainly find different and contradictory suggestions than the ones given in the course. Just try it out and feel free to report your findings in the comments below. 
 
