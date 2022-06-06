@@ -91,11 +91,12 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
  <br>
 #### Mesh with texture
 
-In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. It shows especially at the "flood waves" of the Lahn the problem of extreme height differences (in relation to the flight altitude) of the observed objects. methods for filtering and thinning of the mesh have to be applied to make the 3D representation more realistic and correct. In particular the calculation of a Dense Point Cloud would be of advantage here. 
-
-For the display in Cesium, the mesh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
+In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. 
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
+*The problems of missing vertical data are clearly visible in the "tidal waves" of the Lahn near the shore. The challenge is to adequately fill the extreme height differences (related to the flight altitude) of the observed objects with image data. The 3D representation would be more realistic and correct if (1) more horizontally acquired data from a flight altitude < 30 m were available or (2) more complex methods for filtering and calculating the texture were applied. The calculation of a dense point cloud would also be beneficial here.*
+
+For the display in Cesium, the mesh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
 
 # Conclusions 
 
