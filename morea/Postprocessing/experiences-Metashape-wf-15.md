@@ -25,11 +25,11 @@ UAVs that are lighter than 250 grams are especially suitable for such a purpose.
  * flying in the category OPEN A1 is possible (proximity of uninvolved people and flight in cities / residential areas is possible (Attention: flight zones / no-fly zones and conditions to be observed!)
  * only identification obligation (registration of the drone owner with UAS operator ID (e-ID) and liability insurance).
 
-For the current test, the `DJI Mavic Mini 2` was used which is a good alternative due to the connection to the proven and in use `Litchi` software and the collision-free straight and descent flight. However, with minor adjustments, the `Xiaomi Fimi X8 Mini`, which is considerably less expensive when first purchased, should also produce comparable results.  So it can be expected that such aerial imaging is possible with the better mini-Uavs. UAVs heavier than 250 grams have better cameras and flight characteristics anyway and are established for capturing such image data.  However, it should be noted that above 249 grams takeoff weight, there is a much higher planning and implementation effort to be considered due to the legal ordinances and regulations. 
+For the current test, the `DJI Mavic Mini 2` was used which is a good alternative due to the connection to the proven and in use `Litchi` software and the collision-free straight and descent flight. However, with minor adjustments, the `Xiaomi Fimi X8 Mini`, which is considerably less expensive when first purchased, should also produce comparable results.  So it can be expected that such aerial imaging is possible with the better mini-UAVs. UAVs heavier than 250 grams have better cameras and flight characteristics anyway and are established for capturing such image data.  However, it should be noted that above 249 grams takeoff weight, there is a much higher planning and implementation effort to be considered due to the legal ordinances and regulations. 
 
 ## Planning
 
-An standarized optimized planning (two flight altitudes at different angles and with 5° tilted nadir) was performed using the `QGroundcontrol`  survey with the `DJI Mini 2` camera setup and  while respecting the protection zones as derived from `Airmap` and converted to `Litchi Mission Hub` using the `R` package `uavRmp`. In addition, and take this as **obligatory**, using the  `Litchi Mission Hub` tool, during a final Point by point check, unnecessary waypoints were manually deleted or moved (you need to activate `Settings->Use Online Elevation`) to obtain an optimal flight in terms of safety, coverage and maximum of 20 minutes of battery time. You will find the two final plannings for the lengthwise flight 50 meters AGL, cross flight 70 meters AGL below. In addition the camera lapse rate was set to 2 seconds. 
+An standardized optimized planning (two flight altitudes at different angles and with 5° tilted nadir) was performed using the `QGroundcontrol`  survey with the `DJI Mini 2` camera setup and  while respecting the protection zones as derived from `Airmap` and converted to `Litchi Mission Hub` using the `R` package `uavRmp`. In addition, and take this as **obligatory**, using the  `Litchi Mission Hub` tool, during a final Point by point check, unnecessary way points were manually deleted or moved (you need to activate `Settings->Use Online Elevation`) to obtain an optimal flight in terms of safety, coverage and maximum of 20 minutes of battery time. You will find the two final plannings for the lengthwise flight 50 meters AGL, cross flight 70 meters AGL below. In addition the camera lapse rate was set to 2 seconds. 
 
 The whole on-site acquisition, including set-up and tear-down, took roughly 1 hour. 
 <br>
@@ -54,7 +54,7 @@ The data processing was carried out using `Metashape's` addon `Workflow+->Best P
 For the first overview, especially the quality (resolution) of the images as well as the number of artifacts and the positional accuracy are important for a visual inspection. 
 
 ### Resolution issues
-The resolution of the Orthoimage is defined by a medium estimation of the two flightaltitudes. `Metashape` gives a value is about 1.4 cm ground resolution. The resulting image roughly 2.4 GB of size. If this is resamled to 5 cm we will have about 210 MB.  You will get an impression of quality loss if you compare the two cutout images below. 
+The resolution of the Orthoimage is defined by a medium estimation of the two flight altitudes. `Metashape` gives a value is about 1.4 cm ground resolution. The resulting image roughly 2.4 GB of size. If this is resampled to 5 cm we will have about 210 MB.  You will get an impression of quality loss if you compare the two cutout images below. 
 
 {% include small-img-two.html url1="trees_1_5cm.png" url2="trees_5cm.png" %}  
 
@@ -62,14 +62,18 @@ The resolution of the Orthoimage is defined by a medium estimation of the two fl
 
  <br>
 ### Overall visual inspection
-Below in the upper Cesium map you will find an interactive map of the complete 5 cm orthoimage. Please compare the section of the *three trees* with the Cesium rendering. You will note that the cesium server also resample the image and hence changes the visual quality again. Inaddition you can check how the quality of the automatic genberated reolocation applies to the web based maps. Check the **?** Button for navigation help.
+Below in the upper Cesium map you will find an interactive map of the complete 5 cm orthoimage. Please compare the section of the *three trees* with the Cesium rendering.
+
+You will note that the cesium server also resample the image and hence changes the visual quality again. 
+
+In addition you can check typical issues try to identify them and think about the reasons an possible solutions. Furthermore have a look how the quality of the automatic generated relocation applies to the web based maps. Check the **?** Button for navigation help.
  <br>
 <iframe src="cesium_ortho_1.html" height="800px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
 
  <br>
 ### Typical issues
 
-You will find a lot of *minor* issues. The below panel adresses some of them.
+You will find a lot of *minor* issues. The below panel addresses some of them.
 {% include small-img-4panel.html url4="poor_sampling_artifact.png" url2="shadow_artifact.png"  url3="oversampling_scale.png"  url1="blur.png" %}  
 
 *The outer left crop shows typical blur effects (too much motion or vertical height differences). The center left crop shows an artifact that duplicates features (in this case the shadow of the tree), The center right crop shows typical oversampling issues (too many images on a flat spot), Finally the outer right crop shows typical distortion effects (in this case due to poor image availability at the edge of the task)*
@@ -78,9 +82,9 @@ You will find a lot of *minor* issues. The below panel adresses some of them.
  <br>
 ### Mesh with texture
 
-In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered unsmoothed raw mesh. It shows especially at the "flood waves" of the Lahn the problem of extreme height differences (in relation to the flight altitude) of the observed objects. MEthodes for filtering and thinning of the mesh have to be applied to make the 3D representation more realistic and correct. In particular the calculation of a Dense Point Cloud would be of advantage here. 
+In the lower area you will find the textured mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. It shows especially at the "flood waves" of the Lahn the problem of extreme height differences (in relation to the flight altitude) of the observed objects. methods for filtering and thinning of the mesh have to be applied to make the 3D representation more realistic and correct. In particular the calculation of a Dense Point Cloud would be of advantage here. 
 
-For the display in Cesium, the MEsh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
+For the display in Cesium, the mesh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
 
