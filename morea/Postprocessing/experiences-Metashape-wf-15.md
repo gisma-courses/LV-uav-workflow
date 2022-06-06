@@ -26,7 +26,7 @@ The procedure and choosen parameters and tools  is shown below.
 UAVs that are lighter than 250 grams are especially suitable for such a purpose. The main reasons are:
 
  * no EU A1/A3 certificate required
- * flying in the category OPEN A1 is possible (proximity of uninvolved people and flight in cities / residential areas is possible (Attention: flight zones / no-fly zones and conditions to be observed!)
+ * flying in the category OPEN A1 is possible, i.e. proximity (30m) of uninvolved people as well as flight in cities/residential areas is a possible option if  flight zones/no-fly zones and other regulation are `observed!`
  * only identification obligation (registration of the drone owner with UAS operator ID (e-ID) and liability insurance).
 
 For the current test, the `DJI Mavic Mini 2` was used which is a good alternative due to the connection to the proven and in use `Litchi` software and the collision-free straight and descent flight. However, with minor adjustments, the `Xiaomi Fimi X8 Mini`, which is considerably less expensive when first purchased, should also produce comparable results.  So it can be expected that such aerial imaging is possible with the better mini-UAVs. UAVs heavier than 250 grams have better cameras and flight characteristics anyway and are established for capturing such image data.  However, it should be noted that above 249 grams takeoff weight, there is a much higher planning and implementation effort to be considered due to the legal ordinances and regulations. 
