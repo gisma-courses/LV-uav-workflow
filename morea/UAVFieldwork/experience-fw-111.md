@@ -15,7 +15,16 @@ morea_labels:
 
 ## Planning your Survey
 
-It is most important that you setup your survey with an appropriate overlap for reliable stitching results. If the overlap is too small or vice versa you fly too fast you will get poor or no results. Same is with the flight altitude and the camera settings. Below you find suggested values.
+It is most important that you setup your survey with an appropriate overlap for reliable stitching results. If the overlap is too small or vice versa you fly too fast you will get poor or no results. Same is with the flight altitude and the camera settings. 
+
+#### Suggested Overlap
+
+Front Overlap 80%,  Side Overlap 75%
+
+#### Camera Settings
+
+
+Below you find values for ground resolution typical camera. 
 
 |AGL|GP8MP3+|GP12MP3+|DJIP3-4K |MAPIR-2|DJI-Mini-2|
 |:--  |:--:  |:--:  |:--:  |:--:  |:--:  |
@@ -26,22 +35,15 @@ It is most important that you setup your survey with an appropriate overlap for 
 
 *Ground Resolution of typical cameras in cm with respect to the above surface level.*
 
-#### Suggested Overlap
 
-Front Overlap 80%,  Side Overlap 60%
+Depending on the product and manufacturer of the cameras you have to deal with different flight speeds. NOTE: Only the speed that can be continuously achieved is taken into account. Currently a picture rate of 2 seconds is the maximum in speed.
 
-#### Camera Speed
-
-Depending on the product and manufactor of the cameras you have to deal with different speeds. NOTE: Only the speed that can be continously achieved is taken into account. Currently a picture rate of 2 sconds is the maximum in speed.
-
-{% include note.html content=" It is strongly recommended that you use (if available) an autonoumous camera timer (time lapse) for controlling the pictures interval."
+{% include note.html content=" It is strongly recommended that you use (if available) an autonomous camera timer (time lapse) for controlling the pictures interval."
 %}
 
 #### Flight Speed
 
-On average both SD Cards and cameras will be able to achieve an average speed of about 2 seconds/image. As a result taking pictures at least every 2 seconds is a bit challenging. The Flight speed recommendations are meeting this needs.
-
-**Rule of thumb**
+On average both SD Cards and cameras will be able to achieve an average speed of about 2 seconds/image. As a result taking pictures at least every 2 seconds is a bit challenging. So roughly you can estimate the flight altitude from the ground resolution and the maximum flight speed according to this from the following **rule of thumb**:
 
 $$maxSpeed~(km/h) = (0.2 * AGL)*3.6$$
 
@@ -54,15 +56,14 @@ For a flight of 40 m AGL this is will be roughly: $$5.25~(m/s) = 28.8~(km/h)$$
 Please note that maximum speed is usually not the best choice.
 
 #### DEM/DSM Data
-If you fly in an wide open flat area you do not need additional data. But if you fly in middle range mountains, forests or similar complex structures you will need a digtal surface model (DSM/DEM) for retrieving an optimal and safe flight path. 
+If you fly in an wide open flat area you do not need additional data. But if you fly in middle range mountains, forests or similar complex structures you will need a digtal surface model (DSM/DEM) for retrieving an optimal and safe flight path. Depending on the Software you have to take care of this issue manually.
 
 ## Weather
-{% include attention.html content=" 
-[Check the weather](https://www.windy.com/?50.117,8.684,5). 
-<br>You **must** take care of the wind gusts and cloud coverage for quality and safety reasons.
-
-<br><br>
-Do **not** ignore this. **Forget** about flying with wind speed above 4 Beaufort - most UAVs are **not** falcons."
+{% include attention.html content="  <br>
+- **[Check the weather](https://www.windy.com/?50.117,8.684,5)**
+<br>- You **must** take care of the wind gusts and cloud coverage for quality and safety reasons
+<br>
+- Do **not** ignore this. **Forget** about flying with wind speed above 4 Beaufort - most UAVs are **not** falcons"
 %}
 <br><br>
 # Workflow in the field 
