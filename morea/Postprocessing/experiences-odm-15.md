@@ -7,5 +7,6 @@ morea_url: https://ilias.uni-marburg.de/ilias.php?ref_id=2830985&cmd=view&cmdCla
 morea_type: experience
 morea_sort_order: 1010
 morea_labels:
+ - optional
  - supplement
 ---
