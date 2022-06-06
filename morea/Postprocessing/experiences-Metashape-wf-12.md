@@ -9,8 +9,8 @@ morea_url: https://agisoft.freshdesk.com/support/solutions/articles/31000148381-
 morea_type: experience
 morea_sort_order: 12
 morea_labels:
- - optional
  - advanced
  - supplement
+ - optional 
 ---
 

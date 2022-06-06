@@ -2,7 +2,7 @@
 <div class="col-md-6 col-lg-4" style="padding-bottom: 20px; " >
   
         
-    {% if experience.morea_labels contains "optional" %} 
+    {% if experience.morea_labels contains "optional" or assessment.morea_labels contains "self-check" %} 
     <div class="card h-100" style= "background-color:#f5efef;">
     {% else %}
     <div class="card h-100">

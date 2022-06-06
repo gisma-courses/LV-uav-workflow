@@ -7,9 +7,9 @@ morea_url:
 morea_type: experience
 morea_sort_order: 1010
 morea_labels:
- - optional
  - basic
  - YouTube ~19 min
+ - optional 
 
 ---
 

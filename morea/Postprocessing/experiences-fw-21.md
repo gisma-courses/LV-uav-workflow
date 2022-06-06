@@ -7,9 +7,9 @@ morea_url:
 morea_type: experience
 morea_sort_order: 21
 morea_labels:
- - optional
  - advanced
  - supplement
+ - optional 
 ---
 
 ## Georeferencing of imagery without GPS data
