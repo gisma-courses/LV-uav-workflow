@@ -123,5 +123,3 @@ The settings of the dense point cloud calculation determines quality and necessa
 
 The dense point cloud can be calculated as soon the pictures are aligned. Even if the dense cloud comes second in the workflow dropdown menu in Photoscan it should be considered to calculate the orthoimage first as the dense point cloud will take the longest time of all processes. 
 
-
-
