@@ -53,25 +53,29 @@ The data processing was carried out using `Metashape's` addon `Workflow+->Best P
 
 For the first overview, especially the quality (resolution) of the images as well as the number of artifacts and the positional accuracy are important for a visual inspection. 
 
-### Resolution issues
-The resolution of the Orthoimage is defined by a medium estimation of the two flight altitudes. `Metashape` gives a value is about 1.4 cm ground resolution. The resulting image roughly 2.4 GB of size. If this is resampled to 5 cm we will have about 210 MB.  You will get an impression of quality loss if you compare the two cutout images below. 
+#### Ground resolution - what is more real?
+The resolution of the Orthoimage is defined by a medium estimation of the two flight altitudes. `Metashape` gives a value is about 1.4 cm ground resolution. The resulting image roughly 2.4 GB of size. If this is resampled to 5 cm we will have about 210 MB. 
+
+You will get an impression of quality loss if you compare the two cutout images below. 
 
 {% include small-img-two.html url1="trees_1_5cm.png" url2="trees_5cm.png" %}  
 
 *On the left you can see the original image quality with 1.5 cm, on the right the quality resampled to 5 cm.*
 
- <br>
-### Overall visual inspection
-Below in the upper Cesium map you will find an interactive map of the complete 5 cm orthoimage. Please compare the section of the *three trees* with the Cesium rendering.
+The central question, both for automated evaluation and for visual inspection, is: which resolution is reasonable and manageable? The full technical audit solution (here 1.4 cm) or an efficient (resampling process like cubic spline lanczos etc) reduced and aggregated resolution (here 5cm cubic spline). There is no clear answer because it depends on the objects, the question and the evaluation technique.  In general it can be said that the highest possible pixel resolution is not necessarily the best choice - especially considering the non-linear increase of the data volume.
 
-You will note that the cesium server also resample the image and hence changes the visual quality again. 
+ <br>
+#### Overall visual inspection
+Below in the  Cesium map you will find an interactive map of the complete 5 cm above orthoimage. Please compare again the section of the *three trees* with the Cesium rendering.
+
+You will note that the cesium server again resample the image and hence changes the quality significantly for visual inspection. This is due to the need of efficient traffic and data storage handling.
 
 In addition you can check typical issues try to identify them and think about the reasons an possible solutions. Furthermore have a look how the quality of the automatic generated relocation applies to the web based maps. Check the **?** Button for navigation help.
  <br>
 <iframe src="cesium_ortho_1.html" height="800px" width="100%" frameborder="0" onload="resizeIframe(this)" ></iframe>
 
  <br>
-### Typical issues
+#### Typical other issues
 
 You will find a lot of *minor* issues. The below panel addresses some of them.
 {% include small-img-4panel.html url4="poor_sampling_artifact.png" url2="shadow_artifact.png"  url3="oversampling_scale.png"  url1="blur.png" %}  
