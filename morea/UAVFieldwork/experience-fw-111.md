@@ -39,21 +39,19 @@ Depending on the product and manufactor of the cameras you have to deal with dif
 
 #### Flight Speed
 
-On average both SD Cards and cameras will be able to achieve an average speed of about 2 seconds/image. As a result taking pictures at least every 2 seconds is a bit challenging. The Flight speed recommendations are meeting this needs. Let us assume you fly a task with the field of view (FOV) of the DJI 4K camera at 40 meters above ground level (AGL). To derive the maximum flight distance from picture to picture in meter for the given overlap you can calculate approximately:
+On average both SD Cards and cameras will be able to achieve an average speed of about 2 seconds/image. As a result taking pictures at least every 2 seconds is a bit challenging. The Flight speed recommendations are meeting this needs.
 
-$$FOV*agl*(1-overlap) = 1.71*35*0.2 = 12 m$$ 
+**Rule of thumb**
 
-If you can take a picture every 2 seconds your max speed is: 
+$$maxSpeed~(km/h) = (0.2 * AGL)*3.6$$
 
-$$12 m / 2 s  = 6 m/s = 10.8 km/h$$
+For a 100 meter AGL flight you should set the speed to a **maximum** of:
 
-##### Rule of thumb
+$$0.2 * 100 = 20~(m/s) = 72~(km/h)$$ 
 
-For a 100 meter AGL flight you should set the speed to a maximum of:
+For a flight of 40 m AGL this is will be roughly: $$5.25~(m/s) = 28.8~(km/h)$$
 
-$$0.2 * 100 = 20 m/s = 72 km/h$$ 
-
-For a flight of 40m AGL this is will be roughly: $$5,25 m/s = 28.8 km/h$$
+Please note that maximum speed is usually not the best choice.
 
 #### DEM/DSM Data
 If you fly in an wide open flat area you do not need additional data. But if you fly in middle range mountains, forests or similar complex structures you will need a digtal surface model (DSM/DEM) for retrieving an optimal and safe flight path. 
