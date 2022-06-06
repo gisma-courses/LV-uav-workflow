@@ -3,7 +3,7 @@ title: "Use Case Gisselberger Spannweite"
 toc: true
 toc_label: Inhalt
 published: true
-morea_id: experience-metashape-wf-15
+morea_id: experience-usecase-1
 morea_summary: 'The objective of this feasibility test is to evaluate the postulated workflow for its efficiency and applicability.The goal is to acquire and compute sufficiently accurate (< 2.5 cm) and reproducible orthoimages using low-cost mini-UAVs (< 250 g weight) with minimal effort.'
 morea_url: 
 morea_type: experience
