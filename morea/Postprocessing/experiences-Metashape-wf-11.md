@@ -70,8 +70,12 @@ It is obligatory that you run consecutively  all three steps.
   * downsampling: 1
 
 
-### Step-2 Link GCP to images 
+### `Step-2 Link GCP to images` 
 
+
+{% include kim.html content="
+This is a manual step please follow the bekow instructions
+ " %}
 After the script is finished you *may* need to manually remove the few remaining start and landing area pictures. Otherwise you will find at the launching place some artefacts. To do so just right-click on the position in the model and choose filter by point. Mark and remove all pictures with the launching pad and repeated launching and landing images.
 
 The procedure is well documented. Dor instant watch this [YouTube](https://youtu.be/G09r5PXqhBc) or follow this [tutorial](https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation). Import your Ground Control Points (GCP) and align them manually in at least 4 images. Use about 30 % of the GCP as independent checkpoints by unticking the check box in the reference pane. Save your project.
@@ -80,7 +84,7 @@ The procedure is well documented. Dor instant watch this [YouTube](https://youtu
 Performs an iterative optimisation of the sparse cloud to retrieve the best reprojection error. The tie pointcloud will be much more reliable for all later tasks
 
 
-### Step-4 `Orthoimage-post-GCP`
+### `Step-4 Orthoimage-post-GCP`
 
 * Use `Orthoimage-post-GCP`. This includes the following steps:
   * optimize sparse cloud using the point cloud statistics
@@ -152,9 +156,11 @@ This will compute a set amount of orthomosaics (default is 5), which later can b
 
 ## Further Readings
 
-The workflow above is strictly speaking a kind of black box. You will find information under the Help button and in the corresponding paper about [Ludwig et al. 2020](https://doi.org/10.3390/rs12223831). 
+The workflow above is strictly speaking a kind of black box. At least it is documented and you will find deeper information checking the scripts and reading the corresponding paper from [Ludwig et al. 2020](https://doi.org/10.3390/rs12223831). The optimizations and experiences that are imparted in this course focus mainly on low and medium mountain forest areas. The presets and parameters are tailored to this and will not be optimal in every other setting. 
 
-However it makes sense to actively deal with a complex tool like Metashape. The optimizations and experiences that are imparted in this course focus mainly on low and medium mountain forest areas. The presets and parameters are tailored to this and will not be optimal in every other setting. The resources below will give you an update on different workflows for different settings. They also describe the intensive interactive use of tools and steps that were partially programmed in the automatic scripts.   And please note that you will almost certainly find different and contradictory suggestions than the ones given in the course. Just try it out and feel free to report your findings in the comments below. 
+Even more it makes sense to actively deal with a complex tool like Metashape. The resources below will give you an update on different workflows for different settings. They also describe the intensive interactive use of tools and steps that were only partially programmed in the scripts of `Ortho+`.  
+
+And please note that you will almost certainly find different and contradictory suggestions than the ones given in the course. Just try it out and feel free to report your findings in the comments below. 
 
 * [Aerial data processing - Orthomosaic&DEM generation](https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation)
 * [USGS- Processing Coastal Imagery With Agisoft](https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf)
