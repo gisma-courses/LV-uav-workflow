@@ -43,45 +43,58 @@ Create a point vector file and digitize the following classes:
 
 Provide at minimum 20 sampling points.
 
-Save this file naming it `training-sampling.gpkg`.
+Save this file naming it `sample.shp`.
 
 ### Step-2 Segmentation
 
 In the search field of the `Processing Toolbox`, type *segmentation* and double click `Segmentation`.
 
-* select the input image: `lahn-gi-spann.tif`
-* select `meanshift` from the drop-down list `Segmentation algorithm`
+* select the `input image`: **lahn-gi-spann-5-utm.tif**
+* select `meanshift` from the drop-down list **Segmentation algorithm**
 * The `Spatial Radius` value can be set to **25**.This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel.
 * The `Range Radius` value can be set to **25**. We are dealing with RGB images that have a range `0-255`. The optimal value depends on datatype dynamic range of the input image and requires experimental trials for the specific classification objectives.
 * Set `Minimum Region size` in pixels to **25**. Minimum size of a region (in pixel unit) in segmentation. Smaller clusters will be merged to the neighboring cluster with the closest radiometry.
-* keep `Processing mode`  as `Vector`
+* keep `Processing mode`  as **Vector**
 * Tick `8-neighborhood connectivity` on.
-* Set `Minimum object size` in pixels to `10` 
-* Name the `Output vector file`  as  `lahn-gi-spann-segments-meanshift.gpkg`. You must write the extension `.shp` in this module.
+* Set `Minimum object size` in pixels to **20** 
+* Name the `Output vector file`  as  **lahn-gi-spann-segments-meanshift.gpkg**. 
 * Push `Run`.
 
-[[screenshot1]]
+{% include medium-img.html url="obia1.png" %} 
 
 Evaluate the segmentation results: 
-* Load the output vector file `lahn-gi-spann-segments-meanshift.shp` into your QGIS session and place it on top of the image `lahn-gi-spann.tif`
+
+* Load the output vector file **lahn-gi-spann-segments-meanshift.shp** into your QGIS session and place it on top of the image **lahn-gi-spann.tif**
 * Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`.
 
 ###  Step-3 Feature extraction 
 Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalStatistics` which is settled under the image manipulation section of OTB.
 
-* Select as input image: `lahn-gi-spann.tif`.
-* Select `input vector data` the vector file with segments from above segmentation `lahn-gi-spann-segments-meanshift.shp`
-* Name for the `output vector`: `lahn-gi-spann-segments-meanshift-zonal.gpkg`.
+* Select as input image: **lahn-gi-spann.tif**.
+* Select `input vector data` the vector file with segments from above segmentation **lahn-gi-spann-segments-meanshift.shp**
+* Name for the `output vector`: **lahn-gi-spann-segments-meanshift-zonal.shp**.
 * Push `Run`.
 
-[[screenshot2]]
+{% include small-img.html url="obia2-zonal.png" %} 
 
-###  Step-4 Training
+## Step-4 Joining training data with segements
+
+In the search field of the `Processing Toolbox`, type *join* and double click `Join Attributes by Location`.
+
+* select the `Base Layer`: **lahn-gi-spann-meanshift-zonal-stat.shp**
+* select the `Join Layer`: **sample.shp**
+* `Join Type`: choose **Take Attributes of the first matching...**
+* Tick `Discard records which could not be joined`
+* Provide an output filename
+{% include small-img.html url="obia3-join.png" %} 
+
+
+###  Step-5 Training
 Type `train` in the search field of the Processing Toolbox and open `TrainVectorClassifier`
 
-* In the  field  `Vector Data List` select *manually** a vector file clicking **...** and browse directly to the file containing the training area polygons `lahn-gi-spann-segments-stats.gpkg`.
-* Provide the `Output model filename` as `lahn-gi-spann-obia.model`
-* In the field `Field names for training features` copy and paste <pre> "mean_2 stdev_0 mean_9 mean_7 mean_0" </pre>
+* In the  field  `Vector Data List` select  the correct vector file clicking **...** and browse directly to the file containing the training area polygons **lahn-gi-spann-meanshift-zonal-stat.shp**.
+* Provide the `Output model filename` as **lahn-gi-spann-obia.model**
+* In the field `Field names for training features` copy and paste `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3"`
 * The name of `Field containing the class id for supervision` is `CLASS_ID`.
 * Classifier to use for training: `libsvm`
 * SVM Kernel Type: `linear`
@@ -89,19 +102,19 @@ Type `train` in the search field of the Processing Toolbox and open `TrainVector
 * tick `Parameters optimization` to `ON`.
 * Push `Run`
 
-[[screenshot3]]
+{% include small-img.html url="obia5-train.png" %} 
 
 
-###  Step-5 Classification 
+###  Step-6 Classification 
 Type `class` in the search field of the Processing Toolbox and open `VectorClassifier`
-*  In the  field  `Vector Data` select *manually** a vector file clicking **...** and browse directly to the file containing the training area polygons containing segments and features for the whole image `lahn-gi-spann-segments-meanshift-zonal.gpkg`.
-* The name of the upper `input model` file is `lahn-gi-spann-obia.model`
+*  In the  field  `Vector Data` select *manually** the correct vector file clicking **...** and browse directly to the file containing the training area polygons containing segments and features for the whole image **lahn-gi-spann-segments-meanshift-zonal.shp**.
+* The name of the upper `input model` file is **lahn-gi-spann-obia.model**
 * Output field containing the class is `CLASS_ID`
-* Copy and paste into the field `Field names to be calculated` same attributes as above <pre> "mean_2 stdev_0 mean_9 mean_7 mean_0" </pre>
-* Name the `output vector` data `lahn-gi-spann-classified_obia.gpkg`.
+* Copy and paste into the field `Field names to be calculated` same attributes as above: `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3"`
+* Name the `output vector` data **lahn-gi-spann-classified_obia.shp**.
 * Push `Run`.
 
-[[screenshot4]]
+{% include medium-img.html url="obia6-class.png" %}
 
 Load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
 
