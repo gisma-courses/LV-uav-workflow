@@ -25,4 +25,4 @@ morea_labels:
 ---
 
 
-The analysis of highest resolution image data requires more sophisticated remote sensing applications prioritizing Deep LEarning and the combination of, machine learning and statistical models. 
+The analysis of image data with very high spatial resolution places high demands on hardware and software. The methods used are deep learning (DL), object-based image analysis (OBIA) and machine learning. Deep learning is the clear winner, but also the most complex approach. Since OBIA shows quite respectable results and is comparatively simple, we will focus on this family of methods for now.
