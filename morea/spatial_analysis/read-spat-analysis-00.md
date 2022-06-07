@@ -11,11 +11,11 @@ morea_sort_order: 11
 morea_labels:
  - basic
  - recommended
- - YouTube ~7min
-
+ - YouTube ~1min
+ - YouTube  ~4min
 ---
 # The basic concept of Deep Learning
 {% include youtube.html id="3WcUTMWa9fU" %}
 
-# A bit more basic
+# A bit more basics
 {% include youtube.html id="RbcHiAYPbC0" %}

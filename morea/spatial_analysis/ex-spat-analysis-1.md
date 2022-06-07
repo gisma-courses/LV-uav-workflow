@@ -12,6 +12,7 @@ morea_labels:
  - basic
  - mandatory 
  - YouTube ~18min
+ - preliminary
 
 ---
 
