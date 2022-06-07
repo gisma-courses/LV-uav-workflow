@@ -34,12 +34,11 @@ The segementation process is algorithm-dependent but looks iteratively for simil
 
 ### Step-1 Create Training Sample Points by manual digitizing 
 
-You may follow this [instructions](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we just digitize Points and not areas (polygons).
+You may follow this [instructions](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we just digitize Points and not areas (polygons). In addition you may <a href="obia.zip" >Download</a> the basic data.
 
 {% include note.html content="<br>
  Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfartable to digitize training points of one class in series.
 "%}
-
 
 
 Create a point vector file and digitize the following classes:
