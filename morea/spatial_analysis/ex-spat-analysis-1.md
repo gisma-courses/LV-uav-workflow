@@ -25,7 +25,25 @@ morea_labels:
 
 ## Step by step
 
-### Segmentation
+### Step-1 Create Training Sample Points by manual digitizing 
+You may follow this [instructions](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we just digitize Points and not areas (polygons). 
+
+Create a point vector file and digitize the following classes:
+|class| CLASS_ID|
+|:-:|:-:|
+|water|1|
+|meadows|2|
+|bare-soil-dry|3|
+|bare-sooil-mud|4|
+|green-trees-shrubs|5|
+|dead-wood|6|
+|artificial-other|7|
+
+Provide ad minimum 20 sampling points.
+
+Save this file naming it `training-sampling.gpkg`.
+
+### Step-2 Segmentation
 
 In the search field of the `Processing Toolbox`, type *segmentation* and double click `Segmentation`.
 
@@ -46,7 +64,7 @@ Evaluate the segmentation results:
 * Load the output vector file `lahn-gi-spann-segments-meanshift.shp` into your QGIS session and place it on top of the image `lahn-gi-spann.tif`
 * Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`.
 
-### Feature extraction 
+###  Step-3 Feature extraction 
 Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalStatistics` which is settled under the image manipulation section of OTB.
 
 * Select as input image: `lahn-gi-spann.tif`.
@@ -56,7 +74,7 @@ Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalS
 
 [[screenshot2]]
 
-### Training
+###  Step-4 Training
 Type `train` in the search field of the Processing Toolbox and open `TrainVectorClassifier`
 
 * In the  field  `Vector Data List` select *manually** a vector file clicking **...** and browse directly to the file containing the training area polygons `lahn-gi-spann-segments-stats.gpkg`.
@@ -72,7 +90,7 @@ Type `train` in the search field of the Processing Toolbox and open `TrainVector
 [[screenshot3]]
 
 
-### Classification phase
+###  Step-5 Classification 
 Type `class` in the search field of the Processing Toolbox and open `VectorClassifier`
 *  In the  field  `Vector Data` select *manually** a vector file clicking **...** and browse directly to the file containing the training area polygons containing segments and features for the whole image `lahn-gi-spann-segments-meanshift-zonal.gpkg`.
 * The name of the upper `input model` file is `lahn-gi-spann-obia.model`
