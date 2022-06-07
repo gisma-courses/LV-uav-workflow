@@ -2,9 +2,16 @@
 title: "Analysis of high resolution aerial data"
 morea_type: module
 published: true
-morea_coming_soon: true
+morea_coming_soon: false
 morea_outcomes:
 morea_experiences:
+- ex-spat-analysis-1
+- ex-spat-analysis-3
+morea_readings:
+- read-spat-analysis-00
+- read-spat-analysis-0
+- read-spat-analysis-2
+- read-spat-analysis-1
 morea_id: module-hr-analysis
 morea_icon_url: /morea/spatial_analysis/icon1.png
 morea_start_date: "2022-06-20"
