@@ -10,8 +10,8 @@ morea_type: experience
 morea_sort_order: 11
 morea_labels:
  - basic
- - recommended
  - YouTube 1min/4min
+ - optional 
 ---
 # The basic concept of Deep Learning
 {% include youtube.html id="3WcUTMWa9fU" %}
