@@ -25,4 +25,4 @@ morea_labels:
 ---
 
 
-The analysis of image data with very high spatial resolution places high demands on hardware and software. The methods used are deep learning (DL), object-based image analysis (OBIA) and machine learning. Deep learning is the clear winner, but also the most complex approach. Since OBIA shows quite respectable results and is comparatively simple, we will focus on this family of methods for now.
+The analysis of image data with very high spatial resolution, such as UAV-based orthoimages, places high demands on hardware and software. Established methods include deep learning (DL), object-based image analysis (OBIA), and machine learning (ML). In comparison, DL is the clear winner, but also the most complex approach. Since OBIA shows quite useful results and is comparatively easy to use, we focus on this family of methods for now.
