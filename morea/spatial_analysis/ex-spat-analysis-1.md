@@ -29,17 +29,19 @@ morea_labels:
 You may follow this [instructions](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we just digitize Points and not areas (polygons). 
 
 Create a point vector file and digitize the following classes:
+
 |class| CLASS_ID|
-|:-:|:-:|
+|:-- | --:|
 |water|1|
 |meadows|2|
 |bare-soil-dry|3|
-|bare-sooil-mud|4|
+|bare-soil-mud|4|
 |green-trees-shrubs|5|
 |dead-wood|6|
 |artificial-other|7|
 
-Provide ad minimum 20 sampling points.
+
+Provide at minimum 20 sampling points.
 
 Save this file naming it `training-sampling.gpkg`.
 
@@ -49,13 +51,13 @@ In the search field of the `Processing Toolbox`, type *segmentation* and double 
 
 * select the input image: `lahn-gi-spann.tif`
 * select `meanshift` from the drop-down list `Segmentation algorithm`
-* The `Range radius` value can be set to **25**. We are dealing with RGB images that have a range `0-255`. The optimal value depends on datatype dynamic range of the input image and requires experimental trials for the specific classification objectives.
-* Set `Minimum Region size` in pixels to **16**. This is determing the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel.
+* The `Spatial Radius` value can be set to **25**.This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel.
+* The `Range Radius` value can be set to **25**. We are dealing with RGB images that have a range `0-255`. The optimal value depends on datatype dynamic range of the input image and requires experimental trials for the specific classification objectives.
+* Set `Minimum Region size` in pixels to **25**. Minimum size of a region (in pixel unit) in segmentation. Smaller clusters will be merged to the neighboring cluster with the closest radiometry.
 * keep `Processing mode`  as `Vector`
-* Set `Mask image` to `empty` the blank entry of the drop-down list
 * Tick `8-neighborhood connectivity` on.
-* Set `Minimum object size` in pixels to `16` depending on the minimum mapping size and according to your targeted object size.
-* Name the `Output vector file`  as  `lahn-gi-spann-segments-meanshift.shp`. You must write the extension `.shp` in this module.
+* Set `Minimum object size` in pixels to `10` 
+* Name the `Output vector file`  as  `lahn-gi-spann-segments-meanshift.gpkg`. You must write the extension `.shp` in this module.
 * Push `Run`.
 
 [[screenshot1]]
