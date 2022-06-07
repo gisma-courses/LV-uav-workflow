@@ -27,11 +27,13 @@ The segementation process is algorithm-dependent but looks iteratively for simil
 
 
 ## The complete OBIA Workflow with QGIS and OTB processing plugin
+<br>
 {% include youtube.html id="fX2UpOwoYLk" %}
-
+<br>
 ## Step by step
 
 ### Step-1 Create Training Sample Points by manual digitizing 
+
 You may follow this [instructions](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we just digitize Points and not areas (polygons). 
 
 Create a point vector file and digitize the following classes:
@@ -65,10 +67,11 @@ In the search field of the `Processing Toolbox`, type *segmentation* and double 
 * Set `Minimum object size` in pixels to **20** 
 * Name the `Output vector file`  as  **lahn-gi-spann-segments-meanshift.gpkg**. 
 * Push `Run`.
-
+<br>
 {% include medium-img.html url="obia1.png" %} 
+<br>
 
-Evaluate the segmentation results: 
+**Evaluate the segmentation results:**
 
 * Load the output vector file **lahn-gi-spann-segments-meanshift.shp** into your QGIS session and place it on top of the image **lahn-gi-spann.tif**
 * Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`.
@@ -80,9 +83,9 @@ Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalS
 * Select `input vector data` the vector file with segments from above segmentation **lahn-gi-spann-segments-meanshift.shp**
 * Name for the `output vector`: **lahn-gi-spann-segments-meanshift-zonal.shp**.
 * Push `Run`.
-
+<br>
 {% include small-img.html url="obia2-zonal.png" %} 
-
+<br>
 ## Step-4 Joining training data with segements
 
 In the search field of the `Processing Toolbox`, type *join* and double click `Join Attributes by Location`.
@@ -92,8 +95,9 @@ In the search field of the `Processing Toolbox`, type *join* and double click `J
 * `Join Type`: choose **Take Attributes of the first matching...**
 * Tick `Discard records which could not be joined`
 * Provide an output filename
+<br>
 {% include small-img.html url="obia3-join.png" %} 
-
+<br>
 
 ###  Step-5 Training
 Type `train` in the search field of the Processing Toolbox and open `TrainVectorClassifier`
@@ -107,9 +111,9 @@ Type `train` in the search field of the Processing Toolbox and open `TrainVector
 * SVM Model Type: `csvc`
 * tick `Parameters optimization` to `ON`.
 * Push `Run`
-
+<br>
 {% include small-img.html url="obia5-train.png" %} 
-
+<br>
 
 ###  Step-6 Classification 
 Type `class` in the search field of the Processing Toolbox and open `VectorClassifier`
@@ -119,8 +123,9 @@ Type `class` in the search field of the Processing Toolbox and open `VectorClass
 * Copy and paste into the field `Field names to be calculated` same attributes as above: `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3"`
 * Name the `output vector` data **lahn-gi-spann-classified_obia.shp**.
 * Push `Run`.
-
+<br>
 {% include medium-img.html url="obia6-class.png" %}
+<br>
 
-Load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
+Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
 
