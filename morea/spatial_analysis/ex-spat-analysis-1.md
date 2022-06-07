@@ -58,7 +58,7 @@ Create a point vector file and digitize the following classes:
 
 Provide at minimum 10 widely spred sampling points.
 
-Save this file naming it `sample.shp`.
+Save this file naming it `sample.gpgk`.
 
 ### Step-2 Segmentation
 
