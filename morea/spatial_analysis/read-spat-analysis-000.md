@@ -11,8 +11,7 @@ morea_sort_order: 11
 morea_labels:
  - basic
  - mandatory
- - YouTube ~5min
- - YouTube ~27min
+ - YouTube 5min/27min
 ---
 
 # The basic concept of Object Based Image Analysis
