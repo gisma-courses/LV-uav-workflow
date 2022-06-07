@@ -30,16 +30,17 @@ The segementation process is algorithm-dependent but looks iteratively for simil
 <br>
 {% include youtube.html id="fX2UpOwoYLk" %}
 <br>
-# Step by step
+# Step by step tutorial 
+
+In the following step by step guide an OBIA aproach with QGIS and the OTB Toolbox is carried out as an template example. There are many segmentation algorithms and integrated classification methods. The Mean-shift method used here and the subsequent training with Support Vector Machine is a robust and common method. Especially the extension of the feature space (here called `Range Radius`) and the search space (`Spatial Radius`) as well as the size of the segmented objects (`Minimum Region size`) is crucial for a successful result. The principle is transferable to the different forms of the OBIA and despite abundant literature and some good instructions it is a free empirical game.
 
 ### Step-1 Create Training Sample Points by manual digitizing 
 
-You may follow this [instructions](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we just digitize Points and not areas (polygons). In addition you may <a href="obia.zip" >Download</a> the basic data.
-
-{% include note.html content="<br>
+If you need to learn how to digitize with QGIS you may follow this [tutorial](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we will only digitize Points and not polygons. 
+{% include cool.html content="
  Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfartable to digitize training points of one class in series.
 "%}
-
+For reference you may <a href="obia.zip" >Download</a> the basic data.
 
 Create a point vector file and digitize the following classes:
 
@@ -77,10 +78,8 @@ In the search field of the `Processing Toolbox`, type *segmentation* and double 
 {% include medium-img.html url="obia1.png" %} 
 <br>
 
-**Evaluate the segmentation results:**
-
-* Load the output vector file **segments-meanshift.shp** into your QGIS session and place it on top of the image **example-5.tif**
-* Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`.
+* Check the  results: Load the output vector file **segments-meanshift.shp** into your QGIS session and place it on top of the image **example-5.tif**
+* Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`. Check the features with a visual inspection. Is the result goal keeping? If not start over...
 
 ###  Step-3 Feature extraction 
 Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalStatistics` which is settled under the image manipulation section of OTB.
@@ -106,7 +105,7 @@ In the search field of the `Processing Toolbox`, type *join* and double click `J
 <br>
 {% include small-img.html url="obia3-join.png" %} 
 <br>
-{% include note.html content="
+{% include cool.html content="
 Sometimes the geometry is broken. Type `fix` in the search field of the Processing Toolbox and open `Fix Geometries` which will in most cases do the job
 "%}
 
