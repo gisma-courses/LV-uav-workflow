@@ -41,7 +41,7 @@ Remember to align and merge the chunks “upwards” in the reverse direction yo
 
 ## References for alignment optimizing
 
-  * [Photoscan Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf)
+  * [Metashape Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf)
   - [Search filter](https://www.agisoft.com/forum/index.php?action=search2;params=eJwtzTEOgzAMBdC7sLB4wGUot4mC8wVUIalMoKqUw9epWKz_ny3Zh8snQah95drVWVt6Ek_ETDYsDsQjPQbbHmv-OMn7O6LA7hqd8wtSXE7xe0vW4sKm1gIOucWaIuL_rBG8ymq4Q5ctLT9qwjF9)
   - [Merging Chunks](http://www.agisoft.com/forum/index.php?topic=6995.0)
   - [Chunks alignment](http://www.agisoft.com/forum/index.php?topic=148.0)

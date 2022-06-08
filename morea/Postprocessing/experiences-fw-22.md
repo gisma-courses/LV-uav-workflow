@@ -11,7 +11,7 @@ morea_labels:
 ---
 
 # Setup Metashape on a cluster 
-The concept is roughly outlined in chapter 8 of the [Photoscan Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf). Nevertheless there are some pitfalls and not so well documented features.
+The concept is roughly outlined in chapter 8 of the [Metashape Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf). Nevertheless there are some pitfalls and not so well documented features.
 
 :::
 
@@ -35,23 +35,23 @@ sudo mount xxx.xxx.xxx.xxx:/var/nfs/general /var/nfs/agi
 
 ```
 
-Now you have to start a head node as photoscan server
+Now you have to start a head node as Metashape server
 
 ```bash
-nohup ./photoscan.sh --server xxx.xxx.xxx.xxx --dispatch xxx.xxx.xxx.xxx  --root /var/nfs/agi
+nohup ./metashape.sh --server xxx.xxx.xxx.xxx --dispatch xxx.xxx.xxx.xxx  --root /var/nfs/agi
 ```
 
 Next you may assign node(s)
 
 ```bash
 
-nohup ./photoscan.sh --node --dispatch xxx.xxx.xxx.xxx  --opencl_gpu_mask 1  --root /var/nfs/agi
+nohup ./mhotoscan.sh --node --dispatch xxx.xxx.xxx.xxx  --opencl_gpu_mask 1  --root /var/nfs/agi
 ```
 
 
 {% include note.html content=" 
  
-Be aware, that the monitor and the network installation of Agisoft Photoscan **must** have the same version.
+Be aware, that the monitor and the network installation of Agisoft Metashape **must** have the same version.
 The installation on the computer may have a newer version.
  
 

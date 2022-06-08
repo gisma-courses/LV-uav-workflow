@@ -33,10 +33,10 @@ Download this repo and unzip it to `~/.local/share/Agisoft/Metashape Pro/scripts
 
 ```bash
 cd ~/.local/share/Agisoft/Metashape Pro/scripts
-git clone https://github.com/envima/MetashapeTools.git .
+git clone https://github.com/gisma/MetashapeTools.git .
 ```
 **Windows:**
-Copy the content of this repo to `User/AppData/Local/AgiSoft/PhotoScan Pro/scripts`
+Copy the content of this repo to `User/AppData/Local/AgiSoft/Metashape Pro/scripts`
 
 ## First things first - Load images 
 All functions are based on image data so first do **always** the following:
