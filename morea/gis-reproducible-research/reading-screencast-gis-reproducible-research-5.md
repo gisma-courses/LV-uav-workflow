@@ -12,5 +12,5 @@ morea_labels:
 ---
 
 # A Few Thoughts Beyond the Scientific Ethical Significance of Reproducible Research
-<p><a href="https://www.rstudio.com/resources/rstudioconf-2019/r-markdown-the-bigger-picture/?wvideo=wblobrq76y"><img src="https://embedwistia-a.akamaihd.net/deliveries/dc5a6364c0314c6df4221520b41cf855.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0"  alt="balance" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.rstudio.com/resources/rstudioconf-2019/r-markdown-the-bigger-picture/?wvideo=wblobrq76y">R Markdown: The bigger picture - RStudio</a></p>
+<p><a href="https://www.rstudio.com/resources/rstudioconf-2019/r-markdown-the-bigger-picture/?wvideo=wblobrq76y"><img src="https://embedwistia-a.akamaihd.net/deliveries/dc5a6364c0314c6df4221520b41cf855.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=4287c7e0"  alt="balance" width="800" height="450" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.rstudio.com/resources/rstudioconf-2019/r-markdown-the-bigger-picture/?wvideo=wblobrq76y">R Markdown: The bigger picture - RStudio</a></p>
 
