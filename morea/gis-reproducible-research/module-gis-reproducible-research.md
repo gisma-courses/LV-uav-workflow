@@ -15,4 +15,4 @@ morea_start_date: "2022-04-20"
 morea_end_date: "2021-07-13"
 
 ---
-The importance of reproducible research lies in the transparency and repeatability of research results - i.e. the possibility of also repeating experimental procedures and thus confirming results already obtained - this is the central element of scientific work.
+The importance of reproducible research is rooted in the self-commitment to good scientific practice and rests on the foundation of transparent and repeatable research work. No matter what type of documentation is used, including websites, blogs, or gray literature, it must meet these criteria.

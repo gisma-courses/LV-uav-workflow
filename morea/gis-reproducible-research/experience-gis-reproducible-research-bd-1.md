@@ -1,13 +1,14 @@
 ---
 title: "Das Erstellen einer Webseite für die Abgabe von Arbeiten"
-published: false
+published: true
 morea_id: experience-gis-reproducible-research-bd-1
 morea_summary: "Teil 1 - 3 Wie erstelle ich eine Bloggerseite mit RStudio auf GitHub?"
 morea_type: experience
 morea_sort_order: 1
 morea_labels:
  - supplement
- - screencast ~5 min, ~15 min, ~6 min
+ - screencast 5min/15min/6min
+ - optional
 ---
 ## Screencasts blogdown 
 ### Setting up
