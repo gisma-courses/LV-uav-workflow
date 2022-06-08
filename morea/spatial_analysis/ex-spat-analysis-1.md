@@ -141,4 +141,10 @@ Finally load the output vector file into QGIS and apply the same QGIS style used
 {% include small-img-two.html url1="obia6-class.png" url2="classification.png" %}
 <br>
 
-You will see partly predominantly excellent classification. However, there are also significant misclassifications. What could be the reason for that. What is a weakness of this approach?
+# Result
+
+You will see partly predominantly excellent classification. However, there are also significant misclassifications. 
+
+* What could be the reason for that?
+* What is a weakness of this approach?
+* Any suggestion to improve?
