@@ -6,7 +6,8 @@ morea_summary: "Why is reproducible research necessary at all?"
 morea_type: reading
 morea_sort_order: 1
 morea_labels:
- - talk ~18 min
+ - basic
+ - talk 18min
  - recommended 
 ---
 

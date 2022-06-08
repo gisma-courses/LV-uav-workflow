@@ -30,7 +30,7 @@
       <!-- If customer.name = "anonymous" -->
       {% if label contains "Pflicht" or label contains "mandatory" label contains "knowledgebase" or label contains "recommended" %}
       <span class="badge badge-warning">{{ label }}</span>       
-      {% elsif label contains "Submission" or label contains "obligate" or label contains "Abgabe" or label contains "delivery" or label contains "prelim" or label contains "YouTube" or label contains "Screencast" or label contains "talk" or label contains "self-check" %}
+      {% elsif label contains "submission" or label contains "obligate" or label contains "Abgabe" or label contains "delivery" or label contains "prelim" or label contains "YouTube" or label contains "screencast" or label contains "talk" or label contains "self-check" %}
       <span class="badge badge-danger">{{ label }}</span>   
       {% elsif label contains "addon" or label contains "basic" or label contains "supplement" or label contains "advanced" %}
       <span class="badge badge-info">{{ label }}</span>  

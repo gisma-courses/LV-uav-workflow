@@ -6,7 +6,8 @@ morea_summary: "What is a good balance between effort and benefit?"
 morea_type: reading
 morea_sort_order: 5
 morea_labels:
- - talk ~4 min
+ - basic
+ - talk 4min
  - mandatory
 
 ---
