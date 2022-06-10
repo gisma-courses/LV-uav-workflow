@@ -149,13 +149,13 @@
         <Option type="List" name="filter.meanshift.ranger">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="double" name="static_value" value="15"/>
+            <Option type="double" name="static_value" value="25"/>
           </Option>
         </Option>
         <Option type="List" name="filter.meanshift.spatialr">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="int" name="static_value" value="5"/>
+            <Option type="int" name="static_value" value="25"/>
           </Option>
         </Option>
         <Option type="List" name="filter.meanshift.thres">
@@ -233,13 +233,13 @@
         <Option type="List" name="mode.vector.minsize">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="int" name="static_value" value="1"/>
+            <Option type="int" name="static_value" value="200"/>
           </Option>
         </Option>
         <Option type="List" name="mode.vector.neighbor">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="bool" name="static_value" value="false"/>
+            <Option type="bool" name="static_value" value="true"/>
           </Option>
         </Option>
         <Option type="List" name="mode.vector.ogroptions">
@@ -275,7 +275,7 @@
         <Option type="List" name="mode.vector.tilesize">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="int" name="static_value" value="1024"/>
+            <Option type="int" name="static_value" value="0"/>
           </Option>
         </Option>
         <Option type="List" name="outputpixeltype">
