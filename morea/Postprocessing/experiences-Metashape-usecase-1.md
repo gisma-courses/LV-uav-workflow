@@ -85,6 +85,11 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
 
 *The outer left crop shows typical blur effects (too much motion or vertical height differences). The center left crop shows an artifact that duplicates features (in this case the shadow of the tree), The center right crop shows typical oversampling issues (too many images on a flat spot), Finally the outer right crop shows typical distortion effects (in this case due to poor image availability at the edge of the task)*
 
+## Further Products
+
+Besides the Orthoimage, there are of course other products that can be derived directly. The 3D dense point clouds are to be named with priority. They have at least for some questions comparable information contents to LiDAR data.  
+
+Especially for participative planning, public participation or monitoring and information projects that are relevant to the public, 3D point models and mesh grids with textures are a good choice. 
 
 #### 3D Model 
 
