@@ -1,10 +1,10 @@
 ---
-title: "Metashape Workflow+ - optimized processing of RGB images"
+title: "Metashape Ortho+ - optimized processing of RGB images"
 toc: true
 toc_label: Inhalt
 published: true
 morea_id: experience-metashape-wf-11
-morea_summary: "Metashape Workflow+ extension provides a set of tools for easy reproducibility of optimized generation of orthoimages and point clouds. It is a convenient extension of the standard tools and workflows."
+morea_summary: "Metashape Ortho+ extension provides a set of tools for easy reproducibility of optimized generation of orthoimages and point clouds. It is a convenient extension of the standard tools and workflows."
 morea_url: 
 morea_type: experience
 morea_sort_order: 11
@@ -14,17 +14,17 @@ morea_labels:
 
 ---
 
-# Metashape Workflow via `Workflow+`
+# Metashape Workflow via `Ortho+`
 
-The Metashape Workflow+ provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and automatically optimized products from the aerial images. Installation is seamless via Metashape's scripting interface.  
-After the installation and the necessary restart of Metashape there is `Workflow+` menu item in the Metashape menu bar. 
+The `Metashape Ortho+` menu provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and automatically optimized products from the aerial images. Installation is seamless via Metashape's scripting interface.  
+After the installation and the necessary restart of Metashape there is `Ortho+` menu item in the Metashape menu bar. 
 
 {% include kim.html content="
-The MetashapeToolbox plugin is capable to control all working steps for low cost cameras like GoPro etc.. Usually it replaces the manual workflow.
-<br><br>
-**This is not the case for specific sensors like the _MicaSense Altum_ or other advanced sensors!**
-<br><br>
-However you preferably should integrate in [specific workflows](https://agisoft.freshdesk.com/support/solutions/articles/31000148381-micasense-altum-processing-workflow-including-reflectance-calibration-in-agisoft-metashape-professi) the MetashapeToolbox functions if appropriate.
+The MetashapeToolbox plugin is capable to control all working steps for low cost aerial images with GPS information. Usually it is capable to replace the manual workflow.
+<br>
+**This is not the case for multispectral sensors like the `MicaSense Altum` or other advanced sensors!**
+<br>
+
  " %}
 
 ### Instalation of the toolbox
@@ -33,10 +33,10 @@ Download this repo and unzip it to `~/.local/share/Agisoft/Metashape Pro/scripts
 
 ```bash
 cd ~/.local/share/Agisoft/Metashape Pro/scripts
-git clone https://github.com/envima/MetashapeTools.git .
+git clone https://github.com/gisma/MetashapeTools.git .
 ```
 **Windows:**
-Copy the content of this repo to `User/AppData/Local/AgiSoft/PhotoScan Pro/scripts`
+Copy the content of this repo to `User/AppData/Local/AgiSoft/Metashape Pro/scripts`
 
 ## First things first - Load images 
 All functions are based on image data so first do **always** the following:
@@ -55,7 +55,7 @@ The `BestPractice` menu provides robust and well tested workflows that are prima
 
 It is obligatory that you run consecutively  all three steps.
 
-### `Orthoimage-pre-GCP` - Step 1
+### `Step-1 Orthoimage-pre-GCP`
 * Start the script `Orthoimage-pre-GCP`
   * checks image Quality and drop images with  a quality less than 0.78
   * calculate a first alignment and mesh using the following parameters: 
@@ -70,14 +70,21 @@ It is obligatory that you run consecutively  all three steps.
   * downsampling: 1
 
 
-### Link GCP to images - Step 2
+### `Step-2 Link GCP to images` 
 
+
+{% include kim.html content="
+This is a manual step please follow the bekow instructions
+ " %}
 After the script is finished you *may* need to manually remove the few remaining start and landing area pictures. Otherwise you will find at the launching place some artefacts. To do so just right-click on the position in the model and choose filter by point. Mark and remove all pictures with the launching pad and repeated launching and landing images.
 
 The procedure is well documented. Dor instant watch this [YouTube](https://youtu.be/G09r5PXqhBc) or follow this [tutorial](https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation). Import your Ground Control Points (GCP) and align them manually in at least 4 images. Use about 30 % of the GCP as independent checkpoints by unticking the check box in the reference pane. Save your project.
 
+### `Step-3 Optimize Sparsecloud`
+Performs an iterative optimisation of the sparse cloud to retrieve the best reprojection error. The tie pointcloud will be much more reliable for all later tasks
 
-### `Orthoimage-post-GCP` - Step 3
+
+### `Step-4 Orthoimage-post-GCP`
 
 * Use `Orthoimage-post-GCP`. This includes the following steps:
   * optimize sparse cloud using the point cloud statistics
@@ -117,8 +124,6 @@ This will do the following steps:.
 ### `Reduce Overlap`
 Creates a low quality first alignment and sparse pointcloud  and a smoothed (factor 10) mesh. Calculates then an inverse optimization of the needed images with the factor 8.
 
-### `Optimize Sparsecloud`
-Performs an iterative optimisation of the sparse cloud to retrieve the best reprojection error. The tie pointcloud will be much more reliable for all later tasks
 
 ### `Densecloud`
 Calculates a dense point cloud
@@ -148,3 +153,17 @@ Export the Tie Point Errors from the sparse pointcloud to a csv file. This means
 2. Import the GCP and align them.
 3. Start the script `Reproducibility`
 This will compute a set amount of orthomosaics (default is 5), which later can be analysed in R.
+
+## Further Readings
+
+The workflow above is strictly speaking a kind of black box. At least it is documented and you will find deeper information checking the scripts and reading the corresponding paper from [Ludwig et al. 2020](https://doi.org/10.3390/rs12223831). The optimizations and experiences that are imparted in this course focus mainly on low and medium mountain forest areas. The presets and parameters are tailored to this and will not be optimal in every other setting. 
+
+Even more it makes sense to actively deal with a complex tool like Metashape. The resources below will give you an update on different workflows for different settings. They also describe the intensive interactive use of tools and steps that were only partially programmed in the scripts of `Ortho+`.  
+
+And please note that you will almost certainly find different and contradictory suggestions than the ones given in the course. Just try it out and feel free to report your findings in the comments below. 
+
+* [Aerial data processing - Orthomosaic&DEM generation](https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation)
+* [USGS- Processing Coastal Imagery With Agisoft](https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf)
+* [Metashape 1.8 User Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf)
+
+

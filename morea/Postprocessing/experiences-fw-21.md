@@ -9,6 +9,7 @@ morea_sort_order: 21
 morea_labels:
  - advanced
  - supplement
+ - optional 
 ---
 
 ## Georeferencing of imagery without GPS data
@@ -21,8 +22,8 @@ This documents provides a basic workflow of the georeferencing process of Solo/P
   - high quality point cloud generation
   - high quality orthoimages generation
   - high quality dense point clouds  
-  - importing and exporting data from photoscan 
-  - Agisoft Photoscan scripting
+  - importing and exporting data from Metashape 
+  - Agisoft Metashape scripting
   - interaction with the uavRst package
 
 {% include note.html content="This is a preliminary draft. Please note that significant changes can still be expected" %}
@@ -150,5 +151,5 @@ python  ~/dev/R/uavRst/inst/python/geotag_from_gpx.py.clean_task.gpx
 ```
 
 
-You are done with the preparation now. Time to start Photoscan.
+You are done with the preparation now. Time to start Metashape
 

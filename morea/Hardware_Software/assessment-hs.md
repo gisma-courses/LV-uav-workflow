@@ -10,7 +10,7 @@ morea_start_date: "2022-05-04T23:59"
 morea_end_date: "2022-05-04T23:59"
 morea_sort_order: 05
 morea_labels:
- - delivery
+ - self-check
 
 ---
 

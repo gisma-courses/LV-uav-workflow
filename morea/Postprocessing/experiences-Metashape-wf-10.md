@@ -14,9 +14,9 @@ morea_labels:
 # Agisoft Metashape basic workflow 
 
 Even if both criteria open source and free software are missing one have to admit that 
-Agisoft's Photoscan/Metashape is a good tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an  straightforward GUI and in Question of hardware requests and cost efficiency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. We will cover this on a more specialized article [[micrors:agisoft:photoscanunderthehood|Photoscan and UAV Imagery]]. 
+Agisoft's Metashape is a good tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an  straightforward GUI and in Question of hardware requests and cost efficiency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. 
 
-## Add the photos to Photoscan 
+## Add the photos to Metashape 
 Let's start to follow the white rabbit.
 
 After loading the images into Agisofts Metashape the aerial images are lining up along the flight track as you can see below.
@@ -81,7 +81,7 @@ Before starting the gradual selection process right-click your current chunk in 
   2. Next choose the `Reprojection Error` option. Set it to `< 1` and again delete the selected points then click that wizard’s wand icon again. 
   3. Finally check the `Projection Accuracy`  try to delete the poorest `10 %` of the points.
   
-For more details have a look at e.g.  [dinosaurpaleo](https://dinosaurpalaeo.wordpress.com/2015/10/11/photogrammetry-tutorial-11-how-to-handle-a-project-in-agisoft-photoscan/) tutorial **TODO**.  
+For more details have a look at e.g.  [dinosaurpaleo](https://dinosaurpalaeo.wordpress.com/2015/10/11/photogrammetry-tutorial-11-how-to-handle-a-project-in-agisoft-photoscan/) tutorial .  
 
 {% include note.html content=" 
  
@@ -115,13 +115,11 @@ Et voila - Finally you derive an orthoimage of fairly high quality
 ## Creating high quality dense point clouds 
 
 
-Hence micro-remote sensing is usually restricted to a single (visible) layer the temporal scale this layer can be observed by drones is the advantage compared to high-cost and temporal limited LIDAR data sets. Using photoscan the dense point cloud might still be classified in different layers depending of the structure of the observed area and structure (i.e a deciduous forest can be observed in winter for ground models and tree structure while summer flights will deliver good surface models). 
+Hence micro-remote sensing is usually restricted to a single (visible) layer the temporal scale this layer can be observed by drones is the advantage compared to high-cost and temporal limited LIDAR data sets. Using Metashape the dense point cloud might still be classified in different layers depending of the structure of the observed area and structure (i.e a deciduous forest can be observed in winter for ground models and tree structure while summer flights will deliver good surface models). 
 
 Additionally dense clouds can be exported in several formats to be used in further processing in QGIS, SAGa or 3D modelbuilder software. So it is easy to benefit from already existing and established workflows which were developed for LIDAR oder 3D modeling data. 
 
 The settings of the dense point cloud calculation determines quality and necessary calculation time. Hereby a higher quality results in longer calculation time. Aggressive filtering ignores small structures and runs fastest while moderate and mild filtering consider smaller structures on the cost of longer calculation time.
 
-The dense point cloud can be calculated as soon the pictures are aligned. Even if the dense cloud comes second in the workflow dropdown menu in Photoscan it should be considered to calculate the orthoimage first as the dense point cloud will take the longest time of all processes. 
-
-
+The dense point cloud can be calculated as soon the pictures are aligned. Even if the dense cloud comes second in the workflow dropdown menu in Metashape it should be considered to calculate the orthoimage first as the dense point cloud will take the longest time of all processes. 
 
