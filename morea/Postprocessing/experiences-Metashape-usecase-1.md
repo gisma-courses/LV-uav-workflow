@@ -87,12 +87,20 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
 
 
  <br>
+#### 3D Point Cloud Model 
+
+In the lower area you will find the Point Cloud Model (reduced by factor 30).  Please note that this is the it based on the the standard workflow and you see a reduced version due to storage limitations. 
+ <br>
+<iframe src="cesium_ortho_3.html" height="850px" width="100%" style="border:none;"></iframe>
+*Even in the reduced version of the point cloud you are getting a very good impression of the 3D structure of vegetation and shoreline etc.*
+
+
 #### 3D Model 
 
 In the lower area you will find the shaded 3D mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. 
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
-*The problems of missing vertical data are clearly visible in the "tidal waves" of the Lahn near the shore. The challenge is to adequately fill the extreme height differences (related to the flight altitude) of the observed objects with image data. The 3D representation would be more realistic and correct if (1) more horizontally acquired data from a flight altitude < 30 m were available or (2) more complex methods for filtering and calculating the texture were applied. The calculation of a dense point cloud would also be beneficial here.*
+
 
 For the display in Cesium, the mesh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
 
