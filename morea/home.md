@@ -16,11 +16,11 @@ This course is designed for students of all levels who have a basic knowledge of
 
 ## Didactic Concept
 
- The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-uav-workflow/modules) to be worked through, each lasting approximately 2-3 weeks. Each module has the following structure:
+ The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-uav-workflow/modules) to be worked through, each lasting approximately 3 weeks. Each module has the following structure:
 
 
   * [Outcomes](/LV-uav-workflow/outcomes) - what is the learning objective.
-  * [Readings](/LV-uav-workflow/readings) - all kind of ressources.
+  * [Readings](/LV-uav-workflow/readings) - all kind of reading ressources.
   * [Experiences](/LV-uav-workflow/experiences) - exercises & tutorials to practically master the learning goals.
   * [Assessments](/LV-uav-workflow/assessments) - self assessment to get an idea how you peform.
   
