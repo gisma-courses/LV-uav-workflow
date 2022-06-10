@@ -89,11 +89,17 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
  <br>
 #### 3D Point Cloud Model 
 
-In the lower area you will find the Point Cloud Model (reduced by factor 30).  Please note that this is the it based on the the standard workflow and you see a reduced version due to storage limitations. 
+In the lower area you will find the Point Cloud Model (reduced by factor 30) as a cesium instance.  Please note that this is the it based on the the standard workflow and you see a reduced version due to storage limitations. 
  <br>
 <iframe src="cesium_ortho_3.html" height="850px" width="100%" style="border:none;"></iframe>
 *Even in the reduced version of the point cloud you are getting a very good impression of the 3D structure of vegetation and shoreline etc.*
 
+Same Point Cloud Model (reduced by factor 30) as a sketchfab instance. 
+
+
+<div class="sketchfab-embed-wrapper"> <iframe title="Gisselberger Spannweite" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="1280" height="1024" src="https://sketchfab.com/models/c38b78f3c0b04102abe46f92cb5c4fd9/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/gisselberger-spannweite-c38b78f3c0b04102abe46f92cb5c4fd9?utm_medium=embed&utm_campaign=share-popup&utm_content=c38b78f3c0b04102abe46f92cb5c4fd9" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Gisselberger Spannweite </a> by <a href="https://sketchfab.com/gisma?utm_medium=embed&utm_campaign=share-popup&utm_content=c38b78f3c0b04102abe46f92cb5c4fd9" target="_blank" style="font-weight: bold; color: #1CAAD9;"> gisma </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=c38b78f3c0b04102abe46f92cb5c4fd9" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+
+*Depending on the 3D engine there are a lot more of capabilities*
 
 #### 3D Model 
 
