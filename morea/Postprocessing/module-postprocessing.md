@@ -3,6 +3,7 @@ title: "Creating High Quality Products"
 morea_type: module
 published: true
 morea_coming_soon: false
+morea_summary: "The processing of aerial drone imagery is a complex procedure which is supported by both open source and closed source software."
 morea_id: module-postprocessing
 morea_experiences:
   - experience-metashape-wf-10
@@ -19,7 +20,8 @@ morea_readings:
 
 morea_assessments:    
   - pp-assessment
-
+morea_outcomes: 
+- outcome-pp
   
 morea_icon_url: /morea/Postprocessing/odm.png
 morea_start_date: "2022-06-08"
@@ -31,5 +33,4 @@ morea_sort_order: 10
 
 ---
 
- The processing of aerial drone imagery is a complex procedure which is supported by both open source and closed source software.
-
+ 

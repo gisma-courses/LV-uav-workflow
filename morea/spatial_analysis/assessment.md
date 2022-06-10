@@ -1,7 +1,7 @@
 ---
 title: "Creating Orthoimages and Point Clouds"
 published: true
-morea_id: pp-assessment
+morea_id: assessment-spat-analysis
 morea_summary: ""
 morea_url: 
 morea_type: assessment
@@ -15,9 +15,10 @@ morea_labels:
 {% include ass.html content="
 You can use the provided sample data or your own project data:<br><br>
 
-- Create the first orthoimage with 1 cm or 5 cm ground scan resolution (GSD) according to the contents of this module. <br>
-- Perform a visual inspection of the image. Are you satisfied? <br>
-- Compute a 3D dense point cloud.<br>
--Compute a mesh with texture as close to reality as possible.<br>
+- Create OBIA Classification of the Orthoimage you have produced. <br>
+- Write a short report and discuss the results <br>
+and/or
+- Classify the  3D dense point cloud in ground data and vegetation data.<br>
+- Estimate the biomass volume<br>
 - Prepare a short presentation (preferably online) with your main results and findings.
 "%}

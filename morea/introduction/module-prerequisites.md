@@ -3,8 +3,9 @@ title: "UAV based remote Sensing - A Brief Overview"
 published: true
 morea_coming_soon: false
 morea_id: module-introduction
+morea_summary: "A brief overview of UAV-based in environmental research "
 morea_outcomes:
-  - outcome-hs
+  - outcome
 morea_readings:
   - reading-1
   - reading-2
@@ -24,4 +25,3 @@ morea_labels:
 morea_sort_order: 4
 ---
 
-A brief overview of UAV-based environmental data acquisition

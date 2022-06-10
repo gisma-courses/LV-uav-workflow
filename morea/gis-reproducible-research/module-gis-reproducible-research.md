@@ -4,6 +4,10 @@ published: true
 morea_coming_soon: false
 morea_id: gis-reproducible-research
 morea_outcomes:
+- outcome-rr
+morea_assessments:   
+- assessment-rr
+morea_summary: "The importance of reproducible research is rooted in the self-commitment to good scientific practice and rests on the foundation of transparent and repeatable research work. No matter what type of documentation is used, including websites, blogs, or gray literature, it must meet these criteria."
 morea_readings:
  - reading-gis-reproducible-research-intro
  - reading-screencast-gis-reproducible-research-4
@@ -21,4 +25,3 @@ morea_start_date: "2022-04-20"
 morea_end_date: "2021-07-13"
 
 ---
-The importance of reproducible research is rooted in the self-commitment to good scientific practice and rests on the foundation of transparent and repeatable research work. No matter what type of documentation is used, including websites, blogs, or gray literature, it must meet these criteria.

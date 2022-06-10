@@ -14,8 +14,8 @@ morea_labels:
  
  
 {% include ass.html content="
-- Please read the articles crosswise and identify one positive and one negative aha effect from this research.<br><br>
-- List the top 3 content issues that sparked your greatest interest<br><br>
-- Prepare this for a short summary with some explanation reasoning for the upcoming session.
-
+- Please read at least 2 of the articles in their entirety and the rest in a cursory manner. <br>
+- Name the top three insights that were most important to you<br>
+- From the overview you have acquired, name the three topics of most interest to you<br>
+- Select one article and prepare a short summary (max 0.5-1 page) using the peer review [template](https://plos.org/resource/peer-review-template/) of PLOS. Upload this summary to [Ilias](https://ilias.uni-marburg.de/).
 "%}
