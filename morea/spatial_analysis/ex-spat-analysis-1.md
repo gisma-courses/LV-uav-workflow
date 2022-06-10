@@ -38,9 +38,9 @@ In the following step by step guide an OBIA aproach with QGIS and the OTB Toolbo
 
 If you need to learn how to digitize with QGIS you may follow this [tutorial](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we will only digitize Points and not polygons. 
 {% include cool.html content="
- Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfartable to digitize training points of one class in series.
+ Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfortable to digitize training points of one class in series.
 "%}
-For reference you may <a href="obia.zip" >Download</a> the basic data.
+For reference you may <a href="obia.zip" >Download</a> the basic data. In Addition you may download the <a href="obia1.model3">OBIA-workflow</a> as an `QGIS-Model`. You can add this to your QGIS project with pushing the first icon "Models" ![](images/process.png)  on the processing sidebar and choose `Add Model to Toolbox`
 
 Create a point vector file and digitize the following classes:
 
