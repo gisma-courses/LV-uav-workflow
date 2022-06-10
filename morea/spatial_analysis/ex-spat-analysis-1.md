@@ -56,9 +56,16 @@ Create a point vector file and digitize the following classes:
 |other|8|
 
 
-Provide at minimum 10 widely spred sampling points.
+Provide at minimum 10 widely spread sampling points.
 
 Save this file naming it `sample.gpgk`.
+
+{% include kim.html content="
+ Here, the training data is digitized on the screen (as is very often the case) using the god's eye method as an example. For a rough classification into the selected classes, this is of course useful and sufficiently accurate.
+<br>
+<br>
+However, please keep in mind that these training samples are usually collected in the field. This means that by means of a GPS or exact map work, the positions and their affiliations are collected and entered into a corresponding table. Often this is accompanied by a vegetation survey, soil survey or limnological or other surveys.  
+"%}
 
 ### Step-2 Segmentation
 
@@ -74,6 +81,7 @@ In the search field of the `Processing Toolbox`, type *segmentation* and double 
 * Set `Minimum object size` in pixels to **200** 
 * Name the `Output vector file`  as  **segments-meanshift.shp**. 
 * Push `Run`.
+
 <br>
 {% include medium-img.html url="obia1.png" %} 
 <br>
@@ -91,6 +99,8 @@ Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalS
 <br>
 {% include small-img.html url="obia2-zonal.png" %} 
 <br>
+
+
 
 
 ## Step-4 Joining training data with segements
