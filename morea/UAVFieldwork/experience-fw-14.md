@@ -15,7 +15,13 @@ morea_labels:
 
 Following the new [EU Drone Regulation 2021](https://www.easa.europa.eu/domains/civil-drones) (2019/947 and 2019/945), Germany now also adopts the EU requirements and implements them into German law (Luftverkehrs-Ordnung (LuftVO)). This means for all drone pilots and UAS operators changes after the introduction of the EU Drone Regulation 2021 which are given in [LuftVO §21h](https://www.gesetze-im-internet.de/luftvo_2015/__21h.html). 
 
-The following compilation attempts to compile the central rules for the course context. - as always without guarantee
+You will find the most important rules (German only) in the below [cheat sheet](https://www.bmvi.de/SharedDocs/DE/Anlage/LF/drohnen-flyer-regelungen-eu-und-deutschland.pdf?__blob=publicationFile) of the Bundesministerium für Digitales und Verkehr.
+
+<img src="images/cheat.png" alt="" width="1280px"/>
+
+The following textual compile the central rules you may not be sure about checking the above cheat sheet with respect to the course context. 
+
+Please note: The pilot is responsible - always!
 
 ## Registration operator of the UAV
 
