@@ -30,6 +30,28 @@ The segementation process is algorithm-dependent but looks iteratively for simil
 <br>
 {% include youtube.html id="fX2UpOwoYLk" %}
 <br>
+
+# General Worflow
+
+The OBIA classification example is very typical of the hand-crafted process of such operations using a software package. It basically consists of the following steps:
+
+1. data collection (orthoimage, training data).
+1. generation of spatial segmentsbased on the 
+2. extraction of suitable description parameters 
+4. model training 
+5. classification of the input data set 
+
+Technically often intermediate steps have to be taken or even more often the sequence is not strictly linear because intermediate results are used repeatedly in different steps. The following figure shows the process described below visualized as a graphical model that can be used in QGIS as a convenience tool. 
+<p align="center"><img src="images/obia1-model3.png" alt="OBIA classification Workflow for Orthoimages" width="1000px" /></p>
+
+*OBIA classification Workflow for Orthoimages*
+
+For reference you may <a href="obia.zip" >Download</a> the basic data. In Addition you may download the upper <a href="obia1.model3">OBIA-workflow</a> as an `QGIS-Model`. You can add this to your QGIS project with pushing the first icon "Models" ![](images/process.png)  on the processing sidebar and choose `Add Model to Toolbox`. Please note that is running with fixed default values. For modifying it you need to right-click on th emodel and choose `Edit Model`.
+
+
+
+
+
 # Step by step tutorial 
 
 In the following step by step guide an OBIA aproach with QGIS and the OTB Toolbox is carried out as an template example. There are many segmentation algorithms and integrated classification methods. The Mean-shift method used here and the subsequent training with Support Vector Machine is a robust and common method. Especially the extension of the feature space (here called `Range Radius`) and the search space (`Spatial Radius`) as well as the size of the segmented objects (`Minimum Region size`) is crucial for a satisfying result. The principle is transferable to the different forms of the OBIA and despite abundant literature and some good instructions it is a free empirical game.
@@ -40,7 +62,7 @@ If you need to learn how to digitize with QGIS you may follow this [tutorial](ht
 {% include cool.html content="
  Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfortable to digitize training points of one class in series.
 "%}
-For reference you may <a href="obia.zip" >Download</a> the basic data. In Addition you may download the <a href="obia1.model3">OBIA-workflow</a> as an `QGIS-Model`. You can add this to your QGIS project with pushing the first icon "Models" ![](images/process.png)  on the processing sidebar and choose `Add Model to Toolbox`
+
 
 Create a point vector file and digitize the following classes:
 
