@@ -709,7 +709,7 @@
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="otb:VectorClassifier_1"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="Filename Classified Image">
+        <Option type="Map" name="Filename Classified Segmentation File">
           <Option type="QString" name="child_id" value="otb:VectorClassifier_1"/>
           <Option type="QString" name="color" value=""/>
           <Option type="Map" name="comment">
@@ -722,14 +722,14 @@
             <Option type="bool" name="outputs_collapsed" value="true"/>
             <Option type="bool" name="parameters_collapsed" value="true"/>
           </Option>
-          <Option type="QString" name="component_description" value="Filename Classified Image"/>
+          <Option type="QString" name="component_description" value="Filename Classified Segmentation File"/>
           <Option type="double" name="component_height" value="47.760221493007066"/>
           <Option type="double" name="component_pos_x" value="345"/>
-          <Option type="double" name="component_pos_y" value="623.8801107465035"/>
+          <Option type="double" name="component_pos_y" value="653.8801107465035"/>
           <Option type="double" name="component_width" value="150"/>
           <Option type="invalid" name="default_value"/>
           <Option type="bool" name="mandatory" value="false"/>
-          <Option type="QString" name="name" value="Filename Classified Image"/>
+          <Option type="QString" name="name" value="Filename Classified Segmentation File"/>
           <Option type="QString" name="output_name" value="out"/>
           <Option type="bool" name="outputs_collapsed" value="true"/>
           <Option type="bool" name="parameters_collapsed" value="true"/>
@@ -940,16 +940,16 @@
       <Option type="QString" name="parameter_type" value="fileDestination"/>
       <Option type="bool" name="supports_non_file_outputs" value="false"/>
     </Option>
-    <Option type="Map" name="otb:VectorClassifier_1:Filename Classified Image">
+    <Option type="Map" name="otb:VectorClassifier_1:Filename Classified Segmentation File">
       <Option type="bool" name="create_by_default" value="true"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option type="QString" name="description" value="Filename Classified Image"/>
+      <Option type="QString" name="description" value="Filename Classified Segmentation File"/>
       <Option type="QString" name="file_filter" value="All files (*.*)"/>
       <Option type="int" name="flags" value="8"/>
       <Option type="QString" name="help" value=""/>
       <Option name="metadata"/>
-      <Option type="QString" name="name" value="otb:VectorClassifier_1:Filename Classified Image"/>
+      <Option type="QString" name="name" value="otb:VectorClassifier_1:Filename Classified Segmentation File"/>
       <Option type="QString" name="parameter_type" value="fileDestination"/>
       <Option type="bool" name="supports_non_file_outputs" value="false"/>
     </Option>
