@@ -26,7 +26,11 @@ The segementation process is algorithm-dependent but looks iteratively for simil
  
 
 <br>
+
 # The complete OBIA Workflow in a YouTube nutshell
+
+For all who prefer the workflow as video.
+
 <br>
 {% include youtube.html id="fX2UpOwoYLk" %}
 <br>
