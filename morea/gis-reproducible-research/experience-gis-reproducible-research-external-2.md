@@ -8,7 +8,7 @@ morea_type: experience
 morea_sort_order: 1
 morea_labels:
  - supplement
- - screencast 5min/15min/6min
+ - recommended
  - optional
 ---
 

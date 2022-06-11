@@ -7,8 +7,7 @@ morea_type: experience
 morea_sort_order: 1
 morea_labels:
  - supplement
- - screencast 5min/15min/6min
- - optional
+ - recommended
 ---
 
 Sketchfab is an provider for 3D Webhosting. It is particulary easy to use. You just need to upload your pointcloud and will be led through some steps asking you for the settings. In the end you can distribute your point cloud as below. 
