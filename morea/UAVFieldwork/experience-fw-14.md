@@ -19,10 +19,14 @@ You will find the most important rules (German only) in the below [cheat sheet](
 
 <img src="images/cheat.png" alt="" width="1280px"/>
 
-The following textual compile the central rules you may not be sure about checking the above cheat sheet with respect to the course context. 
+Since there is no English version of the cheat sheet, the following text lists the above rules that are relevant for the course framework. 
 
-Please note: The pilot is responsible - always!
+{% include note.html content=" 
 
+Remember: The pilot is responsible - always!
+"%}
+
+<br>
 ## Registration operator of the UAV
 
 Registration of the drone operator is required within the EU in the respective country. In Germany, this registration is done online at the [Luftfahrtbundesamt](https://uas-registration.lba-openuav.de/#/registration/uasOperator) (LBA).  Additional registration of the drone itself is not required.  The eID (UAS operator ID) assigned during registration must be visibly attached to each owned drone.
