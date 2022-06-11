@@ -24,7 +24,7 @@ This course is designed for students of all levels who have a basic knowledge of
   * [Experiences](/LV-uav-workflow/experiences) - exercises & tutorials to practically master the learning goals.
   * [Assessments](/LV-uav-workflow/assessments) - self assessment to get an idea how you perform.
   
-The `labels` are intended to provide a quick overview of the content and meaning of the individual units within a module. The `mandatory` units are the minimum requirements for the course. The other resources are mainly used for internal differentiation in case of higher interest and as a starting point for independent deepening.
+The `labels` are intended to provide a quick overview of the content and meaning of the individual units within a module. The `mandatory` units are the minimum requirements for the course. The `recommended` should be taken into account and the other resources are mainly used for internal differentiation in case of higher interest and as a starting point for independent deepening.
   
 ## Instructor
 
