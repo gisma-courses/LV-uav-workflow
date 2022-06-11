@@ -16,8 +16,7 @@ morea_experiences:
 - experience-gis-reproducible-research-external-1
 - experience-gis-reproducible-research-external-2
 - experience-gis-reproducible-research-blogs
-- experience-gis-reproducible-research-r
-- experience-gis-reproducible-research-bd-1
+
 morea_icon_url: /morea/gis-reproducible-research/spatial-r-r.png
 morea_type: module
 morea_sort_order: 30

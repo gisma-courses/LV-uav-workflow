@@ -9,14 +9,32 @@ morea_sort_order: 1
 morea_labels:
  - basic
  - optional
+ - preliminary
 ---
 
 # Blogging portals for project reports and more
 
-If you are not familiar with github, you can find a variety of "free" blogging portals that you can easily use. Many of them come with ads in the free version.  The following links to popular providers represent a good selection. Simply create a Gogole account and off you go
+# GitHub related
 
-* [hpage](https://de.hpage.com/)
-* [jimdo](https://www.jimdo.com/de/preise/website/)
-* [netlify](https://www.netlify.com/pricing/)
-* [wix](https://www.wix.com/)
-* [blogger](https://www.blogger.com/)
+My favorites are on github for various reasons.
+* free of charge
+* version control
+* automated workflows
+* deep integration with all types of IT related work
+
+There are numerous approaches and all of them are interesting. One of the best also for integrating Word `.docx` documents is [fastpages](https://github.com/fastai/fastpages). The setup is a bit of tinkering but excellently described after that it works like a charm. 
+
+If you want a R focused workflow you can follow the [Academic writing made easy](https://gisma-courses.github.io/gi-modules/post/2021-11-16-making-of-academic-websites/) be followed by blogdown and Hugo. Great for automated documentation with R a bit bulky for simple web pages.
+
+A very straightforward way is using the [fast-template](https://www.fast.ai/2020/01/16/fast_template/) package. 
+
+## Non Github
+
+If you are not familiar with GitHub, you can find a variety of "free" blogging portals that you can easily use. Many of them come with ads in the free version.  The following links to popular providers represent a good selection. Simply create any kind of account for registration  account and off you go...
+
+* [hpage](https://de.hpage.com/) (hosted in Germany according to the General Data Protection Regulation)
+* [wix](https://www.wix.com/) fancy, very easy to use but with commercial advertising in the free version
+* [netlify](https://www.netlify.com/pricing/) fancy, medium easy 
+* [blogger](https://www.blogger.com/) Google ecosystem easy to use, high integration with Google see also [Larry Ludwigs Review](https://larryludwig.com/blogger-review/)
+
+All of this suggestions are providing you free web space and a wide reach for those who are interested. And of course there are much more really cool possibilities
