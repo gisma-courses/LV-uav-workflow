@@ -19,7 +19,7 @@ You will find the most important rules (German only) in the below [cheat sheet](
 
 <img src="images/cheat.png" alt="" width="1280px"/>
 
-Since there is no English version of the cheat sheet, the following text lists the above rules that are relevant for the course framework. 
+Since there is no English version of the cheat sheet, the following text lists the above rules that are relevant for the course framework. However you will find all relevant information at the central internet platform [DIPUL](https://www.dipul.de/homepage/de/) (and seriously you can switch to sign language and simplified german but not to english...).
 
 {% include note.html content=" 
 
