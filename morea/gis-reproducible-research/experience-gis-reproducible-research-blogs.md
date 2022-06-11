@@ -8,8 +8,8 @@ morea_type: experience
 morea_sort_order: 1
 morea_labels:
  - basic
- - optional
- - preliminary
+ - recommended
+
 ---
 
 # Blogging portals for project reports and more
