@@ -1,5 +1,5 @@
 ---
-title: "Blogging for documentation of scientific work"
+title: "Scientific writing websites"
 published: true
 morea_id: experience-gis-reproducible-research-blogs
 morea_summary: "Online Blogs for deploying studies and more"
