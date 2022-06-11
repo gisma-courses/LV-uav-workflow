@@ -17,7 +17,9 @@ Following the new [EU Drone Regulation 2021](https://www.easa.europa.eu/domains/
 
 You will find the most important rules (German only) in the below [cheat sheet](https://www.bmvi.de/SharedDocs/DE/Anlage/LF/drohnen-flyer-regelungen-eu-und-deutschland.pdf?__blob=publicationFile) of the Bundesministerium für Digitales und Verkehr.
 
-<img src="images/cheat.png" alt="" width="1280px"/>
+<img src="images/cheat.png" alt="cheat sheet" width="1280px"/>
+*(Copyright) Bundesministerium für Digitales und Verkehr.[Online](https://www.bmvi.de/SharedDocs/DE/Anlage/LF/drohnen-flyer-regelungen-eu-und-deutschland.pdf?__blob=publicationFile)*
+
 
 Since there is no English version of the cheat sheet, the following text lists the above rules that are relevant for the course framework. However you will find all relevant information at the central internet platform [DIPUL](https://www.dipul.de/homepage/de/) (and seriously you can switch to sign language and simplified german but not to english...).
 
