@@ -7,8 +7,8 @@ morea_summary: "The basic idea is to provide an easy to use workflow for control
 morea_outcomes:
 - outcome-fw
 morea_readings:
-  - reading-fw-8
   - reading-fw-7
+  - reading-fw-8
   - reading-fw-6  
 
 morea_experiences:
