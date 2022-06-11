@@ -4,11 +4,12 @@ morea_type: module
 published: true
 morea_coming_soon: false
 morea_experiences:
-- read-spat-analysis-000
+- ex-spat-analysis-0
 - ex-spat-analysis-1
-- read-spat-analysis-00
 - ex-spat-analysis-3
 morea_readings:
+- read-spat-analysis-000
+- read-spat-analysis-00
 - read-spat-analysis-0
 - read-spat-analysis-3
 - read-spat-analysis-2

@@ -1,5 +1,5 @@
 ---
-title: "OBIA Workflow QGIS"
+title: "OBIA Workflow for QGIS step by step"
 toc: true
 toc_label: Inhalt
 published: true
@@ -25,17 +25,8 @@ Especially with the spatially extreme and spectrally minimal resolution UAV imag
 The segementation process is algorithm-dependent but looks iteratively for similarities in space, structure and channel dimensions for grouping neighboring and similar pixels into objects. This segements are clasiefied in a next step using supervised training data.
  
 
-<br>
 
-# The complete OBIA Workflow in a YouTube nutshell
-
-For all who prefer the workflow as video.
-
-<br>
-{% include youtube.html id="fX2UpOwoYLk" %}
-<br>
-
-# General Worflow
+# General Workflow
 
 The OBIA classification example is very typical of the hand-crafted process of such operations using a software package. It basically consists of the following steps:
 
@@ -184,3 +175,4 @@ You will see partly predominantly excellent classification. However, there are a
 * What could be the reason for that?
 * What is a weakness of this approach?
 * Any suggestion to improve?
+
