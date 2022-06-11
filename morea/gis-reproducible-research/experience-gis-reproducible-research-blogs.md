@@ -14,7 +14,7 @@ morea_labels:
 
 # Blogging portals for project reports and more
 
-# GitHub related
+#### GitHub related
 
 My favorites are on github for various reasons.
 * free of charge
@@ -22,13 +22,13 @@ My favorites are on github for various reasons.
 * automated workflows
 * deep integration with all types of IT related work
 
-There are numerous approaches and all of them are interesting. One of the best also for integrating Word `.docx` documents is [fastpages](https://github.com/fastai/fastpages). The setup is a bit of tinkering but excellently described after that it works like a charm. 
+There are numerous approaches and all of them are interesting:
 
-If you want a R focused workflow you can follow the [Academic writing made easy](https://gisma-courses.github.io/gi-modules/post/2021-11-16-making-of-academic-websites/) be followed by blogdown and Hugo. Great for automated documentation with R a bit bulky for simple web pages.
+* One of the best because you just can integrate your Word `.docx` documents is [fastpages](https://github.com/fastai/fastpages). The setup is a bit of tinkering but excellently described after that it [works](https://gisma-courses.github.io/gisma-pages/) like a charm. 
+* An `R`-focused workflow is provided  by blogdown and Hugo. Follow the instructions of [Academic writing made easy](https://gisma-courses.github.io/gi-modules/post/2021-11-16-making-of-academic-websites/) be followed. It is great for automated documentation with R a bit bulky for *"simple"* blogging pages.
+* A very straightforward way is using the [fast-template](https://www.fast.ai/2020/01/16/fast_template/) package. 
 
-A very straightforward way is using the [fast-template](https://www.fast.ai/2020/01/16/fast_template/) package. 
-
-## Non Github
+#### Non Github related
 
 If you are not familiar with GitHub, you can find a variety of "free" blogging portals that you can easily use. Many of them come with ads in the free version.  The following links to popular providers represent a good selection. Simply create any kind of account for registration  account and off you go...
 
