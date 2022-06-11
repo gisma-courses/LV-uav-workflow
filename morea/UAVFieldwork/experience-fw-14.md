@@ -23,7 +23,7 @@ Since there is no English version of the cheat sheet, the following text lists t
 
 {% include note.html content=" 
 
-Remember: The pilot is responsible - always!
+However - The pilot is responsible, always!
 "%}
 
 <br>
