@@ -17,6 +17,7 @@ morea_labels:
 ---
 
 # Workflow in R
+There is a complete advanced course dealing with deep learning an AI in R. Below you will find the necessary parts for deep learning only. 
 
 <iframe width="1000" height="800" scrolling="no" src="https://geomoer.github.io/geoAI//unit01/unit01-04_setup_working_environment.html" frameborder="0" allowfullscreen></iframe>
 
