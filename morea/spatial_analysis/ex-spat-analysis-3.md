@@ -25,6 +25,4 @@ morea_labels:
 <iframe width="1000" height="800" scrolling="no" src="https://geomoer.github.io/geoAI//unit02/unit02-04_rs.html" frameborder="0" allowfullscreen></iframe>
 
 
-
-## The complete OBIA Workflow 
-{% include youtube.html id="fX2UpOwoYLk" %}
+<iframe width="1000" height="800" scrolling="no" src="https://geomoer.github.io/geoAI//unit04/unit04-00-00_overview.html" frameborder="0" allowfullscreen></iframe>
