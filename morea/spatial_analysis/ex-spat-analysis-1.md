@@ -11,7 +11,7 @@ morea_sort_order: 11
 morea_labels:
  - basic
  - mandatory 
- - YouTube 18min
+
 
 
 ---
