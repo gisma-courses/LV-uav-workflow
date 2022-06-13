@@ -33,7 +33,7 @@ You will end with something looking like the following:
 
 <img src="images/gitdesk.png" alt="" width="600px"/>
 
-Then, to warm up, run the `desk tutorial`
+Then, to warm up, run the `Create Tutorial Repository`. It will teach you all the essentials dealing with git and GitHub
 
 ## Avanced GitHub Issues and Pull Requests
 
