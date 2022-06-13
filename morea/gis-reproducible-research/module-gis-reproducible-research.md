@@ -14,6 +14,7 @@ morea_readings:
  - reading-screencast-gis-reproducible-research-5
 morea_experiences:
 - experience-gis-reproducible-research-blogs
+- experience-gis-reproducible-research-github
 - experience-gis-reproducible-research-external-1
 - experience-gis-reproducible-research-external-2
 
