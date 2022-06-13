@@ -30,8 +30,8 @@ However, if you want to log in manually, go to the [registration form](https://g
 During the installation, you need to allow GitHub Desktop to manage your GitHub Cloud repos. So please follow the instructions and grant the suggested permissions. At the end, you can change your email settings, etc. It is recommended to leave them as default.
 
 You will end with something looking like the following:
+![](images/gitdesk.png)
 
-<img src="images/gitdesk.png" alt="" width="600px"/>
 
 Then, to warm up, run the `Create Tutorial Repository`. It will teach you all the essentials dealing with git and GitHub
 
