@@ -180,6 +180,7 @@ fp = makeAP(projectDir = "~/uav",
         demFn = demFn,
         maxFlightTime = 25,
         maxwaypoints = 250,
+        cameraType ="dji_min2",
         uavType = "dji_csv")                 
 ```
 
