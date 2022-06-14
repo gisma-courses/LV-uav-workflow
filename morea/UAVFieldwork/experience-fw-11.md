@@ -135,11 +135,12 @@ install.packages("uavRmp")
 ```
 
 
-To install the cutting edge (if so) version you should take it from `github`.  You need to have installed the `devtools` package.
+To install the cutting edge (highly recommended) version you should take it from `github`.  You need to have installed the `devtools` package. Please also install the latest GitHub version  of the utility package `link2GI`.
 
 ``` R
 install.packages("devtools")
 devtools::install_github("gisma/uavRmp", ref = "master")
+devtools::install_github("r-spatial/link2GI")
 
 ```
 
@@ -163,7 +164,8 @@ Please check the folder structure according to the figure below.
 * *demFn = filname* set path and file name to the used DEM 
 * *surveyArea = fa* set path and file name of the QGroundControl flight plan
 * *maxFlightTime = 25* set the maximum estimated lifetime of the battery in minutes
-* *maxwaypoints = 250* set the number of allowed way points in one control file (older DJIs /Litchi were constrained by 99 way points)
+* *maxwaypoints = 250* set the number of allowed way points in one control file (older DJIs /Litchi were constrained by 99 way points).
+Pleas note below you will use demo files from the package. To change it just put in the path and name of your DEM and planning file.
 
 ```r
 library(uavRmp)
@@ -191,7 +193,7 @@ All  of them are important even if a quick inspection of the generated objects i
 
 If you just want to convert fight plans from `GroundControl` to `Litchi` You may also use the shiny GUI:
 ```r
-library(uavRMp)
+library(uavRmp)
 library(shiny)
 runApp(system.file("shiny/plan2litchi/", "/app.R", package = "uavRmp"))
 ```
