@@ -13,6 +13,8 @@ morea_labels:
  
  
 {% include ass.html content="
-- Follow the instructions module instructions and develop an applicable flight plan, taking into account legal restrictions, and upload it to the cloud in Litchi format. Choose the northern part of the 'Giesselberger Spannweite' with a maximum flight time of 15 minutes <br><br>
+- Based on this module, plan a reasonable suitable flight plan for what they consider an important part of the Gisselberger Spannweite (flight time max. 15 minutes).<br>
+- Take into account the legal (air law & protected goods) restrictions <br>
+- Upload their converted flight plan to the Litchi Cloud. 
 
 "%}

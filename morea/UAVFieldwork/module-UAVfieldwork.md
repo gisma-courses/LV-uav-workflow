@@ -1,15 +1,18 @@
 ---
-title: "Flight planning made easy"
+title: "Autonomous flights made easy"
 morea_type: module
 published: true
 morea_coming_soon: false
+morea_summary: "The basic idea is to provide an easy to use workflow for controlling rtf UAVs on autonomous survey missions in highly structured terrain."
 morea_outcomes:
+- outcome-fw
 morea_readings:
-  - reading-fw-8
   - reading-fw-7
+  - reading-fw-8
   - reading-fw-6  
+
 morea_experiences:
-  - experience-fw-13
+  - experience-fw-14
   - experience-fw-11
   - experience-fw-111
   - experience-fw-12
@@ -25,5 +28,3 @@ morea_sort_order: 9
 morea_labels:
 ---
 
-
-The basic idea is to provide an easy to use workflow for controlling rtf UAVs on autonomous survey missions in highly structured terrain.

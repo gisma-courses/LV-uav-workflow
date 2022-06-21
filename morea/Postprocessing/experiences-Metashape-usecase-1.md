@@ -85,16 +85,36 @@ You will find a lot of *minor* issues. The below panel addresses some of them.
 
 *The outer left crop shows typical blur effects (too much motion or vertical height differences). The center left crop shows an artifact that duplicates features (in this case the shadow of the tree), The center right crop shows typical oversampling issues (too many images on a flat spot), Finally the outer right crop shows typical distortion effects (in this case due to poor image availability at the edge of the task)*
 
+## Further Products
 
- <br>
+Besides the Orthoimage, there are of course other products that can be derived directly. The 3D dense point clouds are to be named with priority. They have at least for some questions comparable information contents to LiDAR data.  
+
+Especially for participative planning, public participation or monitoring and information projects that are relevant to the public, 3D point models and mesh grids with textures are a good choice. 
+
 #### 3D Model 
 
 In the lower area you will find the shaded 3D mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. 
  <br>
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
-*The problems of missing vertical data are clearly visible in the "tidal waves" of the Lahn near the shore. The challenge is to adequately fill the extreme height differences (related to the flight altitude) of the observed objects with image data. The 3D representation would be more realistic and correct if (1) more horizontally acquired data from a flight altitude < 30 m were available or (2) more complex methods for filtering and calculating the texture were applied. The calculation of a dense point cloud would also be beneficial here.*
+
 
 For the display in Cesium, the mesh must be manually localized and placed in all three dimensions. For this example, this has not yet been optimized, so that the 3D placement can be a little inaccurate.
+
+
+#### 3D Point Cloud Model 
+
+In the lower area you will find the Point Cloud Model (reduced by factor 30) as a cesium instance.  Please note that this is the it based on the the standard workflow and you see a reduced version due to storage limitations. 
+ <br>
+<iframe src="cesium_ortho_3.html" height="850px" width="100%" style="border:none;"></iframe>
+*Even in the reduced version of the point cloud you are getting a very good impression of the 3D structure of vegetation and shoreline etc.*
+
+Same Point Cloud Model (reduced by factor 30) as a sketchfab instance. 
+
+
+<div class="sketchfab-embed-wrapper"> <iframe title="Gisselberger Spannweite" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="1280" height="600" src="https://sketchfab.com/models/c38b78f3c0b04102abe46f92cb5c4fd9/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/gisselberger-spannweite-c38b78f3c0b04102abe46f92cb5c4fd9?utm_medium=embed&utm_campaign=share-popup&utm_content=c38b78f3c0b04102abe46f92cb5c4fd9" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Gisselberger Spannweite </a> by <a href="https://sketchfab.com/gisma?utm_medium=embed&utm_campaign=share-popup&utm_content=c38b78f3c0b04102abe46f92cb5c4fd9" target="_blank" style="font-weight: bold; color: #1CAAD9;"> gisma </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=c38b78f3c0b04102abe46f92cb5c4fd9" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+
+*Depending on the 3D engine there are a lot more of capabilities*
+
 
 # Conclusions 
 

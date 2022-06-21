@@ -40,8 +40,8 @@ This tutorial deals with the effective and safe planning of an autonomous flight
 ) Account needed.
   - [QGroundcontrol](http://qgroundcontrol.com/)
   - [Step by step tutorial](https://docs.qgroundcontrol.com/master/en/PlanView/pattern_survey.html).
-  - [Airmap ](https://app.airmap.com/) (Use it with the provided google account) easy to use application
-  - [flynex](https://app.flynex.io/) (Use it with the provided  google account) complex, professional application with a maximum of support
+  - [Airmap ](https://app.airmap.com/) (Use it with the provided Google account) easy to use application
+  - [flynex](https://app.flynex.io/) (Use it with the provided  Google account) complex, professional application with a maximum of support
 
 
 
@@ -50,13 +50,13 @@ This tutorial deals with the effective and safe planning of an autonomous flight
   1. Identify the area and digitize it
   2. Adjust the flight parameters to your needs and generate flight control files
   3. Convert and upload the mission control files either directly to your tablet/smartphone or alternatively via the `Litchi` cloud.
-  4. Make an extensive preflight check
+  4. Make an extensive pre-flight check
   5. Fly the mission
   
 ##  Aim of the tutorial 
 
 The example will introduce you to the basic usage of `QGroundcontrol` and `uavRmp`.
-The goal is to create flightplans for surveys over high relief energy surfaces/terrain to generate orthophotos and point clouds. 
+The goal is to create flight plans for surveys over high relief energy surfaces/terrain to generate orthophotos and point clouds. 
 
 ### Digitizing the survey area using Qgroundcontrol's survey feature
 We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the `QGroundcontrol` and navigate to Mission tab and open `Pattern->Survey`. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.
@@ -83,7 +83,7 @@ If you use a `Pixhawk` device you are fine now.
  
 ### Specific settings for  DJI Cameras
 
-To derive a valid planning we need to calculate the correct camera parameters. Typically camera parameters are standarized to the 35 mm full frame sensor format. The DJI Mini 2 sensors have a size of 1/2.3 inch. For an impression have a look at the below figure. Note the default setting of most of the point and shoot cameras is 16:9 - this will change the sensor size due to cutting a part of the height. 
+To derive a valid planning we need to calculate the correct camera parameters. Typically camera parameters are standardized to the 35 mm full frame sensor format. The DJI Mini 2 sensors have a size of 1/2.3 inch. For an impression have a look at the below figure. Note the default setting of most of the point and shoot cameras is 16:9 - this will change the sensor size due to cutting a part of the height. 
 
 {% include medium-img.html url="sensor_size.png" %} 
 **Real Focal Length**
@@ -101,7 +101,7 @@ rF = 24/5.6 = 4.285714
 rf = 4.3
 ```
 
-According to this the camera specs for the DJI are:
+According to this the camera specs for the DJI Mavic Mini 2 are:
 
 Image Size: 4:3: 4000×3000 
 * Sensor Width: 6.17 mm
@@ -127,7 +127,7 @@ For DJI usage you need to save this fightplan to an appropriate folder and follo
 The `R` package [`uavRmp`](https://github.com/gisma/uavRmp) tries to bridge this gap. It generates `MAVLINK` format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the `Litchi` format which can be used for DJI drones.
 ## Installation of `R` and the `uavRmp`
 
-First of all you need to install the scripting language `R` an preferably the Integrated Development Enironment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then follow the instructions at the  [`uavRmp`](https://github.com/gisma/uavRmp) homepage and install the package. Check for the most recent version. However you can install the latest stable version from `CRAN`.
+First of all you need to install the scripting language `R` an preferably the Integrated Development Environment (IDE) `Rstudio`. You will find a step by step tutorial at  [HowTo install R & RStudio](https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html). Alternatively you may use the [rig - R installation manager](https://github.com/r-lib/rig#the-r-installation-manager). Then follow the instructions at the  [`uavRmp`](https://github.com/gisma/uavRmp) homepage and install the package. Check for the most recent version. However you can install the latest stable version from `CRAN`.
 
 ``` R
 install.packages("uavRmp")
@@ -135,18 +135,19 @@ install.packages("uavRmp")
 ```
 
 
-To install the cutting edge (if so) version you should take it from `github`.  You need to have installed the `devtools` package.
+To install the cutting edge (highly recommended) version you should take it from `github`.  You need to have installed the `devtools` package. Please also install the latest GitHub version  of the utility package `link2GI`.
 
 ``` R
 install.packages("devtools")
 devtools::install_github("gisma/uavRmp", ref = "master")
+devtools::install_github("r-spatial/link2GI")
 
 ```
 
 
 ## Calling `makeAP` from the `uavRmd` package
 
-There are a lot of optional arguments available that helps to control the generation of an autonomous flight plan. In this first use case we keep it as simple as possible. First we will focus the arguments to organize the project.  All results will be stored in a fixed folder structure. The root folder is set by the argument `projectDir`. e.g. `~/proj/uav`. The current working directory will then be generated from the `locationName` and is always a subfolder of the `projectDir`. So in this case it is set to `firstSurvey`.  The resulting folder for a specified location in a speciefied project is then `~/proj/uav/firstsurvey`. According to the date of planning the following subfolder structure is set up. The log files are saved in the `log` folder the temporary data sets are stored in a folder called `run`.
+There are a lot of optional arguments available that helps to control the generation of an autonomous flight plan. In this first use case we keep it as simple as possible. First we will focus the arguments to organize the project.  All results will be stored in a fixed folder structure. The root folder is set by the argument `projectDir`. e.g. `~/proj/uav`. The current working directory will then be generated from the `locationName` and is always a subfolder of the `projectDir`. So in this case it is set to `firstSurvey`.  The resulting folder for a specified location in a specified project is then `~/proj/uav/firstsurvey`. According to the date of planning the following subfolder structure is set up. The log files are saved in the `log` folder the temporary data sets are stored in a folder called `run`.
  <br> 
 {% include note.html content=" 
 The mission control file(s) are stored in a folder named `control`.
@@ -160,10 +161,11 @@ Please check the folder structure according to the figure below.
 ### Explanation of the used arguments
 
 * *useMP = TRUE*   is the switch to activate and QGroundCOntrol or Missionplanner task file
-* *demFn = filname* set path and filename to the used DEM 
-* *surveyArea = fa* set path and filename of the QGroundControl flightplan
+* *demFn = filname* set path and file name to the used DEM 
+* *surveyArea = fa* set path and file name of the QGroundControl flight plan
 * *maxFlightTime = 25* set the maximum estimated lifetime of the battery in minutes
-* *maxwaypoints = 250* set the number of allowed waypoints in one control file (older DJIs /Litchi were constrained by 99 waypoints)
+* *maxwaypoints = 250* set the number of allowed way points in one control file (older DJIs /Litchi were constrained by 99 way points).
+Pleas note below you will use demo files from the package. To change it just put in the path and name of your DEM and planning file.
 
 ```r
 library(uavRmp)
@@ -178,6 +180,7 @@ fp = makeAP(projectDir = "~/uav",
         demFn = demFn,
         maxFlightTime = 25,
         maxwaypoints = 250,
+        cameraType ="dji_min2",
         uavType = "dji_csv")                 
 ```
 
@@ -191,7 +194,7 @@ All  of them are important even if a quick inspection of the generated objects i
 
 If you just want to convert fight plans from `GroundControl` to `Litchi` You may also use the shiny GUI:
 ```r
-library(uavRMp)
+library(uavRmp)
 library(shiny)
 runApp(system.file("shiny/plan2litchi/", "/app.R", package = "uavRmp"))
 ```

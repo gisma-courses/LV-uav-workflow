@@ -1,5 +1,5 @@
 ---
-title: "OBIA Workflow QGIS"
+title: "OBIA Workflow for QGIS step by step"
 toc: true
 toc_label: Inhalt
 published: true
@@ -11,7 +11,7 @@ morea_sort_order: 11
 morea_labels:
  - basic
  - mandatory 
- - YouTube 18min
+
 
 
 ---
@@ -22,25 +22,42 @@ Human visual perception almost always outperforms computer image processing algo
 
 Especially with the spatially extreme and spectrally minimal resolution UAV image data, a change in thinking must take place. It makes more sense to think in terms of objects or entities to be identified rather than classifying in terms of individual pixels. The basic principle of object-based image analysis (OBIA) is to segment first and then classify.
 
-The segementation process is algorithm-dependent but looks iteratively for similarities in space, structure and channel dimensions for grouping neighboring and similar pixels into objects. This segements are clasiefied in a next step using supervised training data.
+The segmentation process is algorithm-dependent but looks iteratively for similarities in space, structure and channel dimensions for grouping neighboring and similar pixels into objects. This segments are classified in a next step using supervised training data.
  
 
-<br>
-# The complete OBIA Workflow in a YouTube nutshell
-<br>
-{% include youtube.html id="fX2UpOwoYLk" %}
-<br>
+
+# General Workflow
+
+The OBIA classification example is very typical of the hand-crafted process of such operations using a software package. It basically consists of the following steps:
+
+1. data collection (orthoimage, training data).
+1. generation of spatial segments based on the 
+2. extraction of suitable description parameters 
+4. model training 
+5. classification of the input data set 
+
+Technically often intermediate steps have to be taken or even more often the sequence is not strictly linear because intermediate results are used repeatedly in different steps. The following figure shows the process described below visualized as a graphical model that can be used in QGIS as a convenience tool. 
+<p align="center"><img src="images/obia1-model3.png" alt="OBIA classification Workflow for Orthoimages" width="1000px" /></p>
+
+*OBIA classification Workflow for Orthoimages*
+
+For reference you may <a href="obia.zip" >Download</a> the basic data. In Addition you may download the upper <a href="obia1.model3">OBIA-workflow</a> as an `QGIS-Model`. You can add this to your QGIS project with pushing the first icon "Models" ![](images/process.png)  on the processing sidebar and choose `Add Model to Toolbox`. Please note that is running with fixed default values. For modifying it you need to right-click on the model and choose `Edit Model`.
+
+
+
+
+
 # Step by step tutorial 
 
-In the following step by step guide an OBIA aproach with QGIS and the OTB Toolbox is carried out as an template example. There are many segmentation algorithms and integrated classification methods. The Mean-shift method used here and the subsequent training with Support Vector Machine is a robust and common method. Especially the extension of the feature space (here called `Range Radius`) and the search space (`Spatial Radius`) as well as the size of the segmented objects (`Minimum Region size`) is crucial for a satisfying result. The principle is transferable to the different forms of the OBIA and despite abundant literature and some good instructions it is a free empirical game.
+In the following step by step guide an OBIA approach with QGIS and the OTB Toolbox is carried out as an template example. There are many segmentation algorithms and integrated classification methods. The Mean-shift method used here and the subsequent training with Support Vector Machine is a robust and common method. Especially the extension of the feature space (here called `Range Radius`) and the search space (`Spatial Radius`) as well as the size of the segmented objects (`Minimum Region size`) is crucial for a satisfying result. The principle is transferable to the different forms of the OBIA and despite abundant literature and some good instructions it is a free empirical game.
 
 ### Step-1 Create Training Sample Points by manual digitizing 
 
 If you need to learn how to digitize with QGIS you may follow this [tutorial](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we will only digitize Points and not polygons. 
 {% include cool.html content="
- Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfartable to digitize training points of one class in series.
+ Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfortable to digitize training points of one class in series.
 "%}
-For reference you may <a href="obia.zip" >Download</a> the basic data.
+
 
 Create a point vector file and digitize the following classes:
 
@@ -56,9 +73,16 @@ Create a point vector file and digitize the following classes:
 |other|8|
 
 
-Provide at minimum 10 widely spred sampling points.
+Provide at minimum 10 widely spread sampling points.
 
 Save this file naming it `sample.gpgk`.
+
+{% include kim.html content="
+ Here, the training data is digitized on the screen (as is very often the case) using the god's eye method as an example. For a rough classification into the selected classes, this is of course useful and sufficiently accurate.
+<br>
+<br>
+However, please keep in mind that these training samples are usually collected in the field. This means that by means of a GPS or exact map work, the positions and their affiliations are collected and entered into a corresponding table. Often this is accompanied by a vegetation survey, soil survey or limnological or other surveys.  
+"%}
 
 ### Step-2 Segmentation
 
@@ -74,6 +98,7 @@ In the search field of the `Processing Toolbox`, type *segmentation* and double 
 * Set `Minimum object size` in pixels to **200** 
 * Name the `Output vector file`  as  **segments-meanshift.shp**. 
 * Push `Run`.
+
 <br>
 {% include medium-img.html url="obia1.png" %} 
 <br>
@@ -91,6 +116,8 @@ Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalS
 <br>
 {% include small-img.html url="obia2-zonal.png" %} 
 <br>
+
+
 
 
 ## Step-4 Joining training data with segements
@@ -148,3 +175,4 @@ You will see partly predominantly excellent classification. However, there are a
 * What could be the reason for that?
 * What is a weakness of this approach?
 * Any suggestion to improve?
+
