@@ -8,6 +8,7 @@ morea_readings:
  - reading-gis-reproducible-research-intro
  - reading-screencast-gis-reproducible-research-4
  - reading-screencast-gis-reproducible-research-5
+ - reading-guide
 morea_experiences:
 - experience-gis-reproducible-research-blogs
 - experience-gis-reproducible-research-r
