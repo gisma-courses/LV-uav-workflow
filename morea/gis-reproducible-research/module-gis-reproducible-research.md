@@ -12,6 +12,7 @@ morea_experiences:
 - experience-gis-reproducible-research-blogs
 - experience-gis-reproducible-research-r
 - experience-gis-reproducible-research-blogdown
+- experience-gis-reproducible-research-expose
 - experience-gis-reproducible-research-external-1
 - experience-gis-reproducible-research-external-2
 
