@@ -10,6 +10,7 @@ morea_experiences:
 - ex-spat-analysis-4
 - read-spat-analysis-5
 - ex-spat-analysis-5
+- ex-spat-analysis-6
 
 morea_readings:
 - read-spat-analysis-000
