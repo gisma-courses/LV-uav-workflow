@@ -6,10 +6,10 @@ morea_coming_soon: false
 morea_experiences:
 - ex-spat-analysis-0
 - ex-spat-analysis-1
-- ex-spat-analysis-3
 - ex-spat-analysis-4
 - read-spat-analysis-5
 - ex-spat-analysis-5
+- ex-spat-analysis-3
 - ex-spat-analysis-6
 
 morea_readings:

@@ -10,7 +10,6 @@ morea_type: readings
 morea_sort_order: 11
 morea_labels:
  - advanced
- - supplemental 
  - optional 
 
 
