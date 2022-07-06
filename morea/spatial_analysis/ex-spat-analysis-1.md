@@ -88,31 +88,31 @@ However, please keep in mind that these training samples are usually collected i
 
 In the search field of the `Processing Toolbox` type *segmentation* and double click `Segmentation`.
 
-* select the `input image`: **example-5.tif**
-* select `meanshift` from the drop-down list **Segmentation algorithm**
-* The `Spatial Radius` value can be set to **25**. This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel
-* The `Range Radius` value can be set to **25**. We are dealing with RGB images that have a range `0-255`. The optimal value depends on the datatype, the dynamic range of the input image and requires experimental trials for the specific classification objectives
-* Set `Minimum Region size` in pixels to **25**. The minimum size of a region (in pixel unit) in segmentation. Smaller clusters will merged to the neighboring cluster with the closest radiometry
-* keep `Processing mode`  as **Vector**
+* select the `input image`: *example-5.tif*
+* select `meanshift` from the drop-down list *Segmentation algorithm*
+* The `Spatial Radius` value can be set to *25*. This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel
+* The `Range Radius` value can be set to *25*. We are dealing with RGB images that have a range `0-255`. The optimal value depends on the datatype, the dynamic range of the input image and requires experimental trials for the specific classification objectives
+* Set `Minimum Region size` in pixels to *25*. The minimum size of a region (in pixel unit) in segmentation. Smaller clusters will merged to the neighboring cluster with the closest radiometry
+* keep `Processing mode`  as *Vector*
 * Tick `8-neighborhood connectivity`
-* Set `Minimum object size` in pixels to **200** 
-* Name the `Output vector file`  as  **segments-meanshift.shp**
+* Set `Minimum object size` in pixels to *200* 
+* Name the `Output vector file`  as  *segments-meanshift.shp*
 * Push `Run`
 
 <br>
 {% include medium-img.html url="obia1.png" %} 
 <br>
 
-* Check the  results: Load the output vector file **segments-meanshift.shp** into your QGIS session and place it on top of the image **example-5.tif**
+* Check the  results: Load the output vector file *segments-meanshift.shp* into your QGIS session and place it on top of the image *example-5.tif*
 * Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`. 
 * Check the features with a visual inspection. Is the result goal keeping? If not, start over... .
 
 ###  Step-3 Feature extraction 
 Type `zonalstats` in the search field of the Processing Toolbox and open the tool `ZonalStatistics`. You find it under the image manipulation section of OTB.
 
-* Select as input image: **example-5.tif**.
-* Select `input vector data` the vector file with segments from above segmentation **segments-meanshift.shp**
-* Name for the `output vector`: **segments-meanshift-zonal.shp**.
+* Select as input image: *example-5.tif*.
+* Select `input vector data` the vector file with segments from above segmentation *segments-meanshift.shp*
+* Name for the `output vector`: *segments-meanshift-zonal.shp*.
 * Push `Run`.
 <br>
 {% include small-img.html url="obia2-zonal.png" %} 
@@ -125,9 +125,9 @@ Type `zonalstats` in the search field of the Processing Toolbox and open the too
 
 Type in the search field of the `Processing Toolbox`  *join* and double click `Join Attributes by Location`.
 
-* select the `Base Layer`: **segments-meanshift-zonal.shp**
-* select the `Join Layer`: **sample.shp**
-* `Join Type`: choose **Take Attributes of the first matching...**
+* select the `Base Layer`: *segments-meanshift-zonal.shp*
+* select the `Join Layer`: *sample.shp*
+* `Join Type`: choose *Take Attributes of the first matching...*
 * Tick `Discard records which could not be joined`
 * Provide an output filename
 <br>
@@ -141,8 +141,8 @@ Sometimes the geometry is broken. Type `fix` in the search field of the Processi
 ###  Step-5 Training
 Type `train` in the search field of the Processing Toolbox and open `TrainVectorClassifier`
 
-* In the  field  `Vector Data List` select  the correct vector file by clicking **...** and browse directly to the file containing the training area polygons **segments-meanshift-zonal.shp**
-* Provide the `Output model filename` as **lahn-gi-spann-obia.model**
+* In the  field  `Vector Data List` select  the correct vector file by clicking *...* and browse directly to the file containing the training area polygons *segments-meanshift-zonal.shp*
+* Provide the `Output model filename` as *lahn-gi-spann-obia.model*
 * In the field `Field names for training features` copy and paste `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
 * The name of `Field containing the class id for supervision` is `CLASS_ID`
 * Classifier to use for training: `libsvm` Usually the straighforward Support Vector Machine is doing a good job
@@ -156,11 +156,11 @@ Type `train` in the search field of the Processing Toolbox and open `TrainVector
 
 ###  Step-6 Classification 
 Type `class` in the search field of the Processing Toolbox and open `VectorClassifier`
-*  In the  field  `Vector Data` select *manually** the correct vector file clicking **...** and browse directly to the file containing the training area polygons containing segments and features for the whole image **lahn-gi-spann-segments-meanshift-zonal.shp**
-* The name of the upper `input model` file is **lahn-gi-spann-obia.model**
+*  In the  field  `Vector Data` select *manually* the correct vector file clicking *...* and browse directly to the file containing the training area polygons containing segments and features for the whole image *lahn-gi-spann-segments-meanshift-zonal.shp*
+* The name of the upper `input model` file is *lahn-gi-spann-obia.model*
 * Output field containing the class is `CLASS_ID`
 * Copy and paste into the field `Field names to be calculated` same attributes as above: `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
-* Name the `output vector` data **lahn-gi-spann-classified_obia.shp**.
+* Name the `output vector` data *lahn-gi-spann-classified_obia.shp*.
 * Push `Run`
 * Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
 
