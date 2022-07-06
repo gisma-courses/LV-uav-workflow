@@ -5,7 +5,7 @@ toc_label: Inhalt
 published: true
 morea_id: ex-spat-analysis-5
 morea_summary: "qCanupo classification tutorial "
-morea_url:   https://youtu.be/8ryh_QyUqH8
+morea_url:   
 morea_type: experience
 morea_sort_order: 11
 morea_labels:
@@ -15,3 +15,6 @@ morea_labels:
 
 
 ---
+
+# Canupo classification in CloudCompare
+{% include youtube.html id="8ryh_QyUqH8" %}
