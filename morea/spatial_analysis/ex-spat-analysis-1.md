@@ -28,15 +28,15 @@ The segmentation process is algorithm-dependent but looks iteratively for simila
 
 # General Workflow
 
-The OBIA classification example is very typical of the hand-crafted process of such operations using a software package. It basically consists of the following steps:
+The example of OBIA classification is typical of the manual performance of such operations using a software package. It consists of the following steps:
 
-1. data collection (orthoimage, training data).
-1. generation of spatial segments based on the 
+1. data acquisition (orthophoto, training data).
+1. generation of spatial segments on the basis of the 
 2. extraction of suitable description parameters 
 4. model training 
-5. classification of the input data set 
+5. classification of the input data set. 
 
-Technically often intermediate steps have to be taken or even more often the sequence is not strictly linear because intermediate results are used repeatedly in different steps. The following figure shows the process described below visualized as a graphical model that can be used in QGIS as a convenience tool. 
+In software-based processing, additional steps often have to be performed for technical reasons. Even more often, the processing of the individual steps is not necessarily linear, since intermediate results are used repeatedly in different steps. The following figure shows below step by step described process as a graphical model, which you can integrate in QGIS as a tool in the Processing Box. 
 <p align="center"><img src="images/obia1-model3.png" alt="OBIA classification Workflow for Orthoimages" width="1000px" /></p>
 
 *OBIA classification Workflow for Orthoimages*
@@ -78,36 +78,37 @@ Provide at minimum 10 widely spread sampling points.
 Save this file naming it `sample.gpgk`.
 
 {% include kim.html content="
- Here, the training data is digitized on the screen (as is very often the case) using the god's eye method as an example. For a rough classification into the selected classes, this is of course useful and sufficiently accurate.
+ Here, the training data is digitized on the screen (as is often the case) using the god's eye method as an example. For a rough classification of the selected classes, this is of course useful and sufficiently accurate.
 <br>
 <br>
-However, please keep in mind that these training samples are usually collected in the field. This means that by means of a GPS or exact map work, the positions and their affiliations are collected and entered into a corresponding table. Often this is accompanied by a vegetation survey, soil survey or limnological or other surveys.  
+However, please keep in mind that these training samples are usually collected in the field. This means that utilizing a GPS or exact map work, the positions, and their affiliations are collected and entered into a corresponding table. Often this is accompanied by a vegetation survey, soil survey, or limnological or other surveys.  
 "%}
 
 ### Step-2 Segmentation
 
-In the search field of the `Processing Toolbox`, type *segmentation* and double click `Segmentation`.
+In the search field of the `Processing Toolbox` type *segmentation* and double click `Segmentation`.
 
 * select the `input image`: **example-5.tif**
 * select `meanshift` from the drop-down list **Segmentation algorithm**
-* The `Spatial Radius` value can be set to **25**.This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel.
-* The `Range Radius` value can be set to **25**. We are dealing with RGB images that have a range `0-255`. The optimal value depends on datatype dynamic range of the input image and requires experimental trials for the specific classification objectives.
-* Set `Minimum Region size` in pixels to **25**. Minimum size of a region (in pixel unit) in segmentation. Smaller clusters will be merged to the neighboring cluster with the closest radiometry.
+* The `Spatial Radius` value can be set to **25**. This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel
+* The `Range Radius` value can be set to **25**. We are dealing with RGB images that have a range `0-255`. The optimal value depends on the datatype, the dynamic range of the input image and requires experimental trials for the specific classification objectives
+* Set `Minimum Region size` in pixels to **25**. The minimum size of a region (in pixel unit) in segmentation. Smaller clusters will merged to the neighboring cluster with the closest radiometry
 * keep `Processing mode`  as **Vector**
-* Tick `8-neighborhood connectivity` on.
+* Tick `8-neighborhood connectivity`
 * Set `Minimum object size` in pixels to **200** 
-* Name the `Output vector file`  as  **segments-meanshift.shp**. 
-* Push `Run`.
+* Name the `Output vector file`  as  **segments-meanshift.shp**
+* Push `Run`
 
 <br>
 {% include medium-img.html url="obia1.png" %} 
 <br>
 
 * Check the  results: Load the output vector file **segments-meanshift.shp** into your QGIS session and place it on top of the image **example-5.tif**
-* Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`. Check the features with a visual inspection. Is the result goal keeping? If not start over...
+* Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`. 
+* Check the features with a visual inspection. Is the result goal keeping? If not, start over... .
 
 ###  Step-3 Feature extraction 
-Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalStatistics` which is settled under the image manipulation section of OTB.
+Type `zonalstats` in the search field of the Processing Toolbox and open the tool `ZonalStatistics`. You find it under the image manipulation section of OTB.
 
 * Select as input image: **example-5.tif**.
 * Select `input vector data` the vector file with segments from above segmentation **segments-meanshift.shp**
@@ -122,7 +123,7 @@ Type `zonalstats` in the search field of the Processing Toolbox and open `ZonalS
 
 ## Step-4 Joining training data with segements
 
-In the search field of the `Processing Toolbox`, type *join* and double click `Join Attributes by Location`.
+Type in the search field of the `Processing Toolbox`  *join* and double click `Join Attributes by Location`.
 
 * select the `Base Layer`: **segments-meanshift-zonal.shp**
 * select the `Join Layer`: **sample.shp**
@@ -133,21 +134,21 @@ In the search field of the `Processing Toolbox`, type *join* and double click `J
 {% include small-img.html url="obia3-join.png" %} 
 <br>
 {% include cool.html content="
-Sometimes the geometry is broken. Type `fix` in the search field of the Processing Toolbox and open `Fix Geometries` which will in most cases do the job
+Sometimes the geometry is broken. Type `fix` in the search field of the Processing Toolbox and open `Fix Geometries` which will in most cases do the job.
 "%}
 
 
 ###  Step-5 Training
 Type `train` in the search field of the Processing Toolbox and open `TrainVectorClassifier`
 
-* In the  field  `Vector Data List` select  the correct vector file clicking **...** and browse directly to the file containing the training area polygons **segments-meanshift-zonal.shp**.
+* In the  field  `Vector Data List` select  the correct vector file by clicking **...** and browse directly to the file containing the training area polygons **segments-meanshift-zonal.shp**
 * Provide the `Output model filename` as **lahn-gi-spann-obia.model**
 * In the field `Field names for training features` copy and paste `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
-* The name of `Field containing the class id for supervision` is `CLASS_ID`.
-* Classifier to use for training: `libsvm` Usually the straighforward Support Vector Machine is doing a good job. 
+* The name of `Field containing the class id for supervision` is `CLASS_ID`
+* Classifier to use for training: `libsvm` Usually the straighforward Support Vector Machine is doing a good job
 * SVM Kernel Type: `linear`
 * SVM Model Type: `csvc`
-* tick `Parameters optimization` to `ON`.
+* Set `Parameters optimization` to `ON`
 * Push `Run`
 <br>
 {% include small-img.html url="obia5-train.png" %} 
@@ -155,14 +156,13 @@ Type `train` in the search field of the Processing Toolbox and open `TrainVector
 
 ###  Step-6 Classification 
 Type `class` in the search field of the Processing Toolbox and open `VectorClassifier`
-*  In the  field  `Vector Data` select *manually** the correct vector file clicking **...** and browse directly to the file containing the training area polygons containing segments and features for the whole image **lahn-gi-spann-segments-meanshift-zonal.shp**.
+*  In the  field  `Vector Data` select *manually** the correct vector file clicking **...** and browse directly to the file containing the training area polygons containing segments and features for the whole image **lahn-gi-spann-segments-meanshift-zonal.shp**
 * The name of the upper `input model` file is **lahn-gi-spann-obia.model**
 * Output field containing the class is `CLASS_ID`
 * Copy and paste into the field `Field names to be calculated` same attributes as above: `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
 * Name the `output vector` data **lahn-gi-spann-classified_obia.shp**.
-* Push `Run`.
-
-Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
+* Push `Run`
+* Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
 
 <br>
 {% include small-img-two.html url1="obia6-class.png" url2="classification.png" %}
