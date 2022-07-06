@@ -1,5 +1,5 @@
 ---
-title: "Basic Classification and segmentation with CloudCompare"
+title: "Manual and CSF based Classification of Ground Points with CloudCompare"
 toc: true
 toc_label: Inhalt
 published: true
@@ -15,5 +15,5 @@ morea_labels:
 
 
 ---
-# Basic Classification and segmentation workflow with CloudCompare
+# Manual and CSF based Classification of Ground Points with CloudCompare
 {% include youtube.html id="r6AOUbPi54s" %}
