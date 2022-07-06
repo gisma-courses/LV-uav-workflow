@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <img src="/LV-uav-workflow/morea/header_gis.jpg"  alt="course header" height="190" width="1920">
+  
+  <title> LV-UAV-Guide | Scientific writing websites </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/font-awesome.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/style.css">
+  <!-- Don't load style or syntax until we are sure we know what we're doing.-->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/syntax.css">
+  
+  <link rel="shortcut icon" href="/LV-uav-workflow/favicon.ico" type="image/x-icon" />
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+
+    
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/LV-uav-workflow/index.html"> LV-UAV-Guide </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/assessments/">Assessments</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules/"></a></li>
+        <li class="breadcrumb-item active">Scientific writing websites</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p>GitHub - Repositories, Forks and Pull Request. A very effective way to deal with digital content in a collaborative way in the cloud</p>
+
+<h2 id="first-things-first">First things first</h2>
+
+<p>The interaction with <code class="language-plaintext highlighter-rouge">GitHub</code> is based on the locally installed 
+Version control software <code class="language-plaintext highlighter-rouge">git</code>. This is actually quite complex, but basically in almost all cases you tell <code class="language-plaintext highlighter-rouge">git</code> to monitor certain directories and every time it is desired to create a snapshot i.e. a backup version.</p>
+
+<p>GitHub is the cloud service to store these local directories or projects as so-called “repositories”. That’s it.</p>
+
+<p>GitHub is preferably for text and images. So you need a text editor. You can choose any text editor you like, but if you also want to take advantage of support for R and Python, it is strongly recommended to use [<code class="language-plaintext highlighter-rouge">Rstudio</code>] (https://www.rstudio.com/products/rstudio/download/#download) and also install it now. However, for the submissions in this course, you can also use <code class="language-plaintext highlighter-rouge">.docx</code> documents.</p>
+
+<p>If you are using Windows, you can install git and GitHub Desktop together using the <a href="https://desktop.github.com/">GitHub Desktop installer</a>. Just run it with the default settings. During the installation process, you will be asked if you want to log in (if you already have an account) or create a new account. Please choose the accordingly and proceed.</p>
+
+<p>However, if you want to log in manually, go to the <a href="https://github.com/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">registration form</a> and log in.</p>
+
+<p>During the installation, you need to allow GitHub Desktop to manage your GitHub Cloud repos. So please follow the instructions and grant the suggested permissions. At the end, you can change your email settings, etc. It is recommended to leave them as default.</p>
+
+<p>You will end with something looking like the following:
+<img src="images/gitdesk.png" alt="" /></p>
+
+<p>Then, to warm up, run the <code class="language-plaintext highlighter-rouge">Create Tutorial Repository</code>. It will teach you all the essentials dealing with git and GitHub</p>
+
+<h2 id="avanced-github-issues-and-pull-requests">Avanced GitHub Issues and Pull Requests</h2>
+
+<p>You can find more tutorial at <a href="https://docs.github.com/en/desktop">https://docs.github.com/en/desktop</a>.  Of particular importance is the tutorial <a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request">Creating an issue or pull request</a>. This is the basis for GitHub-supported collaboration and the ability to add your submissions to an existing repository. Please work through it.</p>
+
+
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/LV-uav-workflow/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <h1 id="comments--discussions">Comments &amp; Discussions</h1>
+<script src="https://utteranc.es/client.js" repo="gisma-courses/LV-uav-workflow" issue-term="title" label="comments" theme="github-light" crossorigin="anonymous" async="">
+</script>
+
+<p><small>
+<a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach"> GISMA Geoinformatics Science</a>
+|
+<a class="footer-link" href="https://www.uni-marburg.de/en">University of Marburg
+</a>
+|
+<a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+|
+<a class="footer-link" href="https://gisma-courses.github.io/gi-modules/post/2021-11-21-impressum/"> Impressum</a>
+</small></p>
+
+    
+    <p style="margin: 0;   font-size: .6em; ">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a>
+      Last update on: <span>2022-07-06 18:11:33 +0200</span></p>
+
+    <p style="margin: 0;font-size: .6em;">
+      
+      5 modules
+      
+      | 6 outcomes
+      
+      
+      | 15 readings
+      
+      
+      | 30 experiences
+      
+      
+      | 6 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>

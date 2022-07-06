@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <img src="/LV-uav-workflow/morea/header_gis.jpg"  alt="course header" height="190" width="1920">
+  
+  <title> LV-UAV-Guide | UAV Mission Planning Practical Workflow </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/font-awesome.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/style.css">
+  <!-- Don't load style or syntax until we are sure we know what we're doing.-->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/syntax.css">
+  
+  <link rel="shortcut icon" href="/LV-uav-workflow/favicon.ico" type="image/x-icon" />
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+
+    
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/LV-uav-workflow/index.html"> LV-UAV-Guide </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/assessments/">Assessments</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules/module-fieldwork">Autonomous flights made easy</a></li>
+        <li class="breadcrumb-item active">UAV Mission Planning Practical Workflow</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <p><br /></p>
+
+<div class="alert alert-danger" role="alert"> <i class="fa fa-exclamation "></i>  <b>Attention</b><br />
+You will have a lot of chances to make a small mistake what may yield in a damage of your UAV or even worse in involving people, animals or non-cash assets. Check your risk - implement a <strong>double check</strong> system while planning and performing autonomous flight missions. Operating (autonomous) UAVs is in the full responsibility of the pilot. 
+<br />
+Keep cool - <strong>keep alert!</strong>
+
+</div>
+
+<p><br /></p>
+
+<h1 id="uav-mission-planning---practical-workflow">UAV Mission Planning - Practical Workflow</h1>
+
+<p>The <em><strong>open</strong></em> UAV community is focused on the PixHawk autopilot unit and the <a href="http://qgroundcontrol.com/downloads/">MissionPlanner</a>, or more recent and platform independent, the <a href="http://ardupilot.org/planner2/">QGroundcontrol</a> software. Both are well documented and provide APIs and easy to use GUIs. Nevertheless they are missing some planning capabilities like a high resolution terrain following flight planning or dealing with battery-dependent task splitting and save departures and approaches within the splitted main tasksor exporting the tasks to DJI compatible format yet. Other commercial competitors like the extremly powerful <a href="https://www.ugcs.com/">ugcs</a> are cost intensive and/or fairly complex applications which are not handy as a lightweight planning facility.</p>
+
+<h1 id="basic-mission-planning-workflow">Basic mission planning workflow</h1>
+
+<p>This tutorial deals with the effective and safe planning of an autonomous flight. This provides basic information about the used hardware and software as well as supplemental data and nice to haves. The basic workflow of planning a good aerial and target oriented flight mission. In the extended version you find some more explanations and hints for improving your planning.</p>
+
+<h2 id="things-you-need">Things you need</h2>
+
+<ul>
+  <li><a href="https://land.copernicus.eu/imagery-in-situ/eu-dem/eu-dem-v1.1/view">Digital Surface Model</a> Account needed.</li>
+  <li><a href="http://qgroundcontrol.com/">QGroundcontrol</a></li>
+  <li><a href="https://docs.qgroundcontrol.com/master/en/PlanView/pattern_survey.html">Step by step tutorial</a>.</li>
+  <li><a href="https://app.airmap.com/">Airmap </a> (Use it with the provided Google account) easy to use application</li>
+  <li><a href="https://app.flynex.io/">flynex</a> (Use it with the provided  Google account) complex, professional application with a maximum of support</li>
+</ul>
+
+<h2 id="general-workflow">General Workflow</h2>
+
+<ol>
+  <li>Identify the area and digitize it</li>
+  <li>Adjust the flight parameters to your needs and generate flight control files</li>
+  <li>Convert and upload the mission control files either directly to your tablet/smartphone or alternatively via the <code class="language-plaintext highlighter-rouge">Litchi</code> cloud.</li>
+  <li>Make an extensive pre-flight check</li>
+  <li>Fly the mission</li>
+</ol>
+
+<h2 id="aim-of-the-tutorial">Aim of the tutorial</h2>
+
+<p>The example will introduce you to the basic usage of <code class="language-plaintext highlighter-rouge">QGroundcontrol</code> and <code class="language-plaintext highlighter-rouge">uavRmp</code>.
+The goal is to create flight plans for surveys over high relief energy surfaces/terrain to generate orthophotos and point clouds.</p>
+
+<h3 id="digitizing-the-survey-area-using-qgroundcontrols-survey-feature">Digitizing the survey area using Qgroundcontrol’s survey feature</h3>
+<p>We want to plan a flight in a structured terrain in the upper Lahn-valley. Start the <code class="language-plaintext highlighter-rouge">QGroundcontrol</code> and navigate to Mission tab and open <code class="language-plaintext highlighter-rouge">Pattern-&gt;Survey</code>. Start digitizing a pattern as you want and also fill in the values on the right sided menus for camera angle overlap and so on.</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="lahn_quer.png"><img alt="picture" width="640px" src="lahn_quer.png" /></a>
+    <a href="lahn_lang.png"><img alt="picture" width="640px" src="lahn_lang.png" /></a>
+  </div>
+</div>
+
+<p><br /> <br /></p>
+
+<p>You will produce much better results when you do both, capturing images from different above ground levels (AGL) and different capturing angles. This can be realized by two different plannings. A bit more complicated is the to control the gimbal angle. It will also improve your products if you take nadir (straight down) and non-nadir (at an angle) images. That means a cross pattern flown at two different altitudes with varying nadir angles is much better than a single-nadir-only-one pattern flight. To avoids horizon takes (which of course can be epic) you should not take pictures with a Nadir greater than roughly 5 to 10 degrees.</p>
+
+<p><br /></p>
+
+<div class="alert alert-danger" role="alert"> <i class="fa fa-exclamation "></i>  <b>Attention</b><br />
+
+During planning, observe all airspace and protected area regulations. This is not only a legal issue, but also a matter of maximum safety. So just comply and do it.<br /> 
+<a href="https://www.lba.de/DE/Drohnen/Drohnen_node.html;jsessionid=7ECB1558F37F914B0EF93F2D54B8991B.live11311">LBA Legal Stuff</a>
+<a href="https://www.bmvi.de/SharedDocs/DE/Anlage/LF/drohnen-flyer-regelungen-eu-und-deutschland.pdf?__blob=publicationFile">BMDV Cheat Card</a>
+
+
+</div>
+
+<p><br /></p>
+
+<p>If you use a <code class="language-plaintext highlighter-rouge">Pixhawk</code> device you are fine now.</p>
+
+<h3 id="specific-settings-for--dji-cameras">Specific settings for  DJI Cameras</h3>
+
+<p>To derive a valid planning we need to calculate the correct camera parameters. Typically camera parameters are standardized to the 35 mm full frame sensor format. The DJI Mini 2 sensors have a size of 1/2.3 inch. For an impression have a look at the below figure. Note the default setting of most of the point and shoot cameras is 16:9 - this will change the sensor size due to cutting a part of the height.</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="sensor_size.png"><img alt="picture" width="700px" src="sensor_size.png" /></a>
+  </div>
+</div>
+
+<p><strong>Real Focal Length</strong>
+Can be calculated approximately by dividing the eqiuvalent focal length by the corresponding <a href="https://shuttermuse.com/calculate-cameras-crop-factor/">crop factor</a>.</p>
+
+<div class="language-S highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eFL</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cf</span><span class="w">
+
+</span><span class="n">eFL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">Focal</span><span class="w"> </span><span class="n">Length</span><span class="w">
+</span><span class="n">cf</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">crop</span><span class="w"> </span><span class="n">factor</span><span class="w">
+</span><span class="n">rF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="n">Focal</span><span class="w"> </span><span class="n">Length</span><span class="w">
+
+</span><span class="n">For</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Mavic</span><span class="w"> </span><span class="n">Mini</span><span class="w"> </span><span class="m">2</span><span class="o">:</span><span class="w">
+</span><span class="n">rF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">24</span><span class="o">/</span><span class="m">5.6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4.285714</span><span class="w">
+</span><span class="n">rf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4.3</span><span class="w">
+</span></code></pre></div></div>
+
+<p>According to this the camera specs for the DJI Mavic Mini 2 are:</p>
+
+<p>Image Size: 4:3: 4000×3000</p>
+<ul>
+  <li>Sensor Width: 6.17 mm</li>
+  <li>Sensor Height 4.77 mm</li>
+  <li>Focal Length: 4.3 mm</li>
+</ul>
+
+<p>Image Size: 4:3: 4000×2250</p>
+<ul>
+  <li>Sensor Width: 6.17 mm</li>
+  <li>Sensor Height 4.56 mm</li>
+  <li>Focal Length: 4.3 mm</li>
+</ul>
+
+<p>You may also use the <a href="https://www.cambridgeincolour.com/tutorials/dof-calculator.htm">Depth of field calculator</a> to estimate the minimum distance of the camera to the target.</p>
+
+<p><br /></p>
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b> 
+For DJI usage you need to save this fightplan to an appropriate folder and follow the instructions of the below chapter <code class="language-plaintext highlighter-rouge">Conversion of the flightplan for Litchi compatible DJI devices</code> to carry out the conversion to the <code class="language-plaintext highlighter-rouge">Litchi</code> format.
+
+</div>
+
+<p><br /></p>
+
+<h1 id="conversion-of-the-flightplan-for-litchi-compatible-dji-devices">Conversion of the flightplan for Litchi compatible DJI devices</h1>
+
+<p>The <code class="language-plaintext highlighter-rouge">R</code> package <a href="https://github.com/gisma/uavRmp"><code class="language-plaintext highlighter-rouge">uavRmp</code></a> tries to bridge this gap. It generates <code class="language-plaintext highlighter-rouge">MAVLINK</code> format compliant mission files that can be uploaded to the Pixhawk controller via any Ground Control Station software. In addition it exports or converts plannings to the <code class="language-plaintext highlighter-rouge">Litchi</code> format which can be used for DJI drones.</p>
+<h2 id="installation-of-r-and-the-uavrmp">Installation of <code class="language-plaintext highlighter-rouge">R</code> and the <code class="language-plaintext highlighter-rouge">uavRmp</code></h2>
+
+<p>First of all you need to install the scripting language <code class="language-plaintext highlighter-rouge">R</code> an preferably the Integrated Development Environment (IDE) <code class="language-plaintext highlighter-rouge">Rstudio</code>. You will find a step by step tutorial at  <a href="https://geomoer.github.io/moer-base-r/unit01/unit01-02_Installation.html">HowTo install R &amp; RStudio</a>. Alternatively you may use the <a href="https://github.com/r-lib/rig#the-r-installation-manager">rig - R installation manager</a>. Then follow the instructions at the  <a href="https://github.com/gisma/uavRmp"><code class="language-plaintext highlighter-rouge">uavRmp</code></a> homepage and install the package. Check for the most recent version. However you can install the latest stable version from <code class="language-plaintext highlighter-rouge">CRAN</code>.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"uavRmp"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>To install the cutting edge (highly recommended) version you should take it from <code class="language-plaintext highlighter-rouge">github</code>.  You need to have installed the <code class="language-plaintext highlighter-rouge">devtools</code> package. Please also install the latest GitHub version  of the utility package <code class="language-plaintext highlighter-rouge">link2GI</code>.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"devtools"</span><span class="p">)</span><span class="w">
+</span><span class="n">devtools</span><span class="o">::</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"gisma/uavRmp"</span><span class="p">,</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"master"</span><span class="p">)</span><span class="w">
+</span><span class="n">devtools</span><span class="o">::</span><span class="n">install_github</span><span class="p">(</span><span class="s2">"r-spatial/link2GI"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h2 id="calling-makeap-from-the-uavrmd-package">Calling <code class="language-plaintext highlighter-rouge">makeAP</code> from the <code class="language-plaintext highlighter-rouge">uavRmd</code> package</h2>
+
+<p>There are a lot of optional arguments available that helps to control the generation of an autonomous flight plan. In this first use case we keep it as simple as possible. First we will focus the arguments to organize the project.  All results will be stored in a fixed folder structure. The root folder is set by the argument <code class="language-plaintext highlighter-rouge">projectDir</code>. e.g. <code class="language-plaintext highlighter-rouge">~/proj/uav</code>. The current working directory will then be generated from the <code class="language-plaintext highlighter-rouge">locationName</code> and is always a subfolder of the <code class="language-plaintext highlighter-rouge">projectDir</code>. So in this case it is set to <code class="language-plaintext highlighter-rouge">firstSurvey</code>.  The resulting folder for a specified location in a specified project is then <code class="language-plaintext highlighter-rouge">~/proj/uav/firstsurvey</code>. According to the date of planning the following subfolder structure is set up. The log files are saved in the <code class="language-plaintext highlighter-rouge">log</code> folder the temporary data sets are stored in a folder called <code class="language-plaintext highlighter-rouge">run</code>.
+ <br /></p>
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b><br />
+The mission control file(s) are stored in a folder named <code class="language-plaintext highlighter-rouge">control</code>.
+
+</div>
+
+<p><br /> 
+Please check the folder structure according to the figure below.</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="folderstructure.png"><img alt="picture" width="400px" src="folderstructure.png" /></a>
+  </div>
+</div>
+
+<p><br /> <br /></p>
+
+<h3 id="explanation-of-the-used-arguments">Explanation of the used arguments</h3>
+
+<ul>
+  <li><em>useMP = TRUE</em>   is the switch to activate and QGroundCOntrol or Missionplanner task file</li>
+  <li><em>demFn = filname</em> set path and file name to the used DEM</li>
+  <li><em>surveyArea = fa</em> set path and file name of the QGroundControl flight plan</li>
+  <li><em>maxFlightTime = 25</em> set the maximum estimated lifetime of the battery in minutes</li>
+  <li><em>maxwaypoints = 250</em> set the number of allowed way points in one control file (older DJIs /Litchi were constrained by 99 way points).
+Pleas note below you will use demo files from the package. To change it just put in the path and name of your DEM and planning file.</li>
+</ul>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">uavRmp</span><span class="p">)</span><span class="w">
+</span><span class="c1"># get example DEM data</span><span class="w">
+ </span><span class="n">demFn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mrbiko.tif"</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"uavRmp"</span><span class="p">)</span><span class="w">
+ </span><span class="n">fa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">system.file</span><span class="p">(</span><span class="s2">"extdata"</span><span class="p">,</span><span class="w"> </span><span class="s2">"qgc_survey.plan"</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"uavRmp"</span><span class="p">)</span><span class="w">
+
+
+</span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">makeAP</span><span class="p">(</span><span class="n">projectDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"~/uav"</span><span class="p">,</span><span class="w">
+        </span><span class="n">surveyArea</span><span class="o">=</span><span class="n">fa</span><span class="p">,</span><span class="w">
+        </span><span class="n">useMP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w">
+        </span><span class="n">demFn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">demFn</span><span class="p">,</span><span class="w">
+        </span><span class="n">maxFlightTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">,</span><span class="w">
+        </span><span class="n">maxwaypoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">250</span><span class="p">,</span><span class="w">
+        </span><span class="n">cameraType</span><span class="w"> </span><span class="o">=</span><span class="s2">"dji_min2"</span><span class="p">,</span><span class="w">
+        </span><span class="n">uavType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"dji_csv"</span><span class="p">)</span><span class="w">                 
+</span></code></pre></div></div>
+
+<p>The script generates:</p>
+
+<ul>
+  <li>R objects for visualisation</li>
+  <li>log file(s)</li>
+  <li>flight control file(s) for running a mission on DJIs</li>
+</ul>
+
+<p>All  of them are important even if a quick inspection of the generated objects is the maxFlightTime which rules the length of the single flight. The log file dumps  all important parameters of the calculated mission.</p>
+
+<p>If you just want to convert fight plans from <code class="language-plaintext highlighter-rouge">GroundControl</code> to <code class="language-plaintext highlighter-rouge">Litchi</code> You may also use the shiny GUI:</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">uavRmp</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span><span class="w">
+</span><span class="n">runApp</span><span class="p">(</span><span class="n">system.file</span><span class="p">(</span><span class="s2">"shiny/plan2litchi/"</span><span class="p">,</span><span class="w"> </span><span class="s2">"/app.R"</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"uavRmp"</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Just navigate as requested to the files and check the output. Be patient it may take a while.</p>
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="shiny.png"><img alt="picture" width="700px" src="shiny.png" /></a>
+  </div>
+</div>
+
+<p>After checking the files you should import the control file to the <a href="https://flylitchi.com/hub">Litchi Hub</a>. You need an account. During the course the account and Litchi Software is provided via Ilias.</p>
+
+<p><br /> <br /></p>
+<div class="alert alert-success" role="alert"> <i class="fa fa-thumbs-up "></i>  <b></b> 
+Ready to take off - that’s your first flight plan!
+</div>
+
+
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/LV-uav-workflow/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <h1 id="comments--discussions">Comments &amp; Discussions</h1>
+<script src="https://utteranc.es/client.js" repo="gisma-courses/LV-uav-workflow" issue-term="title" label="comments" theme="github-light" crossorigin="anonymous" async="">
+</script>
+
+<p><small>
+<a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach"> GISMA Geoinformatics Science</a>
+|
+<a class="footer-link" href="https://www.uni-marburg.de/en">University of Marburg
+</a>
+|
+<a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+|
+<a class="footer-link" href="https://gisma-courses.github.io/gi-modules/post/2021-11-21-impressum/"> Impressum</a>
+</small></p>
+
+    
+    <p style="margin: 0;   font-size: .6em; ">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a>
+      Last update on: <span>2022-07-06 18:11:33 +0200</span></p>
+
+    <p style="margin: 0;font-size: .6em;">
+      
+      5 modules
+      
+      | 6 outcomes
+      
+      
+      | 15 readings
+      
+      
+      | 30 experiences
+      
+      
+      | 6 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
