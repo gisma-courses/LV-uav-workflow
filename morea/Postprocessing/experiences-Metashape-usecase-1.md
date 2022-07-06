@@ -13,6 +13,7 @@ morea_labels:
  - mandatory
 
 ---
+---
 # Use Case  *Gisselberger Spannweite*
 
 A feasability study is conducted using the [Gisselberger Spannweite](https://www.marburg.de/portal/seiten/renaturierungsmassnahme-gisselberger-spannweite-900002083-23001.html) as an typical example application. 
@@ -95,6 +96,7 @@ Especially for participative planning, public participation or monitoring and in
 
 In the lower area you will find the shaded 3D mesh grid.  Please note that this is the it based on the unfiltered and not reduced raw mesh. 
  <br>
+ 
 <iframe src="cesium_ortho_2.html" height="850px" width="100%" style="border:none;"></iframe>
 
 
