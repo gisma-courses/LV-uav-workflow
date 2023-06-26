@@ -1,6 +1,6 @@
 ![Course Header](https://gisma-courses.github.io/LV-uav-workflow/morea/header_gis.jpg "Image source: C.Reudenbach")
 
-This course is part of gisma spatial science ressources of the [Department of Geography](https://www.uni-marburg.de/fb19).
+This course is part of [gisma spatial science ressources](https://gisma-courses.github.io/gc/) of the [Department of Geography](https://www.uni-marburg.de/fb19).
 
 
 The course content is developed and hosted on Github. 
