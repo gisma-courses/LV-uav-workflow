@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <img src="/LV-uav-workflow/morea/header_gis.jpg"  alt="course header" height="190" width="1920">
+  
+  <title> LV-UAV-Guide | Field Guide </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/font-awesome.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/style.css">
+  <!-- Don't load style or syntax until we are sure we know what we're doing.-->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/syntax.css">
+  
+  <link rel="shortcut icon" href="/LV-uav-workflow/favicon.ico" type="image/x-icon" />
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+
+    
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/LV-uav-workflow/index.html"> LV-UAV-Guide </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/assessments/">Assessments</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules/module-fieldwork">Autonomous flights made easy</a></li>
+        <li class="breadcrumb-item active">Field Guide</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="field-guide">Field Guide</h1>
+
+<h2 id="planning-your-survey">Planning your Survey</h2>
+
+<p>It is most important that you setup your survey with an appropriate overlap for reliable stitching results. If the overlap is too small or vice versa you fly too fast you will get poor or no results. Same is with the flight altitude and the camera settings.</p>
+
+<h4 id="suggested-overlap">Suggested Overlap</h4>
+
+<p>Front Overlap 80%,  Side Overlap 75%</p>
+
+<h4 id="camera-settings">Camera Settings</h4>
+
+<p>Below you find values for ground resolution typical camera.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">AGL</th>
+      <th style="text-align: center">GP8MP3+</th>
+      <th style="text-align: center">GP12MP3+</th>
+      <th style="text-align: center">DJIP3-4K</th>
+      <th style="text-align: center">MAPIR-2</th>
+      <th style="text-align: center">DJI-Mini-2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>15m</strong></td>
+      <td style="text-align: center">1.08</td>
+      <td style="text-align: center">0.9</td>
+      <td style="text-align: center">0.63</td>
+      <td style="text-align: center">0.56</td>
+      <td style="text-align: center">0.8</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>30m</strong></td>
+      <td style="text-align: center">2.16</td>
+      <td style="text-align: center">1.8</td>
+      <td style="text-align: center">1.27</td>
+      <td style="text-align: center">1.03</td>
+      <td style="text-align: center">1.6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>75m</strong></td>
+      <td style="text-align: center">5.4</td>
+      <td style="text-align: center">4.5</td>
+      <td style="text-align: center">3.2</td>
+      <td style="text-align: center">2.53</td>
+      <td style="text-align: center">3.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>100m</strong></td>
+      <td style="text-align: center">7.2</td>
+      <td style="text-align: center">6.0</td>
+      <td style="text-align: center">4.25</td>
+      <td style="text-align: center">3.38</td>
+      <td style="text-align: center">5.2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Ground Resolution of typical cameras in cm with respect to the above surface level.</em></p>
+
+<p>Depending on the product and manufacturer of the cameras you have to deal with different flight speeds. NOTE: Only the speed that can be continuously achieved is taken into account. Currently a picture rate of 2 seconds is the maximum in speed.</p>
+
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b>  It is strongly recommended that you use (if available) an autonomous camera timer (time lapse) for controlling the pictures interval.
+</div>
+
+<h4 id="flight-speed">Flight Speed</h4>
+
+<p>On average both SD Cards and cameras will be able to achieve an average speed of about 2 seconds/image. As a result taking pictures at least every 2 seconds is a bit challenging. So roughly you can estimate the flight altitude from the ground resolution and the maximum flight speed according to this from the following <strong>rule of thumb</strong>:</p>
+
+\[maxSpeed~(km/h) = (0.2 * AGL)*3.6\]
+
+<p>For a 100 meter AGL flight you should set the speed to a <strong>maximum</strong> of:</p>
+
+\[0.2 * 100 = 20~(m/s) = 72~(km/h)\]
+
+<p>For a flight of 40 m AGL this is will be roughly: \(5.25~(m/s) = 28.8~(km/h)\)</p>
+
+<p>Please note that maximum speed is usually not the best choice.</p>
+
+<h4 id="demdsm-data">DEM/DSM Data</h4>
+<p>If you fly in an wide open flat area you do not need additional data. But if you fly in middle range mountains, forests or similar complex structures you will need a digtal surface model (DSM/DEM) for retrieving an optimal and safe flight path. Depending on the Software you have to take care of this issue manually.</p>
+
+<h2 id="weather">Weather</h2>
+<div class="alert alert-danger" role="alert"> <i class="fa fa-exclamation "></i>  <b>Attention</b>   <br />
+- <strong><a href="https://www.windy.com/?50.117,8.684,5">Check the weather</a></strong>
+<br />- You <strong>must</strong> take care of the wind gusts and cloud coverage for quality and safety reasons
+<br />
+- Do <strong>not</strong> ignore this. <strong>Forget</strong> about flying with wind speed above 4 Beaufort - most UAVs are <strong>not</strong> falcons
+</div>
+
+<p><br /><br /></p>
+<h1 id="workflow-in-the-field">Workflow in the field</h1>
+<p><br /></p>
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b><br />
+
+1. Setup your remote controler, controlling device, UAV <br />
+2. Load task <br />
+3. Double check if the task is correct
+4. Start task <br />
+5. Check always the complete situation - pilot the UAV, co-pilot the sourrounding
+
+</div>
+
+<p><br /></p>
+<h2 id="pre-flight-check">Pre-flight Check</h2>
+
+<p>As simple this seems it is full of pitfalls. Therefore we would like to provide some checklist:</p>
+
+<p><br /></p>
+<div class="alert alert-warning" role="alert"> <b>&lt; Things To Do &gt;</b> <br /> <br />
+ 
+* UAV <br />
+    + batteries fully charged <br />
+    + remote control charged <br />
+    + props <br />
+    + cleanup MicroSD cards<br />
+    + field charger<br />
+    + minute book<br />
+    + power bank<br />
+    (+ charge camera(s)) <br />
+    (+ configure camera(s))<br />  <br />
+<br /><br />
+* Tools<br />
+    + Tools for the UAV<br />
+    + Tape, glue etc.<br />
+    + Table, chairs etc.<br />
+<br /><br />
+* Survey<br />
+    + Survey is checked<br />
+    + Task is stored on controller (app)<br />
+    + offline maps loaded<br />
+<br /><br />
+* Legal stuff<br />
+    + insurance valid<br />
+    + common flight permission<br />
+    + specific permissions<br />
+    + necessary to inform flight security authorithy<br />
+    + necessary to inform local air control<br />
+<br />
+</div>
+<p><br /></p>
+
+
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/LV-uav-workflow/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <h1 id="comments--discussions">Comments &amp; Discussions</h1>
+<script src="https://utteranc.es/client.js" repo="gisma-courses/LV-uav-workflow" issue-term="title" label="comments" theme="github-light" crossorigin="anonymous" async="">
+</script>
+
+<p><small>
+<a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach"> GISMA Geoinformatics Science</a>
+|
+<a class="footer-link" href="https://www.uni-marburg.de/en">University of Marburg
+</a>
+|
+<a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+|
+<a class="footer-link" href="https://gisma-courses.github.io/gi-modules/post/2021-11-21-impressum/"> Impressum</a>
+</small></p>
+
+    
+    <p style="margin: 0;   font-size: .6em; ">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a>
+      Last update on: <span>2023-06-26 10:27:03 +0200</span></p>
+
+    <p style="margin: 0;font-size: .6em;">
+      
+      5 modules
+      
+      | 6 outcomes
+      
+      
+      | 15 readings
+      
+      
+      | 30 experiences
+      
+      
+      | 6 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>

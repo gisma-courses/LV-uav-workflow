@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <img src="/LV-uav-workflow/morea/header_gis.jpg"  alt="course header" height="190" width="1920">
+  
+  <title> LV-UAV-Guide |  Metashape basic workflow  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/font-awesome.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/style.css">
+  <!-- Don't load style or syntax until we are sure we know what we're doing.-->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/syntax.css">
+  
+  <link rel="shortcut icon" href="/LV-uav-workflow/favicon.ico" type="image/x-icon" />
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+
+    
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/LV-uav-workflow/index.html"> LV-UAV-Guide </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/assessments/">Assessments</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules/module-postprocessing">Creating High Quality Products</a></li>
+        <li class="breadcrumb-item active"> Metashape basic workflow </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="agisoft-metashape-basic-workflow">Agisoft Metashape basic workflow</h1>
+
+<p>Even if both criteria open source and free software are missing one have to admit that 
+Agisoft’s Metashape is a good tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an  straightforward GUI and in Question of hardware requests and cost efficiency it is well balanced. For a deeper insight one should know how to deal with a lot o settings.</p>
+
+<h2 id="add-the-photos-to-metashape">Add the photos to Metashape</h2>
+<p>Let’s start to follow the white rabbit.</p>
+
+<p>After loading the images into Agisofts Metashape the aerial images are lining up along the flight track as you can see below.</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="workflow_image_2.png"><img alt="picture" width="700px" src="workflow_image_2.png" /></a>
+  </div>
+</div>
+
+<h3 id="alignment">Alignment</h3>
+
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b><br />
+ 
+The quality of the alignment is crucial for <strong>all</strong> follow up products - especially 3D dense point cloud models and the creation of the orthoimage.
+
+</div>
+
+<p>The <strong>Align Images</strong> process is somehow exploitative. For a quick start it is a good practice to use the following settings:</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="workflow_image_3.png"><img alt="picture" width="700px" src="workflow_image_3.png" /></a>
+  </div>
+</div>
+
+<p>It will give you an good estimate how the general alignment process performs.</p>
+
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b><br />
+ 
+ We did choose <strong>reference preselection</strong> due to the fact that we have georeferenced images.
+ 
+</div>
+
+<p>However there are a lot of different requirements depending on sensor, light and surface characteristics. For high quality images there is obviously <a href="http://www.agisoft.com/forum/index.php?topic=3559.0">no</a> <a href="http://www.agisoft.com/forum/index.php?topic=3559.0">significant</a> quality improvement if increasing the number of keypoints behind 240000. You may calculate as a rule of thumb (same post) the maximum number of keypoint according to <em>megapixels x 6400</em>.</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="workflow_image_4.png"><img alt="picture" width="700px" src="workflow_image_4.png" /></a>
+  </div>
+</div>
+
+<p>For the GoPro, Mapir or DJI images this will results in roughly 77000 keypoints.  Nevertheless setting the params to zero will be interpreted as maximum which seems to be reliable if one is filtering the point clouds and 3D models in a second step.  So a reasonable highest quality approach may look like:</p>
+
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b><br />
+ 
+Please keep in mind that it will take a really long time to align the images in a high quality process
+ 
+Please keep also in mind that if you have a poor image quality and/or alignment you will mess up your tie point cloud with a lot of spurious and cluttered tie points if you use the maximum setting. It happens sometimes that you wont’ be able  to get rid of these points later on.
+
+</div>
+
+<h3 id="creating-high-quality-sparse-tie-point-clouds">Creating high quality sparse (tie) point clouds</h3>
+
+<p>The trick to derive a high quality sparse  point clouds is to avoid spurious information and to retrieve a good spatial positioning of the images. In other words you need a optimal alignment with as less as possible “spurious” tie points.  You can reach this goals in most cases with a highest quality alignment and posterior filtering and camera optimization  process. If still the result is not satisfying your needs,  you additionally may also use ground control points GCPs.</p>
+
+<p>We made fairly good experiences following <a href="http://www.agisoft.com/forum/index.php?action=profile;u=179074">juhutan</a> who suggest the this <a href="http://www.agisoft.com/forum/index.php?topic=3559.0">workflow</a> for generating high quality point clouds. Usually we need only one recursion of gradual selection:</p>
+
+<ol>
+  <li>Remove sparse points by gradual selection (see below)</li>
+  <li>Optimize cameras (after** each** removal)</li>
+  <li>Optionally repeat steps 1-2 until the reconstruction error is minimized</li>
+</ol>
+
+<p>Ad 1: this removes spurious points from the point cloud e.g. it will smooth the surface</p>
+
+<p>Ad 2: all cameras will be re-optimized for the new geometry</p>
+
+<h4 id="gradual-selection-process">Gradual Selection Process</h4>
+
+<p>Before starting the gradual selection process right-click your current chunk in the Workspace window and select “Duplicate chunk”, then proceed with the copy.</p>
+
+<ol>
+  <li>Choose <code class="language-plaintext highlighter-rouge">Reconstruction uncertainty</code>. Type something like <code class="language-plaintext highlighter-rouge">10</code> and see the as a result all points in the sparse cloud selected Clicking <code class="language-plaintext highlighter-rouge">OK</code> and “DEL” will delete the selected points. If the <code class="language-plaintext highlighter-rouge">DEL</code> key doesn’t work, you need to click once into the model window to activate it, and press <code class="language-plaintext highlighter-rouge">DEL</code> again.</li>
+  <li>Next choose the <code class="language-plaintext highlighter-rouge">Reprojection Error</code> option. Set it to <code class="language-plaintext highlighter-rouge">&lt; 1</code> and again delete the selected points then click that wizard’s wand icon again.</li>
+  <li>Finally check the <code class="language-plaintext highlighter-rouge">Projection Accuracy</code>  try to delete the poorest <code class="language-plaintext highlighter-rouge">10 %</code> of the points.</li>
+</ol>
+
+<p>For more details have a look at e.g.  <a href="https://dinosaurpalaeo.wordpress.com/2015/10/11/photogrammetry-tutorial-11-how-to-handle-a-project-in-agisoft-photoscan/">dinosaurpaleo</a> tutorial .</p>
+
+<div class="alert alert-info" role="alert"> <i class="fa fa-info "></i>  <b>Note:</b><br />
+ 
+It is recommended to keep in line with this process if you want to reconstruct high quality point clouds and surfaces like textures or orthoimages. Even if it seems to be an annoying manual approach, you will soon notice that the time you have spent pays itself several times… 
+
+</div>
+
+<h2 id="build-3d-model-mesh">Build 3D model (mesh)</h2>
+
+<p>Now you may use the derived sparse point cloud to build a 3D model. the process is straightforward. For an maximum number of faces in the mesh choose the following settings:</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="workflow_image_5.png"><img alt="picture" width="700px" src="workflow_image_5.png" /></a>
+  </div>
+</div>
+
+<h2 id="generate-orthophoto">Generate Orthophoto</h2>
+
+<p>Creating an orthoimage is a very straightforward approach and it differs slightly from deriving a high density point cloud. Just follow the below outlined Workflow.</p>
+
+<ol>
+  <li>load the prepared images</li>
+  <li>check image quality</li>
+  <li>align images according as proposed before</li>
+  <li>build mesh on an optimized sparse point cloud</li>
+  <li>create orthoimage on the mesh</li>
+</ol>
+
+<p>Using a mesh (3D model) will give in most cases better results for the orthoimage generation of  low AGL flight level altitude imagery. Nevertheless you have to check what kind of cloud is more sufficient the dense or sparse point cloud. It depends on the structure. You will get often more satisfactory results using a well preprocessed sparse point cloud.</p>
+
+<p>So the recommended settings are:</p>
+
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="workflow_image_6.png"><img alt="picture" width="700px" src="workflow_image_6.png" /></a>
+  </div>
+</div>
+
+<p>Et voila - Finally you derive an orthoimage of fairly high quality</p>
+
+<h2 id="creating-high-quality-dense-point-clouds">Creating high quality dense point clouds</h2>
+
+<p>Hence micro-remote sensing is usually restricted to a single (visible) layer the temporal scale this layer can be observed by drones is the advantage compared to high-cost and temporal limited LIDAR data sets. Using Metashape the dense point cloud might still be classified in different layers depending of the structure of the observed area and structure (i.e a deciduous forest can be observed in winter for ground models and tree structure while summer flights will deliver good surface models).</p>
+
+<p>Additionally dense clouds can be exported in several formats to be used in further processing in QGIS, SAGa or 3D modelbuilder software. So it is easy to benefit from already existing and established workflows which were developed for LIDAR oder 3D modeling data.</p>
+
+<p>The settings of the dense point cloud calculation determines quality and necessary calculation time. Hereby a higher quality results in longer calculation time. Aggressive filtering ignores small structures and runs fastest while moderate and mild filtering consider smaller structures on the cost of longer calculation time.</p>
+
+<p>The dense point cloud can be calculated as soon the pictures are aligned. Even if the dense cloud comes second in the workflow dropdown menu in Metashape it should be considered to calculate the orthoimage first as the dense point cloud will take the longest time of all processes.</p>
+
+
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/LV-uav-workflow/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <h1 id="comments--discussions">Comments &amp; Discussions</h1>
+<script src="https://utteranc.es/client.js" repo="gisma-courses/LV-uav-workflow" issue-term="title" label="comments" theme="github-light" crossorigin="anonymous" async="">
+</script>
+
+<p><small>
+<a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach"> GISMA Geoinformatics Science</a>
+|
+<a class="footer-link" href="https://www.uni-marburg.de/en">University of Marburg
+</a>
+|
+<a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+|
+<a class="footer-link" href="https://gisma-courses.github.io/gi-modules/post/2021-11-21-impressum/"> Impressum</a>
+</small></p>
+
+    
+    <p style="margin: 0;   font-size: .6em; ">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a>
+      Last update on: <span>2023-06-26 10:27:03 +0200</span></p>
+
+    <p style="margin: 0;font-size: .6em;">
+      
+      5 modules
+      
+      | 6 outcomes
+      
+      
+      | 15 readings
+      
+      
+      | 30 experiences
+      
+      
+      | 6 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>

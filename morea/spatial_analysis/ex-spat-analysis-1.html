@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <img src="/LV-uav-workflow/morea/header_gis.jpg"  alt="course header" height="190" width="1920">
+  
+  <title> LV-UAV-Guide | OBIA Workflow for QGIS step by step </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/font-awesome.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/LV-uav-workflow/css/style.css">
+  <!-- Don't load style or syntax until we are sure we know what we're doing.-->
+  <link rel="stylesheet" href="/LV-uav-workflow/css/syntax.css">
+  
+  <link rel="shortcut icon" href="/LV-uav-workflow/favicon.ico" type="image/x-icon" />
+
+  
+
+  <!-- Load JQuery, then use it to attach the class 'active' to navbar item currently displayed. -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+
+    
+  <script>
+    $(window).on('load', function () {
+      $('.nav-item').find('a[href="' + location.pathname + '"]').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/LV-uav-workflow/index.html"> LV-UAV-Guide </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/modules/">Modules</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/outcomes/">Outcomes</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/readings/">Readings</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/experiences/">Experiences</a></li>
+        
+        
+        <li class="nav-item"><a class="nav-link" href="/LV-uav-workflow/assessments/">Assessments</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Internal fragment for displaying the breadcrumb bar -->
+<div class="breadcrumb-background" style="padding-top: 1em; padding-bottom: .01em">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules">Modules</a></li>
+        <li class="breadcrumb-item"><a href="/LV-uav-workflow/modules/module-hr-analysis">Analysis of high resolution aerial data</a></li>
+        <li class="breadcrumb-item active">OBIA Workflow for QGIS step by step</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="object-based-image-analysis-obia">Object-based image analysis (OBIA)</h1>
+
+<p>Human visual perception almost always outperforms computer image processing algorithms, For example, your brain knows a river when it sees one. But a computer can’t distinguish rivers from lakes, roads or sewage treatment plants.</p>
+
+<p>Especially with the spatially extreme and spectrally minimal resolution UAV image data, a change in thinking must take place. It makes more sense to think in terms of objects or entities to be identified rather than classifying in terms of individual pixels. The basic principle of object-based image analysis (OBIA) is to segment first and then classify.</p>
+
+<p>The segmentation process is algorithm-dependent but looks iteratively for similarities in space, structure and channel dimensions for grouping neighboring and similar pixels into objects. This segments are classified in a next step using supervised training data.</p>
+
+<h1 id="general-workflow">General Workflow</h1>
+
+<p>The example of OBIA classification is typical of the manual performance of such operations using a software package. It consists of the following steps:</p>
+
+<ol>
+  <li>data acquisition (orthophoto, training data).</li>
+  <li>generation of spatial segments on the basis of the</li>
+  <li>extraction of suitable description parameters</li>
+  <li>model training</li>
+  <li>classification of the input data set.</li>
+</ol>
+
+<p>In software-based processing, additional steps often have to be performed for technical reasons. Even more often, the processing of the individual steps is not necessarily linear, since intermediate results are used repeatedly in different steps. The following figure shows below step by step described process as a graphical model, which you can integrate in QGIS as a tool in the Processing Box.</p>
+<p align="center"><img src="images/obia1-model3.png" alt="OBIA classification Workflow for Orthoimages" width="1000px" /></p>
+
+<p><em>OBIA classification Workflow for Orthoimages</em></p>
+
+<p>For reference you may <a href="obia.zip">Download</a> the basic data. In Addition you may download the upper <a href="obia1.model3">OBIA-workflow</a> as an <code class="language-plaintext highlighter-rouge">QGIS-Model</code>. You can add this to your QGIS project with pushing the first icon “Models” <img src="images/process.png" alt="" />  on the processing sidebar and choose <code class="language-plaintext highlighter-rouge">Add Model to Toolbox</code>. Please note that is running with fixed default values. For modifying it you need to right-click on the model and choose <code class="language-plaintext highlighter-rouge">Edit Model</code>.</p>
+
+<h1 id="step-by-step-tutorial">Step by step tutorial</h1>
+
+<p>In the following step by step guide an OBIA approach with QGIS and the OTB Toolbox is carried out as an template example. There are many segmentation algorithms and integrated classification methods. The Mean-shift method used here and the subsequent training with Support Vector Machine is a robust and common method. Especially the extension of the feature space (here called <code class="language-plaintext highlighter-rouge">Range Radius</code>) and the search space (<code class="language-plaintext highlighter-rouge">Spatial Radius</code>) as well as the size of the segmented objects (<code class="language-plaintext highlighter-rouge">Minimum Region size</code>) is crucial for a satisfying result. The principle is transferable to the different forms of the OBIA and despite abundant literature and some good instructions it is a free empirical game.</p>
+
+<h3 id="step-1-create-training-sample-points-by-manual-digitizing">Step-1 Create Training Sample Points by manual digitizing</h3>
+
+<p>If you need to learn how to digitize with QGIS you may follow this <a href="https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html">tutorial</a>. However we will only digitize Points and not polygons.</p>
+<div class="alert alert-success" role="alert"> <i class="fa fa-thumbs-up "></i>  <b></b> 
+ Activate under <code class="language-plaintext highlighter-rouge">Main Menu-&gt;Settings-&gt;Digitize</code> and check <em><code class="language-plaintext highlighter-rouge">Reuse last entered attribute values</code></em>. this will makes in much more comfortable to digitize training points of one class in series.
+
+</div>
+
+<p>Create a point vector file and digitize the following classes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">class</th>
+      <th style="text-align: right">CLASS_ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">water</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">meadows</td>
+      <td style="text-align: right">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">meadows-rich</td>
+      <td style="text-align: right">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">bare-soil-dry</td>
+      <td style="text-align: right">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">crop</td>
+      <td style="text-align: right">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">green-trees-shrubs</td>
+      <td style="text-align: right">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">dead-wood</td>
+      <td style="text-align: right">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">other</td>
+      <td style="text-align: right">8</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Provide at minimum 10 widely spread sampling points.</p>
+
+<p>Save this file naming it <code class="language-plaintext highlighter-rouge">sample.gpgk</code>.</p>
+
+<div class="alert alert-warning" role="alert"> <b> &lt; Keep in mind &gt; <br /> <br /> 
+ Here, the training data is digitized on the screen (as is often the case) using the god’s eye method as an example. For a rough classification of the selected classes, this is of course useful and sufficiently accurate.
+<br />
+<br />
+However, please keep in mind that these training samples are usually collected in the field. This means that utilizing a GPS or exact map work, the positions, and their affiliations are collected and entered into a corresponding table. Often this is accompanied by a vegetation survey, soil survey, or limnological or other surveys.<br />
+  <br /> 
+</b></div>
+
+<h3 id="step-2-segmentation">Step-2 Segmentation</h3>
+
+<p>In the search field of the <code class="language-plaintext highlighter-rouge">Processing Toolbox</code> type <em>segmentation</em> and double click <code class="language-plaintext highlighter-rouge">Segmentation</code>.</p>
+
+<ul>
+  <li>select the <code class="language-plaintext highlighter-rouge">input image</code>: <em>example-5.tif</em></li>
+  <li>select <code class="language-plaintext highlighter-rouge">meanshift</code> from the drop-down list <em>Segmentation algorithm</em></li>
+  <li>The <code class="language-plaintext highlighter-rouge">Spatial Radius</code> value can be set to <em>25</em>. This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Range Radius</code> value can be set to <em>25</em>. We are dealing with RGB images that have a range <code class="language-plaintext highlighter-rouge">0-255</code>. The optimal value depends on the datatype, the dynamic range of the input image and requires experimental trials for the specific classification objectives</li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Minimum Region size</code> in pixels to <em>25</em>. The minimum size of a region (in pixel unit) in segmentation. Smaller clusters will merged to the neighboring cluster with the closest radiometry</li>
+  <li>keep <code class="language-plaintext highlighter-rouge">Processing mode</code>  as <em>Vector</em></li>
+  <li>Tick <code class="language-plaintext highlighter-rouge">8-neighborhood connectivity</code></li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Minimum object size</code> in pixels to <em>200</em></li>
+  <li>Name the <code class="language-plaintext highlighter-rouge">Output vector file</code>  as  <em>segments-meanshift.shp</em></li>
+  <li>Push <code class="language-plaintext highlighter-rouge">Run</code></li>
+</ul>
+
+<p><br /></p>
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="obia1.png"><img alt="picture" width="700px" src="obia1.png" /></a>
+  </div>
+</div>
+
+<p><br /></p>
+
+<ul>
+  <li>Check the  results: Load the output vector file <em>segments-meanshift.shp</em> into your QGIS session and place it on top of the image <em>example-5.tif</em></li>
+  <li>Colorize the vector layer in the QGIS Layers window. Right click <code class="language-plaintext highlighter-rouge">Properties-&gt;Symbology-&gt;Simple Fill</code>, <code class="language-plaintext highlighter-rouge">Fill Style</code>: <code class="language-plaintext highlighter-rouge">No Brush</code> and <code class="language-plaintext highlighter-rouge">Stroke color</code>: <code class="language-plaintext highlighter-rouge">white</code>.</li>
+  <li>Check the features with a visual inspection. Is the result goal keeping? If not, start over… .</li>
+</ul>
+
+<h3 id="step-3-feature-extraction">Step-3 Feature extraction</h3>
+<p>Type <code class="language-plaintext highlighter-rouge">zonalstats</code> in the search field of the Processing Toolbox and open the tool <code class="language-plaintext highlighter-rouge">ZonalStatistics</code>. You find it under the image manipulation section of OTB.</p>
+
+<ul>
+  <li>Select as input image: <em>example-5.tif</em>.</li>
+  <li>Select <code class="language-plaintext highlighter-rouge">input vector data</code> the vector file with segments from above segmentation <em>segments-meanshift.shp</em></li>
+  <li>Name for the <code class="language-plaintext highlighter-rouge">output vector</code>: <em>segments-meanshift-zonal.shp</em>.</li>
+  <li>Push <code class="language-plaintext highlighter-rouge">Run</code>.
+<br /></li>
+</ul>
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="obia2-zonal.png"><img alt="picture" width="400px" src="obia2-zonal.png" /></a>
+  </div>
+</div>
+
+<p><br /></p>
+
+<h2 id="step-4-joining-training-data-with-segements">Step-4 Joining training data with segements</h2>
+
+<p>Type in the search field of the <code class="language-plaintext highlighter-rouge">Processing Toolbox</code>  <em>join</em> and double click <code class="language-plaintext highlighter-rouge">Join Attributes by Location</code>.</p>
+
+<ul>
+  <li>select the <code class="language-plaintext highlighter-rouge">Base Layer</code>: <em>segments-meanshift-zonal.shp</em></li>
+  <li>select the <code class="language-plaintext highlighter-rouge">Join Layer</code>: <em>sample.shp</em></li>
+  <li><code class="language-plaintext highlighter-rouge">Join Type</code>: choose <em>Take Attributes of the first matching…</em></li>
+  <li>Tick <code class="language-plaintext highlighter-rouge">Discard records which could not be joined</code></li>
+  <li>Provide an output filename
+<br /></li>
+</ul>
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="obia3-join.png"><img alt="picture" width="400px" src="obia3-join.png" /></a>
+  </div>
+</div>
+
+<p><br /></p>
+<div class="alert alert-success" role="alert"> <i class="fa fa-thumbs-up "></i>  <b></b> 
+Sometimes the geometry is broken. Type <code class="language-plaintext highlighter-rouge">fix</code> in the search field of the Processing Toolbox and open <code class="language-plaintext highlighter-rouge">Fix Geometries</code> which will in most cases do the job.
+
+</div>
+
+<h3 id="step-5-training">Step-5 Training</h3>
+<p>Type <code class="language-plaintext highlighter-rouge">train</code> in the search field of the Processing Toolbox and open <code class="language-plaintext highlighter-rouge">TrainVectorClassifier</code></p>
+
+<ul>
+  <li>In the  field  <code class="language-plaintext highlighter-rouge">Vector Data List</code> select  the correct vector file by clicking <em>…</em> and browse directly to the file containing the training area polygons <em>segments-meanshift-zonal.shp</em></li>
+  <li>Provide the <code class="language-plaintext highlighter-rouge">Output model filename</code> as <em>lahn-gi-spann-obia.model</em></li>
+  <li>In the field <code class="language-plaintext highlighter-rouge">Field names for training features</code> copy and paste <code class="language-plaintext highlighter-rouge">"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"</code></li>
+  <li>The name of <code class="language-plaintext highlighter-rouge">Field containing the class id for supervision</code> is <code class="language-plaintext highlighter-rouge">CLASS_ID</code></li>
+  <li>Classifier to use for training: <code class="language-plaintext highlighter-rouge">libsvm</code> Usually the straighforward Support Vector Machine is doing a good job</li>
+  <li>SVM Kernel Type: <code class="language-plaintext highlighter-rouge">linear</code></li>
+  <li>SVM Model Type: <code class="language-plaintext highlighter-rouge">csvc</code></li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Parameters optimization</code> to <code class="language-plaintext highlighter-rouge">ON</code></li>
+  <li>Push <code class="language-plaintext highlighter-rouge">Run</code>
+<br /></li>
+</ul>
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="obia5-train.png"><img alt="picture" width="400px" src="obia5-train.png" /></a>
+  </div>
+</div>
+
+<p><br /></p>
+
+<h3 id="step-6-classification">Step-6 Classification</h3>
+<p>Type <code class="language-plaintext highlighter-rouge">class</code> in the search field of the Processing Toolbox and open <code class="language-plaintext highlighter-rouge">VectorClassifier</code></p>
+<ul>
+  <li>In the  field  <code class="language-plaintext highlighter-rouge">Vector Data</code> select <em>manually</em> the correct vector file clicking <em>…</em> and browse directly to the file containing the training area polygons containing segments and features for the whole image <em>lahn-gi-spann-segments-meanshift-zonal.shp</em></li>
+  <li>The name of the upper <code class="language-plaintext highlighter-rouge">input model</code> file is <em>lahn-gi-spann-obia.model</em></li>
+  <li>Output field containing the class is <code class="language-plaintext highlighter-rouge">CLASS_ID</code></li>
+  <li>Copy and paste into the field <code class="language-plaintext highlighter-rouge">Field names to be calculated</code> same attributes as above: <code class="language-plaintext highlighter-rouge">"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"</code></li>
+  <li>Name the <code class="language-plaintext highlighter-rouge">output vector</code> data <em>lahn-gi-spann-classified_obia.shp</em>.</li>
+  <li>Push <code class="language-plaintext highlighter-rouge">Run</code></li>
+  <li>Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. <code class="language-plaintext highlighter-rouge">Layer-&gt;Layer properties-&gt;Symbology-&gt;Style-&gt;Load style...</code>.</li>
+</ul>
+
+<p><br /></p>
+<div class="center-block">
+  <div class="img-responsive">
+    <a href="obia6-class.png"><img alt="picture" width="640px" src="obia6-class.png" /></a>
+    <a href="classification.png"><img alt="picture" width="640px" src="classification.png" /></a>
+  </div>
+</div>
+
+<p><br /></p>
+
+<h1 id="result">Result</h1>
+
+<p>You will see partly predominantly excellent classification. However, there are also significant misclassifications.</p>
+
+<ul>
+  <li>What could be the reason for that?</li>
+  <li>What is a weakness of this approach?</li>
+  <li>Any suggestion to improve?</li>
+</ul>
+
+
+
+</div>
+
+
+
+
+<!-- Maybe find a different way?
+<script src="/LV-uav-workflow/js/scrollIfAnchor.js"></script>
+-->
+
+<footer class="footer footer-background" style="padding-top: 1em; padding-bottom: 1em">
+  <div class="container text-center">
+    
+    <h1 id="comments--discussions">Comments &amp; Discussions</h1>
+<script src="https://utteranc.es/client.js" repo="gisma-courses/LV-uav-workflow" issue-term="title" label="comments" theme="github-light" crossorigin="anonymous" async="">
+</script>
+
+<p><small>
+<a class="footer-link" href="https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach"> GISMA Geoinformatics Science</a>
+|
+<a class="footer-link" href="https://www.uni-marburg.de/en">University of Marburg
+</a>
+|
+<a class="footer-link" href="http://creativecommons.org/licenses/by-sa/4.0/"> <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+|
+<a class="footer-link" href="https://gisma-courses.github.io/gi-modules/post/2021-11-21-impressum/"> Impressum</a>
+</small></p>
+
+    
+    <p style="margin: 0;   font-size: .6em; ">Powered by the <a class="footer-link" href="http://morea-framework.github.io/">Morea Framework</a>
+      Last update on: <span>2023-06-26 10:27:03 +0200</span></p>
+
+    <p style="margin: 0;font-size: .6em;">
+      
+      5 modules
+      
+      | 6 outcomes
+      
+      
+      | 15 readings
+      
+      
+      | 30 experiences
+      
+      
+      | 6 assessments
+      
+    </p>
+  </div>
+</footer>
+
+
+<!-- Load Bootstrap JavaScript components -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+</body>
+</html>
