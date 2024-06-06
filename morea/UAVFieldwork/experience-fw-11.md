@@ -171,7 +171,7 @@ Pleas note below you will use demo files from the package. To change it just put
 library(uavRmp)
 # get example DEM data
  filenameDEM = system.file("extdata", "mrbiko.tif", package = "uavRmp")
- filenameFlightarea = system.file("extdata", ""tutdata_qgc_survey.plan"", package = "uavRmp")
+ filenameFlightarea = system.file("extdata", "tutdata_qgc_survey.plan", package = "uavRmp")
 
 
 fp = makeAP(projectDir = "~/uav",
