@@ -12,3 +12,5 @@ The responsibility for the content rests with the instructors. Statements, opini
 
 This repository contains a template Morea course site. For documentation on how to use Morea, please see https://morea-framework.github.io.
 
+
+
