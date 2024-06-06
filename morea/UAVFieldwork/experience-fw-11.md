@@ -170,17 +170,15 @@ Pleas note below you will use demo files from the package. To change it just put
 ```r
 library(uavRmp)
 # get example DEM data
- demFn <- system.file("extdata", "mrbiko.tif", package = "uavRmp")
- fa <- system.file("extdata", "qgc_survey.plan", package = "uavRmp")
+ filenameDEM = system.file("extdata", "mrbiko.tif", package = "uavRmp")
+ filenameFlightarea = system.file("extdata", ""tutdata_qgc_survey.plan"", package = "uavRmp")
 
 
 fp = makeAP(projectDir = "~/uav",
-        surveyArea=fa,
         useMP = TRUE,
-        demFn = demFn,
-        maxFlightTime = 25,
-        maxwaypoints = 250,
-        cameraType ="dji_min2",
+        surveyArea = filenameFlightarea,
+        demFn = filenameDEM,
+        cameraType = "dji43",
         uavType = "dji_csv")                 
 ```
 
