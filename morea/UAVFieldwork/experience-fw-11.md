@@ -161,11 +161,10 @@ Please check the folder structure according to the figure below.
 ### Explanation of the used arguments
 
 * *useMP = TRUE*   is the switch to activate and QGroundCOntrol or Missionplanner task file
-* *demFn = filname* set path and file name to the used DEM 
-* *surveyArea = fa* set path and file name of the QGroundControl flight plan
-* *maxFlightTime = 25* set the maximum estimated lifetime of the battery in minutes
-* *maxwaypoints = 250* set the number of allowed way points in one control file (older DJIs /Litchi were constrained by 99 way points).
-Pleas note below you will use demo files from the package. To change it just put in the path and name of your DEM and planning file.
+* *demFn = filenameDEM* set path and file name to the used DEM 
+* *surveyArea = filenameFlightarea* set path and file name of the QGroundControl flight plan
+
+Please note below you will use demo files from the package. To change it just put in the path and name of your DEM and planning file.
 
 ```r
 library(uavRmp)
@@ -188,7 +187,10 @@ The script generates:
   * log file(s) 
   * flight control file(s) for running a mission on DJIs 
 
-All  of them are important even if a quick inspection of the generated objects is the maxFlightTime which rules the length of the single flight. The log file dumps  all important parameters of the calculated mission.
+All of them are important even if a quick inspection of the generated objects is the maxFlightTime which rules the length of the single flight. The log file dumps  all important parameters of the calculated mission.
+
+For a more comprehensive tutorial please check [Mission Planning on basis of QGroundcontrol
+](https://gisma.github.io/uavRmp/articles/uavRmp_2.html)
 
 If you just want to convert fight plans from `GroundControl` to `Litchi` You may also use the shiny GUI:
 ```r
