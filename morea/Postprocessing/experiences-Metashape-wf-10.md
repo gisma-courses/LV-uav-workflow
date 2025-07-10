@@ -11,115 +11,110 @@ morea_labels:
  - mandatory 
 ---
 
-# Agisoft Metashape basic workflow 
+# Agisoft Metashape basic workflow
 
-Even if both criteria open source and free software are missing one have to admit that 
-Agisoft's Metashape is a good tool for deriving point clouds and all kind of surface models from plain RGB imagery. It comes along with an  straightforward GUI and in Question of hardware requests and cost efficiency it is well balanced. For a deeper insight one should know how to deal with a lot o settings. 
+Even though Metashape is neither open source nor free, it is a powerful tool for deriving point clouds and various surface models from standard RGB imagery. It offers a user-friendly interface and strikes a good balance between hardware requirements and cost-efficiency. For more advanced use, understanding the detailed settings is essential.
 
-## Add the photos to Metashape 
-Let's start to follow the white rabbit.
+## Add the photos to Metashape
 
-After loading the images into Agisofts Metashape the aerial images are lining up along the flight track as you can see below.
+Let’s begin by following the white rabbit.
 
-{% include medium-img.html url="workflow_image_2.png" %}  
+After importing your aerial images into Metashape, they will appear arranged along the flight path, as shown below.
+
+{% include medium-img.html url="workflow_image_2.png" %}
 
 ### Alignment
 
+{% include note.html content="
 
-{% include note.html content=" 
- 
-The quality of the alignment is crucial for **all** follow up products - especially 3D dense point cloud models and the creation of the orthoimage.
+The quality of the alignment is crucial for **all** downstream products — especially 3D dense point clouds and orthoimages.
 "%}
 
+The **Align Images** process is somewhat explorative. For a quick start, it’s useful to apply the following recommended settings:
 
-The **Align Images** process is somehow exploitative. For a quick start it is a good practice to use the following settings:
+{% include medium-img.html url="workflow_image_3.png" %}
 
-{% include medium-img.html url="workflow_image_3.png" %}  
+This will provide a good initial assessment of how well your data can be aligned.
 
+{% include note.html content="
 
-It will give you an good estimate how the general alignment process performs. 
-
-{% include note.html content=" 
- 
- We did choose **reference preselection** due to the fact that we have georeferenced images.
- "%}
-
-
-However there are a lot of different requirements depending on sensor, light and surface characteristics. For high quality images there is obviously [no](http://www.agisoft.com/forum/index.php?topic=3559.0) [significant](http://www.agisoft.com/forum/index.php?topic=3559.0) quality improvement if increasing the number of keypoints behind 240000. You may calculate as a rule of thumb (same post) the maximum number of keypoint according to *megapixels x 6400*. 
-
-{% include medium-img.html url="workflow_image_4.png" %}  
-
-For the GoPro, Mapir or DJI images this will results in roughly 77000 keypoints.  Nevertheless setting the params to zero will be interpreted as maximum which seems to be reliable if one is filtering the point clouds and 3D models in a second step.  So a reasonable highest quality approach may look like:
-
-{% include note.html content=" 
- 
-Please keep in mind that it will take a really long time to align the images in a high quality process
- 
-Please keep also in mind that if you have a poor image quality and/or alignment you will mess up your tie point cloud with a lot of spurious and cluttered tie points if you use the maximum setting. It happens sometimes that you wont' be able  to get rid of these points later on.
+We used **reference preselection** because the images are georeferenced.
 "%}
 
-### Creating high quality sparse (tie) point clouds 
+However, alignment quality depends greatly on sensor type, lighting conditions, and surface characteristics. For high-quality imagery, increasing the keypoint limit beyond 240,000 generally leads to no [significant](http://www.agisoft.com/forum/index.php?topic=3559.0) improvements. As a rule of thumb, calculate the maximum number of keypoints as *megapixels × 6400*.
 
+{% include medium-img.html url="workflow_image_4.png" %}
 
-The trick to derive a high quality sparse  point clouds is to avoid spurious information and to retrieve a good spatial positioning of the images. In other words you need a optimal alignment with as less as possible “spurious” tie points.  You can reach this goals in most cases with a highest quality alignment and posterior filtering and camera optimization  process. If still the result is not satisfying your needs,  you additionally may also use ground control points GCPs. 
+For images from GoPro, Mapir, or DJI cameras, this results in about 77,000 keypoints. Setting the parameters to zero tells Metashape to use the maximum, which can work well if you later filter your point clouds and models. A typical high-quality setup might look like this:
 
-We made fairly good experiences following [juhutan](http://www.agisoft.com/forum/index.php?action=profile;u=179074) who suggest the this [workflow](http://www.agisoft.com/forum/index.php?topic=3559.0) for generating high quality point clouds. Usually we need only one recursion of gradual selection:
+{% include note.html content="
 
-  1. Remove sparse points by gradual selection (see below)
-  1. Optimize cameras (after** each** removal)
-  1. Optionally repeat steps 1-2 until the reconstruction error is minimized
+Keep in mind that high-quality alignment will significantly increase processing time.
 
-Ad 1: this removes spurious points from the point cloud e.g. it will smooth the surface
+Also note: if your imagery is of poor quality or the alignment is unstable, using maximum settings may lead to excessive clutter and spurious tie points in the sparse cloud — which may be hard to clean up afterward.
+"%}
 
-Ad 2: all cameras will be re-optimized for the new geometry
+### Creating high-quality sparse (tie) point clouds
 
-#### Gradual Selection Process 
+The key to producing a clean sparse point cloud is minimizing noise and achieving accurate spatial alignment. In practice, this means obtaining the best possible image alignment and then refining it through filtering and camera optimization. If needed, you can further improve results using Ground Control Points (GCPs).
 
-Before starting the gradual selection process right-click your current chunk in the Workspace window and select “Duplicate chunk”, then proceed with the copy. 
+We’ve had good experience following [juhutan](http://www.agisoft.com/forum/index.php?action=profile;u=179074), who recommends this [workflow](http://www.agisoft.com/forum/index.php?topic=3559.0) for high-quality point cloud generation. Typically, only one iteration of the following steps is required:
 
-  1. Choose `Reconstruction uncertainty`. Type something like `10` and see the as a result all points in the sparse cloud selected Clicking `OK` and “DEL” will delete the selected points. If the `DEL` key doesn’t work, you need to click once into the model window to activate it, and press `DEL` again.
-  2. Next choose the `Reprojection Error` option. Set it to `< 1` and again delete the selected points then click that wizard’s wand icon again. 
-  3. Finally check the `Projection Accuracy`  try to delete the poorest `10 %` of the points.
-  
-For more details have a look at e.g.  [dinosaurpaleo](https://dinosaurpalaeo.wordpress.com/2015/10/11/photogrammetry-tutorial-11-how-to-handle-a-project-in-agisoft-photoscan/) tutorial .  
+  1. Remove sparse points via gradual selection (see below)
+  2. Optimize cameras (after **each** removal)
+  3. Optionally repeat steps 1–2 until reconstruction error is minimized
 
-{% include note.html content=" 
- 
-It is recommended to keep in line with this process if you want to reconstruct high quality point clouds and surfaces like textures or orthoimages. Even if it seems to be an annoying manual approach, you will soon notice that the time you have spent pays itself several times… 
+Explanation:
+- Step 1 removes spurious points from the cloud and smooths surfaces.
+- Step 2 updates all cameras to reflect the improved geometry.
+
+#### Gradual Selection Process
+
+Before beginning, right-click on your current chunk in the Workspace panel and choose “Duplicate Chunk” to preserve a backup.
+
+  1. Select `Reconstruction Uncertainty`, enter a value like `10`, click OK, and press `DEL` to delete the selected points. If `DEL` doesn’t work, click inside the model window first.
+  2. Then select `Reprojection Error`, set it to `< 1`, delete selected points, and click the wand icon again.
+  3. Finally, choose `Projection Accuracy`, and delete the lowest `10%` of points.
+
+More details can be found in this tutorial by [dinosaurpaleo](https://dinosaurpalaeo.wordpress.com/2015/10/11/photogrammetry-tutorial-11-how-to-handle-a-project-in-agisoft-photoscan/).
+
+{% include note.html content="
+
+It’s strongly recommended to follow this process if your goal is to generate high-quality point clouds, textures, or orthoimages. Though the steps are manual, the time invested will pay off.
 "%}
 
 ## Build 3D model (mesh)
 
-Now you may use the derived sparse point cloud to build a 3D model. the process is straightforward. For an maximum number of faces in the mesh choose the following settings:
+You can now use the refined sparse cloud to build a 3D model. The process is straightforward. For best results and a high face count in the mesh, use the following settings:
 
-{% include medium-img.html url="workflow_image_5.png" %}  
+{% include medium-img.html url="workflow_image_5.png" %}
 
-## Generate Orthophoto 
+## Generate Orthophoto
 
+Creating an orthoimage is also a straightforward process, slightly different from generating a dense point cloud. Follow this workflow:
 
-Creating an orthoimage is a very straightforward approach and it differs slightly from deriving a high density point cloud. Just follow the below outlined Workflow. 
+  1. Load the prepared images
+  2. Check image quality
+  3. Align images as described earlier
+  4. Build the mesh using the optimized sparse point cloud
+  5. Generate the orthoimage based on the mesh
 
-  1. load the prepared images
-  2. check image quality 
-  3. align images according as proposed before
-  4. build mesh on an optimized sparse point cloud
-  5. create orthoimage on the mesh
+Using a mesh-based surface generally produces better results for low-altitude imagery. However, whether to use a dense or sparse point cloud depends on your dataset. In many cases, a well-processed sparse cloud will deliver better ortho results.
 
-Using a mesh (3D model) will give in most cases better results for the orthoimage generation of  low AGL flight level altitude imagery. Nevertheless you have to check what kind of cloud is more sufficient the dense or sparse point cloud. It depends on the structure. You will get often more satisfactory results using a well preprocessed sparse point cloud.  
+Recommended settings:
 
-So the recommended settings are:
+{% include medium-img.html url="workflow_image_6.png" %}
 
-{% include medium-img.html url="workflow_image_6.png" %}  
-Et voila - Finally you derive an orthoimage of fairly high quality 
+Et voilà — you now have a high-quality orthoimage.
 
-## Creating high quality dense point clouds 
+## Creating high-quality dense point clouds
 
+Micro-remote sensing often works with a single spectral band (RGB), but its main advantage over LiDAR is the ability to repeatedly and flexibly observe the surface over time. With Metashape, dense clouds can still be structured into layers, depending on what is visible in the data. For example, deciduous forests can be analyzed in winter (to detect terrain and tree structure) or summer (to model the canopy surface).
 
-Hence micro-remote sensing is usually restricted to a single (visible) layer the temporal scale this layer can be observed by drones is the advantage compared to high-cost and temporal limited LIDAR data sets. Using Metashape the dense point cloud might still be classified in different layers depending of the structure of the observed area and structure (i.e a deciduous forest can be observed in winter for ground models and tree structure while summer flights will deliver good surface models). 
+Dense clouds can be exported in various formats for further use in QGIS, SAGA, or 3D modeling tools. This makes it easy to integrate with established workflows originally developed for LiDAR or photogrammetry.
 
-Additionally dense clouds can be exported in several formats to be used in further processing in QGIS, SAGa or 3D modelbuilder software. So it is easy to benefit from already existing and established workflows which were developed for LIDAR oder 3D modeling data. 
+Note: The dense cloud settings control both quality and processing time. Higher quality means longer processing. 
+- **Aggressive filtering** is fast but may lose detail.
+- **Moderate or mild filtering** retains finer structures but requires more time.
 
-The settings of the dense point cloud calculation determines quality and necessary calculation time. Hereby a higher quality results in longer calculation time. Aggressive filtering ignores small structures and runs fastest while moderate and mild filtering consider smaller structures on the cost of longer calculation time.
-
-The dense point cloud can be calculated as soon the pictures are aligned. Even if the dense cloud comes second in the workflow dropdown menu in Metashape it should be considered to calculate the orthoimage first as the dense point cloud will take the longest time of all processes. 
-
+You can calculate the dense point cloud after the images are aligned. Although it's listed earlier in Metashape’s workflow dropdown, it is often smarter to generate the orthoimage first, as dense cloud creation is by far the most time-consuming step.

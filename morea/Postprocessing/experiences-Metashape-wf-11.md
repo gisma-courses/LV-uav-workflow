@@ -14,165 +14,173 @@ morea_labels:
 
 ---
 
-Metashape Ortho+ - optimized processing of RGB images
-=====================================================
+# Metashape Workflow via `Ortho+`
 
-The Metashape Ortho+ menu provides essential scripts that streamline and optimize the manual Metashape workflow (Ludwig et al., 2020). It enables reproducible and automatically optimized processing of aerial imagery. Installation is seamless via Metashape's scripting interface.
+The `Metashape Ortho+` menu provides essential scripts that simplify and optimize the manual metashape workflow [Ludwig et al., 2020](https://www.mdpi.com/2072-4292/12/22/3831). The optimized workflow generates reproducible and automatically optimized products from the aerial images. Installation is seamless via Metashape's scripting interface.  
+After the installation and the necessary restart of Metashape there is `Ortho+` menu item in the Metashape menu bar. 
 
-Once installed and Metashape restarted, the Ortho+ menu becomes available in the Metashape menu bar.
+{% include kim.html content="
+The MetashapeToolbox plugin is capable to control all working steps for low cost aerial images with GPS information. Usually it is capable to replace the manual workflow.
+<br>
+**This is not the case for multispectral sensors like the `MicaSense Altum` or other advanced sensors!**
+<br>
 
-Note: The MetashapeToolbox plugin can automate all workflow steps for low-cost aerial images with GPS metadata. In many cases, it replaces the manual workflow. This does not apply to multispectral sensors like the MicaSense Altum or other advanced sensors.
+ " %}
 
-Installation of the Toolbox
----------------------------
-Linux/Mac:
-Download and extract the repository into:
-~/.local/share/Agisoft/Metashape Pro/scripts/
+### Instalation of the toolbox
+**Linux/Mac:**
+Download this repo and unzip it to `~/.local/share/Agisoft/Metashape Pro/scripts/`
 
+```bash
 cd ~/.local/share/Agisoft/Metashape Pro/scripts
 git clone https://github.com/gisma/MetashapeTools.git .
+```
+**Windows:**
+Copy the content of this repo to `User/AppData/Local/AgiSoft/Metashape Pro/scripts`
 
-Windows:
-Copy the repository contents into:
-User/AppData/Local/Agisoft/Metashape Pro/scripts
-
-First Things First – Load Images
---------------------------------
-All functions are based on image data. Therefore, always start with:
+## First things first - Load images 
+All functions are based on image data so first do **always** the following:
 
 1. Add the images you want to process to the chunk.
-2. Assign a meaningful name to the chunk.
-3. Save the project with a meaningful filename.
+2. Give the chunk a meaningful name.
+3. Save the project using a meaningful name
 
-Note: For many operations, you'll be asked whether to process a single chunk or all chunks. Choose appropriately.
+Note: You will be always ask if you want to perfrm the task for a singel chunk or all chunks. Choose wisely.
 
-BestPractice
-------------
-The BestPractice menu provides tested workflows tailored for large image datasets from low-cost UAV surveys. A common issue is excessive image volume due to frequent takeoffs, landings, and continuous time-lapse cameras (e.g., GoPro Hero 7, 2s interval). Often, 80% of such images are redundant or low-quality.
+## `BestPractice`
 
-The BestPractice workflows:
-- Detect poor-quality images
-- Remove unnecessary photos (e.g., takeoff/landing)
-- Optimize the camera set using inverse geometry and surface model analysis
+The `BestPractice` menu provides robust and well tested workflows that are primarily intended for processing large image data sets from (low cost) drone surveys. The problem that arises here is the huge amount of images with numerous starts and landings and a fixed continuous camera system (e.g. GoPro Hero 7, time lapse 2 sec). This way, 10k images are quickly collected, 80% of which are over sampled or of poor image quality and so on. The workflows identify low image quality and reduce the number of images by an inverse camera position calculation based on the preliminary surface model. This *dramatically* reduces the number of images, due to elimination of unusable taxiway and takeoff/landing image sequences. In addition the remaining cameras are activated and optimized. In this way, the quality and reproducibility can be significantly improved. At the same time, processing time is reduced by one to two orders of magnitude. 
 
-The result is a significant reduction in image count, improved reproducibility, and processing time cut by one or two orders of magnitude.
+## Orthoimage Workflow integrating Ground Control Points (GCPs)
 
-Orthoimage Workflow with Ground Control Points (GCPs)
------------------------------------------------------
-This workflow includes four consecutive steps. All must be completed in order.
+It is obligatory that you run consecutively  all three steps.
 
-Step-1 Orthoimage-pre-GCP
---------------------------
-Run Orthoimage-pre-GCP, which:
-- Filters out images with quality < 0.78
-- Performs a first alignment and mesh with:
-  Key Point Limit: 10,000
-  Tie Point Limit: 1,000
-  Downsampling: 4
-  Smoothing: 10x
-  Overlap reduction: 8
-- Performs a second alignment and mesh with:
-  Key Point Limit: 40,000
-  Tie Point Limit: 4,000
-  Downsampling: 1
+### `Step-1 Orthoimage-pre-GCP`
+* Start the script `Orthoimage-pre-GCP`
+  * checks image Quality and drop images with  a quality less than 0.78
+  * calculate a first alignment and mesh using the following parameters: 
+  * key point limit: 10000
+  * tie point limit: 1000
+  * downsampling: 4
+  * smoothing 10 times
+  * reduce overlap with a value of 8 
+  * calculate a **second** alignment and mesh using the following parameters: 
+  * key point limit: 40000
+  * tie point limit: 4000
+  * downsampling: 1
 
-Step-2 Link GCP to Images
--------------------------
-After the script completes, you may need to manually remove remaining takeoff/landing photos.
-Right-click the area in the model, choose "Filter by Point", then select and delete unwanted images.
 
-Follow this YouTube video or Agisoft tutorial:
-- https://youtu.be/G09r5PXqhBc
-- https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation
+### `Step-2 Link GCP to images` 
 
-Import your GCPs and align each to at least 4 images. Use about 30% of GCPs as independent checkpoints by unticking them in the Reference pane. Save your project.
 
-Step-3 Optimize Sparse Cloud
-----------------------------
-This step performs iterative optimization of the sparse point cloud to minimize reprojection error and enhance point reliability.
+{% include kim.html content="
+This is a manual step please follow the bekow instructions
+ " %}
+After the script is finished you *may* need to manually remove the few remaining start and landing area pictures. Otherwise you will find at the launching place some artefacts. To do so just right-click on the position in the model and choose filter by point. Mark and remove all pictures with the launching pad and repeated launching and landing images.
 
-Step-4 Orthoimage-post-GCP
----------------------------
-Run Orthoimage-post-GCP. It:
-- Optimizes the sparse cloud using point statistics
-- Creates a 2.5D mesh
-- Smooths the mesh (factor: 35)
-- Creates orthomosaic with:
-  Surface: mesh
-  Refine seamlines: true
-- Exports:
-  Orthomosaic
-  Seamlines
-  Marker error report
-  Project report
+The procedure is well documented. Dor instant watch this [YouTube](https://youtu.be/G09r5PXqhBc) or follow this [tutorial](https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation). Import your Ground Control Points (GCP) and align them manually in at least 4 images. Use about 30 % of the GCP as independent checkpoints by unticking the check box in the reference pane. Save your project.
 
-This generates a reproducible orthoimage based on statistically optimized camera positions.
+### `Step-3 Optimize Sparsecloud`
+Performs an iterative optimisation of the sparse cloud to retrieve the best reprojection error. The tie pointcloud will be much more reliable for all later tasks
 
-Orthoimage-no-GCP
------------------
-If no GCPs are available or needed, you can produce an optimized orthomosaic with one click:
 
-- Place each flight’s image data in a separate chunk
-- Run Toolchain noGCP and process all chunks
+### `Step-4 Orthoimage-post-GCP`
 
-The script:
-- Filters images with quality < 0.75
-- First alignment and mesh:
-  Key Point Limit: 10,000
-  Tie Point Limit: 1,000
-  Downsampling: 4
-  Smoothing: 10x
-- Overlap reduction: 15
-- Second alignment and 2.5D mesh:
-  Key Point Limit: 40,000
-  Tie Point Limit: 4,000
-  Downsampling: 1
-- Smooths mesh (factor 35)
-- Creates and exports:
-  Orthomosaic (mesh surface, refine seamlines = true)
-  Seamlines and marker errors
-  Report
+* Use `Orthoimage-post-GCP`. This includes the following steps:
+  * optimize sparse cloud using the point cloud statistics
+  * create 2.5D Mesh
+  * smooth Mesh with factor 35 (empirical value for forests)
+  * create Orthomosaic
+	  * surface: mesh
+	  * refine seamlines = True
+  * export Orthomosaic, Seamlines and Marker error
+  * export report
 
-Tools+
-------
-Reduce Overlap
-- Performs a quick alignment and mesh (smoothed with factor 10)
-- Optimizes image selection with reduction factor 8
+Finally you have a result that automatically tries to optimize the number of necessary cameras, minimize re projection errors in the tie point cloud (sparse cloud), re-arrange the cameras and thus produce an reproducible orthoimage on the (statistically) best possible spatial resolution. 
 
-Densecloud
-- Generates a dense point cloud
+### `Orthoimage-no-GCP`
+If you do *NOT* have Ground Control Points or not intending to squeeze the absolute position of the final product, you can run corresponding to the upper workflow, an one click production of optimized orthoimages. This maybe very useful if you have several repeated flights over an area and if you want to get an overview. Just put the image data of each flight in a seperate chunk and start the script `Toolchain noGCP` with the option to process all chunks.
 
-Orthoimage
-- Creates 2.5D mesh
-- Smooths mesh (factor 35)
-- Generates orthomosaic (mesh surface, seamlines refined)
-- Exports orthomosaic, seamlines, marker error, and report
+This will do the following steps:.
+* Check image Quality and drop images with  a quality less than 0.75
+* Calculate a first alignement and mesh with 
+  * Key Point Limit: 10000
+  * Tie Point Limit: 1000
+  * Downsampling: 4
+  * Smoothing 10 times
+* reduce overlap with a value of 15 
+* on the remaining cameras calculate second alignment and 2.5D mesh with: 
+  * Key Point Limit: 40000
+  * Tie Point Limit: 4000
+  * Downsampling: 1
+* smooth Mesh with factor 35
+* create Orthomosaic
+	* surface: mesh
+	* refine seamlines = True
+* export Orthomosaic, Seamlines and Marker error
+* export a report
+## `Tools+`
 
-Tip: Run "Optimize Sparsecloud" before for minimal reprojection error.
+### `Reduce Overlap`
 
-Utilities
----------
-Export Marker Error
-- Exports marker errors to CSV
+Performs a low-quality initial alignment to generate a sparse point cloud and a smoothed mesh (smoothing factor: 10). Based on this, it calculates an inverse optimization of the necessary camera positions using a reduction factor of 8.
 
-Export Tiepoint Error
-- Exports sparse cloud errors (e.g., reprojection, uncertainty) to CSV
+### `Densecloud`
 
-Orthomosaic Reproducibility
-- Import and align GCPs
-- Run "Reproducibility" script
-- Generates several orthomosaics (default: 5) for later analysis in R
+Generates a dense point cloud based on the existing sparse cloud and alignment.
 
-Further Readings
-----------------
-Although this workflow simplifies processing, it’s a black box in many ways. For deeper insight, see:
-- Ludwig et al. 2020: https://doi.org/10.3390/rs12223831
+### `Orthoimage`
 
-Note: Parameters are optimized for forested low/mid-mountain areas and may not fit all scenarios.
+Use `Orthoimage` if you do **not** intend to optimize camera positions or the sparse point cloud beforehand. This script executes the following steps:
 
-Additional Resources:
-- https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation
-- https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf
-- https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf
+* Generate a 2.5D mesh  
+* Smooth the mesh (smoothing factor: 35)  
+* Create an orthomosaic:  
+  * Surface: mesh  
+  * Refine seamlines: `True`  
+* Export:
+  * Orthomosaic  
+  * Seamlines  
+  * Marker error report  
+  * Project report  
 
-Remember: you will encounter different, even contradictory, recommendations elsewhere. Try things out — and share your experiences.
+{% include kim.html content="
+It is strongly recommended to run the `Optimize Sparsecloud` script beforehand. This helps to minimize the reprojection error and improves the overall accuracy of your final orthomosaic.
+" %}
+  
+---
+
+## `Utilities`
+
+### `Export Marker Error`
+
+Exports the marker error statistics as a `.csv` file.
+
+### `Export Tiepoint Error`
+
+Exports key statistics from the sparse point cloud (e.g., Reconstruction Uncertainty, Reprojection Error, Projection Accuracy, Image Count) to a `.csv` file.
+
+### `Orthomosaic Reproducibility`
+
+1. Import your Ground Control Points (GCPs) and align them.  
+2. Run the script `Reproducibility`.
+
+This script generates a set of orthomosaics (default: 5), which can then be evaluated statistically in **R** or other analysis tools to assess spatial variability and product consistency.
+
+---
+
+## Further Readings
+
+The above-described workflow functions to a certain extent as a "black box." However, it is fully documented, and you are encouraged to inspect the scripts directly and review the corresponding publication by [Ludwig et al. 2020](https://doi.org/10.3390/rs12223831).
+
+The optimizations and workflows presented in this course are tailored primarily to low- and mid-altitude forest environments in mountainous regions. Accordingly, the presets may require adjustment for other application contexts.
+
+That said, it is highly recommended to engage actively with the capabilities of Metashape. The resources below offer insights into diverse workflows and application scenarios. They also explain interactive tool use beyond what is scripted in `Ortho+`.
+
+{% include note.html content="
+You will likely encounter other, sometimes conflicting, recommendations in literature and practice. Feel free to experiment and share your insights with the community!
+" %}
+
+* [Aerial data processing – Orthomosaic & DEM generation](https://agisoft.freshdesk.com/support/solutions/articles/31000153696-aerial-data-processing-with-gcps-orthomosaic-dem-generation)  
+* [USGS – Processing Coastal Imagery with Agisoft](https://pubs.usgs.gov/of/2021/1039/ofr20211039.pdf)  
+* [Metashape 1.8 User Manual (PDF)](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf)
