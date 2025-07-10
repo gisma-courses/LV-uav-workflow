@@ -16,163 +16,203 @@ morea_labels:
 
 ---
 
-# Object-based image analysis (OBIA) 
+# Object-based Image Analysis (OBIA)
 
-Human visual perception almost always outperforms computer image processing algorithms, For example, your brain knows a river when it sees one. But a computer can't distinguish rivers from lakes, roads or sewage treatment plants.
+Human visual perception almost always outperforms computer image processing algorithms. For example, your brain easily recognizes a river, whereas a computer may struggle to distinguish rivers from lakes, roads, or sewage treatment plants.
 
-Especially with the spatially extreme and spectrally minimal resolution UAV image data, a change in thinking must take place. It makes more sense to think in terms of objects or entities to be identified rather than classifying in terms of individual pixels. The basic principle of object-based image analysis (OBIA) is to segment first and then classify.
+With UAV image data — which often have high spatial resolution but minimal spectral resolution — a shift in analytical thinking is required. Instead of classifying individual pixels, it is more effective to identify meaningful **objects** or **entities**. The core principle of Object-Based Image Analysis (OBIA) is therefore: **segment first, then classify**.
 
-The segmentation process is algorithm-dependent but looks iteratively for similarities in space, structure and channel dimensions for grouping neighboring and similar pixels into objects. This segments are classified in a next step using supervised training data.
- 
+Segmentation is algorithm-dependent and iteratively searches for similarities in spatial, structural, and spectral dimensions to group neighboring pixels into coherent objects. These segments are subsequently classified using supervised training data.
 
+---
 
 # General Workflow
 
-The example of OBIA classification is typical of the manual performance of such operations using a software package. It consists of the following steps:
+The example below illustrates a typical OBIA classification procedure performed manually in a software environment. The main steps are:
 
-1. data acquisition (orthophoto, training data).
-1. generation of spatial segments on the basis of the 
-2. extraction of suitable description parameters 
-4. model training 
-5. classification of the input data set. 
+1. Data acquisition (orthophoto, training data)
+2. Generation of spatial segments
+3. Extraction of suitable descriptive features
+4. Model training
+5. Classification of the input dataset
 
-In software-based processing, additional steps often have to be performed for technical reasons. Even more often, the processing of the individual steps is not necessarily linear, since intermediate results are used repeatedly in different steps. The following figure shows below step by step described process as a graphical model, which you can integrate in QGIS as a tool in the Processing Box. 
+In practice, additional steps are often required due to software constraints. Furthermore, the workflow may not be strictly linear, as intermediate results are frequently reused. The following figure shows the step-by-step process in the form of a graphical model. This can be integrated into QGIS as a tool in the Processing Toolbox.
+
 <p align="center"><img src="images/obia1-model3.png" alt="OBIA classification Workflow for Orthoimages" width="1000px" /></p>
 
-*OBIA classification Workflow for Orthoimages*
+*OBIA Classification Workflow for Orthoimages*
 
-For reference you may <a href="obia.zip" >Download</a> the basic data. In Addition you may download the upper <a href="obia1.model3">OBIA-workflow</a> as an `QGIS-Model`. You can add this to your QGIS project with pushing the first icon "Models" ![](images/process.png)  on the processing sidebar and choose `Add Model to Toolbox`. Please note that is running with fixed default values. For modifying it you need to right-click on the model and choose `Edit Model`.
+For reference, you may <a href="obia.zip">Download</a> the base dataset. Additionally, you can download the <a href="obia1.model3">OBIA workflow</a> as a `QGIS Model`. To add it to your QGIS project, click the first icon "Models" ![](images/process.png) in the Processing Toolbox and choose `Add Model to Toolbox`. Note that it runs with fixed default values; to modify it, right-click on the model and choose `Edit Model`.
 
+---
 
+# Step-by-Step Tutorial
 
+This step-by-step guide demonstrates an OBIA approach using QGIS and the OTB Toolbox. Many segmentation algorithms and classification methods are available. The **Mean-Shift** segmentation combined with **Support Vector Machine (SVM)** classification is robust and commonly used.
 
+Key parameters like `Range Radius` (feature space) and `Spatial Radius` (search space), as well as the `Minimum Region Size`, significantly impact the result and often require empirical fine-tuning.
 
-# Step by step tutorial 
+---
 
-In the following step by step guide an OBIA approach with QGIS and the OTB Toolbox is carried out as an template example. There are many segmentation algorithms and integrated classification methods. The Mean-shift method used here and the subsequent training with Support Vector Machine is a robust and common method. Especially the extension of the feature space (here called `Range Radius`) and the search space (`Spatial Radius`) as well as the size of the segmented objects (`Minimum Region size`) is crucial for a satisfying result. The principle is transferable to the different forms of the OBIA and despite abundant literature and some good instructions it is a free empirical game.
+## Step 1 – Create Training Sample Points (Manual Digitizing)
 
-### Step-1 Create Training Sample Points by manual digitizing 
+If you're unfamiliar with digitizing in QGIS, follow this [tutorial](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html).  
+Note: For this example, we will digitize **points**, not polygons.
 
-If you need to learn how to digitize with QGIS you may follow this [tutorial](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html). However we will only digitize Points and not polygons. 
 {% include cool.html content="
- Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. this will makes in much more comfortable to digitize training points of one class in series.
+Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. This makes it much more convenient to digitize several points for the same class in sequence.
 "%}
-
 
 Create a point vector file and digitize the following classes:
 
-|class| CLASS_ID|
-|:-- | --:|
-|water|1|
-|meadows|2|
-|meadows-rich|3|
-|bare-soil-dry|4|
-|crop|5|
-|green-trees-shrubs|6|
-|dead-wood|7|
-|other|8|
+| class               | CLASS_ID |
+|---------------------|---------:|
+| water               |        1 |
+| meadows             |        2 |
+| meadows-rich        |        3 |
+| bare-soil-dry       |        4 |
+| crop                |        5 |
+| green-trees-shrubs  |        6 |
+| dead-wood           |        7 |
+| other               |        8 |
 
-
-Provide at minimum 10 widely spread sampling points.
-
-Save this file naming it `sample.gpgk`.
+Provide at least **10 widely distributed sampling points** per class.  
+Save the file as `sample.gpgk`.
 
 {% include kim.html content="
- Here, the training data is digitized on the screen (as is often the case) using the god's eye method as an example. For a rough classification of the selected classes, this is of course useful and sufficiently accurate.
-<br>
-<br>
-However, please keep in mind that these training samples are usually collected in the field. This means that utilizing a GPS or exact map work, the positions, and their affiliations are collected and entered into a corresponding table. Often this is accompanied by a vegetation survey, soil survey, or limnological or other surveys.  
+Here, training data is digitized on screen ('god's eye method') — often sufficient for rough classifications.<br><br>
+However, in real-world applications, training data is usually collected in the field using GPS or accurate maps. These are often supplemented by vegetation, soil, or limnological surveys.
 "%}
 
-### Step-2 Segmentation
+---
 
-In the search field of the `Processing Toolbox` type *segmentation* and double click `Segmentation`.
+## Step 2 – Segmentation
 
-* select the `input image`: *example-5.tif*
-* select `meanshift` from the drop-down list *Segmentation algorithm*
-* The `Spatial Radius` value can be set to *25*. This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel
-* The `Range Radius` value can be set to *25*. We are dealing with RGB images that have a range `0-255`. The optimal value depends on the datatype, the dynamic range of the input image and requires experimental trials for the specific classification objectives
-* Set `Minimum Region size` in pixels to *25*. The minimum size of a region (in pixel unit) in segmentation. Smaller clusters will merged to the neighboring cluster with the closest radiometry
-* keep `Processing mode`  as *Vector*
-* Tick `8-neighborhood connectivity`
-* Set `Minimum object size` in pixels to *200* 
-* Name the `Output vector file`  as  *segments-meanshift.shp*
-* Push `Run`
+In the QGIS **Processing Toolbox**, type *segmentation* and double-click `Segmentation`.
+
+Configure the parameters:
+
+- **Input image**: `example-5.tif`
+- **Segmentation algorithm**: `meanshift`
+- **Spatial Radius**: `25` (adjust based on the pixel scale of your major classes)
+- **Range Radius**: `25` (based on image type and spectral dynamic)
+- **Minimum Region size**: `25` pixels (small clusters are merged)
+- **Processing mode**: `Vector`
+- **Neighborhood**: tick `8-neighborhood connectivity`
+- **Minimum object size**: `200` pixels
+- **Output vector file**: `segments-meanshift.shp`
+
+Click `Run`.
 
 <br>
-{% include medium-img.html url="obia1.png" %} 
+{% include medium-img.html url="obia1.png" %}
 <br>
 
-* Check the  results: Load the output vector file *segments-meanshift.shp* into your QGIS session and place it on top of the image *example-5.tif*
-* Colorize the vector layer in the QGIS Layers window. Right click `Properties->Symbology->Simple Fill`, `Fill Style`: `No Brush` and `Stroke color`: `white`. 
-* Check the features with a visual inspection. Is the result goal keeping? If not, start over... .
+**Inspect results**:
 
-###  Step-3 Feature extraction 
-Type `zonalstats` in the search field of the Processing Toolbox and open the tool `ZonalStatistics`. You find it under the image manipulation section of OTB.
+- Load `segments-meanshift.shp` into your QGIS project and overlay it on `example-5.tif`
+- Style the segments for visibility:  
+  `Layer Properties → Symbology → Simple Fill`:  
+  Set `Fill Style: No Brush` and `Stroke Color: White`
+- If the result is unsatisfactory, adjust parameters and repeat.
 
-* Select as input image: *example-5.tif*.
-* Select `input vector data` the vector file with segments from above segmentation *segments-meanshift.shp*
-* Name for the `output vector`: *segments-meanshift-zonal.shp*.
-* Push `Run`.
+---
+
+## Step 3 – Feature Extraction
+
+In the **Processing Toolbox**, type `zonalstats` and open `ZonalStatistics` (under OTB → Image Manipulation).
+
+- **Input image**: `example-5.tif`
+- **Input vector**: `segments-meanshift.shp`
+- **Output vector**: `segments-meanshift-zonal.shp`
+
+Click `Run`.
+
 <br>
-{% include small-img.html url="obia2-zonal.png" %} 
+{% include small-img.html url="obia2-zonal.png" %}
 <br>
 
+---
 
+## Step 4 – Join Training Data with Segments
 
+In the **Processing Toolbox**, search for *join* and open `Join Attributes by Location`.
 
-## Step-4 Joining training data with segements
+Set the parameters:
 
-Type in the search field of the `Processing Toolbox`  *join* and double click `Join Attributes by Location`.
+- **Base Layer**: `segments-meanshift-zonal.shp`
+- **Join Layer**: `sample.shp`
+- **Join Type**: `Take Attributes of the first matching feature`
+- **Tick**: `Discard records which could not be joined`
+- **Output**: choose a file name
 
-* select the `Base Layer`: *segments-meanshift-zonal.shp*
-* select the `Join Layer`: *sample.shp*
-* `Join Type`: choose *Take Attributes of the first matching...*
-* Tick `Discard records which could not be joined`
-* Provide an output filename
 <br>
-{% include small-img.html url="obia3-join.png" %} 
+{% include small-img.html url="obia3-join.png" %}
 <br>
+
 {% include cool.html content="
-Sometimes the geometry is broken. Type `fix` in the search field of the Processing Toolbox and open `Fix Geometries` which will in most cases do the job.
+Sometimes the geometry is broken. Use `Fix Geometries` from the Processing Toolbox if needed.
 "%}
 
+---
 
-###  Step-5 Training
-Type `train` in the search field of the Processing Toolbox and open `TrainVectorClassifier`
+## Step 5 – Training
 
-* In the  field  `Vector Data List` select  the correct vector file by clicking *...* and browse directly to the file containing the training area polygons *segments-meanshift-zonal.shp*
-* Provide the `Output model filename` as *lahn-gi-spann-obia.model*
-* In the field `Field names for training features` copy and paste `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
-* The name of `Field containing the class id for supervision` is `CLASS_ID`
-* Classifier to use for training: `libsvm` Usually the straighforward Support Vector Machine is doing a good job
-* SVM Kernel Type: `linear`
-* SVM Model Type: `csvc`
-* Set `Parameters optimization` to `ON`
-* Push `Run`
+In the **Processing Toolbox**, type `train` and open `TrainVectorClassifier`.
+
+Configure:
+
+- **Vector Data List**: `segments-meanshift-zonal.shp` (after join!)
+- **Output model filename**: `lahn-gi-spann-obia.model`
+- **Field names for training features**:  
+  `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
+- **Class field**: `CLASS_ID`
+- **Classifier**: `libsvm`
+- **SVM Kernel Type**: `linear`
+- **SVM Model Type**: `csvc`
+- **Parameter Optimization**: ON
+
+Click `Run`.
+
 <br>
-{% include small-img.html url="obia5-train.png" %} 
+{% include small-img.html url="obia5-train.png" %}
 <br>
 
-###  Step-6 Classification 
-Type `class` in the search field of the Processing Toolbox and open `VectorClassifier`
-*  In the  field  `Vector Data` select *manually* the correct vector file clicking *...* and browse directly to the file containing the training area polygons containing segments and features for the whole image *lahn-gi-spann-segments-meanshift-zonal.shp*
-* The name of the upper `input model` file is *lahn-gi-spann-obia.model*
-* Output field containing the class is `CLASS_ID`
-* Copy and paste into the field `Field names to be calculated` same attributes as above: `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
-* Name the `output vector` data *lahn-gi-spann-classified_obia.shp*.
-* Push `Run`
-* Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. `Layer->Layer properties->Symbology->Style->Load style...`.
+---
+
+## Step 6 – Classification
+
+In the **Processing Toolbox**, type `class` and open `VectorClassifier`.
+
+Configure:
+
+- **Input Vector**: `segments-meanshift-zonal.shp`
+- **Input Model**: `lahn-gi-spann-obia.model`
+- **Class field**: `CLASS_ID`
+- **Feature fields**:  
+  `"mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2"`
+- **Output vector**: `lahn-gi-spann-classified_obia.shp`
+
+Click `Run`.
+
+Finally, load the output vector into QGIS and apply a style:
+
+`Layer → Properties → Symbology → Style → Load Style...`
 
 <br>
 {% include small-img-two.html url1="obia6-class.png" url2="classification.png" %}
 <br>
 
+---
+
 # Result
 
-You will see partly predominantly excellent classification. However, there are also significant misclassifications. 
+You should now see a mostly well-classified result. However, expect **some misclassifications** as well.
 
-* What could be the reason for that?
-* What is a weakness of this approach?
-* Any suggestion to improve?
+Questions for further reflection:
 
+- What could be the causes of the misclassifications?
+- What are the weaknesses of this approach?
+- How could the results be improved?
+
+---
