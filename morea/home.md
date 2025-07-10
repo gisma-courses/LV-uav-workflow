@@ -5,32 +5,49 @@ morea_type: home
 published: true
 ---
 
-## Welcome to Micro Remote Sensing 
+## Welcome to Micro Remote Sensing
 
+The *Micro Remote Sensing* course offers a comprehensive introduction to reproducible flight planning, data acquisition, pre-processing, and example-based analysis of high-resolution, low-cost image data — using both commercial and open-source software tools.
 
-The Micro Remote Sensing course - provides a complete introduction to reproducible flight planning, acquisition, pre-processing, and exemplar analysis of high resolution low cost image data using commercial and open software systems. 
+---
 
-## Who should take this course?
+## Who Should Take This Course?
 
-This course is designed for students of all levels who have a basic knowledge of the organization of their operating system. Programming knowledge is not required but will be helpful for the advanced module *Analysis of high resolution aerial data*. The focus is on a practical approach to the independent acquisition of high resolution aerial data. Post-processing of products and an introduction to classification and analysis of the generated data sets complete the course.
+This course is intended for learners of all levels who possess a basic understanding of their operating system's structure. While programming knowledge is **not required**, it may be helpful — especially for the advanced module *Analysis of High-Resolution Aerial Data*.
+
+The main focus is on the **practical acquisition** of high-resolution aerial imagery. The course is rounded off with post-processing workflows and an introduction to classification and analysis of the generated datasets.
+
+---
 
 ## Didactic Concept
 
- The course is structured as a sequential but *not* necessarily linear sequence of [modules](/LV-uav-workflow/modules) to be worked through, each lasting approximately 3 weeks. Each module has the following structure:
+The course consists of a sequential (but not strictly linear) set of [modules](/LV-uav-workflow/modules), each designed to be completed in approximately **three weeks**.
 
+Each module follows this structure:
 
-  * [Outcomes](/LV-uav-workflow/outcomes) - what is the learning objective.
-  * [Readings](/LV-uav-workflow/readings) - all kind of reading resources.
-  * [Experiences](/LV-uav-workflow/experiences) - exercises & tutorials to practically master the learning goals.
-  * [Assessments](/LV-uav-workflow/assessments) - self assessment to get an idea how you perform.
-  
-The `labels` are intended to provide a quick overview of the content and meaning of the individual units within a module. The `mandatory` units are the minimum requirements for the course. The `recommended` should be taken into account and the other resources are mainly used for internal differentiation in case of higher interest and as a starting point for independent deepening.
-  
+- [Outcomes](/LV-uav-workflow/outcomes): Learning objectives  
+- [Readings](/LV-uav-workflow/readings): Core and supplemental resources  
+- [Experiences](/LV-uav-workflow/experiences): Exercises and tutorials for hands-on learning  
+- [Assessments](/LV-uav-workflow/assessments): Self-assessment to monitor progress  
+
+The `labels` provide a quick overview of the content and importance of each unit within a module:
+
+- `mandatory` units define the **minimum course requirements**  
+- `recommended` units should be **considered strongly**  
+- Other resources support **internal differentiation** for learners seeking deeper or broader engagement
+
+---
+
 ## Instructor
 
-Chris Reudenbach [Geoinformatics Working Group](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach) (GISMA) of the Department of Geography at the [University of Marburg ](https://www.uni-marburg.de/en). The course content is developed and hosted on  [<i class="fa fa-github"></i> GitHub](https://github.com/gisma-courses/LV-uav-workflow).
+**Chris Reudenbach**  
+[Geoinformatics Working Group](https://www.uni-marburg.de/de/fb19/fachbereich/staff/reudenbach) (GISMA)  
+Department of Geography, [University of Marburg](https://www.uni-marburg.de/en)
 
+The course materials are developed and hosted on  
+[<i class="fa fa-github"></i> GitHub](https://github.com/gisma-courses/LV-uav-workflow)
 
+---
 
-The responsibility for the content rests with the instructors. Statements, opinions and/or conclusions are the ones from the instructors and do not necessarily reflect the opinion of the representatives of the University of Marburg. 
-
+> The responsibility for the content lies with the instructors.  
+> Statements, opinions, and conclusions are those of the instructors and do not necessarily reflect the views of the University of Marburg.
