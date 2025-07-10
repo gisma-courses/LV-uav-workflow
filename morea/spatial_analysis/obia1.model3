@@ -9,22 +9,22 @@
       <Option type="Map" name="comment">
         <Option type="QString" name="color" value=""/>
         <Option type="QString" name="component_description" value="Step-4 Joining training data with segements&#xa;In the search field of the Processing Toolbox, type join and double click Join Attributes by Location.&#xa;&#xa;select the Base Layer: segments-meanshift-zonal.shp&#xa;select the Join Layer: sample.shp&#xa;Join Type: choose Take Attributes of the first matching…&#xa;Tick Discard records which could not be joined&#xa;Provide an output filename&#xa;picture&#xa;&#xa;&#xa; Sometimes the geometry is broken. Type fix in the search field of the Processing Toolbox and open Fix Geometries which will in most cases do the job"/>
-        <Option type="double" name="component_height" value="60"/>
-        <Option type="double" name="component_pos_x" value="413"/>
-        <Option type="double" name="component_pos_y" value="407"/>
-        <Option type="double" name="component_width" value="100"/>
+        <Option type="double" name="component_height" value="210"/>
+        <Option type="double" name="component_pos_x" value="546.5"/>
+        <Option type="double" name="component_pos_y" value="692"/>
+        <Option type="double" name="component_width" value="339"/>
         <Option type="bool" name="outputs_collapsed" value="true"/>
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="Attribute nach Position zusammenfügen"/>
       <Option type="double" name="component_height" value="60"/>
-      <Option type="double" name="component_pos_x" value="248"/>
-      <Option type="double" name="component_pos_y" value="408"/>
-      <Option type="double" name="component_width" value="150"/>
+      <Option type="double" name="component_pos_x" value="247"/>
+      <Option type="double" name="component_pos_y" value="621"/>
+      <Option type="double" name="component_width" value="178"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:joinattributesbylocation_1"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="join">
+        <Option type="Map" name="Joined Layer name (must contain valid vector file type extension)">
           <Option type="QString" name="child_id" value="native:joinattributesbylocation_1"/>
           <Option type="QString" name="color" value=""/>
           <Option type="Map" name="comment">
@@ -37,14 +37,14 @@
             <Option type="bool" name="outputs_collapsed" value="true"/>
             <Option type="bool" name="parameters_collapsed" value="true"/>
           </Option>
-          <Option type="QString" name="component_description" value="join"/>
-          <Option type="double" name="component_height" value="30"/>
-          <Option type="double" name="component_pos_x" value="401"/>
-          <Option type="double" name="component_pos_y" value="475"/>
-          <Option type="double" name="component_width" value="104"/>
+          <Option type="QString" name="component_description" value="Joined Layer name (must contain valid vector file type extension)"/>
+          <Option type="double" name="component_height" value="86"/>
+          <Option type="double" name="component_pos_x" value="450.5"/>
+          <Option type="double" name="component_pos_y" value="851"/>
+          <Option type="double" name="component_width" value="139"/>
           <Option type="invalid" name="default_value"/>
           <Option type="bool" name="mandatory" value="false"/>
-          <Option type="QString" name="name" value="join"/>
+          <Option type="QString" name="name" value="Joined Layer name (must contain valid vector file type extension)"/>
           <Option type="QString" name="output_name" value="OUTPUT"/>
           <Option type="bool" name="outputs_collapsed" value="true"/>
           <Option type="bool" name="parameters_collapsed" value="true"/>
@@ -103,7 +103,7 @@
         <Option type="List" name="PREFIX">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
       </Option>
@@ -116,17 +116,17 @@
       <Option type="Map" name="comment">
         <Option type="QString" name="color" value=""/>
         <Option type="QString" name="component_description" value="Step-2 Segmentation&#xa;In the search field of the Processing Toolbox, type segmentation and double click Segmentation.&#xa;&#xa;select the input image: example-5.tif&#xa;select meanshift from the drop-down list Segmentation algorithm&#xa;The Spatial Radius value can be set to 25.This is determining the spatial range of the segementation and is also experimental. Try to identify the scale of your major classes in pixel.&#xa;The Range Radius value can be set to 25. We are dealing with RGB images that have a range 0-255. The optimal value depends on datatype dynamic range of the input image and requires experimental trials for the specific classification objectives.&#xa;Set Minimum Region size in pixels to 25. Minimum size of a region (in pixel unit) in segmentation. Smaller clusters will be merged to the neighboring cluster with the closest radiometry.&#xa;keep Processing mode as Vector&#xa;Tick 8-neighborhood connectivity on.&#xa;Set Minimum object size in pixels to 200&#xa;Name the Output vector file as segments-meanshift.shp.&#xa;Push Run."/>
-        <Option type="double" name="component_height" value="60"/>
-        <Option type="double" name="component_pos_x" value="347"/>
-        <Option type="double" name="component_pos_y" value="128"/>
-        <Option type="double" name="component_width" value="100"/>
+        <Option type="double" name="component_height" value="262"/>
+        <Option type="double" name="component_pos_x" value="548.5"/>
+        <Option type="double" name="component_pos_y" value="330"/>
+        <Option type="double" name="component_width" value="335"/>
         <Option type="bool" name="outputs_collapsed" value="true"/>
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="Segmentation"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="136"/>
-      <Option type="double" name="component_pos_y" value="124"/>
+      <Option type="double" name="component_pos_x" value="247"/>
+      <Option type="double" name="component_pos_y" value="214"/>
       <Option type="double" name="component_width" value="160"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="otb:Segmentation_1"/>
@@ -146,8 +146,8 @@
           </Option>
           <Option type="QString" name="component_description" value="Output File Segmentation (i.e. segment.shp)"/>
           <Option type="double" name="component_height" value="55.00000000000001"/>
-          <Option type="double" name="component_pos_x" value="371.5"/>
-          <Option type="double" name="component_pos_y" value="199.5"/>
+          <Option type="double" name="component_pos_x" value="472.5"/>
+          <Option type="double" name="component_pos_y" value="506.5"/>
           <Option type="double" name="component_width" value="171"/>
           <Option type="invalid" name="default_value"/>
           <Option type="bool" name="mandatory" value="false"/>
@@ -332,22 +332,22 @@
       <Option type="Map" name="comment">
         <Option type="QString" name="color" value=""/>
         <Option type="QString" name="component_description" value="Step-5 Training&#xa;Type train in the search field of the Processing Toolbox and open TrainVectorClassifier&#xa;&#xa;In the field Vector Data List select the correct vector file clicking … and browse directly to the file containing the training area polygons segments-meanshift-zonal.shp.&#xa;Provide the Output model filename as lahn-gi-spann-obia.model&#xa;In the field Field names for training features copy and paste &quot;mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2&quot;&#xa;The name of Field containing the class id for supervision is CLASS_ID.&#xa;Classifier to use for training: libsvm Usually the straighforward Support Vector Machine is doing a good job.&#xa;SVM Kernel Type: linear&#xa;SVM Model Type: csvc&#xa;tick Parameters optimization to ON.&#xa;Push Run"/>
-        <Option type="double" name="component_height" value="60"/>
-        <Option type="double" name="component_pos_x" value="819"/>
-        <Option type="double" name="component_pos_y" value="592"/>
-        <Option type="double" name="component_width" value="100"/>
+        <Option type="double" name="component_height" value="196"/>
+        <Option type="double" name="component_pos_x" value="1335.5"/>
+        <Option type="double" name="component_pos_y" value="752"/>
+        <Option type="double" name="component_width" value="467"/>
         <Option type="bool" name="outputs_collapsed" value="true"/>
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="TrainVectorClassifier"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="599"/>
-      <Option type="double" name="component_pos_y" value="591"/>
+      <Option type="double" name="component_pos_x" value="948"/>
+      <Option type="double" name="component_pos_y" value="769"/>
       <Option type="double" name="component_width" value="204.00000000000003"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="otb:TrainVectorClassifier_1"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="model">
+        <Option type="Map" name="model  file name">
           <Option type="QString" name="child_id" value="otb:TrainVectorClassifier_1"/>
           <Option type="QString" name="color" value=""/>
           <Option type="Map" name="comment">
@@ -360,14 +360,14 @@
             <Option type="bool" name="outputs_collapsed" value="true"/>
             <Option type="bool" name="parameters_collapsed" value="true"/>
           </Option>
-          <Option type="QString" name="component_description" value="model"/>
+          <Option type="QString" name="component_description" value="model  file name"/>
           <Option type="double" name="component_height" value="30"/>
-          <Option type="double" name="component_pos_x" value="752"/>
-          <Option type="double" name="component_pos_y" value="680"/>
-          <Option type="double" name="component_width" value="200"/>
+          <Option type="double" name="component_pos_x" value="1338"/>
+          <Option type="double" name="component_pos_y" value="884"/>
+          <Option type="double" name="component_width" value="472"/>
           <Option type="invalid" name="default_value"/>
           <Option type="bool" name="mandatory" value="false"/>
-          <Option type="QString" name="name" value="model"/>
+          <Option type="QString" name="name" value="model  file name"/>
           <Option type="QString" name="output_name" value="io.out"/>
           <Option type="bool" name="outputs_collapsed" value="true"/>
           <Option type="bool" name="parameters_collapsed" value="true"/>
@@ -445,7 +445,7 @@
         <Option type="List" name="classifier.ann.sizes">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
         <Option type="List" name="classifier.ann.t">
@@ -625,13 +625,13 @@
         <Option type="List" name="classifier.sharkkm.cstats">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
         <Option type="List" name="classifier.sharkkm.incentroids">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
         <Option type="List" name="classifier.sharkkm.k">
@@ -681,7 +681,7 @@
         <Option type="List" name="io.stats">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
         <Option type="List" name="io.vd">
@@ -731,22 +731,22 @@
       <Option type="Map" name="comment">
         <Option type="QString" name="color" value=""/>
         <Option type="QString" name="component_description" value="Step-6 Classification&#xa;Type class in the search field of the Processing Toolbox and open VectorClassifier&#xa;&#xa;Input: &#xa;Vector file containing the training area polygons containing segments and extracted features&#xa;Input model file &#xa;Output field: containing the class is CLASS_ID&#xa;Field names to be calculated: same attributes as above: &quot;mean_0 stdev_0 mean_1 stdev_1 mean_3 stdev_3 mean_2 stdev_2&quot;&#xa;Output classified vector file: &#xa;&#xa;Finally load the output vector file into QGIS and apply the same QGIS style used for the training data. Layer->Layer properties->Symbology->Style->Load style....&#xa;&#xa;"/>
-        <Option type="double" name="component_height" value="60"/>
-        <Option type="double" name="component_pos_x" value="365"/>
-        <Option type="double" name="component_pos_y" value="733"/>
-        <Option type="double" name="component_width" value="100"/>
+        <Option type="double" name="component_height" value="206"/>
+        <Option type="double" name="component_pos_x" value="573"/>
+        <Option type="double" name="component_pos_y" value="1148"/>
+        <Option type="double" name="component_width" value="352"/>
         <Option type="bool" name="outputs_collapsed" value="true"/>
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="VectorClassifier"/>
       <Option type="double" name="component_height" value="35"/>
-      <Option type="double" name="component_pos_x" value="194"/>
-      <Option type="double" name="component_pos_y" value="734.5"/>
+      <Option type="double" name="component_pos_x" value="241"/>
+      <Option type="double" name="component_pos_y" value="1050.5"/>
       <Option type="double" name="component_width" value="150"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="otb:VectorClassifier_1"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="Filename Classified Segmentation File">
+        <Option type="Map" name="Classified Segmentation layer name (must contain valid vector file type extension)">
           <Option type="QString" name="child_id" value="otb:VectorClassifier_1"/>
           <Option type="QString" name="color" value=""/>
           <Option type="Map" name="comment">
@@ -759,14 +759,14 @@
             <Option type="bool" name="outputs_collapsed" value="true"/>
             <Option type="bool" name="parameters_collapsed" value="true"/>
           </Option>
-          <Option type="QString" name="component_description" value="Filename Classified Segmentation File"/>
-          <Option type="double" name="component_height" value="47.760221493007066"/>
-          <Option type="double" name="component_pos_x" value="326"/>
-          <Option type="double" name="component_pos_y" value="817.8801107465035"/>
-          <Option type="double" name="component_width" value="150"/>
+          <Option type="QString" name="component_description" value="Classified Segmentation layer name (must contain valid vector file type extension)"/>
+          <Option type="double" name="component_height" value="96.76022149300707"/>
+          <Option type="double" name="component_pos_x" value="568.5"/>
+          <Option type="double" name="component_pos_y" value="1312.3801107465035"/>
+          <Option type="double" name="component_width" value="345"/>
           <Option type="invalid" name="default_value"/>
           <Option type="bool" name="mandatory" value="false"/>
-          <Option type="QString" name="name" value="Filename Classified Segmentation File"/>
+          <Option type="QString" name="name" value="Classified Segmentation layer name (must contain valid vector file type extension)"/>
           <Option type="QString" name="output_name" value="out"/>
           <Option type="bool" name="outputs_collapsed" value="true"/>
           <Option type="bool" name="parameters_collapsed" value="true"/>
@@ -778,7 +778,7 @@
         <Option type="List" name="cfield">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
         <Option type="List" name="confmap">
@@ -805,7 +805,7 @@
         <Option type="List" name="instat">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
         <Option type="List" name="model">
@@ -825,22 +825,22 @@
       <Option type="Map" name="comment">
         <Option type="QString" name="color" value=""/>
         <Option type="QString" name="component_description" value="Step-3 Feature extraction&#xa;Type zonalstats in the search field of the Processing Toolbox and open ZonalStatistics which is settled under the image manipulation section of OTB.&#xa;&#xa;Select as input image: example-5.tif.&#xa;Select input vector data the vector file with segments from above segmentation segments-meanshift.shp&#xa;Name for the output vector: segments-meanshift-zonal.shp.&#xa;Push Run."/>
-        <Option type="double" name="component_height" value="60"/>
-        <Option type="double" name="component_pos_x" value="845"/>
-        <Option type="double" name="component_pos_y" value="271"/>
-        <Option type="double" name="component_width" value="100"/>
+        <Option type="double" name="component_height" value="124.00000000000001"/>
+        <Option type="double" name="component_pos_x" value="1304.5"/>
+        <Option type="double" name="component_pos_y" value="287"/>
+        <Option type="double" name="component_width" value="417"/>
         <Option type="bool" name="outputs_collapsed" value="true"/>
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="ZonalStatistics"/>
-      <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="610"/>
-      <Option type="double" name="component_pos_y" value="313"/>
+      <Option type="double" name="component_height" value="38"/>
+      <Option type="double" name="component_pos_x" value="946"/>
+      <Option type="double" name="component_pos_y" value="295"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="otb:ZonalStatistics_1"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="output">
+        <Option type="Map" name="zonal statistic ayer name (must contain valid vector file type extension)">
           <Option type="QString" name="child_id" value="otb:ZonalStatistics_1"/>
           <Option type="QString" name="color" value=""/>
           <Option type="Map" name="comment">
@@ -853,14 +853,14 @@
             <Option type="bool" name="outputs_collapsed" value="true"/>
             <Option type="bool" name="parameters_collapsed" value="true"/>
           </Option>
-          <Option type="QString" name="component_description" value="output"/>
-          <Option type="double" name="component_height" value="39"/>
-          <Option type="double" name="component_pos_x" value="852.5"/>
-          <Option type="double" name="component_pos_y" value="344.5"/>
-          <Option type="double" name="component_width" value="145"/>
+          <Option type="QString" name="component_description" value="zonal statistic ayer name (must contain valid vector file type extension)"/>
+          <Option type="double" name="component_height" value="89"/>
+          <Option type="double" name="component_pos_x" value="1307"/>
+          <Option type="double" name="component_pos_y" value="417.5"/>
+          <Option type="double" name="component_width" value="420"/>
           <Option type="invalid" name="default_value"/>
           <Option type="bool" name="mandatory" value="false"/>
-          <Option type="QString" name="name" value="output"/>
+          <Option type="QString" name="name" value="zonal statistic ayer name (must contain valid vector file type extension)"/>
           <Option type="QString" name="output_name" value="out.vector.filename"/>
           <Option type="bool" name="outputs_collapsed" value="true"/>
           <Option type="bool" name="parameters_collapsed" value="true"/>
@@ -987,20 +987,20 @@
   <Option type="QString" name="outputGroup" value=""/>
   <Option name="outputOrder"/>
   <Option type="Map" name="parameterDefinitions">
-    <Option type="Map" name="native:joinattributesbylocation_1:join">
+    <Option type="Map" name="native:joinattributesbylocation_1:Joined Layer name (must contain valid vector file type extension)">
       <Option type="bool" name="create_by_default" value="true"/>
       <Option type="int" name="data_type" value="-1"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option type="QString" name="description" value="join"/>
+      <Option type="QString" name="description" value="Joined Layer name (must contain valid vector file type extension)"/>
       <Option type="int" name="flags" value="8"/>
       <Option type="QString" name="help" value=""/>
       <Option type="Map" name="metadata">
         <Option type="QString" name="_modelChildId" value="native:joinattributesbylocation_1"/>
-        <Option type="QString" name="_modelChildOutputName" value="join"/>
+        <Option type="QString" name="_modelChildOutputName" value="Joined Layer name (must contain valid vector file type extension)"/>
         <Option type="QString" name="_modelChildProvider" value="native"/>
       </Option>
-      <Option type="QString" name="name" value="native:joinattributesbylocation_1:join"/>
+      <Option type="QString" name="name" value="native:joinattributesbylocation_1:Joined Layer name (must contain valid vector file type extension)"/>
       <Option type="QString" name="parameter_type" value="sink"/>
       <Option type="bool" name="supports_append" value="false"/>
       <Option type="bool" name="supports_non_file_outputs" value="true"/>
@@ -1034,56 +1034,56 @@
       <Option type="QString" name="parameter_type" value="fileDestination"/>
       <Option type="bool" name="supports_non_file_outputs" value="false"/>
     </Option>
-    <Option type="Map" name="otb:TrainVectorClassifier_1:model">
+    <Option type="Map" name="otb:TrainVectorClassifier_1:model  file name">
       <Option type="bool" name="create_by_default" value="true"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option type="QString" name="description" value="model"/>
+      <Option type="QString" name="description" value="model  file name"/>
       <Option type="QString" name="file_filter" value="All files (*.*)"/>
       <Option type="int" name="flags" value="0"/>
       <Option type="QString" name="help" value=""/>
       <Option type="Map" name="metadata">
         <Option type="QString" name="_modelChildId" value="otb:TrainVectorClassifier_1"/>
-        <Option type="QString" name="_modelChildOutputName" value="model"/>
+        <Option type="QString" name="_modelChildOutputName" value="model  file name"/>
         <Option type="QString" name="_modelChildProvider" value="otb"/>
       </Option>
-      <Option type="QString" name="name" value="otb:TrainVectorClassifier_1:model"/>
+      <Option type="QString" name="name" value="otb:TrainVectorClassifier_1:model  file name"/>
       <Option type="QString" name="parameter_type" value="fileDestination"/>
       <Option type="bool" name="supports_non_file_outputs" value="false"/>
     </Option>
-    <Option type="Map" name="otb:VectorClassifier_1:Filename Classified Segmentation File">
+    <Option type="Map" name="otb:VectorClassifier_1:Classified Segmentation layer name (must contain valid vector file type extension)">
       <Option type="bool" name="create_by_default" value="true"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option type="QString" name="description" value="Filename Classified Segmentation File"/>
+      <Option type="QString" name="description" value="Classified Segmentation layer name (must contain valid vector file type extension)"/>
       <Option type="QString" name="file_filter" value="All files (*.*)"/>
       <Option type="int" name="flags" value="8"/>
       <Option type="QString" name="help" value=""/>
       <Option type="Map" name="metadata">
         <Option type="QString" name="_modelChildId" value="otb:VectorClassifier_1"/>
-        <Option type="QString" name="_modelChildOutputName" value="Filename Classified Segmentation File"/>
+        <Option type="QString" name="_modelChildOutputName" value="Classified Segmentation layer name (must contain valid vector file type extension)"/>
         <Option type="QString" name="_modelChildProvider" value="otb"/>
       </Option>
-      <Option type="QString" name="name" value="otb:VectorClassifier_1:Filename Classified Segmentation File"/>
+      <Option type="QString" name="name" value="otb:VectorClassifier_1:Classified Segmentation layer name (must contain valid vector file type extension)"/>
       <Option type="QString" name="parameter_type" value="fileDestination"/>
       <Option type="bool" name="supports_non_file_outputs" value="false"/>
     </Option>
-    <Option type="Map" name="otb:ZonalStatistics_1:output">
+    <Option type="Map" name="otb:ZonalStatistics_1:zonal statistic ayer name (must contain valid vector file type extension)">
       <Option type="bool" name="create_by_default" value="true"/>
       <Option type="int" name="data_type" value="-1"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option type="QString" name="description" value="output"/>
+      <Option type="QString" name="description" value="zonal statistic ayer name (must contain valid vector file type extension)"/>
       <Option type="int" name="flags" value="0"/>
       <Option type="QString" name="help" value=""/>
       <Option type="Map" name="metadata">
         <Option type="QString" name="_modelChildId" value="otb:ZonalStatistics_1"/>
-        <Option type="QString" name="_modelChildOutputName" value="output"/>
+        <Option type="QString" name="_modelChildOutputName" value="zonal statistic ayer name (must contain valid vector file type extension)"/>
         <Option type="QString" name="_modelChildProvider" value="otb"/>
         <Option type="QString" name="group_key" value="out"/>
         <Option type="QString" name="group_value" value="vector"/>
       </Option>
-      <Option type="QString" name="name" value="otb:ZonalStatistics_1:output"/>
+      <Option type="QString" name="name" value="otb:ZonalStatistics_1:zonal statistic ayer name (must contain valid vector file type extension)"/>
       <Option type="QString" name="parameter_type" value="vectorDestination"/>
       <Option type="bool" name="supports_non_file_outputs" value="false"/>
     </Option>
@@ -1117,8 +1117,8 @@
       </Option>
       <Option type="QString" name="component_description" value="ortho"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="425"/>
-      <Option type="double" name="component_pos_y" value="33"/>
+      <Option type="double" name="component_pos_x" value="618"/>
+      <Option type="double" name="component_pos_y" value="30"/>
       <Option type="double" name="component_width" value="140"/>
       <Option type="QString" name="name" value="ortho"/>
       <Option type="bool" name="outputs_collapsed" value="true"/>
@@ -1138,8 +1138,8 @@
       </Option>
       <Option type="QString" name="component_description" value="training"/>
       <Option type="double" name="component_height" value="36"/>
-      <Option type="double" name="component_pos_x" value="267"/>
-      <Option type="double" name="component_pos_y" value="290"/>
+      <Option type="double" name="component_pos_x" value="98"/>
+      <Option type="double" name="component_pos_y" value="25"/>
       <Option type="double" name="component_width" value="150"/>
       <Option type="QString" name="name" value="training"/>
       <Option type="bool" name="outputs_collapsed" value="true"/>
