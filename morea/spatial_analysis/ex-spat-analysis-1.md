@@ -44,6 +44,10 @@ In practice, additional steps are often required due to software constraints. Fu
 
 For reference, you may <a href="obia.zip">Download</a> the base dataset. Additionally, you can download the <a href="obia1.model3">OBIA workflow</a> as a `QGIS Model`. To add it to your QGIS project, click the first icon "Models" ![](images/process.png) in the Processing Toolbox and choose `Add Model to Toolbox`. Note that it runs with fixed default values; to modify it, right-click on the model and choose `Edit Model`.
 
+
+{% include cool.html content="
+It is strongly recommended to save the project beforehand (e.g. as `obia_test`) to ensure consistent relative paths and avoid path resolution issues later on.
+"%}
 ---
 
 # Step-by-Step Tutorial

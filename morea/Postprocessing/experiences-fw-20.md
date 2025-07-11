@@ -12,38 +12,44 @@ morea_labels:
 
 ---
 
-# Optimize Alignment: How to align and merge Chunks
+# Optimize Alignment: How to Align and Merge Chunks
 
-It happens sometimes that not all pictures can be aligned. First, you can try to solve this situation by choosing different Alignment parameters, i.e. higher (or lower!) quality, or by adding georeference to the pictures (this way the Reference Preselection can be used). If this does not improve the result there is another method to get the not aligned pictures into the point cloud model. In general, you have to manually select the not aligned pictures in the point cloud model, move them into a new chunk, align them separately and then move them back into the main chunk and merge them into the point could.
+Sometimes, not all images can be aligned during processing. To address this, try adjusting the alignment parameters — for example, by increasing (or decreasing!) the alignment quality, or by adding georeference data to the images (this allows you to use Reference Preselection).  
+If these measures do not improve the result, there is another approach to incorporate the unaligned images into the point cloud model.
 
-Usually the not aligned pictures occur in groups so you can select a whole area using the selection tool. Most likely there are pictures around the unaligned areas that have been aligned. It is very important to include a reasonable amount of these aligned pictures (at least all neighboring pictures) into the selection. These additional pictures are later used to re-integrate the newly aligned segment into the main point cloud.
+In general, you must manually select the unaligned images in the point cloud model, move them into a new chunk, align them separately, and then re-integrate them into the main chunk by aligning and merging the chunks.
 
-Re-integration is done in two steps: First, the two (or more) chunks are aligned and afterwards merged into one final chunk. Because of the necessary procedure (see work flow below) this will lead to a larger number of pictures in the main chunk. But the aim to have a more consistent and complete point cloud works quite well. Surplus pictures in the main chunk can be removed.
+Typically, unaligned images appear in groups. Use the selection tool to select the entire affected area. Be sure to include surrounding, **already aligned** images in your selection — especially all neighboring images. These surrounding images are critical later when reintegrating the newly aligned chunk into the main point cloud.
 
-If the alignment does not improve enough you can still move a part of the not aligned pictures from the first separated chunk to another sub-set chunk. 
+Reintegration involves two main steps:  
+1. **Aligning the chunks**  
+2. **Merging them into a single final chunk**  
+
+Due to this process (outlined below), the number of images in the main chunk may increase. However, the goal — a more consistent and complete point cloud — is generally well achieved. Surplus images in the final chunk can be removed to reduce file size.
+
+If alignment quality is still unsatisfactory, you may split the original unaligned chunk into smaller subsets for further refinement.
+
 {% include note.html content="
-
-Remember to align and merge the chunks “upwards” in the reverse direction you reduced them in the “downwards” selecting process.
-"
-%}
+Remember to align and merge the chunks *upwards*, in the reverse order of how you split them during the *downwards* selection process.
+" %}
 
 
-## General workflow
+## General Workflow
 
-  1. Duplicate chunk
-  1. Activate duplicated chunk and select not aligned pictures by using the selection tool including aligned pictures around them (work in the model window, not in the picture list!)
-  1. Inverse selection and delete pictures (in the picture list!). The result should be a chunk with the not aligned pictures surrounded by some aligned pictures
-  1. Delete the Tie Points in the new chunk. (Note: You can still see how many pictures were originally aligned. Remember this number to check if the new alignment improves the situation.)
-  1. Align pictures in the new chunk, use the same parameters as before and adapt them if the results are not satisfying
-  1. Now all chunks will be combined, first by aligning them. Use “Align Chunks” in the Workflow Menu. Here you can set parameters for the alignment similar to the picture alignment. Parameters for the best results depend on the situation of the pictures. [A good try: Method = Point based, Accuracy = Medium, Point Limit = 0]. 
-  1. Finally merge the chunks. [Choose only those chunks you need, leave out “working chunks”!]
-  1. Optional, the surplus (double) pictures can be removed to lower project file size.
+1. **Duplicate the chunk.**  
+2. **Activate the duplicated chunk** and use the selection tool in the 3D model window (not in the image list) to select the unaligned images, including all neighboring aligned images.  
+3. **Inverse the selection** and delete the deselected images from the image list. The resulting chunk should now contain only the unaligned images and their immediate aligned neighbors.  
+4. **Delete the Tie Points** in this new chunk. *(Tip: Note the original number of aligned images so you can later assess whether the new alignment improved.)*  
+5. **Align the images** in the new chunk, using the same parameters as before. Adjust them if necessary to improve results.  
+6. **Align all chunks together** using the “Align Chunks” option in the Workflow menu. Set alignment parameters similar to those for photo alignment. *(Good starting parameters: Method = Point Based, Accuracy = Medium, Point Limit = 0)*  
+7. **Merge the chunks.** Be sure to include only the relevant chunks and exclude temporary “working chunks.”  
+8. **(Optional)**: Remove any surplus (duplicate) images to reduce project size.
 
-## References for alignment optimizing
 
-  * [Metashape Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf)
-  - [Search filter](https://www.agisoft.com/forum/index.php?action=search2;params=eJwtzTEOgzAMBdC7sLB4wGUot4mC8wVUIalMoKqUw9epWKz_ny3Zh8snQah95drVWVt6Ek_ETDYsDsQjPQbbHmv-OMn7O6LA7hqd8wtSXE7xe0vW4sKm1gIOucWaIuL_rBG8ymq4Q5ctLT9qwjF9)
-  - [Merging Chunks](http://www.agisoft.com/forum/index.php?topic=6995.0)
-  - [Chunks alignment](http://www.agisoft.com/forum/index.php?topic=148.0)
-  - [Chunks Workflow](http://www.agisoft.com/forum/index.php?topic=381.0)
+## References for Alignment Optimization
 
+- [Metashape Manual](https://www.agisoft.com/pdf/metashape-pro_1_8_en.pdf)  
+- [Search Filter](https://www.agisoft.com/forum/index.php?action=search2;params=eJwtzTEOgzAMBdC7sLB4wGUot4mC8wVUIalMoKqUw9epWKz_ny3Zh8snQah95drVWVt6Ek_ETDYsDsQjPQbbHmv-OMn7O6LA7hqd8wtSXE7xe0vW4sKm1gIOucWaIuL_rBG8ymq4Q5ctLT9qwjF9)  
+- [Merging Chunks](http://www.agisoft.com/forum/index.php?topic=6995.0)  
+- [Chunks Alignment](http://www.agisoft.com/forum/index.php?topic=148.0)  
+- [Chunks Workflow](http://www.agisoft.com/forum/index.php?topic=381.0)
