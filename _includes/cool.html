@@ -1,4 +1,7 @@
 <div markdown="span" class="alert alert-success" role="alert"
 > <i class="fa fa-thumbs-up
-"></i>  <b></b> {{ include.content }}
+"></i>  
+
+  {{ include.content | markdownify }}
+  
 </div>
