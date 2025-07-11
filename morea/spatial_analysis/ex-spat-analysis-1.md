@@ -46,16 +46,16 @@ For reference, you may <a href="obia.zip">Download</a> the base dataset. Additio
 
 
 {% include kim.html content="
+
 It is strongly recommended to save the project beforehand (e.g. as `obia_test`) to ensure consistent relative paths and avoid path resolution issues later on.
 However, OTB does not respect QGIS temporary layers.
+
 In this model, temporary files are stored in the user home directory (~), even if a project is saved.
-</br>
+
 🛠️ Best practice:
-</br>
+
 - Manually delete intermediate files (segmentation.shp, zonal.shp, etc.) before each run.
-</br>
 - Never rely on “Save to temporary file”.
-</br>
 - Unexpected gaps or missing attributes usually stem from outdated or orphaned temp files.
 "%}
 
