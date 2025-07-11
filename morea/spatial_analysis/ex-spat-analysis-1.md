@@ -47,7 +47,7 @@ For reference, you may <a href="obia.zip">Download</a> the base dataset. Additio
 
 {% include important.html content="
 
-X
+
 
 It is strongly recommended to save the project beforehand (e.g. as `obia_test`) to ensure consistent relative paths and avoid path resolution issues later on.
 However, OTB does not respect QGIS temporary layers.
