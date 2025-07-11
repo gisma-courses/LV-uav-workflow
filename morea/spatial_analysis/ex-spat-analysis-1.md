@@ -47,6 +47,8 @@ For reference, you may <a href="obia.zip">Download</a> the base dataset. Additio
 
 {% include kim.html content="
 
+_**keep in mind**_
+
 It is strongly recommended to save the project beforehand (e.g. as `obia_test`) to ensure consistent relative paths and avoid path resolution issues later on.
 However, OTB does not respect QGIS temporary layers.
 
@@ -95,8 +97,10 @@ Provide at least **10 widely distributed sampling points** per class.
 Save the file as `sample.gpgk`.
 
 {% include kim.html content="
-Here, training data is digitized on screen ('god's eye method') — often sufficient for rough classifications.<br><br>
-However, in real-world applications, training data is usually collected in the field using GPS or accurate maps. These are often supplemented by vegetation, soil, or limnological surveys.
+_**keep in mind**_
+
+- Here, training data is digitized on screen ('god's eye method') — often sufficient for rough classifications.
+- However, in real-world applications, training data is usually collected in the field using GPS or accurate maps. These are often supplemented by vegetation, soil, or limnological surveys.
 "%}
 
 ---
