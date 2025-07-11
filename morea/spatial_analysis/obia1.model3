@@ -121,33 +121,7 @@
       <Option value="160" name="component_width" type="double"/>
       <Option name="dependencies"/>
       <Option value="otb:Segmentation_1" name="id" type="QString"/>
-      <Option name="outputs" type="Map">
-        <Option name="segmentation" type="Map">
-          <Option value="otb:Segmentation_1" name="child_id" type="QString"/>
-          <Option value="" name="color" type="QString"/>
-          <Option name="comment" type="Map">
-            <Option value="" name="color" type="QString"/>
-            <Option value="" name="component_description" type="QString"/>
-            <Option value="60" name="component_height" type="double"/>
-            <Option value="0" name="component_pos_x" type="double"/>
-            <Option value="0" name="component_pos_y" type="double"/>
-            <Option value="100" name="component_width" type="double"/>
-            <Option value="true" name="outputs_collapsed" type="bool"/>
-            <Option value="true" name="parameters_collapsed" type="bool"/>
-          </Option>
-          <Option value="segmentation" name="component_description" type="QString"/>
-          <Option value="30" name="component_height" type="double"/>
-          <Option value="787.0885433538494" name="component_pos_x" type="double"/>
-          <Option value="250.36162401468522" name="component_pos_y" type="double"/>
-          <Option value="200" name="component_width" type="double"/>
-          <Option name="default_value" type="invalid"/>
-          <Option value="false" name="mandatory" type="bool"/>
-          <Option value="segmentation" name="name" type="QString"/>
-          <Option value="mode.vector.out" name="output_name" type="QString"/>
-          <Option value="true" name="outputs_collapsed" type="bool"/>
-          <Option value="true" name="parameters_collapsed" type="bool"/>
-        </Option>
-      </Option>
+      <Option name="outputs"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
       <Option name="params" type="Map">
@@ -275,6 +249,12 @@
           <Option type="Map">
             <Option value="2" name="source" type="int"/>
             <Option value="" name="static_value" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="mode.vector.out" type="List">
+          <Option type="Map">
+            <Option value="2" name="source" type="int"/>
+            <Option value="./segmentation.shp" name="static_value" type="QString"/>
           </Option>
         </Option>
         <Option name="mode.vector.outmode" type="List">
@@ -977,25 +957,6 @@
       <Option name="metadata"/>
       <Option value="ortho" name="name" type="QString"/>
       <Option value="raster" name="parameter_type" type="QString"/>
-    </Option>
-    <Option name="otb:Segmentation_1:segmentation" type="Map">
-      <Option value="true" name="create_by_default" type="bool"/>
-      <Option name="default" type="invalid"/>
-      <Option name="defaultGui" type="invalid"/>
-      <Option value="segmentation" name="description" type="QString"/>
-      <Option value="All files (*.*)" name="file_filter" type="QString"/>
-      <Option value="0" name="flags" type="int"/>
-      <Option value="" name="help" type="QString"/>
-      <Option name="metadata" type="Map">
-        <Option value="otb:Segmentation_1" name="_modelChildId" type="QString"/>
-        <Option value="segmentation" name="_modelChildOutputName" type="QString"/>
-        <Option value="otb" name="_modelChildProvider" type="QString"/>
-        <Option value="mode" name="group_key" type="QString"/>
-        <Option value="vector" name="group_value" type="QString"/>
-      </Option>
-      <Option value="otb:Segmentation_1:segmentation" name="name" type="QString"/>
-      <Option value="fileDestination" name="parameter_type" type="QString"/>
-      <Option value="false" name="supports_non_file_outputs" type="bool"/>
     </Option>
     <Option name="otb:VectorClassifier_1:Classified Segmentation layer name (must contain valid vector file type extension)" type="Map">
       <Option value="true" name="create_by_default" type="bool"/>
