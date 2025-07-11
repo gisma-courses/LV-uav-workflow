@@ -77,7 +77,6 @@ If you're unfamiliar with digitizing in QGIS, follow this [tutorial](https://geo
 Note: For this example, we will digitize **points**, not polygons.
 
 {% include info.html content="
-
 Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. This makes it much more convenient to digitize several points for the same class in sequence.
 "%}
 
