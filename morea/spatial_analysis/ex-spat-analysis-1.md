@@ -76,7 +76,7 @@ Key parameters like `Range Radius` (feature space) and `Spatial Radius` (search 
 If you're unfamiliar with digitizing in QGIS, follow this [tutorial](https://geomoer.github.io/geoAI//unit02/unit02-03_digitize_training_areas.html).  
 Note: For this example, we will digitize **points**, not polygons.
 
-{% include kim.html content="
+{% include cool.html content="
 Activate under `Main Menu->Settings->Digitize` and check *`Reuse last entered attribute values`*. This makes it much more convenient to digitize several points for the same class in sequence.
 "%}
 
@@ -96,8 +96,8 @@ Create a point vector file and digitize the following classes:
 Provide at least **10 widely distributed sampling points** per class.  
 Save the file as `sample.gpgk`.
 
-{% include kim.html content="
-_**keep in mind**_
+{% include important.html content="
+
 
 - Here, training data is digitized on screen ('god's eye method') — often sufficient for rough classifications.
 - However, in real-world applications, training data is usually collected in the field using GPS or accurate maps. These are often supplemented by vegetation, soil, or limnological surveys.
